@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\qbproperties.o
+./release\qbdatabase.o
+./release\qbpersistable.o
+./release\employee.o
+./release\qblogger.o
+./release\QsLogDest.o
+./release\QsLog.o
+./release\QsLogDestConsole.o
+./release\QsLogDestFile.o
+./release\moc_qbpersistable.o
+./release\moc_employee.o
+);
