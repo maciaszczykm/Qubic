@@ -24,7 +24,7 @@ QbProperties::QbProperties(QString path)
         }
     }
     file.close();
-    QbLogger::getInstance()->info("Properties successfully read");
+    QbLogger::getInstance()->info("Properties successfully read from " + QDir::currentPath() + "/qb.properties");
 }
 
 QString QbProperties::getProperty(QString property)

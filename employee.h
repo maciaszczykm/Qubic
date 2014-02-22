@@ -9,9 +9,26 @@
 class Employee : public QbPersistable
 {
     Q_OBJECT
+
 public:
-    Employee();
-    Employee(QString number, QString birthday, QString firstname, QString lastname, QString gender, QString hiredate);
+    Q_INVOKABLE Employee();
+    Q_INVOKABLE Employee(QString number, QString birthday, QString firstname, QString lastname, QString gender, QString hiredate);
+
+    Q_INVOKABLE QString getNumber() {return number;}
+    Q_INVOKABLE QString getBirthday() {return birthday;}
+    Q_INVOKABLE QString getFirstname() {return firstname;}
+    Q_INVOKABLE QString getLastname() {return lastname;}
+    Q_INVOKABLE QString getGender() {return gender;}
+    Q_INVOKABLE QString getHiredate() {return hiredate;}
+
+    Q_INVOKABLE void setNumber(QString number) {this->number = number;}
+    Q_INVOKABLE void setBirthday(QString birthday) {this->birthday = birthday;}
+    Q_INVOKABLE void setFirstname(QString firstname) {this->firstname = firstname;}
+    Q_INVOKABLE void setLastname(QString lastname) {this->lastname = lastname;}
+    Q_INVOKABLE void setGender(QString gender) {this->gender = gender;}
+    Q_INVOKABLE void setHiredate(QString hiredate) {this->hiredate = hiredate;}
+
+private:
     QString number;
     QString birthday;
     QString firstname;

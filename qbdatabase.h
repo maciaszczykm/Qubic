@@ -1,6 +1,7 @@
 #ifndef QBDATABASE_H
 #define QBDATABASE_H
 
+#include <QMetaMethod>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QDir>
@@ -26,6 +27,8 @@ private:
     QString dbname;
     QString username;
     QString password;
+    QString gettersPrefix;
+    QString settersPrefix;
 };
 
 #endif // QBDATABASE_H

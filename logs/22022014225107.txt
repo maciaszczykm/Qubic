@@ -1,0 +1,5 @@
+ INFO 2014-02-22T22:51:07.764 "Properties successfully read" 
+ INFO 2014-02-22T22:51:07.765 "D:/Workspace/Qubic/qb.properties" 
+ INFO 2014-02-22T22:51:07.777 "Database successfully initialized" 
+ INFO 2014-02-22T22:51:07.787 "Connected to database" 
+DEBUG 2014-02-22T22:51:07.787 "Trying to store object" 
