@@ -1,0 +1,2 @@
+DEBUG 2014-02-23T15:11:33.676 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, FIRSTNAME, GENDER, HIREDATE, ID, LASTNAME) VALUES ('1953-09-02', 'Marcin', 'M', '1986-06-26', '99999', 'Maciaszczyk');" 
+DEBUG 2014-02-23T15:11:33.681 "Store operation successfully completed" 

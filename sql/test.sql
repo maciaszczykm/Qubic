@@ -1,11 +1,11 @@
 create database employees;
 
-create table employee (
-id INT,
-bday DATE,
-fname VARCHAR(10),
-lname VARCHAR(20),
-gender VARCHAR(1),
-doh DATE);
+create table EMPLOYEE (
+ID INT,
+BIRTHDAY DATE,
+FIRSTNAME VARCHAR(10),
+LASTNAME VARCHAR(20),
+GENDER VARCHAR(1),
+HIREDATE DATE);
 
 commit;

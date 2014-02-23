@@ -10,18 +10,9 @@ int main(int argc, char *argv[])
     QbDatabase* db = QbDatabase::getInstance();
     db->connect();
 
-    // ----------------------- test area ----------------------- //
-    Employee emp ("99999","1953-09-02","Marcin","Maciaszczyk","M","1986-06-26");
-
-
+    Employee emp ("99999", "1953-09-02", "Marcin", "Maciaszczyk", "M", "1986-06-26");
     db->store(emp);
-    //cout << db->read(emp);
-    //emp.firstname = "Piotr";
-    //db->store(emp);
-    //cout << db->read(emp);
-    //db->remove(emp);
-
-    // ----------------------- test area ----------------------- //
+    db->remove(emp);
 
     return app.exec();
 }

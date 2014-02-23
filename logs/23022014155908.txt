@@ -1,0 +1,3 @@
+DEBUG 2014-02-23T15:59:08.119 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, FIRSTNAME, GENDER, HIREDATE, ID, LASTNAME) VALUES ('1953-09-02', 'Marcin', 'M', '1986-06-26', '99999', 'Maciaszczyk');" 
+DEBUG 2014-02-23T15:59:08.126 "Store operation successfully completed" 
+DEBUG 2014-02-23T15:59:08.126 "Reading metadata of object EMPLOYEE" 

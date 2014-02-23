@@ -34,28 +34,48 @@ void QbDatabase::connect()
 
 void QbDatabase::store(QbPersistable& object)
 {
-    QbLogger::getInstance()->debug("Reading object metadata");
+    QString objectName = object.getObjectName();
+    QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
     QMap<QString, QString> objectMembers;
-    for(int i = 0; i < object.metaObject()->methodCount(); i++) {
+    for(int i = 0; i < object.metaObject()->methodCount(); i++)
+    {
         QMetaMethod method = object.metaObject()->method(i);
-        if(method.name().startsWith(gettersPrefix.toStdString().c_str())) {
+        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
+        {
             QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
             memberName = memberName.toUpper();
             QString memberValue;
-
-            // ----------------------- test area ----------------------- //
-
-            QGenericReturnArgument returnValue;
-            qDebug() << method.invoke(&object,  Qt::DirectConnection, returnValue);
-
-            objectMembers[memberName] = "";
+            QMetaObject::invokeMethod(&object,method.name(), Q_RETURN_ARG(QString, memberValue));
+            objectMembers[memberName] = memberValue;
         }
     }
-    qDebug() << objectMembers;
-    QbLogger::getInstance()->debug("Trying to store object");
-
-    // ----------------------- test area ----------------------- //
+    QbLogger::getInstance()->debug("Trying to store object " + objectName + " [" + object.getObjectString() + "]");
+    QString columns = "(";
+    QString values = "(";
+    for(auto e : objectMembers.toStdMap()) {
+        columns.append(e.first + ", ");
+        values.append("'" + e.second + "', ");
+    }
+    columns = columns.left(columns.length() - 2) + ")";
+    values = values.left(values.length() - 2) + ")";
+    QString insertStatement = "INSERT INTO " + objectName + " " + columns + " VALUES " + values + ";";
+    QbLogger::getInstance()->debug("SQL statement is ready " + insertStatement);
+    QSqlQuery insertQuery;
+    if(insertQuery.exec(insertStatement)) QbLogger::getInstance()->debug("Store operation successfully completed");
+    else QbLogger::getInstance()->debug("Store operation failed");
 }
 
+void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
+{
 
+}
 
+void QbDatabase::update(QbPersistable& object)
+{
+
+}
+
+QbPersistable QbDatabase::load(QbPersistable& object)
+{
+
+}

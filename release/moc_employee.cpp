@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Employee_t {
     QByteArrayData data[20];
-    char stringdata[200];
+    char stringdata[188];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,32 +30,32 @@ struct qt_meta_stringdata_Employee_t {
 static const qt_meta_stringdata_Employee_t qt_meta_stringdata_Employee = {
     {
 QT_MOC_LITERAL(0, 0, 8),
-QT_MOC_LITERAL(1, 9, 9),
-QT_MOC_LITERAL(2, 19, 0),
-QT_MOC_LITERAL(3, 20, 11),
-QT_MOC_LITERAL(4, 32, 12),
-QT_MOC_LITERAL(5, 45, 11),
-QT_MOC_LITERAL(6, 57, 9),
-QT_MOC_LITERAL(7, 67, 11),
-QT_MOC_LITERAL(8, 79, 9),
-QT_MOC_LITERAL(9, 89, 6),
-QT_MOC_LITERAL(10, 96, 11),
-QT_MOC_LITERAL(11, 108, 8),
-QT_MOC_LITERAL(12, 117, 12),
-QT_MOC_LITERAL(13, 130, 9),
-QT_MOC_LITERAL(14, 140, 11),
-QT_MOC_LITERAL(15, 152, 8),
-QT_MOC_LITERAL(16, 161, 9),
-QT_MOC_LITERAL(17, 171, 6),
-QT_MOC_LITERAL(18, 178, 11),
-QT_MOC_LITERAL(19, 190, 8)
+QT_MOC_LITERAL(1, 9, 5),
+QT_MOC_LITERAL(2, 15, 0),
+QT_MOC_LITERAL(3, 16, 11),
+QT_MOC_LITERAL(4, 28, 12),
+QT_MOC_LITERAL(5, 41, 11),
+QT_MOC_LITERAL(6, 53, 9),
+QT_MOC_LITERAL(7, 63, 11),
+QT_MOC_LITERAL(8, 75, 5),
+QT_MOC_LITERAL(9, 81, 2),
+QT_MOC_LITERAL(10, 84, 11),
+QT_MOC_LITERAL(11, 96, 8),
+QT_MOC_LITERAL(12, 105, 12),
+QT_MOC_LITERAL(13, 118, 9),
+QT_MOC_LITERAL(14, 128, 11),
+QT_MOC_LITERAL(15, 140, 8),
+QT_MOC_LITERAL(16, 149, 9),
+QT_MOC_LITERAL(17, 159, 6),
+QT_MOC_LITERAL(18, 166, 11),
+QT_MOC_LITERAL(19, 178, 8)
     },
-    "Employee\0getNumber\0\0getBirthday\0"
-    "getFirstname\0getLastname\0getGender\0"
-    "getHiredate\0setNumber\0number\0setBirthday\0"
-    "birthday\0setFirstname\0firstname\0"
-    "setLastname\0lastname\0setGender\0gender\0"
-    "setHiredate\0hiredate\0"
+    "Employee\0getID\0\0getBirthday\0getFirstname\0"
+    "getLastname\0getGender\0getHiredate\0"
+    "setID\0id\0setBirthday\0birthday\0"
+    "setFirstname\0firstname\0setLastname\0"
+    "lastname\0setGender\0gender\0setHiredate\0"
+    "hiredate\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -123,7 +123,7 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     } else if (_c == QMetaObject::InvokeMetaMethod) {
         Employee *_t = static_cast<Employee *>(_o);
         switch (_id) {
-        case 0: { QString _r = _t->getNumber();
+        case 0: { QString _r = _t->getID();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         case 1: { QString _r = _t->getBirthday();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
@@ -135,7 +135,7 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         case 5: { QString _r = _t->getHiredate();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 6: _t->setNumber((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 6: _t->setID((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 7: _t->setBirthday((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 8: _t->setFirstname((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 9: _t->setLastname((*reinterpret_cast< QString(*)>(_a[1]))); break;

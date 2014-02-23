@@ -17,6 +17,7 @@ public:
     void error(QString message);
     void fatal(QString message);
     static QbLogger* getInstance();
+
 private:
     static QbLogger* instance;
     QbLogger();

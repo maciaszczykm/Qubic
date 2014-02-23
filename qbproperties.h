@@ -16,6 +16,7 @@ public:
     QString getProperty(QString property);
     void setProperty(QString property, QString value);
     void store();
+
 private:
     QMap<QString,QString> properties;
     QString path;
