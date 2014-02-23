@@ -1,5 +1,0 @@
- INFO 2014-02-22T22:52:48.325 "Properties successfully read" 
- INFO 2014-02-22T22:52:48.326 "D:/Workspace/Qubic/qb.properties" 
- INFO 2014-02-22T22:52:48.337 "Database successfully initialized" 
- INFO 2014-02-22T22:52:48.346 "Connected to database" 
-DEBUG 2014-02-22T22:52:48.346 "bject" 

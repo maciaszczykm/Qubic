@@ -1,5 +1,0 @@
- INFO 2014-02-23T13:47:44.320 "Properties successfully read from D:/Workspace/Qubic/qb.properties" 
- INFO 2014-02-23T13:47:44.331 "Database localhost:employees successfully initialized" 
- INFO 2014-02-23T13:47:44.340 "Connected to database" 
-DEBUG 2014-02-23T13:47:44.340 "Reading object metadata" 
-DEBUG 2014-02-23T13:47:44.348 "Trying to store object" 

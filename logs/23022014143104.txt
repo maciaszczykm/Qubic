@@ -1,2 +1,0 @@
-DEBUG 2014-02-23T14:31:04.525 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, FIRSTNAME, GENDER, HIREDATE, ID, LASTNAME) VALUES ('1953-09-02', 'Marcin', 'M', '1986-06-26', '99999', 'Maciaszczyk');" 
-DEBUG 2014-02-23T14:31:04.530 "Store operation successfully completed" 
