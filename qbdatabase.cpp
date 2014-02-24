@@ -67,7 +67,33 @@ void QbDatabase::store(QbPersistable& object)
 
 void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
 {
-
+    QString objectName = object.getObjectName();
+    QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
+    QMap<QString, QString> objectMembers;
+    for(int i = 0; i < object.metaObject()->methodCount(); i++)
+    {
+        QMetaMethod method = object.metaObject()->method(i);
+        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
+        {
+            QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
+            memberName = memberName.toUpper();
+            QString memberValue;
+            QMetaObject::invokeMethod(&object,method.name(), Q_RETURN_ARG(QString, memberValue));
+            objectMembers[memberName] = memberValue;
+        }
+    }
+    QbLogger::getInstance()->debug("Trying to remove object " + objectName + " [" + object.getObjectString() + "]");
+    QString removeStatement = "DELETE FROM " + objectName + " WHERE ";
+    for(auto e : objectMembers.toStdMap()) {
+        removeStatement.append(e.first + "='" + e.second + "' AND ");
+    }
+    removeStatement = removeStatement.left(removeStatement.length() - 5);
+    if(removeAllEntries) removeStatement.append(";");
+    else removeStatement.append(" LIMIT 1;");
+    QbLogger::getInstance()->debug("SQL statement is ready " + removeStatement);
+    QSqlQuery removeQuery;
+    if(removeQuery.exec(removeStatement)) QbLogger::getInstance()->debug("Remove operation successfully completed");
+    else QbLogger::getInstance()->debug("Remove operation failed");
 }
 
 void QbDatabase::update(QbPersistable& object)
