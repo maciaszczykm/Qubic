@@ -15,7 +15,7 @@ QbLogger::QbLogger()
         QDir logsDir;
         logsDir.mkdir("logs");
     }
-    QsLogging::DestinationPtr fileDestination(QsLogging::DestinationFactory::MakeFileDestination(filepath, true, 512, 2));
+    QsLogging::DestinationPtr fileDestination(QsLogging::DestinationFactory::MakeFileDestination(filepath));
     QsLogging::DestinationPtr debugDestination(QsLogging::DestinationFactory::MakeDebugOutputDestination());
     logger.addDestination(debugDestination);
     logger.addDestination(fileDestination);
