@@ -1,4 +1,5 @@
 #include "qbdatabase.h"
+#include <QSqlDriver>
 
 QbDatabase* QbDatabase::instance = NULL;
 
@@ -18,6 +19,7 @@ QbDatabase::QbDatabase()
     db.setUserName(username);
     db.setPassword(password);
     QbLogger::getInstance()->info("Database " + hostname + ":" + dbname + " successfully initialized");
+    initTransactions();
 }
 
 QbDatabase *QbDatabase::getInstance()
@@ -65,6 +67,8 @@ void QbDatabase::store(QbPersistable& object)
     else QbLogger::getInstance()->debug("Store operation failed");
 }
 
+#include <QSqlDriver>
+
 void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
 {
     QString objectName = object.getObjectName();
@@ -104,4 +108,27 @@ void QbDatabase::update(QbPersistable& object)
 QbPersistable QbDatabase::load(QbPersistable& object)
 {
 
+}
+
+void QbDatabase::initTransactions()
+{
+    bool transactionsEnabledProperty = (properties.getProperty("qubic.transactions.enabled").toStdString().c_str() == "true");
+    if(db.driver()->hasFeature(QSqlDriver::Transactions) && transactionsEnabledProperty)
+    {
+        QbLogger::getInstance()->info("Transactions successfully enabled");
+        transactionsEnabled = true;
+    }
+    else
+    {
+        if(db.driver()->hasFeature(QSqlDriver::Transactions))
+        {
+            QbLogger::getInstance()->info("Transactions disabled");
+            transactionsEnabled = false;
+        }
+        else
+        {
+            QbLogger::getInstance()->info("Transactions disabled, your database does not support them");
+            transactionsEnabled = false;
+        }
+    }
 }

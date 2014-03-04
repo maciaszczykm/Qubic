@@ -24,6 +24,7 @@ public:
 
 private:
     QbDatabase();
+    void initTransactions();
     static QbDatabase* instance;
     QbProperties properties;
     QSqlDatabase db;
@@ -34,6 +35,7 @@ private:
     QString password;
     QString gettersPrefix;
     QString settersPrefix;
+    bool transactionsEnabled;
 };
 
 #endif // QBDATABASE_H
