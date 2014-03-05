@@ -62,12 +62,19 @@ void QbDatabase::store(QbPersistable& object)
     values = values.left(values.length() - 2) + ")";
     QString insertStatement = "INSERT INTO " + objectName + " " + columns + " VALUES " + values + ";";
     QbLogger::getInstance()->debug("SQL statement is ready " + insertStatement);
+    if(transactionsEnabled) db.transaction();
     QSqlQuery insertQuery;
-    if(insertQuery.exec(insertStatement)) QbLogger::getInstance()->debug("Store operation successfully completed");
-    else QbLogger::getInstance()->debug("Store operation failed");
+    if(insertQuery.exec(insertStatement))
+    {
+        if(transactionsEnabled) db.commit();
+        QbLogger::getInstance()->debug("Store operation successfully completed");
+    }
+    else
+    {
+        if(transactionsEnabled) db.rollback();
+        QbLogger::getInstance()->debug("Store operation failed");
+    }
 }
-
-#include <QSqlDriver>
 
 void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
 {
@@ -95,9 +102,18 @@ void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
     if(removeAllEntries) removeStatement.append(";");
     else removeStatement.append(" LIMIT 1;");
     QbLogger::getInstance()->debug("SQL statement is ready " + removeStatement);
+    if(transactionsEnabled) db.transaction();
     QSqlQuery removeQuery;
-    if(removeQuery.exec(removeStatement)) QbLogger::getInstance()->debug("Remove operation successfully completed");
-    else QbLogger::getInstance()->debug("Remove operation failed");
+    if(removeQuery.exec(removeStatement))
+    {
+        if(transactionsEnabled) db.commit();
+        QbLogger::getInstance()->debug("Remove operation successfully completed");
+    }
+    else
+    {
+        if(transactionsEnabled) db.rollback();
+        QbLogger::getInstance()->debug("Remove operation failed");
+    }
 }
 
 void QbDatabase::update(QbPersistable& object)
@@ -112,15 +128,15 @@ QbPersistable QbDatabase::load(QbPersistable& object)
 
 void QbDatabase::initTransactions()
 {
-    bool transactionsEnabledProperty = (properties.getProperty("qubic.transactions.enabled").toStdString().c_str() == "true");
-    if(db.driver()->hasFeature(QSqlDriver::Transactions) && transactionsEnabledProperty)
+    bool transactionsEnabledProperty = (properties.getProperty("qubic.transactions.enabled").toStdString() == "true");
+    if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions) && transactionsEnabledProperty)
     {
         QbLogger::getInstance()->info("Transactions successfully enabled");
         transactionsEnabled = true;
     }
     else
     {
-        if(db.driver()->hasFeature(QSqlDriver::Transactions))
+        if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
         {
             QbLogger::getInstance()->info("Transactions disabled");
             transactionsEnabled = false;
