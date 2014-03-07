@@ -3,7 +3,6 @@
 
 #include <QString>
 #include <QObject>
-#include <qdebug.h>
 
 #include <qbpersistable.h>
 
@@ -13,7 +12,7 @@ class Employee : public QbPersistable
 
 public:
     Q_INVOKABLE Employee() {}
-    Q_INVOKABLE Employee(const Employee&) {}
+    Q_INVOKABLE Employee(const Employee& other);
     Q_INVOKABLE Employee(QString id, QString birthday, QString firstname, QString lastname, QString gender, QString hiredate);
     Q_INVOKABLE QString getID() {return id;}
     Q_INVOKABLE QString getBirthday() {return birthday;}
@@ -29,12 +28,12 @@ public:
     Q_INVOKABLE void setHiredate(QString hiredate) {this->hiredate = hiredate;}
 
 private:
-    QString id;
-    QString birthday;
-    QString firstname;
-    QString lastname;
-    QString gender;
-    QString hiredate;
+    Q_INVOKABLE QString id;
+    Q_INVOKABLE QString birthday;
+    Q_INVOKABLE QString firstname;
+    Q_INVOKABLE QString lastname;
+    Q_INVOKABLE QString gender;
+    Q_INVOKABLE QString hiredate;
 };
 
 Q_DECLARE_METATYPE(Employee)

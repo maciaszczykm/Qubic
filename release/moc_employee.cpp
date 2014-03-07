@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Employee_t {
-    QByteArrayData data[20];
-    char stringdata[188];
+    QByteArrayData data[21];
+    char stringdata[194];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,14 +48,15 @@ QT_MOC_LITERAL(15, 140, 8),
 QT_MOC_LITERAL(16, 149, 9),
 QT_MOC_LITERAL(17, 159, 6),
 QT_MOC_LITERAL(18, 166, 11),
-QT_MOC_LITERAL(19, 178, 8)
+QT_MOC_LITERAL(19, 178, 8),
+QT_MOC_LITERAL(20, 187, 5)
     },
     "Employee\0getID\0\0getBirthday\0getFirstname\0"
     "getLastname\0getGender\0getHiredate\0"
     "setID\0id\0setBirthday\0birthday\0"
     "setFirstname\0firstname\0setLastname\0"
     "lastname\0setGender\0gender\0setHiredate\0"
-    "hiredate\0"
+    "hiredate\0other\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -102,7 +103,7 @@ static const uint qt_meta_data_Employee[] = {
 
  // constructors: parameters
     0x80000000 | 2,
-    0x80000000 | 2, 0x80000000 | 0,    2,
+    0x80000000 | 2, 0x80000000 | 0,   20,
     0x80000000 | 2, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   11,   13,   15,   17,   19,
 
  // constructors: name, argc, parameters, tag, flags

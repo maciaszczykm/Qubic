@@ -9,3 +9,13 @@ Employee::Employee(QString id, QString birthday, QString firstname, QString last
     this->gender = gender;
     this->hiredate = hiredate;
 }
+
+Employee::Employee(const Employee& other)
+{
+    id = other.id;
+    birthday = other.birthday;
+    firstname = other.firstname;
+    lastname = other.lastname;
+    gender = other.gender;
+    hiredate = other.hiredate;
+}

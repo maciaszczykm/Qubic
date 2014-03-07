@@ -1,5 +1,4 @@
 #include "qbdatabase.h"
-#include <QSqlDriver>
 
 QbDatabase* QbDatabase::instance = NULL;
 
@@ -73,6 +72,64 @@ void QbDatabase::store(QbPersistable& object)
     {
         if(transactionsEnabled) db.rollback();
         QbLogger::getInstance()->error("Store operation failed");
+        QbLogger::getInstance()->error(insertQuery.lastError().text());
+    }
+}
+
+void QbDatabase::update(QbPersistable& oldObject, QbPersistable& newObject, bool removeAllEntries)
+{
+    QString objectName = newObject.getObjectName();
+    QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
+    if(oldObject.metaObject()->className() != newObject.metaObject()->className())
+    {
+        QbLogger::getInstance()->error("Update operation failed, objects types are different");
+        return;
+    }
+    QString newObjectMembers;
+    for(int i = 0; i < newObject.metaObject()->methodCount(); i++)
+    {
+        QMetaMethod method = newObject.metaObject()->method(i);
+        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
+        {
+            QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
+            memberName = memberName.toUpper();
+            QString memberValue;
+            QMetaObject::invokeMethod(&newObject,method.name(), Q_RETURN_ARG(QString, memberValue));
+            newObjectMembers += memberName + "='" + memberValue + "', ";
+        }
+    }
+    QString oldObjectMembers;
+    for(int i = 0; i < oldObject.metaObject()->methodCount(); i++)
+    {
+        QMetaMethod method = oldObject.metaObject()->method(i);
+        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
+        {
+            QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
+            memberName = memberName.toUpper();
+            QString memberValue;
+            QMetaObject::invokeMethod(&oldObject,method.name(), Q_RETURN_ARG(QString, memberValue));
+            oldObjectMembers += memberName + "='" + memberValue + "' AND ";
+        }
+    }
+    QbLogger::getInstance()->debug("Trying to update object " + objectName + " [" + newObject.getObjectString() + "]");
+    newObjectMembers = newObjectMembers.left(newObjectMembers.length() - 2);
+    oldObjectMembers = oldObjectMembers.left(oldObjectMembers.length() - 5);
+    QString updateStatement = "UPDATE " + objectName + " SET " + newObjectMembers + " WHERE " + oldObjectMembers;
+    if(removeAllEntries) updateStatement.append(";");
+    else updateStatement.append(" LIMIT 1;");
+    QbLogger::getInstance()->debug("SQL statement is ready " + updateStatement);
+    if(transactionsEnabled) db.transaction();
+    QSqlQuery updateQuery;
+    if(updateQuery.exec(updateStatement))
+    {
+        if(transactionsEnabled) db.commit();
+        QbLogger::getInstance()->debug("Update operation successfully completed");
+    }
+    else
+    {
+        if(transactionsEnabled) db.rollback();
+        QbLogger::getInstance()->error("Update operation failed");
+        QbLogger::getInstance()->error(updateQuery.lastError().text());
     }
 }
 
@@ -113,12 +170,8 @@ void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
     {
         if(transactionsEnabled) db.rollback();
         QbLogger::getInstance()->error("Remove operation failed");
+        QbLogger::getInstance()->error(removeQuery.lastError().text());
     }
-}
-
-void QbDatabase::update(QbPersistable& object)
-{
-
 }
 
 QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
@@ -159,7 +212,6 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
                     return result;
                 }
                 QbPersistable *ptr = (QbPersistable*) classPtr;
-                QbLogger::getInstance()->debug("Object " + className + " ready to fill with data");
                 for(int i = 0; i < ptr->metaObject()->methodCount(); i++)
                 {
                     QMetaMethod method = ptr->metaObject()->method(i);
@@ -168,7 +220,7 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
                         QString memberName = method.name().right(method.name().length() - settersPrefix.length());
                         memberName = memberName.toUpper();
                         QString memberValue = selectQuery.value(memberName).toString();
-                        QMetaObject::invokeMethod(&object,method.name(), Q_ARG(QString, memberValue));
+                        QMetaObject::invokeMethod(ptr, method.name(), Q_ARG(QString, memberValue));
                     }
                 }
                 result.append(ptr);
@@ -185,6 +237,7 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
     else
     {
         QbLogger::getInstance()->error("Load operation failed");
+        QbLogger::getInstance()->error(selectQuery.lastError().text());
         return result;
     }
 }

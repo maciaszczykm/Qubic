@@ -19,11 +19,18 @@ int main(int argc, char *argv[])
     Employee employee ("123", "1953-09-02", "Jan", "Kowalski", "M", "1986-06-26");
     db->store(employee);
 
+    //update
+    Employee updated = employee;
+    updated.setFirstname("Zenon");
+    updated.setID("52");
+    db->update(employee, updated);
+
     //read
     Employee empty;
     QList<QbPersistable*> list = db->load(empty);
-    for(int i = 0; i < list.size(); i++) qDebug() << list.at(i)->getObjectString();
-    qDebug() << list.size() << list.at(0)->metaObject()->className() << " objects loaded";
+    Employee* sample = (Employee*) list.at(list.size() - 1);
+    qDebug() << sample->getObjectString();
+    qDebug() << list.size() << sample->metaObject()->className() << " objects loaded";
 
     //delete
     db->remove(employee);

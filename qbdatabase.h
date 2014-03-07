@@ -9,6 +9,8 @@
 #include <QMetaType>
 #include <QDebug>
 #include <QList>
+#include <QSqlDriver>
+#include <QSqlError>
 
 #include <qblogger.h>
 #include <qbpersistable.h>
@@ -20,7 +22,7 @@ public:
     void connect();
     QList<QbPersistable*> load(QbPersistable& object);
     void store(QbPersistable& object);
-    void update(QbPersistable& object);
+    void update(QbPersistable& oldObject, QbPersistable &newObject, bool removeAllEntries = false);
     void remove(QbPersistable& object, bool removeAllEntries = false);
     static QbDatabase* getInstance();
 
