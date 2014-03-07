@@ -11,7 +11,8 @@ class QbPersistable : public QObject
     Q_OBJECT
 
 public:
-    QbPersistable();
+    QbPersistable() {}
+    QbPersistable(const QbPersistable&) {}
     QString getObjectName();
     QString getObjectString();
 };

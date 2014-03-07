@@ -72,7 +72,7 @@ void QbDatabase::store(QbPersistable& object)
     else
     {
         if(transactionsEnabled) db.rollback();
-        QbLogger::getInstance()->debug("Store operation failed");
+        QbLogger::getInstance()->error("Store operation failed");
     }
 }
 
@@ -112,7 +112,7 @@ void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
     else
     {
         if(transactionsEnabled) db.rollback();
-        QbLogger::getInstance()->debug("Remove operation failed");
+        QbLogger::getInstance()->error("Remove operation failed");
     }
 }
 
@@ -121,9 +121,72 @@ void QbDatabase::update(QbPersistable& object)
 
 }
 
-QbPersistable QbDatabase::load(QbPersistable& object)
+QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
 {
-
+    QString objectName = object.getObjectName();
+    QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
+    QString selectStatement = "SELECT ";
+    QMap<QString, QString> objectMembers;
+    for(int i = 0; i < object.metaObject()->methodCount(); i++)
+    {
+        QMetaMethod method = object.metaObject()->method(i);
+        if(method.name().startsWith(settersPrefix.toStdString().c_str()))
+        {
+            QString memberName = method.name().right(method.name().length() - settersPrefix.length());
+            memberName = memberName.toUpper();
+            objectMembers[memberName] = "";
+            selectStatement.append(memberName + ", ");
+        }
+    }
+    QbLogger::getInstance()->debug("Trying to load objects " + objectName + " from database");
+    selectStatement = selectStatement.left(selectStatement.length() - 2) + " FROM " + objectName + ";";
+    QbLogger::getInstance()->debug("SQL statement is ready " + selectStatement);
+    QSqlQuery selectQuery;
+    QList<QbPersistable*> result = QList<QbPersistable*>();
+    if(selectQuery.exec(selectStatement))
+    {
+        QString className = object.metaObject()->className();
+        QByteArray byteArray = className.toLocal8Bit();
+        int classId = QMetaType::type(byteArray.constData());
+        if(classId > 0)
+        {
+            while(selectQuery.next())
+            {
+                void *classPtr = QMetaType::create(classId);
+                if (classPtr == 0)
+                {
+                    QbLogger::getInstance()->error("Load operation failed, cannot initialize " + className + " object");
+                    return result;
+                }
+                QbPersistable *ptr = (QbPersistable*) classPtr;
+                QbLogger::getInstance()->debug("Object " + className + " ready to fill with data");
+                for(int i = 0; i < ptr->metaObject()->methodCount(); i++)
+                {
+                    QMetaMethod method = ptr->metaObject()->method(i);
+                    if(method.name().startsWith(settersPrefix.toStdString().c_str()))
+                    {
+                        QString memberName = method.name().right(method.name().length() - settersPrefix.length());
+                        memberName = memberName.toUpper();
+                        QString memberValue = selectQuery.value(memberName).toString();
+                        QMetaObject::invokeMethod(&object,method.name(), Q_ARG(QString, memberValue));
+                    }
+                }
+                result.append(ptr);
+            }
+            QbLogger::getInstance()->debug("Load operation successfully completed");
+            return result;
+        }
+        else
+        {
+            QbLogger::getInstance()->error("Load operation failed, class " + className + " is not registered as Qt meta type");
+            return result;
+        }
+    }
+    else
+    {
+        QbLogger::getInstance()->error("Load operation failed");
+        return result;
+    }
 }
 
 void QbDatabase::initTransactions()

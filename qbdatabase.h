@@ -6,7 +6,9 @@
 #include <QSqlQuery>
 #include <QDir>
 #include <QMetaObject>
+#include <QMetaType>
 #include <QDebug>
+#include <QList>
 
 #include <qblogger.h>
 #include <qbpersistable.h>
@@ -16,7 +18,7 @@ class QbDatabase
 {
 public:
     void connect();
-    QbPersistable load(QbPersistable& object);
+    QList<QbPersistable*> load(QbPersistable& object);
     void store(QbPersistable& object);
     void update(QbPersistable& object);
     void remove(QbPersistable& object, bool removeAllEntries = false);

@@ -1,9 +1,5 @@
 #include "qbpersistable.h"
 
-QbPersistable::QbPersistable() {
-
-}
-
 QString QbPersistable::getObjectName() {
     QString objectName = this->metaObject()->className();
     return objectName.toUpper();

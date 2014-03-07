@@ -68,7 +68,7 @@ static const uint qt_meta_data_Employee[] = {
       12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
-       2,  112, // constructors
+       3,  115, // constructors
        0,       // flags
        0,       // signalCount
 
@@ -102,11 +102,13 @@ static const uint qt_meta_data_Employee[] = {
 
  // constructors: parameters
     0x80000000 | 2,
+    0x80000000 | 2, 0x80000000 | 0,    2,
     0x80000000 | 2, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   11,   13,   15,   17,   19,
 
  // constructors: name, argc, parameters, tag, flags
        0,    0,   98,    2, 0x0e,
-       0,    6,   99,    2, 0x0e,
+       0,    1,   99,    2, 0x0e,
+       0,    6,  102,    2, 0x0e,
 
        0        // eod
 };
@@ -117,7 +119,9 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         switch (_id) {
         case 0: { Employee *_r = new Employee();
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
-        case 1: { Employee *_r = new Employee((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])));
+        case 1: { Employee *_r = new Employee((*reinterpret_cast< const Employee(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
+        case 2: { Employee *_r = new Employee((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])));
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
         }
     } else if (_c == QMetaObject::InvokeMetaMethod) {
