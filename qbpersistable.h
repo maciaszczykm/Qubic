@@ -13,7 +13,7 @@ class QbPersistable : public QObject
 public:
     QbPersistable() {}
     QbPersistable(const QbPersistable&) {}
-    QString getObjectName();
+    QString getObjectUpperName();
     QString getObjectString();
 };
 

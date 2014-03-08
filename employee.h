@@ -28,12 +28,12 @@ public:
     Q_INVOKABLE void setHiredate(QString hiredate) {this->hiredate = hiredate;}
 
 private:
-    Q_INVOKABLE QString id;
-    Q_INVOKABLE QString birthday;
-    Q_INVOKABLE QString firstname;
-    Q_INVOKABLE QString lastname;
-    Q_INVOKABLE QString gender;
-    Q_INVOKABLE QString hiredate;
+    QString id;
+    QString birthday;
+    QString firstname;
+    QString lastname;
+    QString gender;
+    QString hiredate;
 };
 
 Q_DECLARE_METATYPE(Employee)

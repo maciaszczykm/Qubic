@@ -35,7 +35,7 @@ void QbDatabase::connect()
 
 void QbDatabase::store(QbPersistable& object)
 {
-    QString objectName = object.getObjectName();
+    QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
     QMap<QString, QString> objectMembers;
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
@@ -78,7 +78,7 @@ void QbDatabase::store(QbPersistable& object)
 
 void QbDatabase::update(QbPersistable& oldObject, QbPersistable& newObject, bool removeAllEntries)
 {
-    QString objectName = newObject.getObjectName();
+    QString objectName = newObject.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
     if(oldObject.metaObject()->className() != newObject.metaObject()->className())
     {
@@ -135,7 +135,7 @@ void QbDatabase::update(QbPersistable& oldObject, QbPersistable& newObject, bool
 
 void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
 {
-    QString objectName = object.getObjectName();
+    QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
     QMap<QString, QString> objectMembers;
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
@@ -176,7 +176,7 @@ void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
 
 QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
 {
-    QString objectName = object.getObjectName();
+    QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
     QString selectStatement = "SELECT ";
     QMap<QString, QString> objectMembers;
