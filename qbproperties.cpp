@@ -1,10 +1,5 @@
 #include "qbproperties.h"
 
-QbProperties::QbProperties()
-{
-
-}
-
 QbProperties::QbProperties(QString path)
 {
     this->path = path;

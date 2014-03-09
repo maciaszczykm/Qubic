@@ -11,7 +11,7 @@
 class QbProperties
 {
 public:
-    QbProperties();
+    QbProperties() {}
     QbProperties(QString path);
     QString getProperty(QString property);
     void setProperty(QString property, QString value);
