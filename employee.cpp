@@ -1,7 +1,14 @@
 #include "employee.h"
 
+bool Employee::isRegistered = false;
+
 Employee::Employee(QString birthday, QString firstname, QString lastname, QString gender, QString hiredate)
 {
+    if(!isRegistered)
+    {
+        qRegisterMetaType<Employee>("Employee");
+        isRegistered = true;
+    }
     this->id = "-1";
     this->birthday = birthday;
     this->firstname = firstname;
@@ -12,6 +19,11 @@ Employee::Employee(QString birthday, QString firstname, QString lastname, QStrin
 
 Employee::Employee(QString id, QString birthday, QString firstname, QString lastname, QString gender, QString hiredate)
 {
+    if(!isRegistered)
+    {
+        qRegisterMetaType<Employee>("Employee");
+        isRegistered = true;
+    }
     this->id = id;
     this->birthday = birthday;
     this->firstname = firstname;

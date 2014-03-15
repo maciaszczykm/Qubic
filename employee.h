@@ -35,6 +35,7 @@ private:
     QString lastname;
     QString gender;
     QString hiredate;
+    static bool isRegistered;
 };
 
 Q_DECLARE_METATYPE(Employee)

@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    qRegisterMetaType<Employee>("Employee");
+
     QbDatabase* db = QbDatabase::getInstance();
     db->connect();
 
