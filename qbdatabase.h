@@ -22,13 +22,14 @@ public:
     void connect();
     QList<QbPersistable*> load(QbPersistable& object);
     void store(QbPersistable& object);
-    void update(QbPersistable& oldObject, QbPersistable &newObject, bool removeAllEntries = false);
-    void remove(QbPersistable& object, bool removeAllEntries = false);
+    void update(QbPersistable &object);
+    void remove(QbPersistable& object);
     static QbDatabase* getInstance();
 
 private:
     QbDatabase();
     void initTransactions();
+    void updateObjectIdentifier(QbPersistable& object);
     static QbDatabase* instance;
     QbProperties properties;
     QSqlDatabase db;
@@ -39,6 +40,7 @@ private:
     QString password;
     QString gettersPrefix;
     QString settersPrefix;
+    QString tableIdentifier;
     bool transactionsEnabled;
 };
 

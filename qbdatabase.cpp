@@ -12,6 +12,7 @@ QbDatabase::QbDatabase()
     this->password = properties.getProperty("qubic.database.password");
     this->gettersPrefix = properties.getProperty("qubic.configuration.getters.prefix");
     this->settersPrefix = properties.getProperty("qubic.configuration.setters.prefix");
+    this->tableIdentifier = properties.getProperty("qubic.configuration.table.identifier");
     this->db = QSqlDatabase::addDatabase(driver);
     db.setHostName(hostname);
     db.setDatabaseName(dbname);
@@ -45,9 +46,12 @@ void QbDatabase::store(QbPersistable& object)
         {
             QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
             memberName = memberName.toUpper();
-            QString memberValue;
-            QMetaObject::invokeMethod(&object,method.name(), Q_RETURN_ARG(QString, memberValue));
-            objectMembers[memberName] = memberValue;
+            if(memberName != tableIdentifier.toUpper())
+            {
+                QString memberValue;
+                QMetaObject::invokeMethod(&object,method.name(), Q_RETURN_ARG(QString, memberValue));
+                objectMembers[memberName] = memberValue;
+            }
         }
     }
     QbLogger::getInstance()->debug("Trying to store object " + objectName + " [" + object.getObjectString() + "]");
@@ -67,6 +71,7 @@ void QbDatabase::store(QbPersistable& object)
     {
         if(transactionsEnabled) db.commit();
         QbLogger::getInstance()->debug("Store operation successfully completed");
+        updateObjectIdentifier(object);
     }
     else
     {
@@ -76,47 +81,51 @@ void QbDatabase::store(QbPersistable& object)
     }
 }
 
-void QbDatabase::update(QbPersistable& oldObject, QbPersistable& newObject, bool removeAllEntries)
+void QbDatabase::updateObjectIdentifier(QbPersistable& object)
 {
-    QString objectName = newObject.getObjectUpperName();
+    QString id = object.getID();
+    QString idStatement = "SELECT MAX(" + tableIdentifier + ") FROM " + object.getObjectUpperName() + ";";
+    QSqlQuery idQuery;
+    if(idQuery.exec(idStatement))
+    {
+        if(idQuery.next())
+        {
+            id = idQuery.value(0).toString();
+        }
+        QString idSetter = settersPrefix + tableIdentifier.toUpper();
+        QMetaObject::invokeMethod(&object, idSetter.toStdString().c_str(), Q_ARG(QString, id));
+        QbLogger::getInstance()->debug("Object identifier updated to " + id);
+    }
+    else
+    {
+        QbLogger::getInstance()->debug("Cannot update object identifier");
+        QbLogger::getInstance()->error(idQuery.lastError().text());
+    }
+}
+
+void QbDatabase::update(QbPersistable& object)
+{
+    QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
-    if(oldObject.metaObject()->className() != newObject.metaObject()->className())
+    QString objectMembers;
+    for(int i = 0; i < object.metaObject()->methodCount(); i++)
     {
-        QbLogger::getInstance()->error("Update operation failed, objects types are different");
-        return;
-    }
-    QString newObjectMembers;
-    for(int i = 0; i < newObject.metaObject()->methodCount(); i++)
-    {
-        QMetaMethod method = newObject.metaObject()->method(i);
+        QMetaMethod method = object.metaObject()->method(i);
         if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
         {
             QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
             memberName = memberName.toUpper();
-            QString memberValue;
-            QMetaObject::invokeMethod(&newObject,method.name(), Q_RETURN_ARG(QString, memberValue));
-            newObjectMembers += memberName + "='" + memberValue + "', ";
+            if(memberName != tableIdentifier.toUpper())
+            {
+                QString memberValue;
+                QMetaObject::invokeMethod(&object, method.name(), Q_RETURN_ARG(QString, memberValue));
+                objectMembers += memberName + "='" + memberValue + "', ";
+            }
         }
     }
-    QString oldObjectMembers;
-    for(int i = 0; i < oldObject.metaObject()->methodCount(); i++)
-    {
-        QMetaMethod method = oldObject.metaObject()->method(i);
-        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
-        {
-            QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
-            memberName = memberName.toUpper();
-            QString memberValue;
-            QMetaObject::invokeMethod(&oldObject,method.name(), Q_RETURN_ARG(QString, memberValue));
-            oldObjectMembers += memberName + "='" + memberValue + "' AND ";
-        }
-    }
-    QbLogger::getInstance()->debug("Trying to update object " + objectName + " [" + newObject.getObjectString() + "]");
-    newObjectMembers = newObjectMembers.left(newObjectMembers.length() - 2);
-    oldObjectMembers = oldObjectMembers.left(oldObjectMembers.length() - 5);
-    QString updateStatement = "UPDATE " + objectName + " SET " + newObjectMembers + " WHERE " + oldObjectMembers;
-    if(removeAllEntries) updateStatement.append(";");
-    else updateStatement.append(" LIMIT 1;");
+    QbLogger::getInstance()->debug("Trying to update object " + objectName + " [" + object.getObjectString() + "]");
+    objectMembers = objectMembers.left(objectMembers.length() - 2);
+    QString updateStatement = "UPDATE " + objectName + " SET " + objectMembers + " WHERE ID = " + object.getID() + ";";
     QbLogger::getInstance()->debug("SQL statement is ready " + updateStatement);
     if(transactionsEnabled) db.transaction();
     QSqlQuery updateQuery;
@@ -133,31 +142,20 @@ void QbDatabase::update(QbPersistable& oldObject, QbPersistable& newObject, bool
     }
 }
 
-void QbDatabase::remove(QbPersistable& object, bool removeAllEntries)
+void QbDatabase::remove(QbPersistable& object)
 {
     QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
-    QMap<QString, QString> objectMembers;
-    for(int i = 0; i < object.metaObject()->methodCount(); i++)
+    QString idGetter = gettersPrefix.append(tableIdentifier.toUpper());
+    QString objectID = "-1";
+    QMetaObject::invokeMethod(&object, idGetter.toStdString().c_str(), Q_RETURN_ARG(QString, objectID));
+    if(objectID == "-1")
     {
-        QMetaMethod method = object.metaObject()->method(i);
-        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
-        {
-            QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
-            memberName = memberName.toUpper();
-            QString memberValue;
-            QMetaObject::invokeMethod(&object,method.name(), Q_RETURN_ARG(QString, memberValue));
-            objectMembers[memberName] = memberValue;
-        }
+        QbLogger::getInstance()->error("Remove operation failed, wrong object identifier");
+        return;
     }
     QbLogger::getInstance()->debug("Trying to remove object " + objectName + " [" + object.getObjectString() + "]");
-    QString removeStatement = "DELETE FROM " + objectName + " WHERE ";
-    for(auto e : objectMembers.toStdMap()) {
-        removeStatement.append(e.first + "='" + e.second + "' AND ");
-    }
-    removeStatement = removeStatement.left(removeStatement.length() - 5);
-    if(removeAllEntries) removeStatement.append(";");
-    else removeStatement.append(" LIMIT 1;");
+    QString removeStatement = "DELETE FROM " + objectName + " WHERE " + tableIdentifier.toUpper() + "=" + objectID + ";";
     QbLogger::getInstance()->debug("SQL statement is ready " + removeStatement);
     if(transactionsEnabled) db.transaction();
     QSqlQuery removeQuery;

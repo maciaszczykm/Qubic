@@ -37,26 +37,26 @@ QT_MOC_LITERAL(4, 28, 12),
 QT_MOC_LITERAL(5, 41, 11),
 QT_MOC_LITERAL(6, 53, 9),
 QT_MOC_LITERAL(7, 63, 11),
-QT_MOC_LITERAL(8, 75, 5),
-QT_MOC_LITERAL(9, 81, 2),
-QT_MOC_LITERAL(10, 84, 11),
-QT_MOC_LITERAL(11, 96, 8),
-QT_MOC_LITERAL(12, 105, 12),
-QT_MOC_LITERAL(13, 118, 9),
-QT_MOC_LITERAL(14, 128, 11),
-QT_MOC_LITERAL(15, 140, 8),
-QT_MOC_LITERAL(16, 149, 9),
-QT_MOC_LITERAL(17, 159, 6),
-QT_MOC_LITERAL(18, 166, 11),
-QT_MOC_LITERAL(19, 178, 8),
+QT_MOC_LITERAL(8, 75, 11),
+QT_MOC_LITERAL(9, 87, 8),
+QT_MOC_LITERAL(10, 96, 12),
+QT_MOC_LITERAL(11, 109, 9),
+QT_MOC_LITERAL(12, 119, 11),
+QT_MOC_LITERAL(13, 131, 8),
+QT_MOC_LITERAL(14, 140, 9),
+QT_MOC_LITERAL(15, 150, 6),
+QT_MOC_LITERAL(16, 157, 11),
+QT_MOC_LITERAL(17, 169, 8),
+QT_MOC_LITERAL(18, 178, 5),
+QT_MOC_LITERAL(19, 184, 2),
 QT_MOC_LITERAL(20, 187, 5)
     },
     "Employee\0getID\0\0getBirthday\0getFirstname\0"
     "getLastname\0getGender\0getHiredate\0"
-    "setID\0id\0setBirthday\0birthday\0"
-    "setFirstname\0firstname\0setLastname\0"
-    "lastname\0setGender\0gender\0setHiredate\0"
-    "hiredate\0other\0"
+    "setBirthday\0birthday\0setFirstname\0"
+    "firstname\0setLastname\0lastname\0setGender\0"
+    "gender\0setHiredate\0hiredate\0setID\0id\0"
+    "other\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,7 +69,7 @@ static const uint qt_meta_data_Employee[] = {
       12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
-       3,  115, // constructors
+       3,  113, // constructors
        0,       // flags
        0,       // signalCount
 
@@ -85,7 +85,7 @@ static const uint qt_meta_data_Employee[] = {
       12,    1,   86,    2, 0x02,
       14,    1,   89,    2, 0x02,
       16,    1,   92,    2, 0x02,
-      18,    1,   95,    2, 0x02,
+      18,    1,   95,    2, 0x00,
 
  // methods: parameters
     QMetaType::QString,
@@ -104,12 +104,12 @@ static const uint qt_meta_data_Employee[] = {
  // constructors: parameters
     0x80000000 | 2,
     0x80000000 | 2, 0x80000000 | 0,   20,
-    0x80000000 | 2, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   11,   13,   15,   17,   19,
+    0x80000000 | 2, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   11,   13,   15,   17,
 
  // constructors: name, argc, parameters, tag, flags
        0,    0,   98,    2, 0x0e,
        0,    1,   99,    2, 0x0e,
-       0,    6,  102,    2, 0x0e,
+       0,    5,  102,    2, 0x0e,
 
        0        // eod
 };
@@ -122,7 +122,7 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
         case 1: { Employee *_r = new Employee((*reinterpret_cast< const Employee(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
-        case 2: { Employee *_r = new Employee((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])));
+        case 2: { Employee *_r = new Employee((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])));
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
         }
     } else if (_c == QMetaObject::InvokeMetaMethod) {
@@ -140,12 +140,12 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         case 5: { QString _r = _t->getHiredate();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 6: _t->setID((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 7: _t->setBirthday((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->setFirstname((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 9: _t->setLastname((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 10: _t->setGender((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 11: _t->setHiredate((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 6: _t->setBirthday((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 7: _t->setFirstname((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->setLastname((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->setGender((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 10: _t->setHiredate((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->setID((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }

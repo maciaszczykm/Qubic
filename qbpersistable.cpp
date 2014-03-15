@@ -24,3 +24,19 @@ QString QbPersistable::getObjectString() {
     objectString = objectString.left(objectString.length() - 2);
     return objectString;
 }
+
+QString QbPersistable::getID() {
+    QbProperties properties = QbProperties(QDir::currentPath()+"/qb.properties");
+    QString tableIdentifier = properties.getProperty("qubic.configuration.table.identifier");
+    QString id = "-";
+    for(int i = 0; i < this->metaObject()->methodCount(); i++)
+    {
+        QMetaMethod method = this->metaObject()->method(i);
+        if(method.name() == "get" + tableIdentifier.toUpper())
+        {
+            QMetaObject::invokeMethod(this, method.name(), Q_RETURN_ARG(QString, id));
+
+        }
+    }
+    return id;
+}
