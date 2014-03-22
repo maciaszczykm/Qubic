@@ -2,7 +2,7 @@
 
 bool Employee::isRegistered = false;
 
-Employee::Employee(QString birthday, QString firstname, QString lastname, QString gender, QString hiredate)
+Employee::Employee(QDate birthday, QString firstname, QString lastname, QString gender, QDateTime hiredate, double salary, int children)
 {
     if(!isRegistered)
     {
@@ -15,9 +15,11 @@ Employee::Employee(QString birthday, QString firstname, QString lastname, QStrin
     this->lastname = lastname;
     this->gender = gender;
     this->hiredate = hiredate;
+    this->salary = salary;
+    this->children = children;
 }
 
-Employee::Employee(QString id, QString birthday, QString firstname, QString lastname, QString gender, QString hiredate)
+Employee::Employee(QString id, QDate birthday, QString firstname, QString lastname, QString gender, QDateTime hiredate, double salary, int children)
 {
     if(!isRegistered)
     {
@@ -30,6 +32,8 @@ Employee::Employee(QString id, QString birthday, QString firstname, QString last
     this->lastname = lastname;
     this->gender = gender;
     this->hiredate = hiredate;
+    this->salary = salary;
+    this->children = children;
 }
 
 Employee::Employee(const Employee& other)
@@ -40,4 +44,6 @@ Employee::Employee(const Employee& other)
     lastname = other.lastname;
     gender = other.gender;
     hiredate = other.hiredate;
+    salary = other.salary;
+    children = other.children;
 }

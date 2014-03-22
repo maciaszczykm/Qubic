@@ -5,6 +5,7 @@ INPUT(
 ./debug\qbpersistable.o
 ./debug\employee.o
 ./debug\qblogger.o
+./debug\qbmappinghelper.o
 ./debug\QsLogDest.o
 ./debug\QsLog.o
 ./debug\QsLogDestConsole.o

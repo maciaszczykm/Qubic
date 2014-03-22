@@ -12,6 +12,7 @@
 #include <QSqlDriver>
 #include <QSqlError>
 
+#include <qbmappinghelper.h>
 #include <qblogger.h>
 #include <qbpersistable.h>
 #include <qbproperties.h>

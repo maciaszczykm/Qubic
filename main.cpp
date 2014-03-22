@@ -8,11 +8,12 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-
     QbDatabase* db = QbDatabase::getInstance();
     db->connect();
 
-    Employee employee ("1953-09-02", "Jan", "Kowalski", "M", "1986-06-26");
+    QDate birthday(1995, 5, 17);
+    QDateTime hiredate = QDateTime::currentDateTime();
+    Employee employee (birthday, "Jan", "Kowalski", "M", hiredate, 2790.5, 2);
     db->store(employee);
 
     employee.setFirstname("Zenon");

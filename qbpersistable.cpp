@@ -1,4 +1,5 @@
 #include "qbpersistable.h"
+#include "qbmappinghelper.h"
 
 QString QbPersistable::getObjectUpperName() {
     QString objectName = this->metaObject()->className();
@@ -16,8 +17,7 @@ QString QbPersistable::getObjectString() {
         {
             QString memberName = method.name().right(method.name().length() - prefix.length());
             memberName = memberName.toUpper();
-            QString memberValue;
-            QMetaObject::invokeMethod(this, method.name(), Q_RETURN_ARG(QString, memberValue));
+            QString memberValue = QbMappingHelper::getStringValue(*this, method);
             objectString.append(memberName + " = " + memberValue + "; ");
         }
     }

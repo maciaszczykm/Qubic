@@ -5,6 +5,7 @@ INPUT(
 ./release\qbpersistable.o
 ./release\employee.o
 ./release\qblogger.o
+./release\qbmappinghelper.o
 ./release\QsLogDest.o
 ./release\QsLog.o
 ./release\QsLogDestConsole.o

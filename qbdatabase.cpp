@@ -48,9 +48,7 @@ void QbDatabase::store(QbPersistable& object)
             memberName = memberName.toUpper();
             if(memberName != tableIdentifier.toUpper())
             {
-                QString memberValue;
-                QMetaObject::invokeMethod(&object,method.name(), Q_RETURN_ARG(QString, memberValue));
-                objectMembers[memberName] = memberValue;
+                objectMembers[memberName] = QbMappingHelper::getStringValue(object, method);
             }
         }
     }
@@ -117,7 +115,7 @@ void QbDatabase::update(QbPersistable& object)
             memberName = memberName.toUpper();
             if(memberName != tableIdentifier.toUpper())
             {
-                QString memberValue;
+                QString memberValue = QbMappingHelper::getStringValue(object, method);
                 QMetaObject::invokeMethod(&object, method.name(), Q_RETURN_ARG(QString, memberValue));
                 objectMembers += memberName + "='" + memberValue + "', ";
             }
@@ -218,7 +216,7 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object)
                         QString memberName = method.name().right(method.name().length() - settersPrefix.length());
                         memberName = memberName.toUpper();
                         QString memberValue = selectQuery.value(memberName).toString();
-                        QMetaObject::invokeMethod(ptr, method.name(), Q_ARG(QString, memberValue));
+                        QbMappingHelper::setStringValue(ptr, method, memberValue);
                     }
                 }
                 result.append(ptr);

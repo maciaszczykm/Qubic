@@ -15,14 +15,16 @@ SOURCES += main.cpp \
     qbdatabase.cpp \
     qbpersistable.cpp \
     employee.cpp \
-    qblogger.cpp
+    qblogger.cpp \
+    qbmappinghelper.cpp
 
 HEADERS += \
     qbproperties.h \
     qbdatabase.h \
     qbpersistable.h \
     employee.h \
-    qblogger.h
+    qblogger.h \
+    qbmappinghelper.h
 
 OTHER_FILES += \
     qb.properties
