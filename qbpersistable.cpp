@@ -25,16 +25,16 @@ QString QbPersistable::getObjectString() {
     return objectString;
 }
 
-QString QbPersistable::getID() {
+int QbPersistable::getID() {
     QbProperties properties = QbProperties(QDir::currentPath()+"/qb.properties");
     QString tableIdentifier = properties.getProperty("qubic.configuration.table.identifier");
-    QString id = "-";
+    int id = -1;
     for(int i = 0; i < this->metaObject()->methodCount(); i++)
     {
         QMetaMethod method = this->metaObject()->method(i);
         if(method.name() == "get" + tableIdentifier.toUpper())
         {
-            QMetaObject::invokeMethod(this, method.name(), Q_RETURN_ARG(QString, id));
+            QMetaObject::invokeMethod(this, method.name(), Q_RETURN_ARG(int, id));
 
         }
     }

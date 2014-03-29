@@ -2,24 +2,25 @@
 
 bool Employee::isRegistered = false;
 
-Employee::Employee(QDate birthday, QString firstname, QString lastname, QString gender, QDateTime hiredate, double salary, int children)
+Employee::Employee(QDate birthday, QString firstname, QString lastname, QString gender, Company* company, QDateTime hiredate, double salary, int children)
 {
     if(!isRegistered)
     {
         qRegisterMetaType<Employee>("Employee");
         isRegistered = true;
     }
-    this->id = "-1";
+    this->id = -1;
     this->birthday = birthday;
     this->firstname = firstname;
     this->lastname = lastname;
     this->gender = gender;
+    this->company = company;
     this->hiredate = hiredate;
     this->salary = salary;
     this->children = children;
 }
 
-Employee::Employee(QString id, QDate birthday, QString firstname, QString lastname, QString gender, QDateTime hiredate, double salary, int children)
+Employee::Employee(int id, QDate birthday, QString firstname, QString lastname, QString gender, Company* company, QDateTime hiredate, double salary, int children)
 {
     if(!isRegistered)
     {
@@ -31,6 +32,7 @@ Employee::Employee(QString id, QDate birthday, QString firstname, QString lastna
     this->firstname = firstname;
     this->lastname = lastname;
     this->gender = gender;
+    this->company = company;
     this->hiredate = hiredate;
     this->salary = salary;
     this->children = children;
@@ -43,6 +45,7 @@ Employee::Employee(const Employee& other)
     firstname = other.firstname;
     lastname = other.lastname;
     gender = other.gender;
+    company = other.company;
     hiredate = other.hiredate;
     salary = other.salary;
     children = other.children;

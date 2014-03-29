@@ -6,10 +6,12 @@ INPUT(
 ./release\employee.o
 ./release\qblogger.o
 ./release\qbmappinghelper.o
+./release\company.o
 ./release\QsLogDest.o
 ./release\QsLog.o
 ./release\QsLogDestConsole.o
 ./release\QsLogDestFile.o
 ./release\moc_qbpersistable.o
 ./release\moc_employee.o
+./release\moc_company.o
 );

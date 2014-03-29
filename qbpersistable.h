@@ -15,7 +15,7 @@ public:
     QbPersistable(const QbPersistable&) {}
     QString getObjectUpperName();
     QString getObjectString();
-    QString getID();
+    int getID();
 };
 
 #endif // QBPERSISTABLE_H

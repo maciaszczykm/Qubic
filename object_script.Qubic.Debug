@@ -6,10 +6,12 @@ INPUT(
 ./debug\employee.o
 ./debug\qblogger.o
 ./debug\qbmappinghelper.o
+./debug\company.o
 ./debug\QsLogDest.o
 ./debug\QsLog.o
 ./debug\QsLogDestConsole.o
 ./debug\QsLogDestFile.o
 ./debug\moc_qbpersistable.o
 ./debug\moc_employee.o
+./debug\moc_company.o
 );

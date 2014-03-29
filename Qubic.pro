@@ -16,7 +16,8 @@ SOURCES += main.cpp \
     qbpersistable.cpp \
     employee.cpp \
     qblogger.cpp \
-    qbmappinghelper.cpp
+    qbmappinghelper.cpp \
+    company.cpp
 
 HEADERS += \
     qbproperties.h \
@@ -24,7 +25,8 @@ HEADERS += \
     qbpersistable.h \
     employee.h \
     qblogger.h \
-    qbmappinghelper.h
+    qbmappinghelper.h \
+    company.h
 
 OTHER_FILES += \
     qb.properties
