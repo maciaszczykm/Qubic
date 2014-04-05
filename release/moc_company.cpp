@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Company_t {
-    QByteArrayData data[9];
-    char stringdata[73];
+    QByteArrayData data[7];
+    char stringdata[61];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,18 +30,15 @@ struct qt_meta_stringdata_Company_t {
 static const qt_meta_stringdata_Company_t qt_meta_stringdata_Company = {
     {
 QT_MOC_LITERAL(0, 0, 7),
-QT_MOC_LITERAL(1, 8, 5),
-QT_MOC_LITERAL(2, 14, 0),
-QT_MOC_LITERAL(3, 15, 14),
-QT_MOC_LITERAL(4, 30, 14),
-QT_MOC_LITERAL(5, 45, 11),
-QT_MOC_LITERAL(6, 57, 5),
-QT_MOC_LITERAL(7, 63, 2),
-QT_MOC_LITERAL(8, 66, 5)
+QT_MOC_LITERAL(1, 8, 14),
+QT_MOC_LITERAL(2, 23, 0),
+QT_MOC_LITERAL(3, 24, 14),
+QT_MOC_LITERAL(4, 39, 11),
+QT_MOC_LITERAL(5, 51, 5),
+QT_MOC_LITERAL(6, 57, 2)
     },
-    "Company\0getID\0\0getCompanyname\0"
-    "setCompanyname\0companyname\0setID\0id\0"
-    "other\0"
+    "Company\0getCompanyname\0\0setCompanyname\0"
+    "companyname\0other\0id\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,36 +48,32 @@ static const uint qt_meta_data_Company[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
-       4,   54, // constructors
+       4,   40, // constructors
        0,       // flags
        0,       // signalCount
 
  // methods: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x02,
-       3,    0,   35,    2, 0x02,
-       4,    1,   36,    2, 0x02,
-       6,    1,   39,    2, 0x00,
+       1,    0,   24,    2, 0x02,
+       3,    1,   25,    2, 0x02,
 
  // methods: parameters
-    QMetaType::Int,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, QMetaType::QString,    4,
 
  // constructors: parameters
     0x80000000 | 2,
-    0x80000000 | 2, 0x80000000 | 0,    8,
-    0x80000000 | 2, QMetaType::QString,    5,
-    0x80000000 | 2, QMetaType::Int, QMetaType::QString,    7,    5,
+    0x80000000 | 2, 0x80000000 | 0,    5,
+    0x80000000 | 2, QMetaType::QString,    4,
+    0x80000000 | 2, QMetaType::Int, QMetaType::QString,    6,    4,
 
  // constructors: name, argc, parameters, tag, flags
-       0,    0,   42,    2, 0x0e,
-       0,    1,   43,    2, 0x0e,
-       0,    1,   46,    2, 0x0e,
-       0,    2,   49,    2, 0x0e,
+       0,    0,   28,    2, 0x0e,
+       0,    1,   29,    2, 0x0e,
+       0,    1,   32,    2, 0x0e,
+       0,    2,   35,    2, 0x0e,
 
        0        // eod
 };
@@ -101,12 +94,9 @@ void Company::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     } else if (_c == QMetaObject::InvokeMetaMethod) {
         Company *_t = static_cast<Company *>(_o);
         switch (_id) {
-        case 0: { int _r = _t->getID();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 1: { QString _r = _t->getCompanyname();
+        case 0: { QString _r = _t->getCompanyname();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 2: _t->setCompanyname((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 3: _t->setID((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->setCompanyname((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -137,13 +127,13 @@ int Company::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 2;
     }
     return _id;
 }

@@ -41,6 +41,7 @@ private:
     QString password;
     QString gettersPrefix;
     QString settersPrefix;
+    QString ptrGettersSuffix;
     QString tableIdentifier;
     bool transactionsEnabled;
 };

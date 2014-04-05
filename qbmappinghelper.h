@@ -17,7 +17,6 @@ public:
     QbMappingHelper() {}
     static QString getStringValue(QbPersistable &object, QMetaMethod method);
     static void setStringValue(QbPersistable *object, QMetaMethod method, QString value);
-
 };
 
 #endif // QBMAPPINGHELPER_H

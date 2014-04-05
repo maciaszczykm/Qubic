@@ -13,6 +13,7 @@ QbDatabase::QbDatabase()
     this->gettersPrefix = properties.getProperty("qubic.configuration.getters.prefix");
     this->settersPrefix = properties.getProperty("qubic.configuration.setters.prefix");
     this->tableIdentifier = properties.getProperty("qubic.configuration.table.identifier");
+    this->ptrGettersSuffix = properties.getProperty("qubic.configuration.pointer.getters.suffix");
     this->db = QSqlDatabase::addDatabase(driver);
     db.setHostName(hostname);
     db.setDatabaseName(dbname);
@@ -38,6 +39,23 @@ void QbDatabase::store(QbPersistable& object)
 {
     QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
+    if(object.getID() >= 0)
+    {
+        QbLogger::getInstance()->error("Object " + objectName + " is already stored, to update it use update method");
+        return;
+    }
+    QbLogger::getInstance()->debug("Checking references of object " + objectName);
+    QList<QbPersistable*> pointers = object.getPointers();
+    QbLogger::getInstance()->debug(QString::number(pointers.size()) + " references found");
+    for(int i = 0; i < pointers.size(); i++)
+    {
+        QbPersistable* ptr = pointers.at(i);
+        store(*ptr);
+    }
+    QbLogger::getInstance()->info("Storing object " + objectName);
+
+
+
 
     //check foreign keys and store them if it is needed
     //perform store

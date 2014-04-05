@@ -2,7 +2,7 @@
 
 bool Employee::isRegistered = false;
 
-Employee::Employee(QDate birthday, QString firstname, QString lastname, QString gender, Company* company, QDateTime hiredate, double salary, int children)
+Employee::Employee(QDate birthday, QString firstname, QString lastname, QString gender, Company* companyPtr, QDateTime hiredate, double salary, int children)
 {
     if(!isRegistered)
     {
@@ -14,13 +14,13 @@ Employee::Employee(QDate birthday, QString firstname, QString lastname, QString 
     this->firstname = firstname;
     this->lastname = lastname;
     this->gender = gender;
-    this->company = company;
+    this->companyPtr = companyPtr;
     this->hiredate = hiredate;
     this->salary = salary;
     this->children = children;
 }
 
-Employee::Employee(int id, QDate birthday, QString firstname, QString lastname, QString gender, Company* company, QDateTime hiredate, double salary, int children)
+Employee::Employee(int id, QDate birthday, QString firstname, QString lastname, QString gender, Company* companyPtr, QDateTime hiredate, double salary, int children)
 {
     if(!isRegistered)
     {
@@ -32,7 +32,7 @@ Employee::Employee(int id, QDate birthday, QString firstname, QString lastname, 
     this->firstname = firstname;
     this->lastname = lastname;
     this->gender = gender;
-    this->company = company;
+    this->companyPtr = companyPtr;
     this->hiredate = hiredate;
     this->salary = salary;
     this->children = children;
@@ -45,8 +45,13 @@ Employee::Employee(const Employee& other)
     firstname = other.firstname;
     lastname = other.lastname;
     gender = other.gender;
-    company = other.company;
+    companyPtr = other.companyPtr;
     hiredate = other.hiredate;
     salary = other.salary;
     children = other.children;
+}
+
+QList<QbPersistable*> Employee::getPointers()
+{
+    return QList<QbPersistable*>() << companyPtr;
 }

@@ -14,14 +14,13 @@ class Employee : public QbPersistable
 public:
     Q_INVOKABLE Employee() {}
     Q_INVOKABLE Employee(const Employee& other);
-    Q_INVOKABLE Employee(QDate birthday, QString firstname, QString lastname, QString gender, Company* company, QDateTime hiredate, double salary, int children);
-    Q_INVOKABLE Employee(int id, QDate birthday, QString firstname, QString lastname, QString gender, Company* company, QDateTime hiredate, double salary, int children);
-    Q_INVOKABLE int getID() {return id;}
+    Q_INVOKABLE Employee(QDate birthday, QString firstname, QString lastname, QString gender, Company* companyPtr, QDateTime hiredate, double salary, int children);
+    Q_INVOKABLE Employee(int id, QDate birthday, QString firstname, QString lastname, QString gender, Company* companyPtr, QDateTime hiredate, double salary, int children);
     Q_INVOKABLE QDate getBirthday() {return birthday;}
     Q_INVOKABLE QString getFirstname() {return firstname;}
     Q_INVOKABLE QString getLastname() {return lastname;}
     Q_INVOKABLE QString getGender() {return gender;}
-    Q_INVOKABLE Company* getCompany() {return company;}
+    Q_INVOKABLE Company* getCompanyPtr() {return companyPtr;}
     Q_INVOKABLE QDateTime getHiredate() {return hiredate;}
     Q_INVOKABLE double getSalary() {return salary;}
     Q_INVOKABLE int getChildren() {return children;}
@@ -29,19 +28,18 @@ public:
     Q_INVOKABLE void setFirstname(QString firstname) {this->firstname = firstname;}
     Q_INVOKABLE void setLastname(QString lastname) {this->lastname = lastname;}
     Q_INVOKABLE void setGender(QString gender) {this->gender = gender;}
-    Q_INVOKABLE void setCompany(Company* company) {this->company = company;}
+    Q_INVOKABLE void setCompanyPtr(Company* companyPtr) {this->companyPtr = companyPtr;}
     Q_INVOKABLE void setHiredate(QDateTime hiredate) {this->hiredate = hiredate;}
     Q_INVOKABLE void setSalary(double salary) {this->salary = salary;}
     Q_INVOKABLE void setChildren(int children) {this->children = children;}
+    QList<QbPersistable*> getPointers();
 
 private:
-    Q_INVOKABLE void setID(int id) {this->id = id;}
-    int id;
     QDate birthday;
     QString firstname;
     QString lastname;
     QString gender;
-    Company* company;
+    Company* companyPtr;
     QDateTime hiredate;
     double salary;
     int children;

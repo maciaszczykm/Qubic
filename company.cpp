@@ -29,3 +29,7 @@ Company::Company(const Company& other)
     id = other.id;
     companyname = other.companyname;
 }
+
+QList<QbPersistable*> Company::getPointers() {
+    return QList<QbPersistable*>();
+}

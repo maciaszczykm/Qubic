@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QMetaMethod>
+#include <QList>
 
 #include <qbproperties.h>
 
@@ -15,7 +16,12 @@ public:
     QbPersistable(const QbPersistable&) {}
     QString getObjectUpperName();
     QString getObjectString();
-    int getID();
+    virtual QList<QbPersistable *> getPointers() = 0;
+    int getID() {return id;}
+
+protected:
+    void setID(int id) {this->id = id;}
+    int id;
 };
 
 #endif // QBPERSISTABLE_H
