@@ -53,11 +53,14 @@ int QbDatabase::store(QbPersistable& object)
     for(int i = 0; i < pointers.size(); i++)
     {
         QbPersistable* ptr = pointers.at(i);
-        int ptrId = store(*ptr);
+        int ptrId = ptr->getID();
+        if(ptrId <= 0)
+        {
+            ptrId = store(*ptr);
+        }
         objectMembers[ptr->getObjectUpperName()] = QString::number(ptrId);
     }
     QbLogger::getInstance()->info("Storing object " + objectString);
-
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
     {
         QMetaMethod method = object.metaObject()->method(i);
@@ -124,25 +127,43 @@ int QbDatabase::updateObjectIdentifier(QbPersistable& object)
 
 void QbDatabase::update(QbPersistable& object)
 {
-    /*QString objectName = object.getObjectUpperName();
-    QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
+    QString objectName = object.getObjectUpperName();
+    QString objectID = QString::number(object.getID());
+    QString objectString = objectName + ":" + objectID;
+    QbLogger::getInstance()->debug("Trying to update object " + objectString);
+    if(objectID == "-1")
+    {
+        QbLogger::getInstance()->error("Update operation failed, object " + objectString + " is not stored yet");
+        return;
+    }
     QString objectMembers;
+    QList<QbPersistable*> pointers = object.getPointers();
+    QbLogger::getInstance()->debug(QString::number(pointers.size()) + " references to " + objectString + " found");
+    for(int i = 0; i < pointers.size(); i++)
+    {
+        QbPersistable* ptr = pointers.at(i);
+        int ptrId = ptr->getID();
+        if(ptrId <= 0)
+        {
+            ptrId = store(*ptr);
+        }
+        objectMembers += ptr->getObjectUpperName() + "='" + QString::number(ptrId) + "', ";
+    }
+    QbLogger::getInstance()->info("Updating object " + objectString);
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
     {
         QMetaMethod method = object.metaObject()->method(i);
-        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
+        if(method.name().startsWith(gettersPrefix.toStdString().c_str()) && !method.name().endsWith(ptrGettersSuffix.toStdString().c_str()))
         {
             QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
             memberName = memberName.toUpper();
             if(memberName != tableIdentifier.toUpper())
             {
-                QString memberValue = QbMappingHelper::getStringValue(object, method);
-                QMetaObject::invokeMethod(&object, method.name(), Q_RETURN_ARG(QString, memberValue));
-                objectMembers += memberName + "='" + memberValue + "', ";
+                objectMembers += memberName + "='" + QbMappingHelper::getStringValue(object, method) + "', ";
             }
         }
     }
-    QbLogger::getInstance()->debug("Trying to update object " + objectName + " [" + object.getObjectString() + "]");
+    QbLogger::getInstance()->debug("Trying to update object " + objectString + " [" + object.getObjectString() + "]");
     objectMembers = objectMembers.left(objectMembers.length() - 2);
     QString updateStatement = "UPDATE " + objectName + " SET " + objectMembers + " WHERE ID = " + object.getID() + ";";
     QbLogger::getInstance()->debug("SQL statement is ready " + updateStatement);
@@ -158,7 +179,7 @@ void QbDatabase::update(QbPersistable& object)
         if(transactionsEnabled) db.rollback();
         QbLogger::getInstance()->error("Update operation failed");
         QbLogger::getInstance()->error(updateQuery.lastError().text());
-    }*/
+    }
 }
 
 void QbDatabase::remove(QbPersistable& object)
