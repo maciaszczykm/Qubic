@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Employee_t {
-    QByteArrayData data[29];
-    char stringdata[290];
+    QByteArrayData data[30];
+    char stringdata[305];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,8 +56,9 @@ QT_MOC_LITERAL(23, 242, 9),
 QT_MOC_LITERAL(24, 252, 6),
 QT_MOC_LITERAL(25, 259, 11),
 QT_MOC_LITERAL(26, 271, 8),
-QT_MOC_LITERAL(27, 280, 5),
-QT_MOC_LITERAL(28, 286, 2)
+QT_MOC_LITERAL(27, 280, 14),
+QT_MOC_LITERAL(28, 295, 5),
+QT_MOC_LITERAL(29, 301, 2)
     },
     "Employee\0getBirthday\0\0getFirstname\0"
     "getLastname\0getGender\0getCompanyPtr\0"
@@ -67,7 +68,7 @@ QT_MOC_LITERAL(28, 286, 2)
     "lastname\0setGender\0gender\0setCompanyPtr\0"
     "companyPtr\0setHiredate\0hiredate\0"
     "setSalary\0salary\0setChildren\0children\0"
-    "other\0id\0"
+    "QbPersistable*\0other\0id\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -77,30 +78,31 @@ static const uint qt_meta_data_Employee[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
-       4,  166, // constructors
+       4,  174, // constructors
        0,       // flags
        0,       // signalCount
 
  // methods: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x02,
-       3,    0,   95,    2, 0x02,
-       4,    0,   96,    2, 0x02,
-       5,    0,   97,    2, 0x02,
-       6,    0,   98,    2, 0x02,
-       8,    0,   99,    2, 0x02,
-       9,    0,  100,    2, 0x02,
-      10,    0,  101,    2, 0x02,
-      11,    1,  102,    2, 0x02,
-      13,    1,  105,    2, 0x02,
-      15,    1,  108,    2, 0x02,
-      17,    1,  111,    2, 0x02,
-      19,    1,  114,    2, 0x02,
-      21,    1,  117,    2, 0x02,
-      23,    1,  120,    2, 0x02,
-      25,    1,  123,    2, 0x02,
+       1,    0,   99,    2, 0x02,
+       3,    0,  100,    2, 0x02,
+       4,    0,  101,    2, 0x02,
+       5,    0,  102,    2, 0x02,
+       6,    0,  103,    2, 0x02,
+       8,    0,  104,    2, 0x02,
+       9,    0,  105,    2, 0x02,
+      10,    0,  106,    2, 0x02,
+      11,    1,  107,    2, 0x02,
+      13,    1,  110,    2, 0x02,
+      15,    1,  113,    2, 0x02,
+      17,    1,  116,    2, 0x02,
+      19,    1,  119,    2, 0x02,
+      21,    1,  122,    2, 0x02,
+      23,    1,  125,    2, 0x02,
+      25,    1,  128,    2, 0x02,
+      19,    1,  131,    2, 0x00,
 
  // methods: parameters
     QMetaType::QDate,
@@ -119,18 +121,19 @@ static const uint qt_meta_data_Employee[] = {
     QMetaType::Void, QMetaType::QDateTime,   22,
     QMetaType::Void, QMetaType::Double,   24,
     QMetaType::Void, QMetaType::Int,   26,
+    QMetaType::Void, 0x80000000 | 27,   20,
 
  // constructors: parameters
     0x80000000 | 2,
-    0x80000000 | 2, 0x80000000 | 0,   27,
+    0x80000000 | 2, 0x80000000 | 0,   28,
     0x80000000 | 2, QMetaType::QDate, QMetaType::QString, QMetaType::QString, QMetaType::QString, 0x80000000 | 7, QMetaType::QDateTime, QMetaType::Double, QMetaType::Int,   12,   14,   16,   18,   20,   22,   24,   26,
-    0x80000000 | 2, QMetaType::Int, QMetaType::QDate, QMetaType::QString, QMetaType::QString, QMetaType::QString, 0x80000000 | 7, QMetaType::QDateTime, QMetaType::Double, QMetaType::Int,   28,   12,   14,   16,   18,   20,   22,   24,   26,
+    0x80000000 | 2, QMetaType::Int, QMetaType::QDate, QMetaType::QString, QMetaType::QString, QMetaType::QString, 0x80000000 | 7, QMetaType::QDateTime, QMetaType::Double, QMetaType::Int,   29,   12,   14,   16,   18,   20,   22,   24,   26,
 
  // constructors: name, argc, parameters, tag, flags
-       0,    0,  126,    2, 0x0e,
-       0,    1,  127,    2, 0x0e,
-       0,    8,  130,    2, 0x0e,
-       0,    9,  147,    2, 0x0e,
+       0,    0,  134,    2, 0x0e,
+       0,    1,  135,    2, 0x0e,
+       0,    8,  138,    2, 0x0e,
+       0,    9,  155,    2, 0x0e,
 
        0        // eod
 };
@@ -175,6 +178,7 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 13: _t->setHiredate((*reinterpret_cast< QDateTime(*)>(_a[1]))); break;
         case 14: _t->setSalary((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 15: _t->setChildren((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->setCompanyPtr((*reinterpret_cast< QbPersistable*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -185,6 +189,13 @@ void Employee::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< Company* >(); break;
+            }
+            break;
+        case 16:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QbPersistable* >(); break;
             }
             break;
         }
@@ -216,13 +227,13 @@ int Employee::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     }
     return _id;
 }

@@ -21,7 +21,7 @@ class QbDatabase
 {
 public:
     void connect();
-    QList<QbPersistable*> load(QbPersistable& object);
+    QList<QbPersistable*> load(QbPersistable& object, int id = -1);
     int store(QbPersistable& object);
     void update(QbPersistable &object);
     void remove(QbPersistable& object);

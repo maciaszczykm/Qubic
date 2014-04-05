@@ -35,6 +35,7 @@ public:
     QList<QbPersistable*> getPointers();
 
 private:
+    Q_INVOKABLE void setCompanyPtr(QbPersistable* companyPtr) {this->companyPtr = (Company*) companyPtr;}
     QDate birthday;
     QString firstname;
     QString lastname;
