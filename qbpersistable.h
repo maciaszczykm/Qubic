@@ -20,7 +20,7 @@ public:
     int getID() {return id;}
 
 protected:
-    void setID(int id) {this->id = id;}
+    Q_INVOKABLE void setID(int id) {this->id = id;}
     int id;
 };
 

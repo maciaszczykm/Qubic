@@ -22,7 +22,7 @@ class QbDatabase
 public:
     void connect();
     QList<QbPersistable*> load(QbPersistable& object);
-    void store(QbPersistable& object);
+    int store(QbPersistable& object);
     void update(QbPersistable &object);
     void remove(QbPersistable& object);
     static QbDatabase* getInstance();
@@ -30,7 +30,7 @@ public:
 private:
     QbDatabase();
     void initTransactions();
-    void updateObjectIdentifier(QbPersistable& object);
+    int updateObjectIdentifier(QbPersistable& object);
     static QbDatabase* instance;
     QbProperties properties;
     QSqlDatabase db;

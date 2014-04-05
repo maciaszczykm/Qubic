@@ -35,37 +35,31 @@ void QbDatabase::connect()
     else QbLogger::getInstance()->fatal("Cannot connect to database");
 }
 
-void QbDatabase::store(QbPersistable& object)
+int QbDatabase::store(QbPersistable& object)
 {
     QString objectName = object.getObjectUpperName();
     QbLogger::getInstance()->debug("Reading metadata of object " + objectName);
     if(object.getID() >= 0)
     {
         QbLogger::getInstance()->error("Object " + objectName + " is already stored, to update it use update method");
-        return;
+        return -1;
     }
     QbLogger::getInstance()->debug("Checking references of object " + objectName);
+    QMap<QString, QString> objectMembers;
     QList<QbPersistable*> pointers = object.getPointers();
     QbLogger::getInstance()->debug(QString::number(pointers.size()) + " references found");
     for(int i = 0; i < pointers.size(); i++)
     {
         QbPersistable* ptr = pointers.at(i);
-        store(*ptr);
+        int ptrId = store(*ptr);
+        objectMembers[ptr->getObjectUpperName()] = QString::number(ptrId);
     }
     QbLogger::getInstance()->info("Storing object " + objectName);
 
-
-
-
-    //check foreign keys and store them if it is needed
-    //perform store
-    //update pointers
-
-    /*QMap<QString, QString> objectMembers;
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
     {
         QMetaMethod method = object.metaObject()->method(i);
-        if(method.name().startsWith(gettersPrefix.toStdString().c_str()))
+        if(method.name().startsWith(gettersPrefix.toStdString().c_str()) && !method.name().endsWith(ptrGettersSuffix.toStdString().c_str()))
         {
             QString memberName = method.name().right(method.name().length() - gettersPrefix.length());
             memberName = memberName.toUpper();
@@ -92,17 +86,18 @@ void QbDatabase::store(QbPersistable& object)
     {
         if(transactionsEnabled) db.commit();
         QbLogger::getInstance()->debug("Store operation successfully completed");
-        updateObjectIdentifier(object);
+        return updateObjectIdentifier(object);
     }
     else
     {
         if(transactionsEnabled) db.rollback();
         QbLogger::getInstance()->error("Store operation failed");
         QbLogger::getInstance()->error(insertQuery.lastError().text());
-    }*/
+        return -1;
+    }
 }
 
-void QbDatabase::updateObjectIdentifier(QbPersistable& object)
+int QbDatabase::updateObjectIdentifier(QbPersistable& object)
 {
     int id = object.getID();
     QString idStatement = "SELECT MAX(" + tableIdentifier + ") FROM " + object.getObjectUpperName() + ";";
@@ -119,9 +114,10 @@ void QbDatabase::updateObjectIdentifier(QbPersistable& object)
     }
     else
     {
-        QbLogger::getInstance()->debug("Cannot update object identifier");
+        QbLogger::getInstance()->error("Cannot update object identifier");
         QbLogger::getInstance()->error(idQuery.lastError().text());
     }
+    return id;
 }
 
 void QbDatabase::update(QbPersistable& object)
