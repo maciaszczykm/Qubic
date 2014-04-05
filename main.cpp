@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     db->store(employee2);
 
     Company company2 ("Facebook");
-    employee1.setFirstname("Zenon");
+    employee2.setFirstname("Ryo");
     employee2.setCompanyPtr(&company2);
     db->update(employee2);
 
