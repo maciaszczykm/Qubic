@@ -1,5 +1,0 @@
- INFO 2014-04-05T11:57:05.743 "Properties successfully read from D:/Workspace/Qubic/qb.properties" 
- INFO 2014-04-05T11:57:05.754 "Database localhost:EMPLOYEES successfully initialized" 
- INFO 2014-04-05T11:57:05.763 "Transactions successfully enabled" 
- INFO 2014-04-05T11:57:05.764 "Connected to database" 
-DEBUG 2014-04-05T11:57:05.765 "Reading metadata of object EMPLOYEE" 

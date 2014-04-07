@@ -1,4 +1,0 @@
- INFO 2014-03-29T15:13:42.395 "Properties successfully read from D:/Workspace/Qubic/qb.properties" 
- INFO 2014-03-29T15:13:42.727 "Database localhost:employees successfully initialized" 
- INFO 2014-03-29T15:13:42.763 "Transactions disabled, your database does not support them" 
-FATAL 2014-03-29T15:13:42.765 "Cannot connect to database" 
