@@ -29,16 +29,12 @@ public:
 
 private:
     QbDatabase();
-    void initTransactions();
+    void initializeDatabase();
+    void initializeTransactions();
+    void loadProperties();
     int updateObjectIdentifier(QbPersistable& object);
     static QbDatabase* instance;
-    QbProperties properties;
     QSqlDatabase db;
-    QString driver;
-    QString hostname;
-    QString dbname;
-    QString username;
-    QString password;
     QString gettersPrefix;
     QString settersPrefix;
     QString ptrGettersSuffix;

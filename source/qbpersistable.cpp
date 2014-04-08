@@ -7,8 +7,7 @@ QString QbPersistable::getObjectUpperName() {
 }
 
 QString QbPersistable::getObjectString() {
-    QbProperties properties = QbProperties(QDir::currentPath()+"/qb.properties");
-    QString prefix = properties.getProperty("qubic.configuration.getters.prefix");
+    QString prefix = QbProperties::getInstance()->getProperty("qubic.configuration.getters.prefix");
     QString objectString;
     for(int i = 0; i < this->metaObject()->methodCount(); i++)
     {

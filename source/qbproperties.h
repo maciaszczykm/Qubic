@@ -11,15 +11,16 @@
 class QbProperties
 {
 public:
-    QbProperties() {}
-    QbProperties(QString path);
+    static QbProperties* getInstance();
     QString getProperty(QString property);
     void setProperty(QString property, QString value);
     void store();
 
 private:
+    QbProperties();
+    static QbProperties* instance;
     QMap<QString,QString> properties;
-    QString path;
+    static QString path;
 };
 
 #endif // QBPROPERTIES_H

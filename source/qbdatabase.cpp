@@ -4,23 +4,57 @@ QbDatabase* QbDatabase::instance = NULL;
 
 QbDatabase::QbDatabase()
 {
-    this->properties = QbProperties(QDir::currentPath()+"/qb.properties");
-    this->driver = properties.getProperty("qubic.database.driver");
-    this->hostname = properties.getProperty("qubic.database.hostname");
-    this->dbname = properties.getProperty("qubic.database.dbname");
-    this->username = properties.getProperty("qubic.database.username");
-    this->password = properties.getProperty("qubic.database.password");
-    this->gettersPrefix = properties.getProperty("qubic.configuration.getters.prefix");
-    this->settersPrefix = properties.getProperty("qubic.configuration.setters.prefix");
-    this->tableIdentifier = properties.getProperty("qubic.configuration.table.identifier");
-    this->ptrGettersSuffix = properties.getProperty("qubic.configuration.pointer.getters.suffix");
-    this->db = QSqlDatabase::addDatabase(driver);
+    initializeDatabase();
+    initializeTransactions();
+    loadProperties();
+}
+
+void QbDatabase::initializeDatabase()
+{
+    QString driver = QbProperties::getInstance()->getProperty("qubic.database.driver");
+    QString hostname = QbProperties::getInstance()->getProperty("qubic.database.hostname");
+    QString dbname = QbProperties::getInstance()->getProperty("qubic.database.dbname");
+    QString username = QbProperties::getInstance()->getProperty("qubic.database.username");
+    QString password = QbProperties::getInstance()->getProperty("qubic.database.password");
+    db = QSqlDatabase::addDatabase(driver);
     db.setHostName(hostname);
     db.setDatabaseName(dbname);
     db.setUserName(username);
     db.setPassword(password);
     QbLogger::getInstance()->info("Database " + hostname + ":" + dbname + " successfully initialized");
-    initTransactions();
+}
+
+void QbDatabase::initializeTransactions()
+{
+    QString tansactionsEnabled = QbProperties::getInstance()->getProperty("qubic.transactions.enabled");
+    bool areTransactionsEnabled = (tansactionsEnabled.toStdString() == "true");
+    if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions) && areTransactionsEnabled)
+    {
+        QbLogger::getInstance()->info("Transactions successfully enabled");
+        transactionsEnabled = true;
+    }
+    else
+    {
+        if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
+        {
+            QbLogger::getInstance()->info("Transactions disabled");
+            transactionsEnabled = false;
+        }
+        else
+        {
+            QbLogger::getInstance()->info("Transactions disabled, your database does not support them");
+            transactionsEnabled = false;
+        }
+    }
+}
+
+void QbDatabase::loadProperties()
+{
+    this->gettersPrefix = QbProperties::getInstance()->getProperty("qubic.configuration.getters.prefix");
+    this->settersPrefix = QbProperties::getInstance()->getProperty("qubic.configuration.setters.prefix");
+    this->tableIdentifier = QbProperties::getInstance()->getProperty("qubic.configuration.table.identifier");
+    this->ptrGettersSuffix = QbProperties::getInstance()->getProperty("qubic.configuration.pointer.getters.suffix");
+    QbLogger::getInstance()->info("Properties successfully loaded");
 }
 
 QbDatabase *QbDatabase::getInstance()
@@ -319,28 +353,5 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
         QbLogger::getInstance()->error("Load operation failed");
         QbLogger::getInstance()->error(selectQuery.lastError().text());
         return result;
-    }
-}
-
-void QbDatabase::initTransactions()
-{
-    bool transactionsEnabledProperty = (properties.getProperty("qubic.transactions.enabled").toStdString() == "true");
-    if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions) && transactionsEnabledProperty)
-    {
-        QbLogger::getInstance()->info("Transactions successfully enabled");
-        transactionsEnabled = true;
-    }
-    else
-    {
-        if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
-        {
-            QbLogger::getInstance()->info("Transactions disabled");
-            transactionsEnabled = false;
-        }
-        else
-        {
-            QbLogger::getInstance()->info("Transactions disabled, your database does not support them");
-            transactionsEnabled = false;
-        }
     }
 }
