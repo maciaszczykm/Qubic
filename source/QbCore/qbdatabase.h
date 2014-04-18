@@ -33,6 +33,7 @@ private:
     void initializeTransactions();
     void loadProperties();
     int updateObjectIdentifier(QbPersistable& object);
+    void removeObjectIdentifier(QbPersistable& object);
     static QbDatabase* instance;
     QSqlDatabase db;
     QString gettersPrefix;

@@ -79,7 +79,7 @@ int QbDatabase::store(QbPersistable& object)
     if(object.getID() >= 0)
     {
         QLOG_ERROR() << "Object " + objectString + " is already stored, to update it use update method";
-        return -1;
+        return object.getID();
     }
     QLOG_DEBUG() << "Checking references of object " + objectString;
     QMap<QString, QString> objectMembers;
@@ -237,6 +237,7 @@ void QbDatabase::remove(QbPersistable& object)
     {
         if(transactionsEnabled) db.commit();
         QLOG_INFO() << "Remove operation successfully completed";
+        removeObjectIdentifier(object);
     }
     else
     {
@@ -244,6 +245,14 @@ void QbDatabase::remove(QbPersistable& object)
         QLOG_ERROR() << "Remove operation failed";
         QLOG_ERROR() << removeQuery.lastError().text();
     }
+}
+
+void QbDatabase::removeObjectIdentifier(QbPersistable& object)
+{
+    int id = -1;
+    QString idSetter = settersPrefix + tableIdentifier.toUpper();
+    QMetaObject::invokeMethod(&object, idSetter.toStdString().c_str(), Q_ARG(int, id));
+    QLOG_DEBUG() << "Object identifier updated to " + QString::number(id);
 }
 
 QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
