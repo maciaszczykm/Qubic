@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QMetaMethod>
 #include <QList>
-
 #include <QbCore/qbproperties.h>
 
 class QbPersistable : public QObject

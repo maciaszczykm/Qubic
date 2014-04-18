@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <QbCore/qbdatabase.h>
-#include <QbCore/qblogger.h>
+#include <QsLog.h>
 #include <QbTest/employee.h>
 #include <QbTest/company.h>
 #include <QbCore/qbpersistable.h>

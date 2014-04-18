@@ -11,11 +11,11 @@
 #include <QList>
 #include <QSqlDriver>
 #include <QSqlError>
-
 #include <QbUtilities/qbmappinghelper.h>
-#include <QbCore/qblogger.h>
+#include <QbUtilities/qbloggerhelper.h>
 #include <QbCore/qbpersistable.h>
 #include <QbCore/qbproperties.h>
+#include <QsLog.h>
 
 class QbDatabase
 {

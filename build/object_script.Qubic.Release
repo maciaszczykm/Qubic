@@ -4,13 +4,13 @@ INPUT(
 ./release\QsLogDestConsole.o
 ./release\QsLogDestFile.o
 ./release\qbdatabase.o
-./release\qblogger.o
 ./release\qbpersistable.o
 ./release\qbproperties.o
 ./release\company.o
 ./release\employee.o
 ./release\main.o
 ./release\qbmappinghelper.o
+./release\qbloggerhelper.o
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o

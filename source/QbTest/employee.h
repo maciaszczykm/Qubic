@@ -3,7 +3,7 @@
 
 #include <QString>
 #include <QObject>
-
+#include <QDate>
 #include <QbCore/qbpersistable.h>
 #include <QbTest/company.h>
 

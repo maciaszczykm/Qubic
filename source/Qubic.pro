@@ -10,8 +10,7 @@ CONFIG += c++11
 
 TEMPLATE = app
 
-OTHER_FILES += \
-    qb.properties
+OTHER_FILES += qb.properties
 
 include(QsLog\QsLog.pri)
 include(QbCore\QbCore.pri)

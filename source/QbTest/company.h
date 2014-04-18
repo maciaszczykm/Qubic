@@ -3,7 +3,6 @@
 
 #include <QString>
 #include <QObject>
-
 #include <QbCore/qbpersistable.h>
 
 class Company : public QbPersistable

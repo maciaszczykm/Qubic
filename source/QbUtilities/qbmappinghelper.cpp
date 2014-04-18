@@ -38,8 +38,8 @@ void QbMappingHelper::setStringValue(QbPersistable *object, QMetaMethod method, 
 {
     if(method.parameterCount() < 1)
     {
-        QbLogger::getInstance()->fatal("Setter " + method.name() + " has wrong number of parameters");
-        QbLogger::getInstance()->debug("Setter " + method.name() + " has " + QString::number(method.parameterCount()) + " parameters instead of 1");
+        QLOG_FATAL() << "Setter " + method.name() + " has wrong number of parameters";
+        QLOG_DEBUG() << "Setter " + method.name() + " has " + QString::number(method.parameterCount()) + " parameters instead of 1";
         return;
     }
     int typeId = method.parameterType(0);

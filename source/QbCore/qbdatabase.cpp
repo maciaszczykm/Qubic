@@ -4,6 +4,7 @@ QbDatabase* QbDatabase::instance = NULL;
 
 QbDatabase::QbDatabase()
 {
+    QbLoggerHelper::initialize();
     initializeDatabase();
     initializeTransactions();
     loadProperties();
@@ -21,7 +22,7 @@ void QbDatabase::initializeDatabase()
     db.setDatabaseName(dbname);
     db.setUserName(username);
     db.setPassword(password);
-    QbLogger::getInstance()->info("Database " + hostname + ":" + dbname + " successfully initialized");
+    QLOG_INFO() << "Database " + hostname + ":" + dbname + " successfully initialized";
 }
 
 void QbDatabase::initializeTransactions()
@@ -30,19 +31,19 @@ void QbDatabase::initializeTransactions()
     bool areTransactionsEnabled = (tansactionsEnabled.toStdString() == "true");
     if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions) && areTransactionsEnabled)
     {
-        QbLogger::getInstance()->info("Transactions successfully enabled");
+        QLOG_INFO() << "Transactions successfully enabled";
         transactionsEnabled = true;
     }
     else
     {
         if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
         {
-            QbLogger::getInstance()->info("Transactions disabled");
+            QLOG_INFO() << "Transactions disabled";
             transactionsEnabled = false;
         }
         else
         {
-            QbLogger::getInstance()->info("Transactions disabled, your database does not support them");
+            QLOG_WARN() << "Transactions disabled, your database does not support them";
             transactionsEnabled = false;
         }
     }
@@ -54,7 +55,7 @@ void QbDatabase::loadProperties()
     this->settersPrefix = QbProperties::getInstance()->getProperty("qubic.configuration.setters.prefix");
     this->tableIdentifier = QbProperties::getInstance()->getProperty("qubic.configuration.table.identifier");
     this->ptrGettersSuffix = QbProperties::getInstance()->getProperty("qubic.configuration.pointer.getters.suffix");
-    QbLogger::getInstance()->info("Properties successfully loaded");
+    QLOG_INFO() << "Properties successfully loaded";
 }
 
 QbDatabase *QbDatabase::getInstance()
@@ -65,8 +66,8 @@ QbDatabase *QbDatabase::getInstance()
 
 void QbDatabase::connect()
 {
-    if(db.open()) QbLogger::getInstance()->info("Connected to database");
-    else QbLogger::getInstance()->fatal("Cannot connect to database");
+    if(db.open()) QLOG_INFO() << "Connected to database";
+    else QLOG_FATAL() << "Cannot connect to database";
 }
 
 int QbDatabase::store(QbPersistable& object)
@@ -74,16 +75,16 @@ int QbDatabase::store(QbPersistable& object)
     QString objectName = object.getObjectUpperName();
     QString objectID = QString::number(object.getID());
     QString objectString = objectName + ":" + objectID;
-    QbLogger::getInstance()->debug("Reading metadata of object " + objectString);
+    QLOG_DEBUG() << "Reading metadata of object " + objectString;
     if(object.getID() >= 0)
     {
-        QbLogger::getInstance()->error("Object " + objectString + " is already stored, to update it use update method");
+        QLOG_ERROR() << "Object " + objectString + " is already stored, to update it use update method";
         return -1;
     }
-    QbLogger::getInstance()->debug("Checking references of object " + objectString);
+    QLOG_DEBUG() << "Checking references of object " + objectString;
     QMap<QString, QString> objectMembers;
     QList<QbPersistable*> pointers = object.getPointers();
-    QbLogger::getInstance()->debug(QString::number(pointers.size()) + " references to " + objectString + " found");
+    QLOG_DEBUG() << QString::number(pointers.size()) + " references to " + objectString + " found";
     for(int i = 0; i < pointers.size(); i++)
     {
         QbPersistable* ptr = pointers.at(i);
@@ -94,7 +95,7 @@ int QbDatabase::store(QbPersistable& object)
         }
         objectMembers[ptr->getObjectUpperName()] = QString::number(ptrId);
     }
-    QbLogger::getInstance()->info("Storing object " + objectString);
+    QLOG_INFO() << "Storing object " + objectString;
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
     {
         QMetaMethod method = object.metaObject()->method(i);
@@ -108,7 +109,7 @@ int QbDatabase::store(QbPersistable& object)
             }
         }
     }
-    QbLogger::getInstance()->debug("Trying to store object " + objectString + " [" + object.getObjectString() + "]");
+    QLOG_DEBUG() << "Trying to store object " + objectString + " [" + object.getObjectString() + "]";
     QString columns = "(";
     QString values = "(";
     for(auto e : objectMembers.toStdMap()) {
@@ -118,20 +119,20 @@ int QbDatabase::store(QbPersistable& object)
     columns = columns.left(columns.length() - 2) + ")";
     values = values.left(values.length() - 2) + ")";
     QString insertStatement = "INSERT INTO " + objectName + " " + columns + " VALUES " + values + ";";
-    QbLogger::getInstance()->debug("SQL statement is ready " + insertStatement);
+    QLOG_DEBUG() << "SQL statement is ready " + insertStatement;
     if(transactionsEnabled) db.transaction();
     QSqlQuery insertQuery;
     if(insertQuery.exec(insertStatement))
     {
         if(transactionsEnabled) db.commit();
-        QbLogger::getInstance()->debug("Store operation successfully completed");
+        QLOG_INFO() << "Store operation successfully completed";
         return updateObjectIdentifier(object);
     }
     else
     {
         if(transactionsEnabled) db.rollback();
-        QbLogger::getInstance()->error("Store operation failed");
-        QbLogger::getInstance()->error(insertQuery.lastError().text());
+        QLOG_ERROR() << "Store operation failed";
+        QLOG_ERROR() << insertQuery.lastError().text();
         return -1;
     }
 }
@@ -149,12 +150,12 @@ int QbDatabase::updateObjectIdentifier(QbPersistable& object)
         }
         QString idSetter = settersPrefix + tableIdentifier.toUpper();
         QMetaObject::invokeMethod(&object, idSetter.toStdString().c_str(), Q_ARG(int, id));
-        QbLogger::getInstance()->debug("Object identifier updated to " + QString::number(id));
+        QLOG_DEBUG() << "Object identifier updated to " + QString::number(id);
     }
     else
     {
-        QbLogger::getInstance()->error("Cannot update object identifier");
-        QbLogger::getInstance()->error(idQuery.lastError().text());
+        QLOG_ERROR() << "Cannot update object identifier";
+        QLOG_ERROR() << idQuery.lastError().text();
     }
     return id;
 }
@@ -164,15 +165,15 @@ void QbDatabase::update(QbPersistable& object)
     QString objectName = object.getObjectUpperName();
     QString objectID = QString::number(object.getID());
     QString objectString = objectName + ":" + objectID;
-    QbLogger::getInstance()->debug("Trying to update object " + objectString);
+    QLOG_DEBUG() << "Trying to update object " + objectString;
     if(objectID == "-1")
     {
-        QbLogger::getInstance()->error("Update operation failed, object " + objectString + " is not stored yet");
+        QLOG_ERROR() << "Update operation failed, object " + objectString + " is not stored yet";
         return;
     }
     QString objectMembers;
     QList<QbPersistable*> pointers = object.getPointers();
-    QbLogger::getInstance()->debug(QString::number(pointers.size()) + " references to " + objectString + " found");
+    QLOG_DEBUG() << QString::number(pointers.size()) + " references to " + objectString + " found";
     for(int i = 0; i < pointers.size(); i++)
     {
         QbPersistable* ptr = pointers.at(i);
@@ -183,7 +184,7 @@ void QbDatabase::update(QbPersistable& object)
         }
         objectMembers += ptr->getObjectUpperName() + "='" + QString::number(ptrId) + "', ";
     }
-    QbLogger::getInstance()->info("Updating object " + objectString);
+    QLOG_INFO() << "Updating object " + objectString;
     for(int i = 0; i < object.metaObject()->methodCount(); i++)
     {
         QMetaMethod method = object.metaObject()->method(i);
@@ -197,22 +198,22 @@ void QbDatabase::update(QbPersistable& object)
             }
         }
     }
-    QbLogger::getInstance()->debug("Trying to update object " + objectString + " [" + object.getObjectString() + "]");
+    QLOG_DEBUG() << "Trying to update object " + objectString + " [" + object.getObjectString() + "]";
     objectMembers = objectMembers.left(objectMembers.length() - 2);
     QString updateStatement = "UPDATE " + objectName + " SET " + objectMembers + " WHERE ID = " + QString::number(object.getID()) + ";";
-    QbLogger::getInstance()->debug("SQL statement is ready " + updateStatement);
+    QLOG_DEBUG() << "SQL statement is ready " + updateStatement;
     if(transactionsEnabled) db.transaction();
     QSqlQuery updateQuery;
     if(updateQuery.exec(updateStatement))
     {
         if(transactionsEnabled) db.commit();
-        QbLogger::getInstance()->debug("Update operation successfully completed");
+        QLOG_INFO() << "Update operation successfully completed";
     }
     else
     {
         if(transactionsEnabled) db.rollback();
-        QbLogger::getInstance()->error("Update operation failed");
-        QbLogger::getInstance()->error(updateQuery.lastError().text());
+        QLOG_ERROR() << "Update operation failed";
+        QLOG_ERROR() << updateQuery.lastError().text();
     }
 }
 
@@ -221,27 +222,27 @@ void QbDatabase::remove(QbPersistable& object)
     QString objectName = object.getObjectUpperName();
     QString objectID = QString::number(object.getID());
     QString objectString = objectName + ":" + objectID;
-    QbLogger::getInstance()->info("Trying to remove object " + objectString);
+    QLOG_INFO() << "Trying to remove object " + objectString;
     if(objectID == "-1")
     {
-        QbLogger::getInstance()->error("Remove operation failed, object " + objectString + " is not stored yet");
+        QLOG_ERROR() << "Remove operation failed, object " + objectString + " is not stored yet";
         return;
     }
-    QbLogger::getInstance()->debug("Trying to remove object " + objectString + " [" + object.getObjectString() + "]");
+    QLOG_DEBUG() << "Trying to remove object " + objectString + " [" + object.getObjectString() + "]";
     QString removeStatement = "DELETE FROM " + objectName + " WHERE " + tableIdentifier.toUpper() + "=" + objectID + ";";
-    QbLogger::getInstance()->debug("SQL statement is ready " + removeStatement);
+    QLOG_DEBUG() << "SQL statement is ready " + removeStatement;
     if(transactionsEnabled) db.transaction();
     QSqlQuery removeQuery;
     if(removeQuery.exec(removeStatement))
     {
         if(transactionsEnabled) db.commit();
-        QbLogger::getInstance()->debug("Remove operation successfully completed");
+        QLOG_INFO() << "Remove operation successfully completed";
     }
     else
     {
         if(transactionsEnabled) db.rollback();
-        QbLogger::getInstance()->error("Remove operation failed");
-        QbLogger::getInstance()->error(removeQuery.lastError().text());
+        QLOG_ERROR() << "Remove operation failed";
+        QLOG_ERROR() << removeQuery.lastError().text();
     }
 }
 
@@ -250,11 +251,11 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
     QString objectName = object.getObjectUpperName();
     if(id < 0)
     {
-        QbLogger::getInstance()->info("Trying to load objects " + objectName);
+        QLOG_INFO() << "Trying to load objects " + objectName;
     }
     else
     {
-        QbLogger::getInstance()->info("Trying to load objects " + objectName + " with identifier " + QString::number(id));
+        QLOG_INFO() << "Trying to load objects " + objectName + " with identifier " + QString::number(id);
     }
     QList<QbPersistable*> result = QList<QbPersistable*>();
     QString selectStatement = "SELECT ";
@@ -271,7 +272,7 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
             selectStatement.append(memberName + ", ");
         }
     }
-    QbLogger::getInstance()->debug("Trying to load objects " + objectName + " from database");
+    QLOG_DEBUG() << "Trying to load objects " + objectName + " from database";
     selectStatement = selectStatement.left(selectStatement.length() - 2) + " FROM " + objectName;
     if(id < 0)
     {
@@ -282,7 +283,7 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
         selectStatement += " WHERE " + tableIdentifier.toUpper() + "=" + QString::number(id);
         selectStatement += ";";
     }
-    QbLogger::getInstance()->debug("SQL statement is ready " + selectStatement);
+    QLOG_DEBUG() << "SQL statement is ready " + selectStatement;
     QSqlQuery selectQuery;
     if(selectQuery.exec(selectStatement))
     {
@@ -296,7 +297,7 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
                 void *classPtr = QMetaType::create(classId);
                 if (classPtr == 0)
                 {
-                    QbLogger::getInstance()->error("Load operation failed, cannot initialize " + className + " object");
+                    QLOG_ERROR() << "Load operation failed, cannot initialize " + className + " object";
                     return result;
                 }
                 QbPersistable *ptr = (QbPersistable*) classPtr;
@@ -317,20 +318,20 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
                             QString ptrName = QString(method.name());
                             ptrName = ptrName.left(ptrName.size() - ptrGettersSuffix.size());
                             ptrName = ptrName.right(ptrName.size() - settersPrefix.size());
-                            QbLogger::getInstance()->info("Loading " + ptrName + " reference");
+                            QLOG_TRACE() << "Loading " + ptrName + " reference";
                             QString ptrValue = selectQuery.value(ptrName).toString();
                             int typeIdForPtr = QMetaType::type(ptrName.toStdString().c_str());
                             void *classPtrForPtr = QMetaType::create(typeIdForPtr);
                             if (classPtrForPtr == 0)
                             {
-                                QbLogger::getInstance()->error("Load operation failed, cannot initialize " + ptrName + " object");
+                                QLOG_ERROR() << "Load operation failed, cannot initialize " + ptrName + " object";
                                 return result;
                             }
                             QbPersistable *ptrForPtr = (QbPersistable*) classPtrForPtr;
                             QList<QbPersistable*> pointer = load(*ptrForPtr, ptrValue.toInt());
                             if(pointer.size() != 1)
                             {
-                                QbLogger::getInstance()->error("Did not found " + ptrName + " with identifier " + ptrValue);
+                                QLOG_ERROR() << "Did not found " + ptrName + " with identifier " + ptrValue;
                                 return result;
                             }
                             QMetaObject::invokeMethod(ptr, method.name(), Q_ARG(QbPersistable*, pointer.at(0)));
@@ -339,19 +340,19 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
                 }
                 result.append(ptr);
             }
-            QbLogger::getInstance()->debug("Load operation successfully completed");
+            QLOG_DEBUG() << "Load operation successfully completed";
             return result;
         }
         else
         {
-            QbLogger::getInstance()->error("Load operation failed, class " + className + " is not registered as Qt meta type");
+            QLOG_ERROR() << "Load operation failed, class " + className + " is not registered as Qt meta type";
             return result;
         }
     }
     else
     {
-        QbLogger::getInstance()->error("Load operation failed");
-        QbLogger::getInstance()->error(selectQuery.lastError().text());
+        QLOG_ERROR() << "Load operation failed";
+        QLOG_ERROR() << selectQuery.lastError().text();
         return result;
     }
 }

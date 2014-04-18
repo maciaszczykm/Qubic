@@ -8,7 +8,7 @@ QbProperties::QbProperties()
     QFile file(path);
     if(!file.exists() || !file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        QbLogger::getInstance()->fatal("Cannot open properties file " + path);
+        QLOG_FATAL() << "Cannot open properties file " + path;
         return;
     }
     QTextStream in(&file);
@@ -21,7 +21,7 @@ QbProperties::QbProperties()
         }
     }
     file.close();
-    QbLogger::getInstance()->info("Properties successfully read from " + path);
+    QLOG_INFO() << "Properties successfully read from " + path;
 }
 
 QbProperties* QbProperties::getInstance()
@@ -34,7 +34,7 @@ QString QbProperties::getProperty(QString property)
 {
     if(!properties.contains(property))
     {
-        QbLogger::getInstance()->error("Cannot read property " + property);
+        QLOG_ERROR() << "Cannot read property " + property;
     }
     return properties.value(property);
 }
@@ -49,7 +49,7 @@ void QbProperties::store()
     QFile file(path);
     if(!file.open(QIODevice::ReadWrite | QIODevice::Text))
     {
-        QbLogger::getInstance()->fatal("Cannot open properties file " + path);
+        QLOG_FATAL() << "Cannot open properties file " + path;
         return;
     }
     QTextStream out(&file);
