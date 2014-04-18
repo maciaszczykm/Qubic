@@ -1,0 +1,105 @@
+ INFO 2014-04-19T00:47:32.470 ..\source\QbUtilities\qbpersistencehelper.cpp @ 18 "Database localhost:EMPLOYEES successfully initialized" 
+ INFO 2014-04-19T00:47:32.478 ..\source\QbUtilities\qbpersistencehelper.cpp @ 27 Transactions successfully enabled 
+ INFO 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 47 Connected to database 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 59 "Reading metadata of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 65 "Checking references of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 68 "1 references to EMPLOYEE:-1 found" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 59 "Reading metadata of object COMPANY:-1" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 65 "Checking references of object COMPANY:-1" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 68 "0 references to COMPANY:-1 found" 
+ INFO 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 79 "Storing object COMPANY:-1" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 93 "Trying to store object COMPANY:-1 [COMPANYNAME = Google]" 
+DEBUG 2014-04-19T00:47:32.479 ..\source\QbUtilities\qbpersistencehelper.cpp @ 103 "SQL statement is ready INSERT INTO COMPANY (COMPANYNAME) VALUES ('Google');" 
+ INFO 2014-04-19T00:47:32.482 ..\source\QbUtilities\qbpersistencehelper.cpp @ 109 Store operation successfully completed 
+DEBUG 2014-04-19T00:47:32.483 ..\source\QbUtilities\qbpersistencehelper.cpp @ 136 "Object identifier updated to 10" 
+ INFO 2014-04-19T00:47:32.483 ..\source\QbUtilities\qbpersistencehelper.cpp @ 79 "Storing object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:47:32.483 ..\source\QbUtilities\qbpersistencehelper.cpp @ 93 "Trying to store object EMPLOYEE:-1 [BIRTHDAY = 1995-05-17; FIRSTNAME = Lee; LASTNAME = Jones; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:47:32; SALARY = 2790.5; CHILDREN = 2]" 
+DEBUG 2014-04-19T00:47:32.483 ..\source\QbUtilities\qbpersistencehelper.cpp @ 103 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, CHILDREN, COMPANY, FIRSTNAME, GENDER, HIREDATE, LASTNAME, SALARY) VALUES ('1995-05-17', '2', '10', 'Lee', 'M', '2014-04-19 00:47:32', 'Jones', '2790.5');" 
+ INFO 2014-04-19T00:47:32.484 ..\source\QbUtilities\qbpersistencehelper.cpp @ 109 Store operation successfully completed 
+DEBUG 2014-04-19T00:47:32.484 ..\source\QbUtilities\qbpersistencehelper.cpp @ 136 "Object identifier updated to 11" 
+DEBUG 2014-04-19T00:47:32.484 ..\source\QbUtilities\qbpersistencehelper.cpp @ 59 "Reading metadata of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:47:32.484 ..\source\QbUtilities\qbpersistencehelper.cpp @ 65 "Checking references of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:47:32.484 ..\source\QbUtilities\qbpersistencehelper.cpp @ 68 "1 references to EMPLOYEE:-1 found" 
+ INFO 2014-04-19T00:47:32.484 ..\source\QbUtilities\qbpersistencehelper.cpp @ 79 "Storing object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:47:32.485 ..\source\QbUtilities\qbpersistencehelper.cpp @ 93 "Trying to store object EMPLOYEE:-1 [BIRTHDAY = 1995-05-17; FIRSTNAME = Joe; LASTNAME = Smith; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:47:32; SALARY = 2290.5; CHILDREN = 0]" 
+DEBUG 2014-04-19T00:47:32.485 ..\source\QbUtilities\qbpersistencehelper.cpp @ 103 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, CHILDREN, COMPANY, FIRSTNAME, GENDER, HIREDATE, LASTNAME, SALARY) VALUES ('1995-05-17', '0', '10', 'Joe', 'M', '2014-04-19 00:47:32', 'Smith', '2290.5');" 
+ INFO 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 109 Store operation successfully completed 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 136 "Object identifier updated to 12" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 154 "Trying to update object EMPLOYEE:12" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 162 "1 references to EMPLOYEE:12 found" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 59 "Reading metadata of object COMPANY:-1" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 65 "Checking references of object COMPANY:-1" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 68 "0 references to COMPANY:-1 found" 
+ INFO 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 79 "Storing object COMPANY:-1" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 93 "Trying to store object COMPANY:-1 [COMPANYNAME = Facebook]" 
+DEBUG 2014-04-19T00:47:32.486 ..\source\QbUtilities\qbpersistencehelper.cpp @ 103 "SQL statement is ready INSERT INTO COMPANY (COMPANYNAME) VALUES ('Facebook');" 
+ INFO 2014-04-19T00:47:32.487 ..\source\QbUtilities\qbpersistencehelper.cpp @ 109 Store operation successfully completed 
+DEBUG 2014-04-19T00:47:32.487 ..\source\QbUtilities\qbpersistencehelper.cpp @ 136 "Object identifier updated to 11" 
+ INFO 2014-04-19T00:47:32.487 ..\source\QbUtilities\qbpersistencehelper.cpp @ 173 "Updating object EMPLOYEE:12" 
+DEBUG 2014-04-19T00:47:32.487 ..\source\QbUtilities\qbpersistencehelper.cpp @ 187 "Trying to update object EMPLOYEE:12 [BIRTHDAY = 1995-05-17; FIRSTNAME = Ryo; LASTNAME = Smith; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:47:32; SALARY = 2290.5; CHILDREN = 0]" 
+DEBUG 2014-04-19T00:47:32.487 ..\source\QbUtilities\qbpersistencehelper.cpp @ 190 "SQL statement is ready UPDATE EMPLOYEE SET COMPANY='11', BIRTHDAY='1995-05-17', FIRSTNAME='Ryo', LASTNAME='Smith', GENDER='M', HIREDATE='2014-04-19 00:47:32', SALARY='2290.5', CHILDREN='0' WHERE ID = 12;" 
+ INFO 2014-04-19T00:47:32.488 ..\source\QbUtilities\qbpersistencehelper.cpp @ 196 Update operation successfully completed 
+ INFO 2014-04-19T00:47:32.488 ..\source\QbUtilities\qbpersistencehelper.cpp @ 255 "Trying to load objects EMPLOYEE" 
+DEBUG 2014-04-19T00:47:32.489 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects EMPLOYEE from database" 
+DEBUG 2014-04-19T00:47:32.489 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, BIRTHDAY, FIRSTNAME, LASTNAME, GENDER, COMPANY, HIREDATE, SALARY, CHILDREN, COMPANY FROM EMPLOYEE;" 
+TRACE 2014-04-19T00:47:32.489 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.489 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 3" 
+DEBUG 2014-04-19T00:47:32.489 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.489 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=3;" 
+DEBUG 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 3" 
+DEBUG 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=3;" 
+DEBUG 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.490 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 3" 
+DEBUG 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=3;" 
+DEBUG 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 3" 
+DEBUG 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.491 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=3;" 
+DEBUG 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 10" 
+DEBUG 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=10;" 
+DEBUG 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 10" 
+DEBUG 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.492 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=10;" 
+DEBUG 2014-04-19T00:47:32.493 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.493 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.493 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 11" 
+DEBUG 2014-04-19T00:47:32.493 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.493 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=11;" 
+DEBUG 2014-04-19T00:47:32.493 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+TRACE 2014-04-19T00:47:32.494 ..\source\QbUtilities\qbpersistencehelper.cpp @ 322 "Loading Company reference" 
+ INFO 2014-04-19T00:47:32.494 ..\source\QbUtilities\qbpersistencehelper.cpp @ 259 "Trying to load objects COMPANY with identifier 11" 
+DEBUG 2014-04-19T00:47:32.494 ..\source\QbUtilities\qbpersistencehelper.cpp @ 276 "Trying to load objects COMPANY from database" 
+DEBUG 2014-04-19T00:47:32.494 ..\source\QbUtilities\qbpersistencehelper.cpp @ 287 "SQL statement is ready SELECT ID, COMPANYNAME FROM COMPANY WHERE ID=11;" 
+DEBUG 2014-04-19T00:47:32.494 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+DEBUG 2014-04-19T00:47:32.494 ..\source\QbUtilities\qbpersistencehelper.cpp @ 344 Load operation successfully completed 
+ INFO 2014-04-19T00:47:32.501 ..\source\QbUtilities\qbpersistencehelper.cpp @ 212 "Trying to remove object EMPLOYEE:11" 
+DEBUG 2014-04-19T00:47:32.501 ..\source\QbUtilities\qbpersistencehelper.cpp @ 218 "Trying to remove object EMPLOYEE:11 [BIRTHDAY = 1995-05-17; FIRSTNAME = Lee; LASTNAME = Jones; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:47:32; SALARY = 2790.5; CHILDREN = 2]" 
+DEBUG 2014-04-19T00:47:32.501 ..\source\QbUtilities\qbpersistencehelper.cpp @ 220 "SQL statement is ready DELETE FROM EMPLOYEE WHERE ID=11;" 
+ INFO 2014-04-19T00:47:32.502 ..\source\QbUtilities\qbpersistencehelper.cpp @ 226 Remove operation successfully completed 
+DEBUG 2014-04-19T00:47:32.502 ..\source\QbUtilities\qbpersistencehelper.cpp @ 244 "Object identifier updated to -1" 
+ INFO 2014-04-19T00:47:32.502 ..\source\QbUtilities\qbpersistencehelper.cpp @ 212 "Trying to remove object EMPLOYEE:12" 
+DEBUG 2014-04-19T00:47:32.502 ..\source\QbUtilities\qbpersistencehelper.cpp @ 218 "Trying to remove object EMPLOYEE:12 [BIRTHDAY = 1995-05-17; FIRSTNAME = Ryo; LASTNAME = Smith; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:47:32; SALARY = 2290.5; CHILDREN = 0]" 
+DEBUG 2014-04-19T00:47:32.502 ..\source\QbUtilities\qbpersistencehelper.cpp @ 220 "SQL statement is ready DELETE FROM EMPLOYEE WHERE ID=12;" 
+ INFO 2014-04-19T00:47:32.503 ..\source\QbUtilities\qbpersistencehelper.cpp @ 226 Remove operation successfully completed 
+DEBUG 2014-04-19T00:47:32.503 ..\source\QbUtilities\qbpersistencehelper.cpp @ 244 "Object identifier updated to -1" 
+ INFO 2014-04-19T00:47:32.503 ..\source\QbUtilities\qbpersistencehelper.cpp @ 212 "Trying to remove object COMPANY:10" 
+DEBUG 2014-04-19T00:47:32.503 ..\source\QbUtilities\qbpersistencehelper.cpp @ 218 "Trying to remove object COMPANY:10 [COMPANYNAME = Google]" 
+DEBUG 2014-04-19T00:47:32.503 ..\source\QbUtilities\qbpersistencehelper.cpp @ 220 "SQL statement is ready DELETE FROM COMPANY WHERE ID=10;" 
+ INFO 2014-04-19T00:47:32.504 ..\source\QbUtilities\qbpersistencehelper.cpp @ 226 Remove operation successfully completed 
+DEBUG 2014-04-19T00:47:32.504 ..\source\QbUtilities\qbpersistencehelper.cpp @ 244 "Object identifier updated to -1" 
+ INFO 2014-04-19T00:47:32.504 ..\source\QbUtilities\qbpersistencehelper.cpp @ 212 "Trying to remove object COMPANY:11" 
+DEBUG 2014-04-19T00:47:32.504 ..\source\QbUtilities\qbpersistencehelper.cpp @ 218 "Trying to remove object COMPANY:11 [COMPANYNAME = Facebook]" 
+DEBUG 2014-04-19T00:47:32.504 ..\source\QbUtilities\qbpersistencehelper.cpp @ 220 "SQL statement is ready DELETE FROM COMPANY WHERE ID=11;" 
+ INFO 2014-04-19T00:47:32.505 ..\source\QbUtilities\qbpersistencehelper.cpp @ 226 Remove operation successfully completed 
+DEBUG 2014-04-19T00:47:32.505 ..\source\QbUtilities\qbpersistencehelper.cpp @ 244 "Object identifier updated to -1" 

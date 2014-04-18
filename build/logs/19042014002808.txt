@@ -1,0 +1,27 @@
+ INFO 2014-04-19T00:28:08.553 ..\source\QbCore\qbdatabase.cpp @ 24 "Database localhost:EMPLOYEES successfully initialized" 
+ INFO 2014-04-19T00:28:08.560 ..\source\QbUtilities\qbpersistencehelper.cpp @ 11 Transactions successfully enabled 
+ INFO 2014-04-19T00:28:08.561 ..\source\QbCore\qbdatabase.cpp @ 35 Connected to database 
+DEBUG 2014-04-19T00:28:08.561 ..\source\QbUtilities\qbpersistencehelper.cpp @ 37 "Reading metadata of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:28:08.561 ..\source\QbUtilities\qbpersistencehelper.cpp @ 43 "Checking references of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 46 "1 references to EMPLOYEE:-1 found" 
+DEBUG 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 37 "Reading metadata of object COMPANY:-1" 
+DEBUG 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 43 "Checking references of object COMPANY:-1" 
+DEBUG 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 46 "0 references to COMPANY:-1 found" 
+ INFO 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 57 "Storing object COMPANY:-1" 
+DEBUG 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 71 "Trying to store object COMPANY:-1 [COMPANYNAME = Google]" 
+DEBUG 2014-04-19T00:28:08.562 ..\source\QbUtilities\qbpersistencehelper.cpp @ 81 "SQL statement is ready INSERT INTO COMPANY (COMPANYNAME) VALUES ('Google');" 
+ INFO 2014-04-19T00:28:08.564 ..\source\QbUtilities\qbpersistencehelper.cpp @ 87 Store operation successfully completed 
+DEBUG 2014-04-19T00:28:08.565 ..\source\QbUtilities\qbpersistencehelper.cpp @ 114 "Object identifier updated to 3" 
+ INFO 2014-04-19T00:28:08.565 ..\source\QbUtilities\qbpersistencehelper.cpp @ 57 "Storing object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:28:08.565 ..\source\QbUtilities\qbpersistencehelper.cpp @ 71 "Trying to store object EMPLOYEE:-1 [BIRTHDAY = 1995-05-17; FIRSTNAME = Lee; LASTNAME = Jones; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:28:08; SALARY = 2790.5; CHILDREN = 2]" 
+DEBUG 2014-04-19T00:28:08.565 ..\source\QbUtilities\qbpersistencehelper.cpp @ 81 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, CHILDREN, COMPANY, FIRSTNAME, GENDER, HIREDATE, LASTNAME, SALARY) VALUES ('1995-05-17', '2', '3', 'Lee', 'M', '2014-04-19 00:28:08', 'Jones', '2790.5');" 
+ INFO 2014-04-19T00:28:08.565 ..\source\QbUtilities\qbpersistencehelper.cpp @ 87 Store operation successfully completed 
+DEBUG 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 114 "Object identifier updated to 3" 
+DEBUG 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 37 "Reading metadata of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 43 "Checking references of object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 46 "1 references to EMPLOYEE:-1 found" 
+ INFO 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 57 "Storing object EMPLOYEE:-1" 
+DEBUG 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 71 "Trying to store object EMPLOYEE:-1 [BIRTHDAY = 1995-05-17; FIRSTNAME = Joe; LASTNAME = Smith; GENDER = M; COMPANYPTR = ; HIREDATE = 2014-04-19 00:28:08; SALARY = 2290.5; CHILDREN = 0]" 
+DEBUG 2014-04-19T00:28:08.566 ..\source\QbUtilities\qbpersistencehelper.cpp @ 81 "SQL statement is ready INSERT INTO EMPLOYEE (BIRTHDAY, CHILDREN, COMPANY, FIRSTNAME, GENDER, HIREDATE, LASTNAME, SALARY) VALUES ('1995-05-17', '0', '3', 'Joe', 'M', '2014-04-19 00:28:08', 'Smith', '2290.5');" 
+ INFO 2014-04-19T00:28:08.567 ..\source\QbUtilities\qbpersistencehelper.cpp @ 87 Store operation successfully completed 
+DEBUG 2014-04-19T00:28:08.567 ..\source\QbUtilities\qbpersistencehelper.cpp @ 114 "Object identifier updated to 4" 

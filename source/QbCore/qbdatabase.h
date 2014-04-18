@@ -13,6 +13,7 @@
 #include <QSqlError>
 #include <QbUtilities/qbmappinghelper.h>
 #include <QbUtilities/qbloggerhelper.h>
+#include <QbUtilities/qbpersistencehelper.h>
 #include <QbCore/qbpersistable.h>
 #include <QbCore/qbproperties.h>
 #include <QsLog.h>
@@ -20,27 +21,18 @@
 class QbDatabase
 {
 public:
-    void connect();
-    QList<QbPersistable*> load(QbPersistable& object, int id = -1);
+    static QbDatabase* getInstance();
+    static void deleteInstance();
     int store(QbPersistable& object);
     void update(QbPersistable &object);
     void remove(QbPersistable& object);
-    static QbDatabase* getInstance();
+    QList<QbPersistable*> load(QbPersistable& object, int id = -1);
 
 private:
     QbDatabase();
-    void initializeDatabase();
-    void initializeTransactions();
-    void loadProperties();
-    int updateObjectIdentifier(QbPersistable& object);
-    void removeObjectIdentifier(QbPersistable& object);
+    ~QbDatabase();
     static QbDatabase* instance;
-    QSqlDatabase db;
-    QString gettersPrefix;
-    QString settersPrefix;
-    QString ptrGettersSuffix;
-    QString tableIdentifier;
-    bool transactionsEnabled;
+
 };
 
 #endif // QBDATABASE_H

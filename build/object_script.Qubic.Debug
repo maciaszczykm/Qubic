@@ -11,6 +11,7 @@ INPUT(
 ./debug\main.o
 ./debug\qbmappinghelper.o
 ./debug\qbloggerhelper.o
+./debug\qbpersistencehelper.o
 ./debug\moc_qbpersistable.o
 ./debug\moc_company.o
 ./debug\moc_employee.o

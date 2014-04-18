@@ -1,0 +1,3 @@
+ INFO 2014-04-19T00:27:45.907 ..\source\QbCore\qbdatabase.cpp @ 24 "Database localhost:EMPLOYEES successfully initialized" 
+ INFO 2014-04-19T00:27:45.915 ..\source\QbUtilities\qbpersistencehelper.cpp @ 11 Transactions successfully enabled 
+ INFO 2014-04-19T00:27:45.917 ..\source\QbCore\qbdatabase.cpp @ 35 Connected to database 

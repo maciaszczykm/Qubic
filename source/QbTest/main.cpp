@@ -9,8 +9,6 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    QbDatabase::getInstance()->connect();
-
     Company company1 ("Google");
     QDate birthday(1995, 5, 17);
     QDateTime hiredate = QDateTime::currentDateTime();
@@ -36,6 +34,8 @@ int main(int argc, char *argv[])
     QbDatabase::getInstance()->remove(employee2);
     QbDatabase::getInstance()->remove(company1);
     QbDatabase::getInstance()->remove(company2);
+
+    QbDatabase::deleteInstance();
 
     return app.exec();
 }

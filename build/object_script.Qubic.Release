@@ -11,6 +11,7 @@ INPUT(
 ./release\main.o
 ./release\qbmappinghelper.o
 ./release\qbloggerhelper.o
+./release\qbpersistencehelper.o
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o
