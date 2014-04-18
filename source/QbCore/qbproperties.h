@@ -5,7 +5,7 @@
 #include <QFile>
 #include <QString>
 #include <QStringList>
-#include <qblogger.h>
+#include <QbCore/qblogger.h>
 #include <QTextStream>
 
 class QbProperties

@@ -1,5 +1,5 @@
 #include "qbpersistable.h"
-#include "qbmappinghelper.h"
+#include "QbUtilities/qbmappinghelper.h"
 
 QString QbPersistable::getObjectUpperName() {
     QString objectName = this->metaObject()->className();

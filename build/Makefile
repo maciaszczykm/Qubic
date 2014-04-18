@@ -149,6 +149,9 @@ Makefile: ../source/Qubic.pro ../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/win3
 		../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/features/default_pre.prf \
 		../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/features/win32/default_pre.prf \
 		../source/QsLog/QsLog.pri \
+		../source/QbCore/QbCore.pri \
+		../source/QbTest/QbTest.pri \
+		../source/QbUtilities/QbUtilities.pri \
 		../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/features/resolve_config.prf \
 		../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/features/exclusive_builds_post.prf \
 		../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/features/default_post.prf \
@@ -257,6 +260,9 @@ Makefile: ../source/Qubic.pro ../../../Programy/Qt/5.2.1/mingw48_32/mkspecs/win3
 ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\default_pre.prf:
 ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\win32\default_pre.prf:
 ..\source\QsLog\QsLog.pri:
+..\source\QbCore\QbCore.pri:
+..\source\QbTest\QbTest.pri:
+..\source\QbUtilities\QbUtilities.pri:
 ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\resolve_config.prf:
 ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\exclusive_builds_post.prf:
 ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\default_post.prf:

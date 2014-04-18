@@ -1,9 +1,9 @@
 #include <QCoreApplication>
-#include <qbdatabase.h>
-#include <qblogger.h>
-#include <employee.h>
-#include <company.h>
-#include <qbpersistable.h>
+#include <QbCore/qbdatabase.h>
+#include <QbCore/qblogger.h>
+#include <QbTest/employee.h>
+#include <QbTest/company.h>
+#include <QbCore/qbpersistable.h>
 
 int main(int argc, char *argv[])
 {

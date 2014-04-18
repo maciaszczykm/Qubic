@@ -5,7 +5,7 @@
 #include <QMetaMethod>
 #include <QList>
 
-#include <qbproperties.h>
+#include <QbCore/qbproperties.h>
 
 class QbPersistable : public QObject
 {

@@ -1,0 +1,17 @@
+INPUT(
+./debug\QsLogDest.o
+./debug\QsLog.o
+./debug\QsLogDestConsole.o
+./debug\QsLogDestFile.o
+./debug\qbdatabase.o
+./debug\qblogger.o
+./debug\qbpersistable.o
+./debug\qbproperties.o
+./debug\company.o
+./debug\employee.o
+./debug\main.o
+./debug\qbmappinghelper.o
+./debug\moc_qbpersistable.o
+./debug\moc_company.o
+./debug\moc_employee.o
+);

@@ -12,10 +12,10 @@
 #include <QSqlDriver>
 #include <QSqlError>
 
-#include <qbmappinghelper.h>
-#include <qblogger.h>
-#include <qbpersistable.h>
-#include <qbproperties.h>
+#include <QbUtilities/qbmappinghelper.h>
+#include <QbCore/qblogger.h>
+#include <QbCore/qbpersistable.h>
+#include <QbCore/qbproperties.h>
 
 class QbDatabase
 {

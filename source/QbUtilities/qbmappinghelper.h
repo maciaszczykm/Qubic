@@ -8,8 +8,8 @@
 #include <QDate>
 #include <QDateTime>
 
-#include <qbpersistable.h>
-#include <qblogger.h>
+#include <QbCore/qbpersistable.h>
+#include <QbCore/qblogger.h>
 
 class QbMappingHelper
 {

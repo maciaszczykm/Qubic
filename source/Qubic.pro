@@ -10,25 +10,10 @@ CONFIG += c++11
 
 TEMPLATE = app
 
-SOURCES += main.cpp \
-    qbproperties.cpp \
-    qbdatabase.cpp \
-    qbpersistable.cpp \
-    employee.cpp \
-    qblogger.cpp \
-    qbmappinghelper.cpp \
-    company.cpp
-
-HEADERS += \
-    qbproperties.h \
-    qbdatabase.h \
-    qbpersistable.h \
-    employee.h \
-    qblogger.h \
-    qbmappinghelper.h \
-    company.h
-
 OTHER_FILES += \
     qb.properties
 
 include(QsLog\QsLog.pri)
+include(QbCore\QbCore.pri)
+include(QbTest\QbTest.pri)
+include(QbUtilities\QbUtilities.pri)

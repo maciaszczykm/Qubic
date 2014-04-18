@@ -4,7 +4,7 @@
 #include <QString>
 #include <QObject>
 
-#include <qbpersistable.h>
+#include <QbCore/qbpersistable.h>
 
 class Company : public QbPersistable
 {

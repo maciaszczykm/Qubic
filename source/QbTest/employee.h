@@ -4,8 +4,8 @@
 #include <QString>
 #include <QObject>
 
-#include <qbpersistable.h>
-#include <company.h>
+#include <QbCore/qbpersistable.h>
+#include <QbTest/company.h>
 
 class Employee : public QbPersistable
 {
