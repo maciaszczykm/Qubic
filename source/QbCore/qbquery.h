@@ -13,6 +13,7 @@ public:
     virtual void appendOr() = 0;
     virtual void openParen() = 0;
     virtual void closeParen() = 0;
+    void setQuery(QString query);
     QString getQuery();
     QString getClassName();
     static QString EQUALS;

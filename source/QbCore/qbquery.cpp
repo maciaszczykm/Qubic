@@ -11,6 +11,11 @@ QbQuery::QbQuery(QString className)
     isWhereAppended = false;
 }
 
+void QbQuery::setQuery(QString query)
+{
+    this->query = query;
+}
+
 QString QbQuery::getQuery()
 {
     return query + ";";
