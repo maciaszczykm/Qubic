@@ -1,5 +1,5 @@
-#ifndef QBMAPPINGHELPER_H
-#define QBMAPPINGHELPER_H
+#ifndef QBMYSQLMAPPINGHELPER_H
+#define QBMYSQLMAPPINGHELPER_H
 
 #include <QString>
 #include <QObject>
@@ -10,10 +10,11 @@
 #include <QbCore/qbpersistable.h>
 #include <QsLog/QsLog.h>
 
-class QbMappingHelper
+class QbMySQLMappingHelper
 {
 public:
     static QString getStringValue(QbPersistable &object, QMetaMethod method);
+    static void setStringValue(QbPersistable *object, QMetaMethod method, QString value);
 };
 
-#endif // QBMAPPINGHELPER_H
+#endif // QBMYSQLMAPPINGHELPER_H

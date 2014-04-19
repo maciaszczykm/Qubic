@@ -9,9 +9,11 @@ INPUT(
 ./debug\company.o
 ./debug\employee.o
 ./debug\main.o
-./debug\qbmappinghelper.o
 ./debug\qbloggerhelper.o
 ./debug\qbpersistencehelper.o
+./debug\qbmysqlpersistencehelper.o
+./debug\qbmysqlmappinghelper.o
+./debug\qbmappinghelper.o
 ./debug\moc_qbpersistable.o
 ./debug\moc_company.o
 ./debug\moc_employee.o

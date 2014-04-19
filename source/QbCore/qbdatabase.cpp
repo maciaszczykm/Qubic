@@ -27,22 +27,63 @@ void QbDatabase::deleteInstance()
     instance = NULL;
 }
 
+QSqlDatabase* QbDatabase::getDatabase()
+{
+    return QbPersistenceHelper::getDatabase();
+}
+
+bool QbDatabase::checkDriver(QString driverName)
+{
+    if(this->driverName == NULL) this->driverName = QbPersistenceHelper::getDatabase()->driverName();
+    return (this->driverName == driverName);
+}
+
 int QbDatabase::store(QbPersistable& object)
 {
-    return QbPersistenceHelper::store(object);
+    if(checkDriver("QMYSQL"))
+    {
+        return QbMySQLPersistenceHelper::store(object);
+    }
+    else
+    {
+        QLOG_FATAL() << "Store method for driver " + this->driverName + " is not implemented";
+        return -1;
+    }
 }
 
 void QbDatabase::update(QbPersistable& object)
 {
-    QbPersistenceHelper::update(object);
+    if(checkDriver("QMYSQL"))
+    {
+        QbMySQLPersistenceHelper::update(object);
+    }
+    else
+    {
+        QLOG_FATAL() << "Update method for driver " + this->driverName + " is not implemented";
+    }
 }
 
 void QbDatabase::remove(QbPersistable& object)
 {
-    QbPersistenceHelper::remove(object);
+    if(checkDriver("QMYSQL"))
+    {
+        QbMySQLPersistenceHelper::remove(object);
+    }
+    else
+    {
+        QLOG_FATAL() << "Remove method for driver " + this->driverName + " is not implemented";
+    }
 }
 
 QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
 {
-    return QbPersistenceHelper::load(object, id);
+    if(checkDriver("QMYSQL"))
+    {
+        return QbMySQLPersistenceHelper::load(object, id);
+    }
+    else
+    {
+        QLOG_FATAL() << "Load method for driver " + this->driverName + " is not implemented";
+        return QList<QbPersistable*>();
+    }
 }

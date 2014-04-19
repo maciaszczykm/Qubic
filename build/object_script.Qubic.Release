@@ -9,9 +9,11 @@ INPUT(
 ./release\company.o
 ./release\employee.o
 ./release\main.o
-./release\qbmappinghelper.o
 ./release\qbloggerhelper.o
 ./release\qbpersistencehelper.o
+./release\qbmysqlpersistencehelper.o
+./release\qbmysqlmappinghelper.o
+./release\qbmappinghelper.o
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o

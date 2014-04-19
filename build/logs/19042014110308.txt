@@ -1,0 +1,11 @@
+ INFO 2014-04-19T11:03:08.259 ..\source\QbUtilities\qbpersistencehelper.cpp @ 23 "Database localhost:EMPLOYEES successfully initialized" 
+ INFO 2014-04-19T11:03:08.267 ..\source\QbUtilities\qbpersistencehelper.cpp @ 32 Transactions successfully enabled 
+ INFO 2014-04-19T11:03:08.268 ..\source\QbUtilities\qbpersistencehelper.cpp @ 52 Connected to database 
+FATAL 2014-04-19T11:03:08.268 ..\source\QbCore\qbdatabase.cpp @ 49 "Store method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.268 ..\source\QbCore\qbdatabase.cpp @ 49 "Store method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.269 ..\source\QbCore\qbdatabase.cpp @ 62 "Update method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.269 ..\source\QbCore\qbdatabase.cpp @ 86 "Load method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.269 ..\source\QbCore\qbdatabase.cpp @ 74 "Remove method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.269 ..\source\QbCore\qbdatabase.cpp @ 74 "Remove method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.269 ..\source\QbCore\qbdatabase.cpp @ 74 "Remove method for driver QMYSQL is not implemented" 
+FATAL 2014-04-19T11:03:08.269 ..\source\QbCore\qbdatabase.cpp @ 74 "Remove method for driver QMYSQL is not implemented" 
