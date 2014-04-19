@@ -311,3 +311,83 @@ QList<QbPersistable*> QbMySQLPersistenceHelper::load(QbPersistable& object, int 
         return result;
     }
 }
+
+QList<QbPersistable*> QbMySQLPersistenceHelper::load(QbQuery* query)
+{
+    QString settersPrefix = QbProperties::getInstance()->getProperty("qubic.configuration.setters.prefix");
+    QString ptrGettersSuffix = QbProperties::getInstance()->getProperty("qubic.configuration.pointer.getters.suffix");
+     QLOG_DEBUG() << "Trying to query objects " + query->getClassName().toUpper() + " from database";
+     QList<QbPersistable*> result = QList<QbPersistable*>();
+     QLOG_DEBUG() << "SQL statement is ready " + query->getQuery();
+     QSqlQuery selectQuery;
+     if(selectQuery.exec(query->getQuery()))
+     {
+         QByteArray byteArray = query->getClassName().toLocal8Bit();
+         int classId = QMetaType::type(byteArray.constData());
+         if(classId > 0)
+         {
+             while(selectQuery.next())
+             {
+                 void *classPtr = QMetaType::create(classId);
+                 if (classPtr == 0)
+                 {
+                     QLOG_ERROR() << "Load operation failed, cannot initialize " + query->getClassName() + " object";
+                     return result;
+                 }
+                 QbPersistable *ptr = (QbPersistable*) classPtr;
+                 for(int i = 0; i < ptr->metaObject()->methodCount(); i++)
+                 {
+                     QMetaMethod method = ptr->metaObject()->method(i);
+                     if(method.name().startsWith(settersPrefix.toStdString().c_str()))
+                     {
+                         if(!method.name().endsWith(ptrGettersSuffix.toStdString().c_str()))
+                         {
+                             QString memberName = method.name().right(method.name().length() - settersPrefix.length());
+                             memberName = memberName.toUpper();
+                             QString memberValue = selectQuery.value(memberName).toString();
+                             QbMySQLMappingHelper::setStringValue(ptr, method, memberValue);
+                         }
+                         else
+                         {
+                             QString ptrName = QString(method.name());
+                             ptrName = ptrName.left(ptrName.size() - ptrGettersSuffix.size());
+                             ptrName = ptrName.right(ptrName.size() - settersPrefix.size());
+                             QLOG_TRACE() << "Loading " + ptrName + " reference";
+                             QString ptrValue = selectQuery.value(ptrName).toString();
+                             int typeIdForPtr = QMetaType::type(ptrName.toStdString().c_str());
+                             void *classPtrForPtr = QMetaType::create(typeIdForPtr);
+                             if (classPtrForPtr == 0)
+                             {
+                                 QLOG_ERROR() << "Load operation failed, cannot initialize " + ptrName + " object";
+                                 return result;
+                             }
+                             QbPersistable *ptrForPtr = (QbPersistable*) classPtrForPtr;
+                             QList<QbPersistable*> pointer = load(*ptrForPtr, ptrValue.toInt());
+                             if(pointer.size() != 1)
+                             {
+                                 QLOG_ERROR() << "Did not found " + ptrName + " with identifier " + ptrValue;
+                                 return result;
+                             }
+                             QMetaObject::invokeMethod(ptr, method.name(), Q_ARG(QbPersistable*, pointer.at(0)));
+                         }
+                     }
+                 }
+                 result.append(ptr);
+             }
+             QLOG_DEBUG() << "Load operation successfully completed";
+             return result;
+         }
+         else
+         {
+             QLOG_ERROR() << "Load operation failed, class " + query->getClassName() + " is not registered as Qt meta type";
+             return result;
+         }
+     }
+     else
+     {
+         QLOG_ERROR() << "Load operation failed";
+         QLOG_ERROR() << selectQuery.lastError().text();
+         return result;
+     }
+
+}

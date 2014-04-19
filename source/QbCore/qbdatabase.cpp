@@ -92,3 +92,16 @@ QList<QbPersistable*> QbDatabase::load(QbPersistable& object, int id)
         return QList<QbPersistable*>();
     }
 }
+
+QList<QbPersistable*> QbDatabase::load(QbQuery *query)
+{
+    if(checkDriver("QMYSQL"))
+    {
+        return QbMySQLPersistenceHelper::load(query);
+    }
+    else
+    {
+        QLOG_FATAL() << "Load method for driver " + this->driverName + " is not implemented";
+        return QList<QbPersistable*>();
+    }
+}

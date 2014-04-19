@@ -15,3 +15,8 @@ QString QbQuery::getQuery()
 {
     return query + ";";
 }
+
+QString QbQuery::getClassName()
+{
+    return className;
+}

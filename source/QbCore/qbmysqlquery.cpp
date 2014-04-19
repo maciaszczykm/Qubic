@@ -9,7 +9,7 @@ void QbMySQLQuery::appendWhere(QString key, QString value, QString condition)
         query += " WHERE";
         isWhereAppended = true;
     }
-    query += " " + key + condition + value;
+    query += " " + key + condition + "'" + value + "'";
 }
 
 void QbMySQLQuery::appendAnd()

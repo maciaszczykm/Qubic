@@ -35,15 +35,22 @@ int main(int argc, char *argv[])
         qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname()
                  << "\t" << loaded->getSalary();
     }
+    if(list.size() == 0) qDebug() << "-";
 
     //query database
+    qDebug() << "\nQuery result:\n";
     QbMySQLQuery query = QbMySQLQuery(Employee::CLASSNAME);
     query.appendWhere(Employee::FIRSTNAME, "Ryo", QbQuery::EQUALS);
     query.appendAnd();
     query.appendWhere(Employee::SALARY, "1500", QbQuery::MORE_THAN);
-    qDebug() << "\nQuery:\n";
-    qDebug() << query.getQuery();
-
+    list = QbDatabase::getInstance()->load(&query);
+    for(int i=0; i<list.size(); i++)
+    {
+        Employee* loaded = (Employee*) list.at(i);
+        qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname()
+                 << "\t" << loaded->getSalary();
+    }
+    if(list.size() == 0) qDebug() << "-";
 
     //loading list of currently synchronized objects
     qDebug() << "\nSynchronized objects:\n";

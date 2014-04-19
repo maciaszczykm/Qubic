@@ -14,6 +14,7 @@ public:
     virtual void openParen() = 0;
     virtual void closeParen() = 0;
     QString getQuery();
+    QString getClassName();
     static QString EQUALS;
     static QString LESS_THAN;
     static QString MORE_THAN;

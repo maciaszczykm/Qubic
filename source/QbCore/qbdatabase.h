@@ -4,6 +4,7 @@
 #include <QSqlDatabase>
 #include <QbCore/qbpersistable.h>
 #include <QbCore/qbproperties.h>
+#include <QbCore/qbquery.h>
 #include <QbUtilities/qbloggerhelper.h>
 #include <QbUtilities/qbpersistencehelper.h>
 #include <QbUtilities/qbmysqlpersistencehelper.h>
@@ -18,6 +19,7 @@ public:
     void update(QbPersistable &object);
     void remove(QbPersistable& object);
     QList<QbPersistable*> load(QbPersistable& object, int id = -1);
+    QList<QbPersistable*> load(QbQuery* query);
     QSqlDatabase* getDatabase();
     QList<QbPersistable*> *getSynchronizedObjects();
 

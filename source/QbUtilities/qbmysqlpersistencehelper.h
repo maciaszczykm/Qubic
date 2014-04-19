@@ -1,6 +1,7 @@
 #ifndef QBMYSQLPERSISTENCEHELPER_H
 #define QBMYSQLPERSISTENCEHELPER_H
 
+#include <QbCore/qbquery.h>
 #include <QbUtilities/qbmysqlmappinghelper.h>
 #include <QbUtilities/qbpersistencehelper.h>
 
@@ -11,6 +12,7 @@ public:
     static void update(QbPersistable &object);
     static void remove(QbPersistable& object);
     static QList<QbPersistable*> load(QbPersistable& object, int id);
+    static QList<QbPersistable*> load(QbQuery* query);
 
 private:
     static int updateObjectIdentifier(QbPersistable& object);

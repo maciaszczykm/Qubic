@@ -28,6 +28,7 @@ QString QbPersistable::getObjectMembers()
 {
     QString prefix = QbProperties::getInstance()->getProperty("qubic.configuration.getters.prefix");
     QString suffix = QbProperties::getInstance()->getProperty("qubic.configuration.pointer.getters.suffix");
+    QString tableIdentifier = QbProperties::getInstance()->getProperty("qubic.configuration.table.identifier");
     QString objectMembers = "";
     for(int i = 0; i < this->metaObject()->methodCount(); i++)
     {
@@ -42,6 +43,6 @@ QString QbPersistable::getObjectMembers()
             objectMembers += memberName.toUpper() + ", ";
         }
     }
-    objectMembers = objectMembers.left(objectMembers.length() - 2);
+    objectMembers += tableIdentifier.toUpper();
     return objectMembers;
 }
