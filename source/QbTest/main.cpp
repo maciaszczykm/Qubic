@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
+    //storing objects in database
     Company company1 ("Google");
     QDate birthday(1995, 5, 17);
     QDateTime hiredate = QDateTime::currentDateTime();
@@ -17,11 +18,14 @@ int main(int argc, char *argv[])
     QbDatabase::getInstance()->store(employee1);
     QbDatabase::getInstance()->store(employee2);
 
+    //updating objects in database
     Company company2 ("Facebook");
     employee2.setFirstname("Ryo");
     employee2.setCompanyPtr(&company2);
     QbDatabase::getInstance()->update(employee2);
 
+    //loading objects from database
+    qDebug() << "Loaded objects:\n";
     Employee empty;
     QList<QbPersistable*> list = QbDatabase::getInstance()->load(empty);
     for(int i=0; i<list.size(); i++)
@@ -30,11 +34,33 @@ int main(int argc, char *argv[])
         qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname();
     }
 
+    //loading list of currently synchronized objects
+    qDebug() << "\nSynchronized objects:\n";
+    list = *(QbDatabase::getInstance()->getSynchronizedObjects());
+    for(int i=0; i<list.size(); i++)
+    {
+        QbPersistable* synchronized = list.at(i);
+        qDebug() << synchronized->getObjectUpperName() + ":" + QString::number(synchronized->getID());
+    }
+    if(list.size() == 0) qDebug() << "-";
+
+    //removing objects from database
     QbDatabase::getInstance()->remove(employee1);
     QbDatabase::getInstance()->remove(employee2);
     QbDatabase::getInstance()->remove(company1);
     QbDatabase::getInstance()->remove(company2);
 
+    //loading list of currently synchronized objects
+    qDebug() << "\nSynchronized objects:\n";
+    list = *(QbDatabase::getInstance()->getSynchronizedObjects());
+    for(int i=0; i<list.size(); i++)
+    {
+        QbPersistable* synchronized = list.at(i);
+        qDebug() << synchronized->getObjectUpperName() + ":" + QString::number(synchronized->getID());
+    }
+    if(list.size() == 0) qDebug() << "-";
+
+    //closing database connection to prevent application crash
     QbDatabase::deleteInstance();
 
     return app.exec();

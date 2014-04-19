@@ -1,7 +1,13 @@
 #include "qbpersistencehelper.h"
 
+QList<QbPersistable*> QbPersistenceHelper::synchronizedObjects = QList<QbPersistable*>();
 bool QbPersistenceHelper::transactionsEnabled = false;
 QSqlDatabase QbPersistenceHelper::db;
+
+QList<QbPersistable*>* QbPersistenceHelper::getSynchronizedObjects()
+{
+    return &synchronizedObjects;
+}
 
 QSqlDatabase* QbPersistenceHelper::getDatabase()
 {

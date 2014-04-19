@@ -59,6 +59,7 @@ int QbMySQLPersistenceHelper::store(QbPersistable& object)
     {
         if(transactionsEnabled) db.commit();
         QLOG_INFO() << "Store operation successfully completed";
+        synchronizedObjects << &object;
         return updateObjectIdentifier(object);
     }
     else
@@ -176,6 +177,7 @@ void QbMySQLPersistenceHelper::remove(QbPersistable& object)
     {
         if(transactionsEnabled) db.commit();
         QLOG_INFO() << "Remove operation successfully completed";
+        synchronizedObjects.removeOne(&object);
         removeObjectIdentifier(object);
     }
     else

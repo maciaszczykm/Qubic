@@ -19,11 +19,12 @@ public:
     void remove(QbPersistable& object);
     QList<QbPersistable*> load(QbPersistable& object, int id = -1);
     QSqlDatabase* getDatabase();
-    bool checkDriver(QString driverName);
+    QList<QbPersistable*> *getSynchronizedObjects();
 
 private:
     QbDatabase();
     ~QbDatabase();
+    bool checkDriver(QString driverName);
     static QbDatabase* instance;
     QString driverName = NULL;
 

@@ -32,6 +32,11 @@ QSqlDatabase* QbDatabase::getDatabase()
     return QbPersistenceHelper::getDatabase();
 }
 
+QList<QbPersistable*>* QbDatabase::getSynchronizedObjects()
+{
+    return QbPersistenceHelper::getSynchronizedObjects();
+}
+
 bool QbDatabase::checkDriver(QString driverName)
 {
     if(this->driverName == NULL) this->driverName = QbPersistenceHelper::getDatabase()->driverName();

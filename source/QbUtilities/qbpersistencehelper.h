@@ -18,8 +18,10 @@ public:
     static void initializeDatabase();
     static void connect();
     static void disconnect();
+    static QList<QbPersistable *> *getSynchronizedObjects();
 
 protected:
+    static QList<QbPersistable*> synchronizedObjects;
     static bool transactionsEnabled;
     static QSqlDatabase db;
 };
