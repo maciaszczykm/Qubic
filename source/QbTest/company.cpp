@@ -1,4 +1,5 @@
 #include "company.h"
+#include <QbTest/employee.h>
 
 QString Company::CLASSNAME = "Company";
 QString Company::ID = "ID";
@@ -35,4 +36,8 @@ Company::Company(const Company& other)
 
 QList<QbPersistable*> Company::getPointers() {
     return QList<QbPersistable*>();
+}
+
+QList<QbPersistable*> Company::getEmployees() {
+    return QbAdvancedQueryHelper::queryOneToMany(Employee::CLASSNAME, CLASSNAME, this->getID());
 }

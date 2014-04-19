@@ -52,6 +52,17 @@ int main(int argc, char *argv[])
     }
     if(list.size() == 0) qDebug() << "-";
 
+    //advanced query
+    qDebug() << "\nAdvanced query result:\n";
+    list = company1.getEmployees();
+    for(int i=0; i<list.size(); i++)
+    {
+        Employee* loaded = (Employee*) list.at(i);
+        qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname()
+                 << "\t" << loaded->getSalary();
+    }
+    if(list.size() == 0) qDebug() << "-";
+
     //loading list of currently synchronized objects
     qDebug() << "\nSynchronized objects:\n";
     list = *(QbDatabase::getInstance()->getSynchronizedObjects());

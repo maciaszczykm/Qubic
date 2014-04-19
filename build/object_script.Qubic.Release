@@ -17,6 +17,7 @@ INPUT(
 ./release\qbmysqlmappinghelper.o
 ./release\qbmappinghelper.o
 ./release\qbqueryhelper.o
+./release\qbadvancedqueryhelper.o
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o

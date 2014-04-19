@@ -22,11 +22,11 @@ public:
     QList<QbPersistable*> load(QbQuery* query);
     QSqlDatabase* getDatabase();
     QList<QbPersistable*> *getSynchronizedObjects();
+    bool checkDriver(QString driverName);
 
 private:
     QbDatabase();
     ~QbDatabase();
-    bool checkDriver(QString driverName);
     static QbDatabase* instance;
     QString driverName = NULL;
 

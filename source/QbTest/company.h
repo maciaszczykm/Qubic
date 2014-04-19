@@ -4,6 +4,7 @@
 #include <QString>
 #include <QObject>
 #include <QbCore/qbpersistable.h>
+#include <QbUtilities/qbadvancedqueryhelper.h>
 
 class Company : public QbPersistable
 {
@@ -17,6 +18,7 @@ public:
     Q_INVOKABLE QString getCompanyname() {return companyname;}
     Q_INVOKABLE void setCompanyname(QString companyname) {this->companyname = companyname;}
     QList<QbPersistable*> getPointers();
+    QList<QbPersistable*> getEmployees();
     static QString CLASSNAME;
     static QString ID;
     static QString COMPANYNAME;

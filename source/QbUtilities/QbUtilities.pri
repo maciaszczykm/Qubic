@@ -4,7 +4,8 @@ HEADERS += \
     QbUtilities/qbmysqlpersistencehelper.h \
     QbUtilities/qbmysqlmappinghelper.h \
     QbUtilities/qbmappinghelper.h \
-    QbUtilities/qbqueryhelper.h
+    QbUtilities/qbqueryhelper.h \
+    QbUtilities/qbadvancedqueryhelper.h
 
 SOURCES += \
     QbUtilities/qbloggerhelper.cpp \
@@ -12,4 +13,5 @@ SOURCES += \
     QbUtilities/qbmysqlpersistencehelper.cpp \
     QbUtilities/qbmysqlmappinghelper.cpp \
     QbUtilities/qbmappinghelper.cpp \
-    QbUtilities/qbqueryhelper.cpp
+    QbUtilities/qbqueryhelper.cpp \
+    QbUtilities/qbadvancedqueryhelper.cpp

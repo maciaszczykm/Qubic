@@ -17,6 +17,7 @@ INPUT(
 ./debug\qbmysqlmappinghelper.o
 ./debug\qbmappinghelper.o
 ./debug\qbqueryhelper.o
+./debug\qbadvancedqueryhelper.o
 ./debug\moc_qbpersistable.o
 ./debug\moc_company.o
 ./debug\moc_employee.o
