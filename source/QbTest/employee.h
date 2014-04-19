@@ -33,6 +33,16 @@ public:
     Q_INVOKABLE void setSalary(double salary) {this->salary = salary;}
     Q_INVOKABLE void setChildren(int children) {this->children = children;}
     QList<QbPersistable*> getPointers();
+    static QString CLASSNAME;
+    static QString ID;
+    static QString BIRTHDAY;
+    static QString FIRSTNAME;
+    static QString LASTNAME;
+    static QString GENDER;
+    static QString COMPANY;
+    static QString HIREDATE;
+    static QString SALARY;
+    static QString CHILDREN;
 
 private:
     Q_INVOKABLE void setCompanyPtr(QbPersistable* companyPtr) {this->companyPtr = (Company*) companyPtr;}

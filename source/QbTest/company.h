@@ -17,6 +17,9 @@ public:
     Q_INVOKABLE QString getCompanyname() {return companyname;}
     Q_INVOKABLE void setCompanyname(QString companyname) {this->companyname = companyname;}
     QList<QbPersistable*> getPointers();
+    static QString CLASSNAME;
+    static QString ID;
+    static QString COMPANYNAME;
 
 private:
     QString companyname;

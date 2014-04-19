@@ -6,6 +6,8 @@ INPUT(
 ./release\qbdatabase.o
 ./release\qbpersistable.o
 ./release\qbproperties.o
+./release\qbquery.o
+./release\qbmysqlquery.o
 ./release\company.o
 ./release\employee.o
 ./release\main.o
@@ -14,6 +16,7 @@ INPUT(
 ./release\qbmysqlpersistencehelper.o
 ./release\qbmysqlmappinghelper.o
 ./release\qbmappinghelper.o
+./release\qbqueryhelper.o
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o

@@ -1,6 +1,7 @@
 #include <QCoreApplication>
 #include <QbCore/qbdatabase.h>
 #include <QbCore/qbpersistable.h>
+#include <QbCore/qbmysqlquery.h>
 #include <QbTest/employee.h>
 #include <QbTest/company.h>
 #include <QsLog/QsLog.h>
@@ -31,8 +32,18 @@ int main(int argc, char *argv[])
     for(int i=0; i<list.size(); i++)
     {
         Employee* loaded = (Employee*) list.at(i);
-        qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname();
+        qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname()
+                 << "\t" << loaded->getSalary();
     }
+
+    //query database
+    QbMySQLQuery query = QbMySQLQuery(Employee::CLASSNAME);
+    query.appendWhere(Employee::FIRSTNAME, "Ryo", QbQuery::EQUALS);
+    query.appendAnd();
+    query.appendWhere(Employee::SALARY, "1500", QbQuery::MORE_THAN);
+    qDebug() << "\nQuery:\n";
+    qDebug() << query.getQuery();
+
 
     //loading list of currently synchronized objects
     qDebug() << "\nSynchronized objects:\n";

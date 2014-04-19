@@ -6,6 +6,8 @@ INPUT(
 ./debug\qbdatabase.o
 ./debug\qbpersistable.o
 ./debug\qbproperties.o
+./debug\qbquery.o
+./debug\qbmysqlquery.o
 ./debug\company.o
 ./debug\employee.o
 ./debug\main.o
@@ -14,6 +16,7 @@ INPUT(
 ./debug\qbmysqlpersistencehelper.o
 ./debug\qbmysqlmappinghelper.o
 ./debug\qbmappinghelper.o
+./debug\qbqueryhelper.o
 ./debug\moc_qbpersistable.o
 ./debug\moc_company.o
 ./debug\moc_employee.o

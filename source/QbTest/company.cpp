@@ -1,5 +1,8 @@
 #include "company.h"
 
+QString Company::CLASSNAME = "Company";
+QString Company::ID = "ID";
+QString Company::COMPANYNAME = "COMPANYNAME";
 bool Company::isRegistered = false;
 
 Company::Company(QString companyname)

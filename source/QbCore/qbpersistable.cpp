@@ -23,3 +23,25 @@ QString QbPersistable::getObjectString() {
     objectString = objectString.left(objectString.length() - 2);
     return objectString;
 }
+
+QString QbPersistable::getObjectMembers()
+{
+    QString prefix = QbProperties::getInstance()->getProperty("qubic.configuration.getters.prefix");
+    QString suffix = QbProperties::getInstance()->getProperty("qubic.configuration.pointer.getters.suffix");
+    QString objectMembers = "";
+    for(int i = 0; i < this->metaObject()->methodCount(); i++)
+    {
+        QMetaMethod method = this->metaObject()->method(i);
+        if(method.name().startsWith(prefix.toStdString().c_str()))
+        {
+            QString memberName = method.name().right(method.name().length() - prefix.length());
+            if(memberName.endsWith(suffix.toStdString().c_str()))
+            {
+                memberName = memberName.left(memberName.length() - suffix.length());
+            }
+            objectMembers += memberName.toUpper() + ", ";
+        }
+    }
+    objectMembers = objectMembers.left(objectMembers.length() - 2);
+    return objectMembers;
+}

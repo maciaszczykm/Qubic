@@ -15,6 +15,7 @@ public:
     QbPersistable(const QbPersistable&) {}
     QString getObjectUpperName();
     QString getObjectString();
+    QString getObjectMembers();
     virtual QList<QbPersistable *> getPointers() = 0;
     int getID() {return id;}
 
