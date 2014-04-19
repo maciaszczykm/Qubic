@@ -1,9 +1,9 @@
 #include <QCoreApplication>
 #include <QbCore/qbdatabase.h>
-#include <QsLog.h>
+#include <QbCore/qbpersistable.h>
 #include <QbTest/employee.h>
 #include <QbTest/company.h>
-#include <QbCore/qbpersistable.h>
+#include <QsLog/QsLog.h>
 
 int main(int argc, char *argv[])
 {

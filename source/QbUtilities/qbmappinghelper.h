@@ -8,7 +8,7 @@
 #include <QDate>
 #include <QDateTime>
 #include <QbCore/qbpersistable.h>
-#include <QsLog.h>
+#include <QsLog/QsLog.h>
 
 class QbMappingHelper
 {

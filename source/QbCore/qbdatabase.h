@@ -1,22 +1,11 @@
 #ifndef QBDATABASE_H
 #define QBDATABASE_H
 
-#include <QMetaMethod>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QDir>
-#include <QMetaObject>
-#include <QMetaType>
-#include <QDebug>
-#include <QList>
-#include <QSqlDriver>
-#include <QSqlError>
-#include <QbUtilities/qbmappinghelper.h>
-#include <QbUtilities/qbloggerhelper.h>
-#include <QbUtilities/qbpersistencehelper.h>
 #include <QbCore/qbpersistable.h>
 #include <QbCore/qbproperties.h>
-#include <QsLog.h>
+#include <QbUtilities/qbloggerhelper.h>
+#include <QbUtilities/qbpersistencehelper.h>
+#include <QsLog/QsLog.h>
 
 class QbDatabase
 {

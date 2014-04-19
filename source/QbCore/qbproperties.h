@@ -5,9 +5,9 @@
 #include <QFile>
 #include <QString>
 #include <QStringList>
-#include <QsLog.h>
-#include <qdir.h>
+#include <QDir>
 #include <QTextStream>
+#include <QsLog/QsLog.h>
 
 class QbProperties
 {

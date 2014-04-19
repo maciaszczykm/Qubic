@@ -2,14 +2,14 @@
 #define QBPERSISTENCEHELPER_H
 
 #include <QsLog.h>
-#include <qstring.h>
-#include <QbCore/qbproperties.h>
-#include <qsqldriver.h>
-#include <QbCore/qbpersistable.h>
+#include <QString>
+#include <QSqlDriver>
 #include <QSqlDatabase>
-#include <QbUtilities/qbmappinghelper.h>
 #include <QSqlQuery>
-#include <qsqlerror.h>
+#include <QSqlError>
+#include <QbCore/qbproperties.h>
+#include <QbCore/qbpersistable.h>
+#include <QbUtilities/qbmappinghelper.h>
 
 class QbPersistenceHelper
 {
