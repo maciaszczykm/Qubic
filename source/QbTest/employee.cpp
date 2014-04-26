@@ -1,4 +1,6 @@
 #include "employee.h"
+#include <QbTest/department.h>
+#include <QbTest/assignment.h>
 
 QString Employee::CLASSNAME = "Employee";
 QString Employee::ID = "ID";
@@ -64,4 +66,8 @@ Employee::Employee(const Employee& other)
 QList<QbPersistable*> Employee::getPointers()
 {
     return QList<QbPersistable*>() << companyPtr;
+}
+
+QList<QbPersistable*> Employee::getDepartments() {
+    return QbAdvancedQueryHelper::queryManyToMany(Department::CLASSNAME, CLASSNAME, Assignment::CLASSNAME, id);
 }

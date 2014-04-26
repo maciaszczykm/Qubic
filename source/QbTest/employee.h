@@ -33,6 +33,7 @@ public:
     Q_INVOKABLE void setSalary(double salary) {this->salary = salary;}
     Q_INVOKABLE void setChildren(int children) {this->children = children;}
     QList<QbPersistable*> getPointers();
+    QList<QbPersistable*> getDepartments();
     static QString CLASSNAME;
     static QString ID;
     static QString BIRTHDAY;

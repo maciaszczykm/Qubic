@@ -12,6 +12,7 @@ class QbAdvancedQueryHelper
 {
 public:
     static QList<QbPersistable*> queryOneToMany(QString className, QString conditionClass, int id);
+    static QList<QbPersistable*> queryManyToMany(QString className, QString conditionClass, QString middleClass, int id);
 };
 
 #endif // QBADVANCEDQUERYHELPER_H

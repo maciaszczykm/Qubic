@@ -4,6 +4,8 @@
 #include <QbCore/qbmysqlquery.h>
 #include <QbTest/employee.h>
 #include <QbTest/company.h>
+#include <QbTest/assignment.h>
+#include <QbTest/department.h>
 #include <QsLog/QsLog.h>
 
 int main(int argc, char *argv[])
@@ -52,9 +54,40 @@ int main(int argc, char *argv[])
     }
     if(list.size() == 0) qDebug() << "-";
 
-    //advanced query
+    //advanced query (one to many)
     qDebug() << "\nAdvanced query result:\n";
     list = company1.getEmployees();
+    for(int i=0; i<list.size(); i++)
+    {
+        Employee* loaded = (Employee*) list.at(i);
+        qDebug() << loaded->getID() << "\t" << loaded->getFirstname() << "\t" << loaded->getLastname() << "\t" << loaded->getCompanyPtr()->getCompanyname()
+                 << "\t" << loaded->getSalary();
+    }
+    if(list.size() == 0) qDebug() << "-";
+
+    //storing new objects in database
+    Department department1 ("Human Resources");
+    Department department2 ("Board");
+    Assignment assignment1 (&department1, &employee1);
+    Assignment assignment2 (&department2, &employee2);
+    QbDatabase::getInstance()->store(department1);
+    QbDatabase::getInstance()->store(department2);
+    QbDatabase::getInstance()->store(assignment1);
+    QbDatabase::getInstance()->store(assignment2);
+
+    //advanced query (many to many)
+    qDebug() << "\nAdvanced query result:\n";
+    list = employee1.getDepartments();
+    for(int i=0; i<list.size(); i++)
+    {
+        Department* loaded = (Department*) list.at(i);
+        qDebug() << loaded->getID() << "\t" << loaded->getDepartmentname();
+    }
+    if(list.size() == 0) qDebug() << "-";
+
+    //advanced query (many to many)
+    qDebug() << "\nAdvanced query result:\n";
+    list = department2.getEmployees();
     for(int i=0; i<list.size(); i++)
     {
         Employee* loaded = (Employee*) list.at(i);
@@ -74,10 +107,14 @@ int main(int argc, char *argv[])
     if(list.size() == 0) qDebug() << "-";
 
     //removing objects from database
+    QbDatabase::getInstance()->remove(assignment1);
+    QbDatabase::getInstance()->remove(assignment2);
     QbDatabase::getInstance()->remove(employee1);
     QbDatabase::getInstance()->remove(employee2);
     QbDatabase::getInstance()->remove(company1);
     QbDatabase::getInstance()->remove(company2);
+    QbDatabase::getInstance()->remove(department1);
+    QbDatabase::getInstance()->remove(department2);
 
     //loading list of currently synchronized objects
     qDebug() << "\nSynchronized objects:\n";

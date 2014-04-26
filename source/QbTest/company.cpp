@@ -39,5 +39,5 @@ QList<QbPersistable*> Company::getPointers() {
 }
 
 QList<QbPersistable*> Company::getEmployees() {
-    return QbAdvancedQueryHelper::queryOneToMany(Employee::CLASSNAME, CLASSNAME, this->getID());
+    return QbAdvancedQueryHelper::queryOneToMany(Employee::CLASSNAME, CLASSNAME, id);
 }

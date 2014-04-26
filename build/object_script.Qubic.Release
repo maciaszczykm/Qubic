@@ -11,6 +11,8 @@ INPUT(
 ./release\company.o
 ./release\employee.o
 ./release\main.o
+./release\department.o
+./release\assignment.o
 ./release\qbloggerhelper.o
 ./release\qbpersistencehelper.o
 ./release\qbmysqlpersistencehelper.o
@@ -21,4 +23,6 @@ INPUT(
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o
+./release\moc_department.o
+./release\moc_assignment.o
 );

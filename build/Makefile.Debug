@@ -55,6 +55,8 @@ SOURCES       = ..\source\QsLog\QsLogDest.cpp \
 		..\source\QbTest\company.cpp \
 		..\source\QbTest\employee.cpp \
 		..\source\QbTest\main.cpp \
+		..\source\QbTest\department.cpp \
+		..\source\QbTest\assignment.cpp \
 		..\source\QbUtilities\qbloggerhelper.cpp \
 		..\source\QbUtilities\qbpersistencehelper.cpp \
 		..\source\QbUtilities\qbmysqlpersistencehelper.cpp \
@@ -63,7 +65,9 @@ SOURCES       = ..\source\QsLog\QsLogDest.cpp \
 		..\source\QbUtilities\qbqueryhelper.cpp \
 		..\source\QbUtilities\qbadvancedqueryhelper.cpp debug\moc_qbpersistable.cpp \
 		debug\moc_company.cpp \
-		debug\moc_employee.cpp
+		debug\moc_employee.cpp \
+		debug\moc_department.cpp \
+		debug\moc_assignment.cpp
 OBJECTS       = debug/QsLogDest.o \
 		debug/QsLog.o \
 		debug/QsLogDestConsole.o \
@@ -76,6 +80,8 @@ OBJECTS       = debug/QsLogDest.o \
 		debug/company.o \
 		debug/employee.o \
 		debug/main.o \
+		debug/department.o \
+		debug/assignment.o \
 		debug/qbloggerhelper.o \
 		debug/qbpersistencehelper.o \
 		debug/qbmysqlpersistencehelper.o \
@@ -85,7 +91,9 @@ OBJECTS       = debug/QsLogDest.o \
 		debug/qbadvancedqueryhelper.o \
 		debug/moc_qbpersistable.o \
 		debug/moc_company.o \
-		debug/moc_employee.o
+		debug/moc_employee.o \
+		debug/moc_department.o \
+		debug/moc_assignment.o
 
 DIST          = 
 QMAKE_TARGET  = Qubic
@@ -126,7 +134,7 @@ dist:
 	$(ZIP) Qubic.zip $(SOURCES) $(DIST) ..\source\Qubic.pro ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\spec_pre.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\qdevice.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\device_config.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\common\shell-win32.conf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\qconfig.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axbase.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axserver.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_clucene_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_core.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_core_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_declarative.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_declarative_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_designer.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_gui.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_help.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_help_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_network.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_network_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_nfc.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_opengl.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_platformsupport_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_positioning.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qml.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_quick.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_script.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_script_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sensors.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_serialport.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sql.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_svg.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_testlib.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_uitools.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkit.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkit_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkitwidgets.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_widgets.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_winextras.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xml.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\qt_functions.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\qt_config.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\win32-g++\qmake.conf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\spec_post.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\exclusive_builds.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\default_pre.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\win32\default_pre.prf ..\source\QsLog\QsLog.pri ..\source\QbCore\QbCore.pri ..\source\QbTest\QbTest.pri ..\source\QbUtilities\QbUtilities.pri ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\resolve_config.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\exclusive_builds_post.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\default_post.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\build_pass.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\c++11.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\win32\console.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\win32\rtti.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\warn_on.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\qt.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\resources.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\moc.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\testcase_targets.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\exceptions.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\yacc.prf ..\..\..\Programy\Qt\5.2.1\mingw48_32\mkspecs\features\lex.prf ..\source\Qubic.pro D:/Programy/Qt/5.2.1/mingw48_32/lib/Qt5Sqld.prl D:/Programy/Qt/5.2.1/mingw48_32/lib/Qt5Cored.prl  RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\QsLogDest.o debug\QsLog.o debug\QsLogDestConsole.o debug\QsLogDestFile.o debug\qbdatabase.o debug\qbpersistable.o debug\qbproperties.o debug\qbquery.o debug\qbmysqlquery.o debug\company.o debug\employee.o debug\main.o debug\qbloggerhelper.o debug\qbpersistencehelper.o debug\qbmysqlpersistencehelper.o debug\qbmysqlmappinghelper.o debug\qbmappinghelper.o debug\qbqueryhelper.o debug\qbadvancedqueryhelper.o debug\moc_qbpersistable.o debug\moc_company.o debug\moc_employee.o
+	-$(DEL_FILE) debug\QsLogDest.o debug\QsLog.o debug\QsLogDestConsole.o debug\QsLogDestFile.o debug\qbdatabase.o debug\qbpersistable.o debug\qbproperties.o debug\qbquery.o debug\qbmysqlquery.o debug\company.o debug\employee.o debug\main.o debug\department.o debug\assignment.o debug\qbloggerhelper.o debug\qbpersistencehelper.o debug\qbmysqlpersistencehelper.o debug\qbmysqlmappinghelper.o debug\qbmappinghelper.o debug\qbqueryhelper.o debug\qbadvancedqueryhelper.o debug\moc_qbpersistable.o debug\moc_company.o debug\moc_employee.o debug\moc_department.o debug\moc_assignment.o
 
 distclean: clean
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -140,9 +148,9 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: debug/moc_qbpersistable.cpp debug/moc_company.cpp debug/moc_employee.cpp
+compiler_moc_header_make_all: debug/moc_qbpersistable.cpp debug/moc_company.cpp debug/moc_employee.cpp debug/moc_department.cpp debug/moc_assignment.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_qbpersistable.cpp debug\moc_company.cpp debug\moc_employee.cpp
+	-$(DEL_FILE) debug\moc_qbpersistable.cpp debug\moc_company.cpp debug\moc_employee.cpp debug\moc_department.cpp debug\moc_assignment.cpp
 debug/moc_qbpersistable.cpp: ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QObject \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
@@ -344,6 +352,28 @@ debug/moc_company.cpp: ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QStr
 		../source/QsLog/QsLogDisableForThisFile.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
 		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h \
 		../source/QbTest/company.h
 	D:\Programy\Qt\5.2.1\mingw48_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 $(INCPATH) ..\source\QbTest\company.h -o debug\moc_company.cpp
 
@@ -450,8 +480,281 @@ debug/moc_employee.cpp: ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QSt
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
 		../source/QbTest/company.h \
 		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h \
 		../source/QbTest/employee.h
 	D:\Programy\Qt\5.2.1\mingw48_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 $(INCPATH) ..\source\QbTest\employee.h -o debug\moc_employee.cpp
+
+debug/moc_department.cpp: ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QString \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobal.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qconfig.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsystemdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qprocessordetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcompilerdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobalstatic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bootstrap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qgenericatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_msvc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_integrity.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qoldbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_vxworks.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_power.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_alpha.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv7.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv6.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv5.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bfin.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_ia64.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_mips.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_s390.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sh4a.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sparc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_x86.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_cxx11.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_gcc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_unix.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmutex.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlogging.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qflags.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QObject \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvarlengtharray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qisenum.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		../source/QbCore/qbpersistable.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaMethod \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetaobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpair.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qregexp.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QList \
+		../source/QbCore/qbproperties.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMap \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QFile \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QStringList \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDir \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdir.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfileinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTextStream \
+		../source/QsLog/QsLog.h \
+		../source/QsLog/QsLogLevel.h \
+		../source/QsLog/QsLogDest.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QSharedPointer \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtGlobal \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDebug \
+		../source/QsLog/QsLogDisableForThisFile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
+		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h \
+		../source/QbTest/department.h
+	D:\Programy\Qt\5.2.1\mingw48_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 $(INCPATH) ..\source\QbTest\department.h -o debug\moc_department.cpp
+
+debug/moc_assignment.cpp: ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QString \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobal.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qconfig.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsystemdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qprocessordetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcompilerdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobalstatic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bootstrap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qgenericatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_msvc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_integrity.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qoldbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_vxworks.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_power.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_alpha.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv7.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv6.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv5.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bfin.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_ia64.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_mips.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_s390.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sh4a.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sparc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_x86.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_cxx11.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_gcc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_unix.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmutex.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlogging.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qflags.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QObject \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvarlengtharray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qisenum.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		../source/QbCore/qbpersistable.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaMethod \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetaobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpair.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qregexp.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QList \
+		../source/QbCore/qbproperties.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMap \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QFile \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QStringList \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDir \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdir.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfileinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTextStream \
+		../source/QsLog/QsLog.h \
+		../source/QsLog/QsLogLevel.h \
+		../source/QsLog/QsLogDest.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QSharedPointer \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtGlobal \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDebug \
+		../source/QsLog/QsLogDisableForThisFile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
+		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h \
+		../source/QbTest/department.h \
+		../source/QbTest/employee.h \
+		../source/QbTest/company.h \
+		../source/QbTest/assignment.h
+	D:\Programy\Qt\5.2.1\mingw48_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 $(INCPATH) ..\source\QbTest\assignment.h -o debug\moc_assignment.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1442,17 +1745,16 @@ debug/company.o: ../source/QbTest/company.cpp ../source/QbTest/company.h \
 		../source/QsLog/QsLogDisableForThisFile.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
 		../source/QbUtilities/qbadvancedqueryhelper.h \
-		../source/QbCore/qbquery.h \
-		../source/QbUtilities/qbqueryhelper.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
-		../source/QbTest/employee.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
 		../source/QbCore/qbdatabase.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
 		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
 		../source/QbUtilities/qbpersistencehelper.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
@@ -1463,7 +1765,9 @@ debug/company.o: ../source/QbTest/company.cpp ../source/QbTest/company.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
 		../source/QbUtilities/qbmysqlpersistencehelper.h \
 		../source/QbUtilities/qbmysqlmappinghelper.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h \
+		../source/QbTest/employee.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\company.o ..\source\QbTest\company.cpp
 
 debug/employee.o: ../source/QbTest/employee.cpp ../source/QbTest/employee.h \
@@ -1569,7 +1873,27 @@ debug/employee.o: ../source/QbTest/employee.cpp ../source/QbTest/employee.h \
 		../source/QsLog/QsLogDisableForThisFile.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
 		../source/QbTest/company.h \
-		../source/QbUtilities/qbadvancedqueryhelper.h
+		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\employee.o ..\source\QbTest\employee.cpp
 
 debug/main.o: ../source/QbTest/main.cpp ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QCoreApplication \
@@ -1700,6 +2024,259 @@ debug/main.o: ../source/QbTest/main.cpp ../../../Programy/Qt/5.2.1/mingw48_32/in
 		../source/QbTest/company.h \
 		../source/QbUtilities/qbadvancedqueryhelper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\source\QbTest\main.cpp
+
+debug/department.o: ../source/QbTest/department.cpp ../source/QbTest/department.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QString \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobal.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qconfig.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsystemdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qprocessordetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcompilerdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobalstatic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bootstrap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qgenericatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_msvc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_integrity.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qoldbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_vxworks.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_power.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_alpha.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv7.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv6.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv5.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bfin.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_ia64.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_mips.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_s390.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sh4a.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sparc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_x86.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_cxx11.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_gcc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_unix.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmutex.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlogging.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qflags.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QObject \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvarlengtharray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qisenum.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		../source/QbCore/qbpersistable.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaMethod \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetaobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpair.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qregexp.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QList \
+		../source/QbCore/qbproperties.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMap \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QFile \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QStringList \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDir \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdir.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfileinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTextStream \
+		../source/QsLog/QsLog.h \
+		../source/QsLog/QsLogLevel.h \
+		../source/QsLog/QsLogDest.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QSharedPointer \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtGlobal \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDebug \
+		../source/QsLog/QsLogDisableForThisFile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
+		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\department.o ..\source\QbTest\department.cpp
+
+debug/assignment.o: ../source/QbTest/assignment.cpp ../source/QbTest/assignment.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QString \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobal.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qconfig.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsystemdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qprocessordetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcompilerdetection.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qglobalstatic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bootstrap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qgenericatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_msvc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_integrity.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qoldbasicatomic.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_vxworks.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_power.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_alpha.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv7.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv6.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_armv5.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_bfin.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_ia64.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_mips.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_s390.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sh4a.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_sparc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_x86.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_cxx11.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_gcc.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qatomic_unix.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmutex.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlogging.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qflags.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QObject \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvarlengtharray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qisenum.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		../source/QbCore/qbpersistable.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaMethod \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetaobject.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpair.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qregexp.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QList \
+		../source/QbCore/qbproperties.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMap \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QFile \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QStringList \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDir \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdir.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qfileinfo.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTextStream \
+		../source/QsLog/QsLog.h \
+		../source/QsLog/QsLogLevel.h \
+		../source/QsLog/QsLogDest.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QSharedPointer \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtGlobal \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDebug \
+		../source/QsLog/QsLogDisableForThisFile.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
+		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h \
+		../source/QbTest/department.h \
+		../source/QbTest/employee.h \
+		../source/QbTest/company.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\assignment.o ..\source\QbTest\assignment.cpp
 
 debug/qbloggerhelper.o: ../source/QbUtilities/qbloggerhelper.cpp ../source/QbUtilities/qbloggerhelper.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDir \
@@ -2386,17 +2963,21 @@ debug/qbadvancedqueryhelper.o: ../source/QbUtilities/qbadvancedqueryhelper.cpp .
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../source/QbCore/qbdatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDatabase \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldatabase.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsql.h \
 		../source/QbCore/qbpersistable.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QObject \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
@@ -2443,7 +3024,25 @@ debug/qbadvancedqueryhelper.o: ../source/QbUtilities/qbadvancedqueryhelper.cpp .
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtGlobal \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDebug \
 		../source/QsLog/QsLogDisableForThisFile.h \
-		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QtDebug \
+		../source/QbCore/qbquery.h \
+		../source/QbUtilities/qbqueryhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QMetaType \
+		../source/QbUtilities/qbloggerhelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDate \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/qdatetime.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QTime \
+		../source/QbUtilities/qbpersistencehelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlDriver \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqldriver.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlQuery \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlquery.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/QSqlError \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtSql/qsqlerror.h \
+		../source/QbUtilities/qbmysqlpersistencehelper.h \
+		../source/QbUtilities/qbmysqlmappinghelper.h \
+		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
+		../source/QbCore/qbmysqlquery.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\qbadvancedqueryhelper.o ..\source\QbUtilities\qbadvancedqueryhelper.cpp
 
 debug/moc_qbpersistable.o: debug/moc_qbpersistable.cpp 
@@ -2454,6 +3053,12 @@ debug/moc_company.o: debug/moc_company.cpp
 
 debug/moc_employee.o: debug/moc_employee.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_employee.o debug\moc_employee.cpp
+
+debug/moc_department.o: debug/moc_department.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_department.o debug\moc_department.cpp
+
+debug/moc_assignment.o: debug/moc_assignment.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_assignment.o debug\moc_assignment.cpp
 
 ####### Install
 

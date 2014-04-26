@@ -11,6 +11,8 @@ INPUT(
 ./debug\company.o
 ./debug\employee.o
 ./debug\main.o
+./debug\department.o
+./debug\assignment.o
 ./debug\qbloggerhelper.o
 ./debug\qbpersistencehelper.o
 ./debug\qbmysqlpersistencehelper.o
@@ -21,4 +23,6 @@ INPUT(
 ./debug\moc_qbpersistable.o
 ./debug\moc_company.o
 ./debug\moc_employee.o
+./debug\moc_department.o
+./debug\moc_assignment.o
 );
