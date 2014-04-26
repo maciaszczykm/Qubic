@@ -1,3 +1,6 @@
+-- Employees database created only to test Qubic library, so it's 
+-- structure might not be perfect. It contains 1:N and N:N relations.
+
 DROP DATABASE EMPLOYEES;
 
 CREATE DATABASE EMPLOYEES;
