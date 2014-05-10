@@ -1,14 +1,11 @@
 \documentclass[12pt]{report}
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{txfonts}
 \usepackage{pdfpages}
-
-
-
-%\usepackage[polish]{babel}
 
 \renewcommand{\chaptername}{Rozdział}
 \renewcommand{\contentsname}{Spis treści}
@@ -23,45 +20,50 @@
 \setlength{\textwidth}{14cm}
 \setlength{\textheight}{20cm}
 
-\newtheorem{definition}{Definicja} % przykład nowego środowiska 
-\newtheorem{example}{Przykład}[chapter] % przykład nowego środowiska 
-\newtheorem{corollary}{Wniosek}[chapter] % przykład nowego środowiska 
-
-
+\newtheorem{definition}{Definicja}
+\newtheorem{example}{Przykład}[chapter]
+\newtheorem{corollary}{Wniosek}[chapter]
 
 \begin{document}
 
 \includepdf[pages={1}]{resources/title_page.pdf}
 
-\tableofcontents	% generuje spis treści ze stronami !!!
+\tableofcontents
 
-\chapter{Wstęp} \label{rozdz.wstep} 
-{\em Praca MUSI stanowić samodzielne opracowanie przez dyplomanta WYBRANEGO TE\-MATU
-BADAWCZEGO pod kierunkiem promotora. 
-Temat i zakres pracy powinien wiązać się ze specjalnością, na której studiuje
-dyplomant.\\
-\indent Orientacyjna objętość pracy inżynierskiej/licencjackiej (I-go stopnia)
-to 50-80 stron, zaś pracy magisterskiej (II-go stopnia) -- 70-120 stron.}
+\chapter{Wstęp} \label{wstep} 
 
 \section{Problematyka i zakres pracy}
-Niniejsza praca dotyczy zakresu (inżynierii oprogramowania/sieci
-komputero\-wych/gra\-fiki komputerowej/sztucznej inteligencji/algorytmów ewolucyjnych/technologii baz danych). ....\\
+
+Niniejsza praca podejmuje problematykę mapowania obiektowo relacyjnego oraz tworzenia aplikacji szkieletowych w języku C++.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Zakresem niniejszej pracy dyplomowej jest mapowanie obiektowo-relacyjne oraz tworzenie bibliotek programistycznych w języku C++. Głównym przedmiotem pracy jest
+analiza istniejących aplikacji szkieletowych oraz bibliotek programistycznych realizujących mapowanie obiektowo-relacyjne oraz zaproponowanie własnej biblioteki napisanej 
+w języku C++.
+
+\indent Główną przyczyną podjęcia wybranego tematu pracy była niska popularność narzędzi realizujących mapowanie relacyjno-obiektowe w języku C++. Programiści Javy
+oraz wielu innych popularnych języków mają do wyboru wiele aplikacji szkieletowych czy też bibliotek progranistycznych ułatwiających pisanie aplikacji bazodanowych. Naszym
+celem jest ułatwienie tego programistom języka C++.
+
+
+Niniejsza praca dotyczy zakresu inżynierii oprogramowania a także technologii baz danych.
 \indent Głównym przedmiotem/celem pracy jest
 stworzenie/opracowanie/przeanalizo\-wanie/zaprojektowanie.... {\bf ten fragment
 pracy zawierać musi wyraźne określenie problemu badawczego oraz jego pogłębioną
 analizę}\\
 
-\indent Dlaczego podejmowanie tej tematyki jest potrzebne? Czy są inne
-rozwiązania tego problemu/tych problemów? Jakie? czy są lepsze/gorsze,
-tańsze/droższe, itp.
+\indent Dlaczego podejmowanie tej tematyki jest potrzebne? Czy są inne rozwiązania tego problemu/tych problemów? Jakie? czy są lepsze/gorsze, tańsze/droższe, itp.
 \indent Przed jakimi wyzwaniami stoi osoba podejmująca tematykę? \\
 \indent {\bf Określić spodziewane efekty pracy:} W wyniku doświadczeń przeprowadzonych w zakresie pracy polepszeniu
 uległo.... podać konkretne wskaźniki rezultaty, jak np. przyspieszenie obliczeń,
-redukcja kosztu, nowe oprogramowanie itp. w złotówkach, sekundach, procentach,
-roboczogodzinach itp. 
+redukcja kosztu, nowe oprogramowanie itp. w złotówkach, sekundach, procentach, roboczogodzinach itp. 
 
-{\bf (razem max. 3 strony - strona przeliczeniowa = 1800 znaków, średnio 30
-wierszy po 60 znaków)}
+{\bf (razem max. 3 strony - strona przeliczeniowa = 1800 znaków, średnio 30 wierszy po 60 znaków)}
 
 \section{Cele pracy}
 Wymienić w punktach cele pracy, rozpoczynając od celów poznawczych (dotyczą\-cych
@@ -349,7 +351,7 @@ użyta w części praktycznej, patrz rozdział~\ref{rozdz.czesc.prakt}.
 
 \section{Inne, np. narzędzia i metody symulacji, }
 
-\chapter{Aplikacja/system/projekt "XYZ"} \label{rozdz.czesc.prakt}
+\chapter{Biblioteka programistyczna Qubic} \label{rozdz.czesc.prakt}
 Ta część pracy może być podzielona na więcej rozdziałów, np kiedy autor chce
 w~szczególności podkreślić któryś z etapów projektu. W zależności od tematu i~celów pracy, pewne sekcje można dodać (np. przy projektowaniu sieci, instalacji
 i~konfiguracji serwerów usług sieciowych), inne zaś pominąć.

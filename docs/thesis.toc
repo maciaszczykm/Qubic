@@ -47,7 +47,7 @@
 \contentsline {subsection}{\numberline {4.3.2}Biblioteki}{15}
 \contentsline {subsection}{\numberline {4.3.3}Wzorce projektowe}{15}
 \contentsline {section}{\numberline {4.4}Inne, np. narz\IeC {\k e}dzia i metody symulacji, }{15}
-\contentsline {chapter}{\numberline {5}Aplikacja/system/projekt "XYZ"}{16}
+\contentsline {chapter}{\numberline {5}Biblioteka programistyczna Qubic}{16}
 \contentsline {section}{\numberline {5.1}Analiza wymaga\IeC {\'n}}{16}
 \contentsline {subsection}{\numberline {5.1.1}Studium mo\IeC {\.z}liwo\IeC {\'s}ci}{16}
 \contentsline {subsection}{\numberline {5.1.2}Wymagania funkcjonalne}{16}
