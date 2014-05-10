@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  7 APR 2014 21:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  10 MAY 2014 19:14
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -440,68 +440,167 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 (Font)                  U/txexa/m/n --> U/txexa/bx/n on input line 129.
 LaTeX Info: Redefining \not on input line 1043.
 )
-\c@definition=\count101
-\c@example=\count102
-\c@corollary=\count103
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pdfpages.sty
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count101
+\calc@Bcount=\count102
+\calc@Adimen=\dimen114
+\calc@Bdimen=\dimen115
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count103
+\calc@Cskip=\skip48
+)
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\eso-pic\eso-pic.sty
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+))
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pppdftex.def
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box28
+\AM@toc@title=\toks22
+\c@AM@survey=\count104
+\AM@templatesizebox=\box29
+)
+\c@definition=\count105
+\c@example=\count106
+\c@corollary=\count107
 
 (D:\Workspace\Qubic\docs\thesis.aux
 
 LaTeX Warning: Label `rozdz.wstep' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 29.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 29.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 32.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 32.
 
  (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 29.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 32.
 
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 29.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 32.
 
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 29.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 32.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Try loading font information for T1+txr on input line 29.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Try loading font information for T1+txr on input line 32.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
 )
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count105
-\nofMParguments=\count106
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen115
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
-\everyMPtoPDFconversion=\toks23
-) (D:\Workspace\Qubic\docs\thesis.toc
+\scratchcounter=\count108
+\scratchdimen=\dimen116
+\scratchbox=\box30
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen117
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks24
+)
+\AtBeginShipoutBox=\box31
+ <resources/title_page.pdf, id=1, 597.23125pt x 845.1575pt>
+File: resources/title_page.pdf Graphic file (type pdf)
+
+<use resources/title_page.pdf>
+Package pdftex.def Info: resources/title_page.pdf used on input line 34.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/title_page.pdf Graphic file (type pdf)
+ <use resources/title_page.pdf>
+Package pdftex.def Info: resources/title_page.pdf used on input line 34.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+<resources/title_page.pdf, id=4, page=1, 597.23125pt x 845.1575pt>
+File: resources/title_page.pdf Graphic file (type pdf)
+
+<use resources/title_page.pdf, page 1>
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 34.
+
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/title_page.pdf Graphic file (type pdf)
+ <use resources/title_page.pdf, page 1>
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 34.
+
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: resources/title_page.pdf Graphic file (type pdf)
+
+<use resources/title_page.pdf, page 1>
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 34.
+
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: resources/title_page.pdf Graphic file (type pdf)
+ <use resources/title_page.pdf, page 1>
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 34.
+
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: resources/title_page.pdf Graphic file (type pdf)
+
+<use resources/title_page.pdf, page 1>
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 34.
+
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [1
+
+ <D:/Workspace/Qubic/docs/resources/title_page.pdf>] (D:\Workspace\Qubic\docs\t
+hesis.toc
 LaTeX Font Info:    Try loading font information for OT1+txr on input line 2.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\ot1txr.fd
@@ -527,143 +626,142 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 2.
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-[1
+[2
 
-
-{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2])
+{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [3])
 \tf@toc=\write3
 
-[3]
+[4]
 Rozdzia\IeC {\l } 1.
 
-Overfull \hbox (6.26396pt too wide) in paragraph at lines 33--39
+Overfull \hbox (6.26396pt too wide) in paragraph at lines 39--45
 \T1/txr/m/it/12 TE-MATU BADAWCZEGO pod kierunk-iem pro-mo-tora. Temat i za-kres
  pracy powinien
  []
 
 
-Overfull \hbox (17.90543pt too wide) in paragraph at lines 41--47
+Overfull \hbox (17.90543pt too wide) in paragraph at lines 47--53
 \T1/txr/m/n/12 Niniejsza praca doty-czy za-kresu (in-»ynierii opro-gramowa-nia/
 sieci komputero-wych/gra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--47
+Underfull \hbox (badness 10000) in paragraph at lines 47--53
 
  []
 
-[4
+[5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 81.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 87.
  (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 81.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 87.
 
-Overfull \hbox (6.98227pt too wide) in paragraph at lines 87--97
+Overfull \hbox (6.98227pt too wide) in paragraph at lines 93--103
 []\T1/txr/m/n/12 Ka»dy el-e-ment opisa¢ w min-i-mum 2-3 zda-ni-ach. Np. stu-dia
  lit-er-atur-owe powinny
  []
 
-[5]
-Overfull \hbox (14.82072pt too wide) in paragraph at lines 108--115
+[6]
+Overfull \hbox (14.82072pt too wide) in paragraph at lines 114--121
 \T1/txr/m/n/12 W pod-sumowa-niu pracy przed-staw-iono..........................
 ., z czego wynika, »e ................ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--115
+Underfull \hbox (badness 10000) in paragraph at lines 114--121
 
  []
 
-[6]
+[7]
 Rozdzia\IeC {\l } 2.
-[7
+[8
 
-] [8]
+] [9]
 Rozdzia\IeC {\l } 3.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 144.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 150.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 153--157
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 164--166
 
  []
 
-[9
+[10
 
 ]
-Overfull \hbox (3.32472pt too wide) in paragraph at lines 174--187
+Overfull \hbox (3.32472pt too wide) in paragraph at lines 180--193
 \T1/txtt/m/n/12 http://serwer.com/temat/podtemat/katalog/plik_strony.html \T1/t
 xr/bx/n/12 (stan na
  []
 
 
-Overfull \hbox (6.77824pt too wide) in paragraph at lines 188--190
+Overfull \hbox (6.77824pt too wide) in paragraph at lines 194--196
 []\T1/txr/m/n/12 Niedochowanie tego wymogu mo»e sta¢ si[] powo-dem odrzuce-nia 
 pracy ze wzgl[]-
  []
 
-[10]
-Overfull \hbox (0.59828pt too wide) in paragraph at lines 232--235
+[11]
+Overfull \hbox (0.59828pt too wide) in paragraph at lines 238--241
 []\T1/txr/bx/n/12 Wszystkie sym-bole matem-aty-czne wyst[]puj[]ce w tek±-cie ,,
 na bie»[]co'', czyli
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--235
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--281
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
 
  []
 
-[11] [12]
+[12] [13]
 Rozdzia\IeC {\l } 4.
 
-Overfull \hbox (3.15283pt too wide) in paragraph at lines 316--319
+Overfull \hbox (3.15283pt too wide) in paragraph at lines 322--325
 []\T1/txr/m/n/12 W rozdziale 2[] po-dano pod-stawy teo-re-ty-czne i ogólny za-k
 res pracy. W niniejszym
  []
 
-[13
+[14
 
-] [14]
+] [15]
 Rozdzia\IeC {\l } 5.
-[15
+[16
 
 ]
-Overfull \hbox (2.0294pt too wide) in paragraph at lines 376--376
+Overfull \hbox (2.0294pt too wide) in paragraph at lines 382--382
 []\T1/txr/bx/n/12 Rodzaj ap-likacji (klient-serwer, thick/thin client, ap-likac
 ja ,,bi-urkowa'', usªuga,
  []
 
-[16]
+[17]
 Rozdzia\IeC {\l } 6.
-[17
+[18
 
-] [18
+] [19
 
 ] (D:\Workspace\Qubic\docs\thesis.lof)
 \tf@lof=\write4
- [19
+ [20
 
 ]
 (D:\Workspace\Qubic\docs\thesis.lot)
 \tf@lot=\write5
- [20
+ [21
 
-] [21
+] [22
 
 ]
 (D:\Workspace\Qubic\docs\thesis.aux)
@@ -672,13 +770,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3092 strings out of 493921
- 37086 string characters out of 3144874
- 84168 words of memory out of 3000000
- 6307 multiletter control sequences out of 15000+200000
+ 4354 strings out of 493921
+ 55398 string characters out of 3144874
+ 111041 words of memory out of 3000000
+ 7534 multiletter control sequences out of 15000+200000
  63393 words of font info for 114 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,8n,26p,385b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,18n,42p,385b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/
 Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxb.pfb><C:/Users
 /Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxi.pfb><C:/User
@@ -690,9 +788,9 @@ Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/txsy.pfb><C:
 les (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (21 pages, 115939 bytes).
+Output written on thesis.pdf (22 pages, 191674 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
