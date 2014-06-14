@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  10 MAY 2014 23:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  14 JUN 2014 20:36
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -631,146 +631,177 @@ File: utxsyc.fd 2000/12/15 v3.1
 [4]
 Rozdzia\IeC {\l } 1.
 
-Overfull \hbox (1.48941pt too wide) in paragraph at lines 45--48
-\T1/txr/m/n/12 oraz tworze-nie bib-liotek pro-gramisty-cznych w j[]zyku C++. Gª
-ównym przed-miotem
+Overfull \hbox (1.30942pt too wide) in paragraph at lines 37--40
+\T1/txr/m/n/12 dlat-ego te» pod-czas tworzenia opro-gramowa-nia wyko-rzysty-wan
+e s[] ró»nego rodzaju
  []
 
 
-Overfull \hbox (1.23743pt too wide) in paragraph at lines 49--52
-\T1/txr/m/n/12 narz[]dzi realizuj[]cych mapowanie relacyjno-obiektowe w j[]zyku
- C++. Pro-grami±ci
+Overfull \hbox (20.06541pt too wide) in paragraph at lines 41--44
+\T1/txr/m/n/12 to pod uwag[] pod-czas fazy planowa-nia tworzenia opro-gramowa-n
+ia, poniewa» decyduj[]c
  []
 
 
-Overfull \hbox (5.38943pt too wide) in paragraph at lines 49--52
-\T1/txr/m/n/12 Javy oraz wielu in-nych pop-u-larnych j[]zyków maj[] do wyboru w
-iele ap-likacji szkiele-
+Overfull \hbox (3.54147pt too wide) in paragraph at lines 41--44
+\T1/txr/m/n/12 si[] na ko-rzys-tanie z nich jeste±my w stanie zaoszcz[]dzi¢ spo
+ro czasu, a tak»e unikn[]¢
  []
 
 
-Overfull \hbox (53.12222pt too wide) in paragraph at lines 54--59
-\T1/txr/m/n/12 baz danych. []Gªównym przed-miotem/celem pracy jest stworzenie/o
-pracowanie/przeanalizo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--59
-
+Overfull \hbox (13.27023pt too wide) in paragraph at lines 51--53
+[]\T1/txr/m/n/12 Tematem pracy Se-bas-tiana jest gen-er-a-tor opisu mapowa-nia 
+obiektowo-relacyjnego,
  []
 
 [5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 89.
+Overfull \hbox (24.3014pt too wide) in paragraph at lines 63--65
+\T1/txr/m/n/12 Niniejsza praca dy-plo-mowa pode-j-muje problematyk[] mapowa-nia
+ obiektowo-relacyjnego
+ []
+
+
+Overfull \hbox (1.48941pt too wide) in paragraph at lines 66--69
+\T1/txr/m/n/12 oraz tworze-nie bib-liotek pro-gramisty-cznych w j[]zyku C++. Gª
+ównym przed-miotem
+ []
+
+
+Overfull \hbox (1.23743pt too wide) in paragraph at lines 70--73
+\T1/txr/m/n/12 narz[]dzi realizuj[]cych mapowanie relacyjno-obiektowe w j[]zyku
+ C++. Pro-grami±ci
+ []
+
+
+Overfull \hbox (5.38943pt too wide) in paragraph at lines 70--73
+\T1/txr/m/n/12 Javy oraz wielu in-nych pop-u-larnych j[]zyków maj[] do wyboru w
+iele ap-likacji szkiele-
+ []
+
+
+Overfull \hbox (53.12222pt too wide) in paragraph at lines 75--80
+\T1/txr/m/n/12 baz danych. []Gªównym przed-miotem/celem pracy jest stworzenie/o
+pracowanie/przeanalizo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
+
+ []
+
+[6]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 114.
+
  (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 114.
 
-Overfull \hbox (6.98227pt too wide) in paragraph at lines 95--105
+Overfull \hbox (6.98227pt too wide) in paragraph at lines 120--130
 []\T1/txr/m/n/12 Ka»dy el-e-ment opisa¢ w min-i-mum 2-3 zda-ni-ach. Np. stu-dia
  lit-er-atur-owe powinny
  []
 
-[6]
-Overfull \hbox (14.82072pt too wide) in paragraph at lines 116--123
+[7]
+Overfull \hbox (14.82072pt too wide) in paragraph at lines 141--148
 \T1/txr/m/n/12 W pod-sumowa-niu pracy przed-staw-iono..........................
 ., z czego wynika, »e ................ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--123
+Underfull \hbox (badness 10000) in paragraph at lines 141--148
 
  []
 
-[7]
+[8]
 Rozdzia\IeC {\l } 2.
-[8
+[9
 
-] [9]
+] [10]
 Rozdzia\IeC {\l } 3.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 152.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 177.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 161--165
+Underfull \hbox (badness 10000) in paragraph at lines 186--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
  []
 
-[10
+[11
 
 ]
-Overfull \hbox (3.32472pt too wide) in paragraph at lines 182--195
+Overfull \hbox (3.32472pt too wide) in paragraph at lines 207--220
 \T1/txtt/m/n/12 http://serwer.com/temat/podtemat/katalog/plik_strony.html \T1/t
 xr/bx/n/12 (stan na
  []
 
 
-Overfull \hbox (6.77824pt too wide) in paragraph at lines 196--198
+Overfull \hbox (6.77824pt too wide) in paragraph at lines 221--223
 []\T1/txr/m/n/12 Niedochowanie tego wymogu mo»e sta¢ si[] powo-dem odrzuce-nia 
 pracy ze wzgl[]-
  []
 
-[11]
-Overfull \hbox (0.59828pt too wide) in paragraph at lines 240--243
+[12]
+Overfull \hbox (0.59828pt too wide) in paragraph at lines 265--268
 []\T1/txr/bx/n/12 Wszystkie sym-bole matem-aty-czne wyst[]puj[]ce w tek±-cie ,,
 na bie»[]co'', czyli
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--243
+Underfull \hbox (badness 10000) in paragraph at lines 265--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
-[12] [13]
+[13] [14]
 Rozdzia\IeC {\l } 4.
 
-Overfull \hbox (3.15283pt too wide) in paragraph at lines 324--327
+Overfull \hbox (3.15283pt too wide) in paragraph at lines 349--352
 []\T1/txr/m/n/12 W rozdziale 2[] po-dano pod-stawy teo-re-ty-czne i ogólny za-k
 res pracy. W niniejszym
  []
 
-[14
+[15
 
-] [15]
+] [16]
 Rozdzia\IeC {\l } 5.
-[16
+[17
 
 ]
-Overfull \hbox (2.0294pt too wide) in paragraph at lines 384--384
+Overfull \hbox (2.0294pt too wide) in paragraph at lines 409--409
 []\T1/txr/bx/n/12 Rodzaj ap-likacji (klient-serwer, thick/thin client, ap-likac
 ja ,,bi-urkowa'', usªuga,
  []
 
-[17]
+[18]
 Rozdzia\IeC {\l } 6.
-[18
+[19
 
-] [19
+] [20
 
 ] (D:\Workspace\Qubic\docs\thesis.lof)
 \tf@lof=\write4
- [20
+ [21
 
 ]
 (D:\Workspace\Qubic\docs\thesis.lot)
 \tf@lot=\write5
- [21
+ [22
 
-] [22
+] [23
 
 ]
 (D:\Workspace\Qubic\docs\thesis.aux) ) 
@@ -791,9 +822,9 @@ ype1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
 rw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (22 pages, 180392 bytes).
+Output written on thesis.pdf (23 pages, 183196 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
