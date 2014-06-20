@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  19 JUN 2014 17:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  20 JUN 2014 17:32
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -631,184 +631,200 @@ File: utxsyc.fd 2000/12/15 v3.1
 [4]
 Rozdzia\IeC {\l } 1.
 
-Overfull \hbox (1.23743pt too wide) in paragraph at lines 49--52
-\T1/txr/m/n/12 narz[]dzi realizuj[]cych mapowanie relacyjno-obiektowe w j[]zyku
- C++. Pro-grami±ci
+Overfull \hbox (20.77342pt too wide) in paragraph at lines 41--45
+\T1/txr/m/n/12 da-menty dla twor-zonych ap-likacji czy te» bib-lioteki udost[]p
+niaj[]ce zestawy okre±lonych
  []
 
 
-Overfull \hbox (5.38943pt too wide) in paragraph at lines 49--52
-\T1/txr/m/n/12 Javy oraz wielu in-nych pop-u-larnych j[]zyków maj[] do wyboru w
-iele ap-likacji szkiele-
+Overfull \hbox (12.24142pt too wide) in paragraph at lines 41--45
+\T1/txr/m/n/12 nia tworzenia opro-gramowa-nia, poniewa» decyduj[]c si[] na ko-r
+zys-tanie z nich jeste±my
+ []
+
+
+Overfull \hbox (23.44942pt too wide) in paragraph at lines 46--51
+\T1/txr/m/n/12 j[]zyku C++. Wybór j[]zyka pro-gramowa-nia zwi[]zany byª z do±¢ 
+dobr[] jego znajomo±ci[],
+ []
+
+
+Overfull \hbox (1.47743pt too wide) in paragraph at lines 46--51
+\T1/txr/m/n/12 trak-cie studiów. Mapowanie obiektowo-relacyjne jest to obec-nie
+ za-gad-nie-nie bardzo
+ []
+
+
+Overfull \hbox (1.38141pt too wide) in paragraph at lines 46--51
+\T1/txr/m/n/12 grami±ci C++ nie maj[] ju» tak du»ego wyboru w±ród dost[]pnych n
+arz[]dzi sªu»[]cych
+ []
+
+
+Overfull \hbox (0.10628pt too wide) in paragraph at lines 52--56
+[]\T1/txr/m/n/12 Podziaª naszej pracy zostanie opisany w dal-szych rozdzi-aªach
+, jed-nak na wst[]pie
  []
 
 [5
 
 ]
-Overfull \hbox (13.27023pt too wide) in paragraph at lines 59--61
-[]\T1/txr/m/n/12 Tematem pracy Se-bas-tiana jest gen-er-a-tor opisu mapowa-nia 
-obiektowo-relacyjnego,
- []
-
-
-Overfull \hbox (2.05339pt too wide) in paragraph at lines 59--61
-\T1/txr/m/n/12 b[]d[] stricte mapowaniem obiektowo-relacyjnym i za-gad-nieni-am
-i z nim zwi[]zanymi. 
- []
-
-
-Overfull \hbox (5.97743pt too wide) in paragraph at lines 64--68
+Overfull \hbox (5.97743pt too wide) in paragraph at lines 59--63
 \T1/txr/m/n/12 Programowanie obiek-towe jest obec-nie jed-nym z na-jpop-u-larni
 ejszych paradyg-matów
  []
 
 
-Overfull \hbox (7.58224pt too wide) in paragraph at lines 69--71
-[]\T1/txr/m/n/12 Gªównym przed-miotem niniejszej pracy jest anal-iza istniej[]c
-ych ap-likacji szkiele-
+Overfull \hbox (8.74942pt too wide) in paragraph at lines 64--67
+\T1/txr/m/n/12 ap-likacji szkiele-towych sªu»[]cych do mapowa-nia obiek-towo re
+la-cyjnego? Odpowied¹
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 73.
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
+File: omstxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 73.
+
+Overfull \hbox (0.71939pt too wide) in paragraph at lines 81--82
+[]\T1/txr/m/n/12 Konfiguracja narz[]dzi ORM jest najcz[]±ciej bardzo skom-p-lik
+owana i wymaga
+ []
+
+[6]
+Overfull \hbox (18.07341pt too wide) in paragraph at lines 107--110
+\T1/txr/m/n/12 bib-liotek pro-gramisty-cznych realizuj[]cych mapowanie obiektow
+o-relacyjne napisanych
  []
 
 
-Overfull \hbox (22.22542pt too wide) in paragraph at lines 69--71
-\T1/txr/m/n/12 towych oraz bib-liotek pro-gramisty-cznych realizuj[]cych mapowa
-nie obiektowo-relacyjne
- []
-
-
-Overfull \hbox (23.01419pt too wide) in paragraph at lines 77--78
+Overfull \hbox (23.01419pt too wide) in paragraph at lines 111--112
 []\T1/txr/m/n/12 http://stackoverflow.com/questions/1279613/what-is-an-orm-and-
 where-can-i-learn-
  []
 
 
-Overfull \hbox (53.12222pt too wide) in paragraph at lines 79--84
+Overfull \hbox (53.12222pt too wide) in paragraph at lines 113--118
 \T1/txr/m/n/12 baz danych. []Gªównym przed-miotem/celem pracy jest stworzenie/o
 pracowanie/przeanalizo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--84
+Underfull \hbox (badness 10000) in paragraph at lines 113--118
 
  []
 
-[6]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 118.
-
- (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
-File: omstxr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 118.
-
-Overfull \hbox (6.98227pt too wide) in paragraph at lines 124--134
+[7]
+Overfull \hbox (6.98227pt too wide) in paragraph at lines 158--168
 []\T1/txr/m/n/12 Ka»dy el-e-ment opisa¢ w min-i-mum 2-3 zda-ni-ach. Np. stu-dia
  lit-er-atur-owe powinny
  []
 
-[7]
-Overfull \hbox (14.82072pt too wide) in paragraph at lines 145--152
+[8]
+Overfull \hbox (14.82072pt too wide) in paragraph at lines 179--186
 \T1/txr/m/n/12 W pod-sumowa-niu pracy przed-staw-iono..........................
 ., z czego wynika, »e ................ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--152
+Underfull \hbox (badness 10000) in paragraph at lines 179--186
 
  []
 
-[8]
+[9]
 Rozdzia\IeC {\l } 2.
-[9
+[10
 
-] [10]
+] [11]
 Rozdzia\IeC {\l } 3.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 181.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 215.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
-[11
+[12
 
 ]
-Overfull \hbox (3.32472pt too wide) in paragraph at lines 211--224
+Overfull \hbox (3.32472pt too wide) in paragraph at lines 245--258
 \T1/txtt/m/n/12 http://serwer.com/temat/podtemat/katalog/plik_strony.html \T1/t
 xr/bx/n/12 (stan na
  []
 
 
-Overfull \hbox (6.77824pt too wide) in paragraph at lines 225--227
+Overfull \hbox (6.77824pt too wide) in paragraph at lines 259--261
 []\T1/txr/m/n/12 Niedochowanie tego wymogu mo»e sta¢ si[] powo-dem odrzuce-nia 
 pracy ze wzgl[]-
  []
 
-[12]
-Overfull \hbox (0.59828pt too wide) in paragraph at lines 269--272
+[13]
+Overfull \hbox (0.59828pt too wide) in paragraph at lines 303--306
 []\T1/txr/bx/n/12 Wszystkie sym-bole matem-aty-czne wyst[]puj[]ce w tek±-cie ,,
 na bie»[]co'', czyli
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
+Underfull \hbox (badness 10000) in paragraph at lines 303--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--318
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
 
  []
 
-[13] [14]
+[14] [15]
 Rozdzia\IeC {\l } 4.
 
-Overfull \hbox (3.15283pt too wide) in paragraph at lines 353--356
+Overfull \hbox (3.15283pt too wide) in paragraph at lines 387--390
 []\T1/txr/m/n/12 W rozdziale 2[] po-dano pod-stawy teo-re-ty-czne i ogólny za-k
 res pracy. W niniejszym
  []
 
-[15
+[16
 
-] [16]
+] [17]
 Rozdzia\IeC {\l } 5.
-[17
+[18
 
 ]
-Overfull \hbox (2.0294pt too wide) in paragraph at lines 413--413
+Overfull \hbox (2.0294pt too wide) in paragraph at lines 447--447
 []\T1/txr/bx/n/12 Rodzaj ap-likacji (klient-serwer, thick/thin client, ap-likac
 ja ,,bi-urkowa'', usªuga,
  []
 
-[18]
+[19]
 Rozdzia\IeC {\l } 6.
-[19
+[20
 
-] [20
+] [21
 
 ] (D:\Workspace\Qubic\docs\thesis.lof)
 \tf@lof=\write4
- [21
+ [22
 
 ]
 (D:\Workspace\Qubic\docs\thesis.lot)
 \tf@lot=\write5
- [22
+ [23
 
-] [23
+] [24
 
 ]
 (D:\Workspace\Qubic\docs\thesis.aux) ) 
 Here is how much of TeX's memory you used:
  4355 strings out of 493921
  55405 string characters out of 3144874
- 111010 words of memory out of 3000000
+ 112011 words of memory out of 3000000
  7535 multiletter control sequences out of 15000+200000
  63393 words of font info for 114 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -822,9 +838,9 @@ ype1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
 rw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (23 pages, 184175 bytes).
+Output written on thesis.pdf (24 pages, 187681 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

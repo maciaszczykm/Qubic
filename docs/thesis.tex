@@ -34,45 +34,79 @@
 
 \section{Uzasadnienie wyboru tematu}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 Wraz z rozwojem informatyki proces tworzenia oprogramowania wymaga od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
 danych czy sieci komputerowe. Ciężko jest być specjalistą w każdej z tych dziedzin, dlatego też podczas tworzenia oprogramowania programiści co raz częściej sięgają po
 różnego rodzaju narzędzia programistyczne, które mają za zadanie ułatwić im pracę. 
 
-Przykładem takich narzędzi są aplikacje szkieletowe wykorzystywane przez programistów jako fundamenty dla tworzonych przez nich aplikacji czy też biblioteki udostępniające 
-zestawy określonych funkcji. Oczywiście nie zawsze mamy możliwość skorzystania z wspominanych narzędzi, jednak jeśli taka istnieje warto wziąć to pod uwagę podczas 
-fazy planowania tworzenia oprogramowania, ponieważ decydując się na korzystanie z nich jesteśmy w stanie zaoszczędzić sporo czasu, a także uniknąć wielu błędów.
+Przykładem takich narzędzi są aplikacje szkieletowe wykorzystywane jako fundamenty dla tworzonych aplikacji czy też biblioteki udostępniające zestawy określonych funkcji. 
+Oczywiście nie zawsze mamy możliwość skorzystania z wspominanych narzędzi, jednak jeśli taka istnieje warto wziąć to pod uwagę podczas fazy planowania tworzenia 
+oprogramowania, ponieważ decydując się na korzystanie z nich jesteśmy w stanie zaoszczędzić sporo czasu, a także uniknąć wielu błędów związanych z nieznajomością danej
+dziedziny.
 
-Główną przyczyną podjęcia wybranego tematu pracy była niska popularność narzędzi realizujących mapowanie relacyjno-obiektowe w języku C++. Programiści Javy
-oraz wielu innych popularnych języków mają do wyboru wiele aplikacji szkieletowych czy też bibliotek progranistycznych ułatwiających pisanie aplikacji bazodanowych. Naszym
-celem jest ułatwienie tego programistom języka C++.
+Wraz z kolegą z tego samego roku studiów -- Sebastianem Florkiem, zdecydowaliśmy się w ramach pisamia pracy dyplomowej na wspólne stworzenie aplikacji szkieletowej, 
+która będzie realizowała mapowanie obiektowo-relacyjne w języku C++. Wybór języka programowania związany był z dość dobrą jego znajomością, a także z pewnym
+doświadczeniem w programowaniu w tym języku nabytym w trakcie studiów. Mapowanie obiektowo-relacyjne jest to obecnie zagadnienie bardzo powszechne, szczególnie w 
+językach programowania takich jak C\# czy Java. Programiści C++ nie mają już tak dużego wyboru wśród dostępnych narzędzi służących do mapowania 
+obiektowo-relacyjnego, co tłumaczy nasz wybór.
 
-Wraz z kolegą z tego samego roku studiów Sebastianem Florkiem zdecydowaliśmy się na wspólne stworzenie aplikacji szkieletowej w ramach pisamia pracy dyplomowej, 
-która będzie realizowała mapowanie obiektowo-relacyjne. Jest to zagadnienie bardzo popularne, szczególnie w innych językach programowania niż C++, takich jak Java 
-czy C\#. Związane jest to z faktem, że zdecydowana większość tworzonego obecnie oprogramowania wykorzystuje bazy danych do przechowywania wszelkiego rodzaju 
-informacji. Podczas studiów niejednokrotnie decydowaliśmy się na tworzenie programów w języku C++ właśnie, dlatego też zdecydowaliśmy, że warto byłoby podjąć się 
-stworzenia własnej aplikacji szkieletowej w tym języku.
-
-Tematem pracy Sebastiana jest generator opisu mapowania obiektowo-relacyjnego, który jest wstępnym etapem pracy naszej aplikacji szkieletowej. Sam zajmował się będę 
-stricte mapowaniem obiektowo-relacyjnym i zagadnieniami z nim związanymi.
+Podział naszej pracy zostanie opisany w dalszych rozdziałach, jednak na wstępie warto zaznaczyć, że tematem pracy Sebastiana jest generator opisu mapowania 
+obiektowo-relacyjnego, który jest wstępnym etapem pracy naszej aplikacji szkieletowej. Celem wspomnianego generatora jest wygenerowanie pliku projektu, a także plików
+nagłówkowych oraz klas na podstawie istniejącej już bazy danych. Moim zadaniem będzie samo mapowanie obiektowo-relacyjne, które będzie się opierało na wcześniej
+wygenerowanych plikach. 
 
 \section{Problematyka i zakres pracy}
 
 Programowanie obiektowe jest obecnie jednym z najpopularniejszych paradygmatów programowania, a pojęcia takie jak klasa czy obiekt znane są wszystkim programistom.
-Podobnie jest z relacyjnym modelem organizacji baz danych i terminami takimi jak relacja czy krotka. Chcąc wykorzystać oba te podejścia musimy zadbać o obustronną 
-konwersję pomiędzy danymi z tabel relacyjnej bazy danych a obiektami aplikacjii. Tym właśnie zajmuje się mapowanie obiektowo-relacyjne, które wraz z tworzeniem aplikacji 
-szkieletowych w języku C++ jest główną problematyką niniejszej pracy.
+Podobnie jest z relacyjnym modelem organizacji baz danych i terminami takimi jak relacja czy krotka. Chcąc wykorzystać oba te podejścia w jednej aplikacji musimy zadbać o 
+obustronną konwersję pomiędzy danymi z tabel relacyjnej bazy danych a obiektami aplikacjii. Tym właśnie zajmuje się mapowanie obiektowo-relacyjne, które wraz z tworzeniem 
+aplikacji szkieletowych w języku C++ jest główną problematyką niniejszej pracy.
 
-Głównym przedmiotem niniejszej pracy jest analiza istniejących aplikacji szkieletowych oraz bibliotek programistycznych realizujących mapowanie obiektowo-relacyjne 
-napisanych w języku C++ oraz zaproponowanie własnej aplikacji szkieletowej, zwanej także w daszej części pracy Qubic. 
+W tym momencie powstaje pytanie czy na prawdę warto korzystać z bibliotek i aplikacji szkieletowych służących do mapowania obiektowo relacyjnego? Odpowiedź nie jest
+jednoznaczna w wszystkich przypadkach, ale warto wymienić jego podstawowe wady i zalety, których głębsza analiza znajduje się w dalszej części pracy. Zacznijmy od zalet 
+wykorzystania narzędzi ORM\footnote{mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping)}:
 
-Zakresem niniejszej pracy dyplomowej jest mapowanie obiektowo-relacyjne oraz tworzenie bibliotek programistycznych w języku C++.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item Nieobowiązkowa dla programisty znajomość języka SQL\footnote{strukturalny język zapytań (ang. Structured Query Language)}. W celu tworzenia zapytań do bazy
+danych korzystamy z interfejsu udostępnianego przez daną bibliotekę czy też aplikację szkieletową napisaną w wybranym przez nas języku programowania.
+\item Aby skorzystać z transakcji a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać pojedyńczą metodę.
+\end{itemize}
+
+Wszędzie gdzie pojawiają się zalety mamy też do czynienia z wadami, nie inaczej jest w tym przypadku:
+
+\begin{itemize}
+\item Konfiguracja narzędzi ORM jest najczęściej bardzo skomplikowana i wymaga sporo czasu aby była optymalna.
+\item Proste zapytania są obsługiwane bardzo sprawnie, jednak gdy przetwarzamy duże ilości skomplikowanych zapytań wydajność nie dorówna nigdy zapytaniom napisanym
+przez specjalistę znającego doskonale język SQL.
+\end{itemize}
 
 
+Pros and cons
 
+Using an ORM save a lot of time because :
+
+    DRY : You write your data model in only one place, it's easier to update, maintain and reuse the code.
+    A lot of stuff is done automatically, from the database handling to I18N.
+    It forces you to write MVC code, and in the end your app is cleaner.
+
+Using an ORM is more flexible because :
+
+    It abstracts the DB system, so you can change it whenever you want.
+    The model is weakly binded to the rest of the app, so you can change it or use it anywhere else.
+    It let you use OOP goodness like data inheritance without head ache.
+
+But ORM can be a pain :
+
+    You have to learn it, and they are not lightweight tools;
+    It abstracts the DB. While it's ok if you know what's happening behind the scene, it's a trap for the noobs that can write very greedy statements, like a heavy hit in a for loop...
+
+
+Głównym celem pracy jest analiza istniejących aplikacji szkieletowych oraz bibliotek programistycznych realizujących mapowanie obiektowo-relacyjne napisanych w języku C++ 
+oraz zaproponowanie własnej aplikacji szkieletowej, zwanej także w daszej części pracy Qubic. Zakres pracy to mapowanie obiektowo-relacyjne oraz tworzenie aplikacji 
+szkieletowych w języku C++.
 
 http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it
 
