@@ -65,95 +65,98 @@ W tym momencie powstaje pytanie czy na prawdę warto korzystać z bibliotek i ap
 jednoznaczna w wszystkich przypadkach, ale warto wymienić jego podstawowe wady i zalety, których głębsza analiza znajduje się w dalszej części pracy. Zacznijmy od zalet 
 wykorzystania narzędzi ORM\footnote{mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping)}:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{itemize}
-\item Nieobowiązkowa dla programisty znajomość języka SQL\footnote{strukturalny język zapytań (ang. Structured Query Language)}. W celu tworzenia zapytań do bazy
-danych korzystamy z interfejsu udostępnianego przez daną bibliotekę czy też aplikację szkieletową napisaną w wybranym przez nas języku programowania.
-\item Aby skorzystać z transakcji a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać pojedyńczą metodę.
+\item Znacznie zredukowana ilość pracy wymagana na oprogramowanie dostępu do bazy danych.
+\item Nieobowiązkowa znajomość języka SQL\footnote{strukturalny język zapytań (ang. Structured Query Language)}. W celu tworzenia zapytań do bazy
+danych korzystamy z interfejsu udostępnianego przez daną bibliotekę czy też aplikację szkieletową.
+\item Uniezależnienie się od rodzaju systemu zarządzania bazą danych, możemy korzystać równie dobrze z MySQL, Oracle, PostgreSQL czy też Microsoft SQL Server
+niekoniecznie posiadając o nich rozbudowaną wiedzę.
+\item Aby skorzystać z transakcji, połączenia z bazą danych a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać pojedyńczą metodę.
+\item Cały model danych przechowywany jest w jednym miejscu oraz nie jest ściśle związany z wykorzystywanym systemem zarządzania bazą danych dzięki czemu łatwiej 
+jest nam wprowadzać kolejne modyfikacje w kodzie oraz nawet zmieniać system zarządzania bazą danych na inny.
 \end{itemize}
 
 Wszędzie gdzie pojawiają się zalety mamy też do czynienia z wadami, nie inaczej jest w tym przypadku:
 
 \begin{itemize}
-\item Konfiguracja narzędzi ORM jest najczęściej bardzo skomplikowana i wymaga sporo czasu aby była optymalna.
-\item Proste zapytania są obsługiwane bardzo sprawnie, jednak gdy przetwarzamy duże ilości skomplikowanych zapytań wydajność nie dorówna nigdy zapytaniom napisanym
-przez specjalistę znającego doskonale język SQL.
+\item Konfiguracja jest najczęściej skomplikowana i wymaga sporo czasu.
+\item Podobnie jest z użytkowaniem, aby robić to w sposób optymalny musimy dobrze poznać daną bibliotekę czy też aplikację szkieletową.
+\item Proste zapytania są obsługiwane bardzo sprawnie, jednak gdy przetwarzamy duże ilości złożonych zapytań wydajność nie dorówna nigdy zapytaniom napisanym
+przez specjalistę znającego język SQL.
+\item Abstrakcja wprowadzona przez narzędzia ORM może okazać się uciążliwa, ponieważ nie zawsze zdajemy sobie sprawę z tego co dzieje się za kulisami w trakcie
+wykonywania poszczególnch operacji.
 \end{itemize}
 
+Naszym głównym celem jest uczynienie Qubica dobrą alternatywą dla nielicznych, ale istniejących już bibliotek oraz aplikacji szkieletowych realizujących mapowanie 
+obiektowo-relacyjne w języku C++. Wszystkie nam obecnie znane rozwiązania są dostępne za darmo, jednak nie udostępniają one generatora opisu będącego w stanie 
+wygenerować cały projekt aplikacji a ich interfejsy nie należą do intuicyjnych. Wprowadzenie generatora oraz intuicyjnego interfejsu użytkownika powinno uczynić Qubica
+istotną alternatywą dla istniejących już narzędzi.
 
-Pros and cons
-
-Using an ORM save a lot of time because :
-
-    DRY : You write your data model in only one place, it's easier to update, maintain and reuse the code.
-    A lot of stuff is done automatically, from the database handling to I18N.
-    It forces you to write MVC code, and in the end your app is cleaner.
-
-Using an ORM is more flexible because :
-
-    It abstracts the DB system, so you can change it whenever you want.
-    The model is weakly binded to the rest of the app, so you can change it or use it anywhere else.
-    It let you use OOP goodness like data inheritance without head ache.
-
-But ORM can be a pain :
-
-    You have to learn it, and they are not lightweight tools;
-    It abstracts the DB. While it's ok if you know what's happening behind the scene, it's a trap for the noobs that can write very greedy statements, like a heavy hit in a for loop...
-
-
-Głównym celem pracy jest analiza istniejących aplikacji szkieletowych oraz bibliotek programistycznych realizujących mapowanie obiektowo-relacyjne napisanych w języku C++ 
-oraz zaproponowanie własnej aplikacji szkieletowej, zwanej także w daszej części pracy Qubic. Zakres pracy to mapowanie obiektowo-relacyjne oraz tworzenie aplikacji 
-szkieletowych w języku C++.
-
-http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it
-
-Niniejsza praca dotyczy zakresu inżynierii oprogramowania a także technologii baz danych.
-\indent Głównym przedmiotem/celem pracy jest
-stworzenie/opracowanie/przeanalizo\-wanie/zaprojektowanie.... {\bf ten fragment
-pracy zawierać musi wyraźne określenie problemu badawczego oraz jego pogłębioną
-analizę}\\
-
-\indent Dlaczego podejmowanie tej tematyki jest potrzebne? Czy są inne rozwiązania tego problemu/tych problemów? Jakie? czy są lepsze/gorsze, tańsze/droższe, itp.
-\indent Przed jakimi wyzwaniami stoi osoba podejmująca tematykę? \\
-\indent {\bf Określić spodziewane efekty pracy:} W wyniku doświadczeń przeprowadzonych w zakresie pracy polepszeniu
-uległo.... podać konkretne wskaźniki rezultaty, jak np. przyspieszenie obliczeń,
-redukcja kosztu, nowe oprogramowanie itp. w złotówkach, sekundach, procentach, roboczogodzinach itp. 
-
-{\bf (razem max. 3 strony - strona przeliczeniowa = 1800 znaków, średnio 30 wierszy po 60 znaków)}
-
-
-
-
+Analizę istniejących rozwiązań przedstawia kolejny rozdział a zestawienie z rezultatami naszej pracy znajduje się natomiast w końcowej części pracy, gdzie zostaną
+przedstawione uzyskane przez nas wyniki oraz podsumowanie wykonanej przez nas pracy.
 
 \section{Cele pracy}
-Wymienić w punktach cele pracy, rozpoczynając od celów poznawczych (dotyczą\-cych
-zebrania wiadomości, przybliżenia/popularyzacji technik / metod / zagaadnień).
-W~drugiej kolejności wyienić cele praktyczne.
-\subsubsection{Przybliżenie (popularyzacja) metody/technologii/systemu...}
-\subsubsection{Propozycja rozwiązania problemu....}
-\subsubsection{Opis zastosowania technologii X w problemie Y...}
-\subsubsection{Przedstawienie prototypu systemu/układu/aplikacji...}
-\subsubsection{Określenie przydatności algorytmu Z do rozwiązania problemu T.....
-}
-\subsubsection{Opracowanie strategii ... w celu poprawy wydajności/jakości...}
-\subsubsection{Ocena możliwości wdrożenia proponowanych rozwiązań, ich wartość
-praktyczna, lokalne i globalne możliwości zastosowania}
-\subsubsection{itp.}
+
+Do najważniejszych celów niniejszej pracy dyplomowej należą:
+
+\begin{itemize}
+\item Analiza istniejących bibliotek oraz aplikacji szkieletowych realizujących mapowanie obiektowo-relacyjne w języku C++.
+\item Stworzenie własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne w języku C++.
+\item Analiza porównawcza szybkości działania przykładowej aplikacji stworzonej w oparciu o Qubic a o inne istniejące narzędzia.
+\item Analiza porównawcza ilości kodu przykładowej aplikacji stworzonej w oparciu o Qubic a o inne istniejące narzędzia.
+\end{itemize}
+
+Do celów części praktycznej należą:
+
+\begin{itemize}
+\item Stworzenie intuicyjnego interfejsu użytkownika.
+\item Uczynienie konfiguracji Qubica jak najprostszą.
+\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego.
+\item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań.
+\end{itemize}
+
+\section{Metoda badawcza}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
 
 Każdy cel opisać w minimum 2-3 zdaniach. Użyte określenia muszą być powszechnie
 zrozumiałe, nie stosujemy skrótów, slangu,  tzw. makaronizmów, np. ,,softłer''.
 {\bf cały podrozdział ok. 1 strony przeliczeniowej czyli 1800 znaków}
 
-\section{Metoda badawcza}
-\begin{itemize}
-\item Studia literaturowe
-\item Analiza budowy i działania istniejących produktów
-\item Projektowanie i prototypowanie nowatorskich rozwiązań 
-\item Obliczenia i ........
-\end{itemize}
+%% http://webhosting.pl/Czy.ORM_y.odejda.wkrotce.do.lamusa
+%% http://zeszyty-naukowe.wwsi.edu.pl/zeszyty/zeszyt4/Mapowanie_Obiektowo-Relacyjne_ORM_-_Czy_Tylko_Dobra_Idea.pdf
+%% http://sens.e-informatyka.pl/wp-content/uploads/WIRP2/Hibernate.pdf
+
+Mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping ORM) to sposób odwzorowania obiektowej architektury systemu informatycznego na bazę danych (lub inny element systemu) o relacyjnym charakterze. Implementacja takiego odwzorowania stosowana jest m.in. w przypadku, gdy tworzony system oparty jest na podejściu obiektowym, a system bazodanowy (System Zarządzania Bazą Danych) operuje na relacjach. Z ORM związany jest szereg problemów wydajnościowych.
+ORM czyli Object-Relational Mapping jest to rozwiązanie w którym dane są mapowane i zwracane w postaci obiektów.
+
+Odwzorowania obiektowo relacyjne
+A) ORM pozwala na reprezentację danych pobieranych z bazy w postaci obiektów (kolekcji obiektów, obiektów powiązanych przez referencje). Wiązanie to jest zdefiniowane w sposób deklaratywny (adnotacje lub XML). Izoluje to kod aplikacji (opierający się na paradygmacie obiektowym) od bazy danych (opierającej się na paradygmacie relacyjnym).
+B) ORM zapewnia obiektom trwałość (ang. persistence). Modyfikacje struktury obiektowej są zapisywane w bazie.
+A) I B) pozwala na wysokopoziomowy dostęp do bazy. PROBLEM: Niezgodność modeli (impedance mismatch) relacje w bazie są reprezentowane inaczej niż relacje między obiektami.  Ponadto baza nie pozwala na dziedziczenie a obiekty tak. ORM wprowadzają sposoby radzenia sobie z tą niezgodnością.
+
+ORM - projektowanie aplikacji
+Tworzenie warstwy trwałości korzystającej z ORM może być realizowane na 3 sposoby:
+A) Mapowanie do przodu (forward mapping) - mamy klasy i na ich podstawie będziemy tworzyć bazę danych. To jest najprostsze i nie wymaga zbyt dużej ilości metadanych w kodzie (domyślnie nazwa właściwości jest mapowana do nazwy pola)
+B) Mapowanie do tyłu (reverse mapping) - mamy bazę danych i na jej podstawie będziemy tworzyć klasy. To jest trudniejsze - wybaga definiowania większej ilości metadanych.
+C) Mapowanie Meet in The Middle - mamy i schemat bazy i klasy i chcemy je do siebie wzajemnie dopasować.
+
+http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Studia literaturowe}
+
+\subsection{Analiza istniejących rozwiązań}
+
+\subsection{Stworzenie własnej aplikacji szkieletowej}
+
+\subsection{Analiza porównawcza oraz testy}
 
 Każdy element opisać w minimum 2-3 zdaniach. Np. studia literaturowe powinny
 odnosić się do charakterystyki wykorzystanych źródeł książkowych, czyli: Jaka
