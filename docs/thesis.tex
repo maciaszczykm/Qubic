@@ -95,7 +95,7 @@ istotną alternatywą dla istniejących już narzędzi.
 Analizę istniejących rozwiązań przedstawia kolejny rozdział a zestawienie z rezultatami naszej pracy znajduje się natomiast w końcowej części pracy, gdzie zostaną
 przedstawione uzyskane przez nas wyniki oraz podsumowanie wykonanej przez nas pracy.
 
-\section{Cele pracy}
+\section{Cele pracy} % Podrozdział około 1 strony, czyli 1800 znaków. Każdy cel opisany w 2-3 zdaniach, bez używania skrótów.
 
 Do najważniejszych celów niniejszej pracy dyplomowej należą:
 
@@ -109,13 +109,48 @@ Do najważniejszych celów niniejszej pracy dyplomowej należą:
 Do celów części praktycznej należą:
 
 \begin{itemize}
-\item Stworzenie intuicyjnego interfejsu użytkownika.
+\item Stworzenie intuicyjnego interfejsu użytkownika -- aby sprawdzić w jakim stopniu udało się zrealizować założenia zostanie przeprowadzony test polegający na napisaniu
+tej samej aplikacji wykorzystującej Qubica oraz inne aplikacje szkieletowe i bibioteki, a następnie porównaniu ilości linii kodu stworzonych aplikacji.
+\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to przedmiotem pracy Sebastiana, naszym wspólnym celem jest integracja obu modułów.
+\item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań -- aby sprawdzić w jakim stopniu udało się zrealizować
+założenia zostanie przeprowadzony test polegający na napisaniu tej samej aplikacji wykorzystującej Qubica oraz inne aplikacje szkieletowe i bibioteki, a następnie porównaniu
+ich wydajności.
 \item Uczynienie konfiguracji Qubica jak najprostszą.
-\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego.
-\item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań.
 \end{itemize}
 
 \section{Metoda badawcza}
+
+\subsubsection{Studia literaturowe} % Podrozdział około 1 strony, czyli 1800 znaków.Opis w 2-3 zdaniach. Wymagane odniesienia do bibliografii!
+
+Podstawowa literatura wykorzystana podczas pisania niniejszej pracy dotyczy specyfikacji języka C++ oraz zapytań w języku SQL, są to powszechne zagadnienia, więc wybór
+pozycji książkowych jest spory. Materiały dotyczące samego mapowania obiektowo-relacyjnego pochodzą najczęściej z źródeł elektronicznych w języku angielskim, co jest
+związane z faktem, że wiedza ta wciąż się rozwija.
+
+\subsubsection{Analiza istniejących rozwiązań}
+
+\subsubsection{Stworzenie własnej aplikacji szkieletowej}
+
+Praktyka jest najczęściej najlepszą z dostępnych metod nauki i to właśnie podczas tworzenia własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne można
+się najbardziej z danym tematem zapoznać. Wszystkie problemy, które pojawiały się poczas pisania Qubica musiały zostać w pewien sposób rozwiązane i to właśnie analiza
+tych problemów i ich rozwiązywanie było główną metodą badawczą wykorzystaną podczas pisania niniejszej pracy.
+
+\subsubsection{Analiza porównawcza oraz testy}
+
+\section{Przegląd literatury w dziedzinie}
+
+\subsubsection{Literatura dotycząca języka C++}
+
+\subsubsection{Literatura dotycząca języka SQL}
+
+\subsubsection{Literatura dotycząca mapowania obiektowo-relacyjnego}
+
+\subsubsection{Literatura dotycząca aplikacji szkieletowej Qt}
+
+\section{Układ pracy} % Cały podrozdział około 1 strony.
+
+\chapter{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego} \label{teoria}
+
+\section{Podstawowe definicje} % Dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,9 +158,13 @@ Do celów części praktycznej należą:
 
 \newpage
 
-Każdy cel opisać w minimum 2-3 zdaniach. Użyte określenia muszą być powszechnie
-zrozumiałe, nie stosujemy skrótów, slangu,  tzw. makaronizmów, np. ,,softłer''.
-{\bf cały podrozdział ok. 1 strony przeliczeniowej czyli 1800 znaków}
+Tematem pracy jest: ....., zaś za główny cel przyjęto ...... . \\
+Rozdział \label{rozdz.wstep} zawiera wstęp i cele pracy. W rozdziale drugim
+opisano/...... w Rozdziale 3. zawarto............ Rozdział 4. przedstawia..... \\
+W podsumowaniu pracy przedstawiono..........................., z czego wynika,
+że ................  \\
+Najważniejszym wnioskiem/wynikiem/rezultatem pracy jest..................\\ {\bf wyraźnie określić
+CO TO JEST}. \\
 
 %% http://webhosting.pl/Czy.ORM_y.odejda.wkrotce.do.lamusa
 %% http://zeszyty-naukowe.wwsi.edu.pl/zeszyty/zeszyt4/Mapowanie_Obiektowo-Relacyjne_ORM_-_Czy_Tylko_Dobra_Idea.pdf
@@ -150,54 +189,8 @@ http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Studia literaturowe}
-
-\subsection{Analiza istniejących rozwiązań}
-
-\subsection{Stworzenie własnej aplikacji szkieletowej}
-
-\subsection{Analiza porównawcza oraz testy}
-
-Każdy element opisać w minimum 2-3 zdaniach. Np. studia literaturowe powinny
-odnosić się do charakterystyki wykorzystanych źródeł książkowych, czyli: Jaka
-jest podstawowa literatura dziedziny, czy jest dostępna w języku polskim, czy trzeba je tłumaczyć, czy wiedza na ten
-temat jest zebrana w jednym miejscu, czy jej synteza jest osobnym zadaniem itp. 
-Jak duży jest udział źródeł elektronicznych w tej ,,działce'' wiedzy i badań,
-itd. \\
-\indent Jakie metody badawcze są typowe dla danego tematu. Dlaczego je
-zastosowano, ewentualnie dlaczego zastosowano inne? \\
-WYMAGANE ODNOŚNIKI DO POZYCJI BILIOGRAFII.\\
-{\bf cały podrozdział ok. 1 strony przeliczeniowej czyli 1800 znaków}.
-
-\section{Przegląd literatury w dziedzinie}
-Rozszerzyć odpowiedni podpunkt z metody badawczej, np. wg podziału:
-\subsubsection{Źródła książkowe polskojęzyczne i tłumaczenia}
-\subsubsection{Źródła książkowe obcojęzyczne}
-\subsubsection{Artykuły naukowe, raporty z badań, komunikaty konferencyjne,
-dokumentacje techniczne, manuale, instrukcje}
-\subsubsection{Źródła elektroniczne}
-
-
-\section{Układ pracy}
-Tematem pracy jest: ....., zaś za główny cel przyjęto ...... . \\
-Rozdział \label{rozdz.wstep} zawiera wstęp i cele pracy. W rozdziale drugim
-opisano/...... w Rozdziale 3. zawarto............ Rozdział 4. przedstawia..... \\
-W podsumowaniu pracy przedstawiono..........................., z czego wynika,
-że ................  \\
-Najważniejszym wnioskiem/wynikiem/rezultatem pracy jest..................\\ {\bf wyraźnie określić
-CO TO JEST}. \\
-
-{\bf cały podrozdział ok. 1 strony}.
-
-
-
-
-\chapter{Tytuł części teoretycznej} \label{etykietarozdzialu2}
-\section{Podstawowe definicje}
-Ten podrozdział powinien zawierać dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy. 
-
-
 \section{Istniejące rozwiązania w dziedzinie}
+
 W tym podrozdziale zostaną opisane.....
 \subsection{Sprzęt}
 .........................
