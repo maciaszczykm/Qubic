@@ -34,7 +34,7 @@
 
 \section{Uzasadnienie wyboru tematu}
 
-Wraz z rozwojem informatyki proces tworzenia oprogramowania wymaga od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
+Wraz z rozwojem informatyki proces tworzenia oprogramowania wymagał od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
 danych czy sieci komputerowe. Ciężko jest być specjalistą w każdej z tych dziedzin, dlatego też podczas tworzenia oprogramowania programiści co raz częściej sięgają po
 różnego rodzaju narzędzia programistyczne, które mają za zadanie ułatwić im pracę. 
 
@@ -163,6 +163,31 @@ tych problemów i ich rozwiązywanie było główną metodą badawczą wykorzyst
 \section{Przykładowa aplikacja wykorzystująca Qubica}
 
 \section{Testy oraz ich wyniki}
+
+\section{Perspektywy rozwoju Qubica}
+
+W celu dalszego rozwoju stworzonej aplikacji szkieletowej warto rozważyć wprowadzenie następujących usprawnień:
+
+\begin{itemize}
+\item System adnotacji -- obecnie na opis mapowania składają się odpowienie nazwy funkcji oraz makra Qt. Istnieje jednak możliwość wprowadzenia własnych makr, które
+miałyby opisywać mapowanie pomiędzy nazwami tabel z baz danych a odpowiednimi polami klas napisanych z języku C++. Dzięki temu zaistniałaby możliwość uniezależnienia
+nazw pól klas od nazw tabel w bazie danych.
+\item Interfejs zapytań -- choć jest już zaimplementowany, nadal nie udostępnia on wszystkich możliwych funkcjonalności języka SQL. Implementacja obsługi takich poleceń
+jak JOIN czy UNION z pewnością byłaby dodatkowym atutem.
+\item Identyfikacja tabel także za pomocą kluczy złożonych -- w tej chwili tabele identyfikowane są za pomocą kluczów głównych, co z kolei wymusza ich nadawanie w każdej
+z tabel.
+\item Pamięć podręczna -- wprowadzenie pamięci podręcznej może znacznie polepszyć wydajność w przypadku ciągłych operacji na tych samych danych.
+\item Konfiguracja z poziomu kodu -- obecnie większość konfiguracji jest zapisana w plikach konfiguracyjnych i tylko tam może być zmieniana, w celu rozwoju wprowadzenie
+dodatkowej możliwości jego konfiguracji wydaje się być dobrym pomysłem.
+\item Wsparcie dla różnych rodzajów baz danych -- wprowadzenie tego usprawnienia ogranicza się do implementacji kilku interfejsów dla innych niż MySQL rodzajów baz 
+danych. Biorąc pod uwagę możliwość wzorowania się na zaimplementowanej już logice nie powinno to stworzyć problemu gdy zaistnieje taka konieczność.
+\item Serializacja danych -- dodanie możliwości serializacji może okazać się użyteczne w przypadku pracy z dużymi ilościami danych, w tym celu można skorzystać z wielu
+istniejących już bibliotek udostępniających tę możliwość.
+\item Internacjonalizacja -- w tej chwili wszystkie logi zlokalizowane są w języku angielskim, istnieje jednak możliwość zmiany obecnego stanu poprzez wykorzystanie modułu
+translacji udostępnianego przez Qt.
+\item Wielowątkowość -- wykorzystanie wielowątkowości w przypadku mapowania-obiektowo relacyjnego z pewnością nie należy do najłatwiejszych zadań, jednak znacznie
+może to usprawnić wykonywanie bardziej wymagających operacji.
+\end{itemize}
 
 \chapter{Podsumowanie} \label{podsumowanie}
 
@@ -491,7 +516,7 @@ praw autorskich do powstałych produktów, itp.
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
 \bibitem{kacprzyk86}
-Kacprzyk J. (1986) Fuzzy sets in system analysis.  PWN, Warsaw (in Polish).
+Kacprzyk J. (1986) Fuzzy sets in system analysis.  PWN, Warsaw (in Polish). % http://www.ipipan.waw.pl/~subieta/artykuly/slownik_obiektowosci/hasla_slownika.html
 \bibitem{kacprzyk99b}
 Kacprzyk J., Strykowski P. (1999) Linguistic Data Summaries for Intelligent Decision Support, Proceedings of EFDAN'99. 4-th European Workshop on Fuzzy Decision Analysis and Recognition Technology for Management, Planning and Optimization, Dortmund, 1999, 3--12.
 \bibitem{kacprzyk01d}
