@@ -1,82 +1,35 @@
-\contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{5}
-\contentsline {section}{\numberline {1.1}Uzasadnienie wyboru tematu}{5}
-\contentsline {section}{\numberline {1.2}Problematyka i zakres pracy}{6}
-\contentsline {section}{\numberline {1.3}Cele pracy}{7}
-\contentsline {section}{\numberline {1.4}Metoda badawcza}{8}
-\contentsline {subsubsection}{Studia literaturowe}{8}
-\contentsline {subsubsection}{Analiza istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{8}
-\contentsline {subsubsection}{Stworzenie w\IeC {\l }asnej aplikacji szkieletowej}{8}
-\contentsline {subsubsection}{Analiza por\IeC {\'o}wnawcza oraz testy}{9}
-\contentsline {section}{\numberline {1.5}Przegl\IeC {\k a}d literatury w dziedzinie}{9}
-\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca j\IeC {\k e}zyka C++}{9}
-\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca j\IeC {\k e}zyka SQL}{9}
-\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca mapowania obiektowo-relacyjnego}{9}
-\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca aplikacji szkieletowej Qt}{9}
-\contentsline {section}{\numberline {1.6}Uk\IeC {\l }ad pracy}{9}
-\contentsline {chapter}{\numberline {2}Zagadnienia teoretyczne dotycz\IeC {\k a}ce mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych}{10}
-\contentsline {section}{\numberline {2.1}Podstawowe definicje}{10}
-\contentsline {chapter}{\numberline {3}Technologie i metody u\IeC {\.z}yte w cz\IeC {\k e}\IeC {\'s}ci badawczej}{11}
-\contentsline {chapter}{\numberline {4}Aplikacja szkieletowa Qubic}{12}
-\contentsline {section}{\numberline {4.1}Dokumentacja techniczna}{12}
-\contentsline {section}{\numberline {4.2}Dokumentacja u\IeC {\.z}ytkownika}{12}
-\contentsline {section}{\numberline {4.3}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{12}
-\contentsline {section}{\numberline {4.4}Testy oraz ich wyniki}{12}
-\contentsline {section}{\numberline {4.5}Perspektywy rozwoju Qubica}{12}
-\contentsline {chapter}{\numberline {5}Podsumowanie}{14}
-\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{14}
-\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{14}
-\contentsline {section}{\numberline {5.3}Istniej\IeC {\k a}ce rozwi\IeC {\k a}zania w dziedzinie}{16}
-\contentsline {subsection}{\numberline {5.3.1}Sprz\IeC {\k e}t}{16}
-\contentsline {subsection}{\numberline {5.3.2}Oprogramowanie i wdro\IeC {\.z}one systemy}{16}
-\contentsline {subsection}{\numberline {5.3.3}}{16}
-\contentsline {section}{\numberline {5.4}Wady i s\IeC {\l }abe punkty istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{16}
-\contentsline {subsection}{\numberline {5.4.1}Efektywno\IeC {\'s}\IeC {\'c}}{16}
-\contentsline {subsection}{\numberline {5.4.2}Utrudniony dost\IeC {\k e}p}{16}
-\contentsline {subsection}{\numberline {5.4.3}Wysokie koszty}{16}
-\contentsline {chapter}{\numberline {6}Dalsze uwagi o edycji i\nobreakspace {}formatowaniu pracy}{17}
-\contentsline {section}{\numberline {6.1}Bibliografia i przypisy}{17}
-\contentsline {subsubsection}{\IeC {\'Z}r\IeC {\'o}d\IeC {\l }a elektroniczne}{18}
-\contentsline {section}{\numberline {6.2}Polskie akapity, cudzys\IeC {\l }owy, itp.}{18}
-\contentsline {section}{\numberline {6.3}Definicje i wyra\IeC {\.z}enia matematyczne}{19}
-\contentsline {section}{\numberline {6.4}Jak wstawia\IeC {\'c} rysunki? tabele? }{19}
-\contentsline {section}{\numberline {6.5}Listy wypunktowana i numerowana}{20}
-\contentsline {section}{\numberline {6.6}Przenoszenie wyraz\IeC {\'o}w}{20}
-\contentsline {section}{\numberline {6.7}Sprz\IeC {\k e}t}{21}
-\contentsline {subsection}{\numberline {6.7.1}Element 1}{21}
-\contentsline {subsection}{\numberline {6.7.2}Element 2}{21}
-\contentsline {section}{\numberline {6.8}Oprogramowanie}{21}
-\contentsline {subsection}{\numberline {6.8.1}Serwer baz danych}{21}
-\contentsline {subsection}{\numberline {6.8.2}\IeC {\'S}rodowisko zintegrowane}{21}
-\contentsline {subsection}{\numberline {6.8.3}Oprogramowanie klienckie}{21}
-\contentsline {section}{\numberline {6.9}Technologie i metodologie programistyczne}{21}
-\contentsline {subsection}{\numberline {6.9.1}J\IeC {\k e}zyk programowania}{21}
-\contentsline {subsection}{\numberline {6.9.2}Biblioteki}{22}
-\contentsline {subsection}{\numberline {6.9.3}Wzorce projektowe}{22}
-\contentsline {section}{\numberline {6.10}Inne, np. narz\IeC {\k e}dzia i metody symulacji, }{22}
-\contentsline {chapter}{\numberline {7}Biblioteka programistyczna Qubic}{23}
-\contentsline {section}{\numberline {7.1}Analiza wymaga\IeC {\'n}}{23}
-\contentsline {subsection}{\numberline {7.1.1}Studium mo\IeC {\.z}liwo\IeC {\'s}ci}{23}
-\contentsline {subsection}{\numberline {7.1.2}Wymagania funkcjonalne}{23}
-\contentsline {subsection}{\numberline {7.1.3}Ograniczenia projektu}{23}
-\contentsline {section}{\numberline {7.2}Projekt}{23}
-\contentsline {subsection}{\numberline {7.2.1}Projekt warstwy danych}{23}
-\contentsline {subsection}{\numberline {7.2.2}Projekt warstwy logiki}{24}
-\contentsline {subsection}{\numberline {7.2.3}Projekt warstwy interfejsu u\IeC {\.z}ytkownika}{24}
-\contentsline {subsubsection}{Wyb\IeC {\'o}r \IeC {\'s}rodowiska i platformy dzia\IeC {\l }ania}{24}
-\contentsline {subsubsection}{Rodzaj aplikacji (klient-serwer, thick/thin client, aplikacja ,,biurkowa'', us\IeC {\l }uga, klient hybrydowy, itp.}{24}
-\contentsline {subsubsection}{Technologie projektowania i realizacji interfejsu u\IeC {\.z}ytkownika, np. biblioteki}{24}
-\contentsline {section}{\numberline {7.3}Implementacja: punkty kluczowe}{24}
-\contentsline {section}{\numberline {7.4}Testy i wdro\IeC {\.z}enie}{24}
-\contentsline {subsection}{\numberline {7.4.1}Testy wydajno\IeC {\'s}ci}{24}
-\contentsline {subsection}{\numberline {7.4.2}Testy regresyjne}{24}
-\contentsline {subsection}{\numberline {7.4.3}Testy bezpiecze\IeC {\'n}stwa}{24}
-\contentsline {subsection}{\numberline {7.4.4}Dalsze testy}{24}
-\contentsline {subsection}{\numberline {7.4.5}Testy...}{24}
-\contentsline {section}{\numberline {7.5}Konserwacja i in\IeC {\.z}ynieria wt\IeC {\'o}rna}{24}
-\contentsline {chapter}{\numberline {8}Podsumowanie}{25}
-\contentsline {section}{\numberline {8.1}Dyskusja wynik\IeC {\'o}w}{25}
-\contentsline {section}{\numberline {8.2}Ocena mo\IeC {\.z}liwo\IeC {\'s}ci wdro\IeC {\.z}enia...}{25}
-\contentsline {chapter}{Bibliografia}{25}
-\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{26}
-\contentsline {chapter}{Spis tabel}{27}
-\contentsline {chapter}{Za\IeC {\l }\IeC {\k a}czniki}{28}
+\contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Uzasadnienie wyboru tematu}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Problematyka i zakres pracy}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Cele pracy}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Metoda badawcza}{7}{section.1.4}
+\contentsline {subsubsection}{Studia literaturowe}{7}{section*.2}
+\contentsline {subsubsection}{Analiza istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{8}{section*.3}
+\contentsline {subsubsection}{Stworzenie w\IeC {\l }asnej aplikacji szkieletowej}{8}{section*.4}
+\contentsline {subsubsection}{Analiza por\IeC {\'o}wnawcza oraz testy}{8}{section*.5}
+\contentsline {section}{\numberline {1.5}Przegl\IeC {\k a}d literatury w dziedzinie}{8}{section.1.5}
+\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca j\IeC {\k e}zyka C++}{8}{section*.6}
+\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca j\IeC {\k e}zyka SQL}{8}{section*.7}
+\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca mapowania obiektowo-relacyjnego}{8}{section*.8}
+\contentsline {subsubsection}{Literatura dotycz\IeC {\k a}ca aplikacji szkieletowej Qt}{8}{section*.9}
+\contentsline {section}{\numberline {1.6}Uk\IeC {\l }ad pracy}{8}{section.1.6}
+\contentsline {chapter}{\numberline {2}Zagadnienia teoretyczne}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Podstawowe definicje}{10}{section.2.1}
+\contentsline {chapter}{\numberline {3}Technologie i metody u\IeC {\.z}yte w cz\IeC {\k e}\IeC {\'s}ci badawczej}{11}{chapter.3}
+\contentsline {chapter}{\numberline {4}Analiza istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{12}{chapter.4}
+\contentsline {chapter}{\numberline {5}Aplikacja szkieletowa Qubic}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}Analiza wymaga\IeC {\'n}}{13}{section.5.1}
+\contentsline {section}{\numberline {5.2}Projekt}{13}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementacja}{13}{section.5.3}
+\contentsline {section}{\numberline {5.4}Konserwacja i in\IeC {\.z}ynieria wt\IeC {\'o}rna}{13}{section.5.4}
+\contentsline {section}{\numberline {5.5}Dokumentacja u\IeC {\.z}ytkownika}{13}{section.5.5}
+\contentsline {section}{\numberline {5.6}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{13}{section.5.6}
+\contentsline {section}{\numberline {5.7}Testy oraz ich wyniki}{13}{section.5.7}
+\contentsline {section}{\numberline {5.8}Perspektywy rozwoju Qubica}{13}{section.5.8}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{15}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dyskusja wynik\IeC {\'o}w}{15}{section.6.1}
+\contentsline {section}{\numberline {6.2}Perspektywy rozwoju pracy}{15}{section.6.2}
+\contentsline {chapter}{Bibliografia}{15}{section.6.2}
+\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{16}{chapter*.10}
+\contentsline {chapter}{Spis tabel}{17}{chapter*.11}
+\contentsline {chapter}{Za\IeC {\l }\IeC {\k a}czniki}{18}{chapter*.12}

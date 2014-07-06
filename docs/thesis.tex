@@ -6,6 +6,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{txfonts}
 \usepackage{pdfpages}
+\usepackage{hyperref}
 
 \renewcommand{\chaptername}{Rozdział}
 \renewcommand{\contentsname}{Spis treści}
@@ -34,20 +35,20 @@
 
 \section{Uzasadnienie wyboru tematu}
 
-Wraz z rozwojem informatyki proces tworzenia oprogramowania wymagał od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
-danych czy sieci komputerowe. Ciężko jest być specjalistą w każdej z tych dziedzin, dlatego też podczas tworzenia oprogramowania programiści co raz częściej sięgają po
-różnego rodzaju narzędzia programistyczne, które mają za zadanie ułatwić im pracę. 
+Wraz z rozwojem informatyki proces tworzenia oprogramowania wymaga od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
+danych czy sieci komputerowe. Ciężko jest być specjalistą w każdej z nich, dlatego też podczas tworzenia oprogramowania programiści co raz częściej sięgają po różnego 
+rodzaju narzędzia programistyczne, które mają za zadanie ułatwić im pracę. 
 
-Przykładem takich narzędzi są aplikacje szkieletowe wykorzystywane jako fundamenty dla tworzonych aplikacji czy też biblioteki udostępniające zestawy określonych funkcji. 
-Oczywiście nie zawsze mamy możliwość skorzystania z wspominanych narzędzi, jednak jeśli taka istnieje warto wziąć to pod uwagę podczas fazy planowania tworzenia 
-oprogramowania, ponieważ decydując się na korzystanie z nich jesteśmy w stanie zaoszczędzić sporo czasu, a także uniknąć wielu błędów związanych z nieznajomością danej
-dziedziny.
+Przykładem takich narzędzi są aplikacje szkieletowe wykorzystywane jako fundamenty dla tworzonych aplikacji czy też biblioteki programistyczne udostępniające zestawy 
+określonych funkcji. Oczywiście nie zawsze mamy możliwość skorzystania z wspominanych narzędzi, jednak jeśli taka istnieje warto wziąć to pod uwagę podczas fazy planowania 
+tworzenia  oprogramowania, ponieważ decydując się na korzystanie z nich jesteśmy w stanie zaoszczędzić sporo czasu, a także uniknąć wielu błędów związanych z nieznajomością 
+danej dziedziny.
 
 Wraz z kolegą z tego samego roku studiów -- Sebastianem Florkiem, zdecydowaliśmy się w ramach pisamia pracy dyplomowej na wspólne stworzenie aplikacji szkieletowej, 
-która będzie realizowała mapowanie obiektowo-relacyjne w języku C++. Wybór języka programowania związany był z dość dobrą jego znajomością, a także z pewnym
+która będzie realizowała mapowanie obiektowo-relacyjne w języku C++. Wybór C++ jako języka programowania tłumaczymy dość dobrą jego znajomością, a także pewnym
 doświadczeniem w programowaniu w tym języku nabytym w trakcie studiów. Mapowanie obiektowo-relacyjne jest to obecnie zagadnienie bardzo powszechne, szczególnie w 
 językach programowania takich jak C\# czy Java. Programiści C++ nie mają już tak dużego wyboru wśród dostępnych narzędzi służących do mapowania 
-obiektowo-relacyjnego, co tłumaczy nasz wybór.
+obiektowo-relacyjnego, co także braliśmy pod uwagę ustalając temat nad jakim będziemy pracować.
 
 Podział naszej pracy zostanie opisany w dalszych rozdziałach, jednak na wstępie warto zaznaczyć, że tematem pracy Sebastiana jest generator opisu mapowania 
 obiektowo-relacyjnego, który jest wstępnym etapem pracy naszej aplikacji szkieletowej. Celem wspomnianego generatora jest wygenerowanie pliku projektu, a także plików
@@ -56,13 +57,13 @@ wygenerowanych plikach.
 
 \section{Problematyka i zakres pracy}
 
-Programowanie obiektowe jest obecnie jednym z najpopularniejszych paradygmatów programowania, a pojęcia takie jak klasa czy obiekt znane są wszystkim programistom.
+Programowanie obiektowe jest obecnie jednym z najpopularniejszych pa\-ra\-dy\-gma\-tów programowania, a pojęcia takie jak klasa czy obiekt znane są wszystkim programistom.
 Podobnie jest z relacyjnym modelem organizacji baz danych i terminami takimi jak relacja czy krotka. Chcąc wykorzystać oba te podejścia w jednej aplikacji musimy zadbać o 
 obustronną konwersję pomiędzy danymi z tabel relacyjnej bazy danych a obiektami aplikacjii. Tym właśnie zajmuje się mapowanie obiektowo-relacyjne, które wraz z tworzeniem 
 aplikacji szkieletowych w języku C++ jest główną problematyką niniejszej pracy.
 
-W tym momencie powstaje pytanie czy na prawdę warto korzystać z bibliotek i aplikacji szkieletowych służących do mapowania obiektowo relacyjnego? Odpowiedź nie jest
-jednoznaczna w wszystkich przypadkach, ale warto wymienić jego podstawowe wady i zalety, których głębsza analiza znajduje się w dalszej części pracy. Zacznijmy od zalet 
+W tym momencie powstaje pytanie czy na prawdę warto korzystać z bibliotek i aplikacji szkieletowych służących do mapowania obiektowo relacyjnego? Od\-po\-wiedź nie jest
+jednoznaczna w wszystkich przypadkach, ale warto wymienić jego podstawowe wady i zalety, których dokładniejsza analiza znajduje się w dalszej części pracy. Zacznijmy od zalet 
 wykorzystania narzędzi ORM\footnote{mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping)}:
 
 \begin{itemize}
@@ -71,8 +72,8 @@ wykorzystania narzędzi ORM\footnote{mapowanie obiektowo-relacyjne (ang. Object-
 danych korzystamy z interfejsu udostępnianego przez daną bibliotekę czy też aplikację szkieletową.
 \item Uniezależnienie się od rodzaju systemu zarządzania bazą danych, możemy korzystać równie dobrze z MySQL, Oracle, PostgreSQL czy też Microsoft SQL Server
 niekoniecznie posiadając o nich rozbudowaną wiedzę.
-\item Aby skorzystać z transakcji, połączenia z bazą danych a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać pojedyńczą metodę.
-\item Cały model danych przechowywany jest w jednym miejscu oraz nie jest ściśle związany z wykorzystywanym systemem zarządzania bazą danych dzięki czemu łatwiej 
+\item Aby skorzystać z transakcji, połączenia z bazą danych a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać pojedyńczą me\-to\-dę.
+\item Cały model danych przechowywany jest w jednym miejscu oraz nie jest ściśle związany z wykorzystywanym systemem zarządzania bazą danych dzięki cze\-mu łatwiej 
 jest nam wprowadzać kolejne modyfikacje w kodzie oraz nawet zmieniać system zarządzania bazą danych na inny.
 \end{itemize}
 
@@ -81,13 +82,13 @@ Wszędzie gdzie pojawiają się zalety mamy też do czynienia z wadami, nie inac
 \begin{itemize}
 \item Konfiguracja jest najczęściej skomplikowana i wymaga sporo czasu.
 \item Podobnie jest z użytkowaniem, aby robić to w sposób optymalny musimy dobrze poznać daną bibliotekę czy też aplikację szkieletową.
-\item Proste zapytania są obsługiwane bardzo sprawnie, jednak gdy przetwarzamy duże ilości złożonych zapytań wydajność nie dorówna nigdy zapytaniom napisanym
+\item Proste zapytania są obsługiwane bardzo sprawnie, jednak gdy przetwarzamy duże ilości złożonych zapytań wydajność nie dorówna nigdy zapytaniom na\-pi\-sa\-nym
 przez specjalistę znającego język SQL.
 \item Abstrakcja wprowadzona przez narzędzia ORM może okazać się uciążliwa, ponieważ nie zawsze zdajemy sobie sprawę z tego co dzieje się za kulisami w trakcie
 wykonywania poszczególnch operacji.
 \end{itemize}
 
-Naszym głównym celem jest uczynienie Qubica dobrą alternatywą dla nielicznych, ale istniejących już bibliotek oraz aplikacji szkieletowych realizujących mapowanie 
+Naszym głównym celem jest uczynienie Qubica dobrą alternatywą dla nie\-li\-cznych, ale istniejących już bibliotek oraz aplikacji szkieletowych realizujących mapowanie 
 obiektowo-relacyjne w języku C++. Wszystkie nam obecnie znane rozwiązania są dostępne za darmo, jednak nie udostępniają one generatora opisu będącego w stanie 
 wygenerować cały projekt aplikacji a ich interfejsy nie należą do intuicyjnych. Wprowadzenie generatora oraz intuicyjnego interfejsu użytkownika powinno uczynić Qubica
 istotną alternatywą dla istniejących już narzędzi.
@@ -100,7 +101,7 @@ przedstawione uzyskane przez nas wyniki oraz podsumowanie wykonanej przez nas pr
 Do najważniejszych celów niniejszej pracy dyplomowej należą:
 
 \begin{itemize}
-\item Analiza istniejących bibliotek oraz aplikacji szkieletowych realizujących mapowanie obiektowo-relacyjne w języku C++.
+\item Analiza istniejących bibliotek oraz aplikacji szkieletowych realizujących ma\-po\-wa\-nie obiektowo-relacyjne w języku C++.
 \item Stworzenie własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne w języku C++.
 \item Analiza porównawcza szybkości działania przykładowej aplikacji stworzonej w oparciu o Qubic a o inne istniejące narzędzia.
 \item Analiza porównawcza ilości kodu przykładowej aplikacji stworzonej w oparciu o Qubic a o inne istniejące narzędzia.
@@ -109,9 +110,9 @@ Do najważniejszych celów niniejszej pracy dyplomowej należą:
 Do celów części praktycznej należą:
 
 \begin{itemize}
-\item Stworzenie intuicyjnego interfejsu użytkownika -- aby sprawdzić w jakim stopniu udało się zrealizować założenia zostanie przeprowadzony test polegający na napisaniu
+\item Stworzenie intuicyjnego interfejsu użytkownika -- aby sprawdzić w jakim stopniu udało się zrealizować założenia zostanie przeprowadzony test po\-le\-ga\-ją\-cy na napisaniu
 tej samej aplikacji wykorzystującej Qubica oraz inne aplikacje szkieletowe i bibioteki, a następnie porównaniu ilości linii kodu stworzonych aplikacji.
-\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to przedmiotem pracy Sebastiana, naszym wspólnym celem jest integracja obu modułów.
+\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to przed\-mio\-tem pracy Sebastiana, naszym wspólnym celem jest integracja obu modułów.
 \item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań -- aby sprawdzić w jakim stopniu udało się zrealizować
 założenia zostanie przeprowadzony test polegający na napisaniu tej samej aplikacji wykorzystującej Qubica oraz inne aplikacje szkieletowe i bibioteki, a następnie porównaniu
 ich wydajności.
@@ -123,18 +124,24 @@ ich wydajności.
 \subsubsection{Studia literaturowe} % Podrozdział około 1 strony, czyli 1800 znaków.Opis w 2-3 zdaniach. Wymagane odniesienia do bibliografii!
 
 Podstawowa literatura wykorzystana podczas pisania niniejszej pracy dotyczy specyfikacji języka C++ oraz zapytań w języku SQL, są to powszechne zagadnienia, więc wybór
-pozycji książkowych jest spory. Materiały dotyczące samego mapowania obiektowo-relacyjnego pochodzą najczęściej z źródeł elektronicznych w języku angielskim, co jest
-związane z faktem, że wiedza ta wciąż się rozwija.
+pozycji książkowych jest spory. Materiały dotyczące samego mapowania obiektowo-relacyjnego czy też aplikacji szkieletowej Qt pochodzą głównie z źródeł elektronicznych w 
+języku angielskim, co jest związane z mniejszą popularnością tych tematyk.
 
 \subsubsection{Analiza istniejących rozwiązań}
+
+Analiza istniejących rozwiązań jest o tyle dobrą metodą badawczą, że stosując ją poznajemy praktyczne rozwiązania konkretnych problemów, czyli coś czego nie daje nam w
+żaden sposób teoria.
 
 \subsubsection{Stworzenie własnej aplikacji szkieletowej}
 
 Praktyka jest najczęściej najlepszą z dostępnych metod nauki i to właśnie podczas tworzenia własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne można
-się najbardziej z danym tematem zapoznać. Wszystkie problemy, które pojawiały się poczas pisania Qubica musiały zostać w pewien sposób rozwiązane i to właśnie analiza
+się najbardziej z danym tematem zapoznać. Wszystkie problemy, które pojawiały się poczas pisania Qubica musiały zostać w pewien sposób roz\-wią\-zane i to właśnie analiza
 tych problemów i ich rozwiązywanie było główną metodą badawczą wykorzystaną podczas pisania niniejszej pracy.
 
 \subsubsection{Analiza porównawcza oraz testy}
+
+Analizując wcześniej istniejące już rozwiązania i powównując je z własnym można dojść do najtrafniejszych wniosków. To właśnie na tym etapie często dowiadujemy się czy
+przyjęte przez nas założenia i zaproponowane rozwiązania były lepsze niż te z istniejących już rozwiązań. 
 
 \section{Przegląd literatury w dziedzinie}
 
@@ -148,15 +155,33 @@ tych problemów i ich rozwiązywanie było główną metodą badawczą wykorzyst
 
 \section{Układ pracy} % Cały podrozdział około 1 strony.
 
-\chapter{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych} \label{teoria}
+Tematem niniejszej pracy jest mapowanie obiektowo-relacyjne w języku C++, zaś za jej główny cel przyjęto przeanalizowanie istniejących bibliotek oraz aplikacji szkieletowych
+realizujących mapowanie obiektowo-relacyjne oraz zaproponowanie własnej aplikacji szkieletowej.
+
+W rozdziale \ref{wstep} uzasadniony został wybór tematu pracy, opisane jej cele oraz problematyka i zakres. Rozdział \ref{teoria} zawiera opis zagadnień teoretycznych
+do\-ty\-czą\-cych mapowania obiektowo-relacyjnego a także tworzenia aplikacji szkieletowych w języku C++.
+
+Najważniejszym rezultatem pracy jest analiza oraz porównanie istniejących bibliotek programistycznych i aplikacji szkieletowych realizujących mapowanie obiekt\-owo-rel\-acyjne
+z stworzonym przez nas Qubiciem.
+
+\chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych} \label{teoria}
 
 \section{Podstawowe definicje} % Dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy.
 
-\chapter{Technologie i metody użyte w części badawczej} \label{technologie}
+\chapter{Technologie i metody użyte w części badawczej} \label{technologie} % Sprzęt, oprogramowanie, serwer bazy danych, technologie i metodologie, język, biblioteki, wzorce.
+
+\chapter[Analiza istniejących rozwiązań]{Analiza istniejących rozwiązań mapowania obiektowo-relacyjnego w języku C++} \label{analiza}
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
-\section{Dokumentacja techniczna}
+\section{Analiza wymagań} % Studium możliwości, wymagania funkcjonalne, niefunkcjonalne i ograniczenia projektu.
+
+\section{Projekt} % Projekt wartswy danych, logiki i widoku. Diagramy klas, wzorce projektowe. Rodzaj aplikacji, wybór środowiska i platformy działania. Wybór bibliotek.
+
+\section{Implementacja} % Punkty kluczowe, rodzaje przeprowadzanych testów.
+
+\section{Konserwacja i inżynieria wtórna} %Jak przebiega eksploatacja projektu? Jakie wady i zalety ujawniły się po okresie testowania i użytkowania?
+% Jak można skorzystać z tej wiedzy praktycznej pod kątem roz\-bu\-do\-wy pracy? Jakie elementy systemu powinny zostać w pierwszej kolejności zmodyfikowane?  
 
 \section{Dokumentacja użytkownika}
 
@@ -196,332 +221,14 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 \section{Perspektywy rozwoju pracy} % Jak można kontynuować tę pracę, zwłaszcza pod kątem magisterskich i dalej? Co jeszcze powinno być zrobione lub ulepszone?
 % Co należy zmienić lub poprawić w pracy z dzisiejszego punktu widzenia?
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newpage
-
-Tematem pracy jest: ....., zaś za główny cel przyjęto ...... . \\
-Rozdział \label{rozdz.wstep} zawiera wstęp i cele pracy. W rozdziale drugim
-opisano/...... w Rozdziale 3. zawarto............ Rozdział 4. przedstawia..... \\
-W podsumowaniu pracy przedstawiono..........................., z czego wynika,
-że ................  \\
-Najważniejszym wnioskiem/wynikiem/rezultatem pracy jest..................\\ {\bf wyraźnie określić
-CO TO JEST}. \\
-
-%% http://webhosting.pl/Czy.ORM_y.odejda.wkrotce.do.lamusa
-%% http://zeszyty-naukowe.wwsi.edu.pl/zeszyty/zeszyt4/Mapowanie_Obiektowo-Relacyjne_ORM_-_Czy_Tylko_Dobra_Idea.pdf
-%% http://sens.e-informatyka.pl/wp-content/uploads/WIRP2/Hibernate.pdf
-
-Mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping ORM) to sposób odwzorowania obiektowej architektury systemu informatycznego na bazę danych (lub inny element systemu) o relacyjnym charakterze. Implementacja takiego odwzorowania stosowana jest m.in. w przypadku, gdy tworzony system oparty jest na podejściu obiektowym, a system bazodanowy (System Zarządzania Bazą Danych) operuje na relacjach. Z ORM związany jest szereg problemów wydajnościowych.
-ORM czyli Object-Relational Mapping jest to rozwiązanie w którym dane są mapowane i zwracane w postaci obiektów.
-
-Odwzorowania obiektowo relacyjne
-A) ORM pozwala na reprezentację danych pobieranych z bazy w postaci obiektów (kolekcji obiektów, obiektów powiązanych przez referencje). Wiązanie to jest zdefiniowane w sposób deklaratywny (adnotacje lub XML). Izoluje to kod aplikacji (opierający się na paradygmacie obiektowym) od bazy danych (opierającej się na paradygmacie relacyjnym).
-B) ORM zapewnia obiektom trwałość (ang. persistence). Modyfikacje struktury obiektowej są zapisywane w bazie.
-A) I B) pozwala na wysokopoziomowy dostęp do bazy. PROBLEM: Niezgodność modeli (impedance mismatch) relacje w bazie są reprezentowane inaczej niż relacje między obiektami.  Ponadto baza nie pozwala na dziedziczenie a obiekty tak. ORM wprowadzają sposoby radzenia sobie z tą niezgodnością.
-
-ORM - projektowanie aplikacji
-Tworzenie warstwy trwałości korzystającej z ORM może być realizowane na 3 sposoby:
-A) Mapowanie do przodu (forward mapping) - mamy klasy i na ich podstawie będziemy tworzyć bazę danych. To jest najprostsze i nie wymaga zbyt dużej ilości metadanych w kodzie (domyślnie nazwa właściwości jest mapowana do nazwy pola)
-B) Mapowanie do tyłu (reverse mapping) - mamy bazę danych i na jej podstawie będziemy tworzyć klasy. To jest trudniejsze - wybaga definiowania większej ilości metadanych.
-C) Mapowanie Meet in The Middle - mamy i schemat bazy i klasy i chcemy je do siebie wzajemnie dopasować.
-
-http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it
-
-\section{Istniejące rozwiązania w dziedzinie}
-
-W tym podrozdziale zostaną opisane.....
-\subsection{Sprzęt}
-.........................
-\subsection{Oprogramowanie i wdrożone systemy}
-.....................................
-\subsection{}
-...................
-
-\section{Wady i słabe punkty istniejących rozwiązań}
-\subsection{Efektywność}
-..........................
-\subsection{Utrudniony dostęp}
-..............
-\subsection{Wysokie koszty}
-...............................
-
-\chapter{Dalsze uwagi o edycji i~formatowaniu pracy}
-Pracę w \LaTeX'u najlepiej składać w szablonie {\tt report}, ze względu na jendostronny wydruk (jak w {\tt article}) i możliwość dzielenia pracy na rozdziały, a co za tym idzie, tworzenia spisu treści, spisu tabel, rysunków. 
-\begin{example}
-Przyklad
-\end{example}
-
-\begin{corollary}
-Wniosek
-\end{corollary}
-\section{Bibliografia i przypisy}
-Spis litertury dołącza się  w \LaTeX'u automatycznie na końcu pracy (zob.
-komenda {\tt begin{thebibliography}}). Informacje o sposobie cytowania zawarte
-są na stronie Bibilioteki Głównej PŁ\\ także udostępnione na
-\underline{\tt http://ics.p.lodz.pl/\textasciitilde aniewiadomski}. \\
-
-\indent Przykład cytowania --  jak podaje praca \cite{kacprzyk86}, ......,
-jednakże autorzy [2] twierdzą, iż.....\\
-
-
-\indent Za każdym razem, kiedy w pracy pojawia się treść na podstawie jakiegoś
-tekstu źródłowego czyjegoś autorstwa, oznaczamy takie miejsce
-przypisem\footnote{Treść przypisu pierwszego}. Przypis zawierać musi  numer
-jakim w spisie literatury, czyli bibliografii, oznaczono tę pracę, np.
-tak\footnote{[3], ss. 3--6 (czyli praca trzecia w spisie literatury,
-wykorzystany fragment znajduje się na stronach od 3. do 6.)}. {\bf
-Wszystkie źródła tekstów, rysunków, danych, wykresów, schematów, kodów i
-informacji wykorzystanych w pracy muszą być zamieszczone w bibliografii.
-Wszystkie pozycje literatury zamieszczone w bibliografii muszą być cytowane w
-treści pracy, na dowód, iż zostały rzeczywiście użyte przy pisaniu pracy.}
-
-\subsubsection{Źródła elektroniczne}
-Źródła elektroniczne, zwłaszcza internetowe należy cytować z należytą uwagą na
-ich jakość. Nie cytujemy źródeł wątpliwej jakości lub wtórnie przekazujących
-czy też powielających wiedzę zawartą w innych źródłach, np. fora internetowe lub
-wikipedia.\\
-\indent {\bf Wszystkie wykorzystane źródła elektroniczne powinny być przez Autora
-pracy skopiowane \underline{w dniu ich wykorzystania} i
-dołączone np. na CD/DVD do wersji drukowanej pracy.\\
-\indent Odnośniki do źródeł elektronicznych muszą zawierać pełną ścieżkę, np. do
-pliku lub rysunku, a nie jedynie domenowy adres portalu, np.\newline {\tt
-http://serwer.com/temat/podtemat/katalog/plik\_strony.html} (stan na dzień:
-2009-12-05)\\
-ale nie\\
-{\tt www.portal.pl}.} (!!!!!)
-
-Niedochowanie tego wymogu może stać się powodem odrzucenia pracy ze wzglę\-dów
-formalnych (,,brak możliwości weryfikacji źródeł wykorzystanych w pracy''). 
-
-\section{Polskie akapity, cudzysłowy, itp.}
-Akapity stosujemy zawsze z wcięciem, ale bez wiersza odstępu pomiędzy akapitami. 
-Ta forma jest przyjęta dla publikacji polskojęzycznych. {\bf W szczególnych
-przypadkach (także w tym szablonie)} akapit występujący bezpośrednio po tytule
-rozdziału, sekcji, podsekcji itp. NIE JEST WCIĘTY.\\
-\indent Ten akapit JEST WCIĘTY. NIE MA także PUSTEGO WIERSZA pomiędzy tym
-akapitem a poprzednim. \\
-\indent Podobne uwagi dotyczą wszystkich innych elementów formatowania pracy --
-muszą być zgodne ze zwyczajami przyjętymi W JĘZYKU POLSKIM.	Np. cu\-dzysłowy
-wyglądają tak: ,,cudzysłów'', ale nie ''cudzysłów'', albo też `cudzysłów' czy
-``cudzysłów''. 
-
-
-
-\section{Definicje i wyrażenia matematyczne}
-\begin{definition} \label{def.definicja1}
-Niech $\cal X$ będzie przestrzenią.....
-\end{definition}
-
-Do definicji odnieść sie można poprzez jej etykietę: jak podano w Def.~\ref{def.definicja1}
-
-Przykładowe podkreślenie... \underline{tekst podkreślony}, pogrubienie: {\bf
-tekst pogrubiony} oraz wyrożnienie {\em tekst wyróżniony, czyli kursywa}. 
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału
-Dalszy tekst rozdziału a teraz koniec linii... \\
-\indent ... i nowy akapit. Akapity muszą być standardowo wcięte.  
-
-
-Przykład wzoru matematycznego numerowanego
-
-\begin{equation} \label{wzoreinsteina}
-E=m\cdot c^2
-\end{equation}
-
-{\bf Wszystkie symbole matematyczne występujące w tekście ,,na bieżąco'',
-czyli nieoznaczone numerem równania TAKŻE PISZEMY W TRYBIE MATEMA\-TYCZNYM, CZYLI
-K U R S Y W Ą} : $a=b\cdot c$, ale nie: a= b*c (!!)\\
-
-\indent Numeracja wzoru -- ZAWSZE w POSTACI (\#.\#\#)
-Jak podaje wzor (\ref{wzoreinsteina}).... (koniec linii). \\
-\indent Wyrażenia matematyczne można też wpisywać w wierszu -- używamy wów\-czas znaku '\$', który rozpoczyna i kończy wyrażenie, np. wg Einsteina $E=m\cdot c^2$...
-
-
-\section{Jak wstawiać rysunki? tabele? }
-A teraz pora na rysunek:
-\begin{figure}[!t]
-\centering
-%\includegraphics[width=7cm]{1figmftall} 
-\caption{Funkcja przynależności zbioru rozmytego -- Podpis ZAWSZE POD rysunkiem,
-numeracja w postaci \#.\#\#. } (wypada podać źródło, czyli literaturę,
-z której rysunek pochodzi, ewentualnie {\em opracowanie własne}.)
-\label{fig.funkcja.przyn}
-\end{figure}
-
-
-\begin{table}[!t]
-\centering
-\caption{Tytuł tabeli ZAWSZE NAD TABELĄ, numeracja w formie \#.\#\#. (wypada podać źródło, czyli literaturę,
-z której tabela pochodzi, ewentualnie {\em opracowanie własne}.)} 
-
-\label{tabls1}
-
-{\footnotesize 
-\vspace{5mm}
-\begin{tabular}{c c c c c}
-\hline\noalign{\smallskip}
-{\bf Alg.} & {\bf tytuł kolumny 1} & {\bf tytuł kolumny 1} & {\bf Tytuł kolumny
-3} & {\bf ....}     \\
-
-\hline\noalign{\smallskip}
-a & b & c & d & e  \vspace{3mm} \\ 
-\noalign{\smallskip}
- a & b & c & d & e \\
-
-\noalign{\smallskip}
-%%%
-\end{tabular}
-}
-\end{table}
-
-
-Rysunki i tabele nie powinny przekraczać 0.9 szerokości tekstu i zasadniczo
-powinny występować na górze strony. \\
-
-\indent Odnosić się do rysunku można poprzez jego etykietę ''label'', np. jak widać na rys. \ref{fig.funkcja.przyn}......
-
-Jak widać, rysunek nie wypada w dokumencie w tym samym miejscu co w kodzie, choć czasem się tak zdarza. Jeśli potrzebujesz przenieść rysunek, zajrzyj do rozdzialu 2.11. manuala pt. {\em Wstawki}. 
-
-\section{Listy wypunktowana i numerowana}
-
-\begin{itemize}
-\item pierwszy element listy wypunktowanej
-\item drugi...
-\item trzeci...
-\end{itemize}
-
-
-Nowy akapit z lista numerowaną. 
-\begin{enumerate}
- \item pierwszy element listy NUMEROWANEJ
- \item drugi...
- \item trzeci...
- \item trzeci...
- \item trzeci...
- \end{enumerate}
-
-\section{Przenoszenie wyrazów}
-Skorzystaj z polecenia {\tt hyphenation}\\ w preambule dokumentu, lub dziel
-wyrazy ,,ręcznie'' czyli właśnie tak jak tu: po\-dzie\-lo\-ne wy\-ra\-zy. 
-
-
-
-{\em Tytuł tego rozdziału ma dwie wersje: zwykłą, (w kodzie: w nawiasach
-klamrowych), która
-pokazuje sie na stronie rozpoczynającej rozdział, oraz krótką (w kodzie: w nawiasach
-kwadratowych), która pokazuje sie w spisie treści i w nagłówku}
-
-W rozdziale \ref{etykietarozdzialu2} podano podstawy teoretyczne i ogólny zakres
-pracy. W niniejszym rozdziale opisana zostanie technologia XYZ oraz metoda ABC
-użyta w części praktycznej, patrz rozdział~\ref{rozdz.czesc.prakt}. 
-
-\section{Sprzęt}
-...................
-\subsection{Element 1}
-.........................
-\subsection{Element 2}
-......................
-
-\section{Oprogramowanie}
-..........................
-\subsection{Serwer baz danych}
-........................
-\subsection{Środowisko zintegrowane}
-..........................
-\subsection{Oprogramowanie klienckie}
-
-\section{Technologie i metodologie programistyczne}
-..................
-\subsection{Język programowania}
-......................
-\subsection{Biblioteki}
-.......................
-\subsection{Wzorce projektowe}
-.......................
-
-\section{Inne, np. narzędzia i metody symulacji, }
-
-\chapter{Biblioteka programistyczna Qubic} \label{rozdz.czesc.prakt}
-Ta część pracy może być podzielona na więcej rozdziałów, np kiedy autor chce
-w~szczególności podkreślić któryś z etapów projektu. W zależności od tematu i~celów pracy, pewne sekcje można dodać (np. przy projektowaniu sieci, instalacji
-i~konfiguracji serwerów usług sieciowych), inne zaś pominąć.
-
-\section{Analiza wymagań}
-\subsection{Studium możliwości}
-\subsection{Wymagania funkcjonalne}
-.................
-\subsection{Ograniczenia projektu}
-
-\section{Projekt}
-\subsection{Projekt warstwy danych}
-
-\begin{enumerate}
-\item normalizacje baz danych
-\item projekt bazy/baz 
-\item grupy użytkowników i ich prawa dostępu do danych (zależne od implementacji bazy)
-\item ew. diagramy klas warstwy danych
-\end{enumerate}
-\subsection{Projekt warstwy logiki}
-\begin{enumerate}
-\item Diagramy i scenariusze przypadków użycia
-\item Diagramy przepływu danych (lub ich odpowiedniki)
-\item ew. diagramy klas, wzorce projektowe itp.
-\end{enumerate}
-
-\subsection{Projekt warstwy interfejsu użytkownika}
-\subsubsection{Wybór środowiska i platformy działania}
-\subsubsection{Rodzaj aplikacji (klient-serwer, thick/thin client, aplikacja
-,,biurkowa'', usługa, klient hybrydowy, itp.}
-\subsubsection{Technologie projektowania i realizacji interfejsu użytkownika,
-np. biblioteki}
-
-
-\section{Implementacja: punkty kluczowe}
-
-\section{Testy i wdrożenie}
-\subsection{Testy wydajności}
-\subsection{Testy regresyjne}
-\subsection{Testy bezpieczeństwa}
-\subsection{Dalsze testy}
-\subsection{Testy...}
-
-\section{Konserwacja i inżynieria wtórna}
-Jak przebiega eksploatacja systemu/projektu? Jakie wady i zalety ujawniły się po
-np. 2-miesięcznym okresie testowania i użytkowania? \\
-\indent Jak można skorzystać z tej wiedzy praktycznej pod kątem roz\-bu\-do\-wy pracy? Jakie elementy systemu powinny zostać w pierwszej kolejności zmodyfikowane?  
-
-\chapter{Podsumowanie}
-\section{Dyskusja wyników}
-Dzięki zrealizowaniu pracy poprawie uległa wydajność ....... Ponadto, o ?? \%
-skrócony został czas ........, a koszty osiągnięcia zamierzonego efektu zostały
-zmniejszone z ???pln do ???pln za godzinę/ dzień/ jednostkę sprzętu.........\\
-\indent Które cele pracy udało sie zrealizować? co z tego wynika? Które cele
-pracy pozostały niezrealizowane i dlaczego? 
-
-\section[Ocena możliwości wdrożenia...]{Ocena możliwości wdrożenia proponowanych
-\newline rozwiązań...}
-... ich wartość praktyczna, lokalne i globalne możliwości zastosowania, kwestia
-praw autorskich do powstałych produktów, itp. 
-
+Dzięki zrealizowaniu pracy poprawie uległa wydajność. Ponadto, o ? \% skrócony został czas. Które cele pracy udało sie zrealizować? Co z tego wynika? Które cele pracy 
+pozostały niezrealizowane i dlaczego? 
 
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
-\bibitem{kacprzyk86}
-Kacprzyk J. (1986) Fuzzy sets in system analysis.  PWN, Warsaw (in Polish). % http://www.ipipan.waw.pl/~subieta/artykuly/slownik_obiektowosci/hasla_slownika.html
-\bibitem{kacprzyk99b}
-Kacprzyk J., Strykowski P. (1999) Linguistic Data Summaries for Intelligent Decision Support, Proceedings of EFDAN'99. 4-th European Workshop on Fuzzy Decision Analysis and Recognition Technology for Management, Planning and Optimization, Dortmund, 1999, 3--12.
-\bibitem{kacprzyk01d}
-Kacprzyk J., Yager R. R. (2001) Linguistic summaries of data using fuzzy logic. International Journal of General Systems 30:133--154 
-
+\bibitem{symfonia} Grębosz, Jerzy. Symfonia C++. Standard. Wyd. 3. Kraków, 2013. ISBN 978-83-7366-134-4.
+\bibitem{cpp} C++ Language Tutorial. \url{http://www.cplusplus.com/doc/}.
+\bibitem{sql} Viescas, John. SQL Queries for Mere Mortals. 2001. ISBN 83-7279-152-X.
 \end{thebibliography}
 
 \addcontentsline{toc}{chapter}{Spis rysunków} 
@@ -530,17 +237,10 @@ Kacprzyk J., Yager R. R. (2001) Linguistic summaries of data using fuzzy logic. 
 \addcontentsline{toc}{chapter}{Spis tabel} 
 \listoftables
 
-
 \addcontentsline{toc}{chapter}{Załączniki} 
 \chapter*{Załączniki}
 \begin{enumerate}
-\item Załącznik nr 1
-\item Załącznik nr 2
-\item Załącznik nr 3
+\item
 \end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
