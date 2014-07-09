@@ -1,3 +1,9 @@
+% Do zrobienia:
+% - poprawić umiejscowienie obirazków
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[12pt]{report}
 
 \usepackage[T1]{fontenc}
@@ -6,7 +12,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{txfonts}
 \usepackage{pdfpages}
-\usepackage{hyperref}
+\usepackage{float}
 
 \renewcommand{\chaptername}{Rozdział}
 \renewcommand{\contentsname}{Spis treści}
@@ -166,6 +172,8 @@ z stworzonym przez nas Qubiciem.
 
 \chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych} \label{teoria}
 
+% Definicje polimorfizmu, refleksji, operacji CRUD, diagram UML/klas.
+
 \section{Podstawowe definicje} % Dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy.
 
 \chapter{Technologie i metody użyte w części badawczej} \label{technologie} % Sprzęt, oprogramowanie, serwer bazy danych, technologie i metodologie, język, biblioteki, wzorce.
@@ -174,9 +182,66 @@ z stworzonym przez nas Qubiciem.
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
-\section{Analiza wymagań} % Studium możliwości, wymagania funkcjonalne, niefunkcjonalne i ograniczenia projektu.
+\section{Analiza wymagań}
 
-\section{Projekt} % Projekt wartswy danych, logiki i widoku. Diagramy klas, wzorce projektowe. Rodzaj aplikacji, wybór środowiska i platformy działania. Wybór bibliotek.
+\subsection{Wymagania funkcjonalne}
+
+\subsection{Wymagania niefunkcjonalne}
+
+\section{Projekt} % Diagramy klas, wzorce projektowe. Rodzaj aplikacji, wybór środowiska i platformy działania. Wybór bibliotek.
+
+W związku z tym, że jest to projekt aplikacji szkieletowej w rozdziale tym nie zostanie zamieszczony opis warstwy danych czy też widoku, ponieważ zaprojektowanie oraz
+zaimplementowanie tych warstw należy do zadań programisty ko\-rzy\-sta\-ją\-cego z Qubica. Znajdą się tutaj jednak opisy poszczególnych modułów które wspólnie składają się
+na stworzoną aplikację szkieletową.
+
+\subsection{Interfejs CRUD}
+
+Kluczowym modułem narzędzi programistycznych realizujących mapowanie obiekt\-owo-relacyjne jest interfejs CRUD umożliwiający manipulowanie danymi w bazie danych z 
+poziomu kodu. Interfejs ten dostępny jest w podstaci co najmniej czterech metod, które jako argumenty przyjmują obiekty dziedziczące po jednej z klas Qubica -- 
+{\tt QbPersistable}. Umożliwia to wykorzystanie polimorfizmu, a przecież podczas operacji na obiektach od samego początku nie znany jest dokładny typ obiektu.
+
+Aby mapowanie mogło skutecznie działać potrzebny jest jego jednoznaczny opis, część narzędzi je realizujących korzysta z adnotacji, które określają mapowanie pomiędzy
+konkretnymi polami klas a konkretnymi tabelami w bazie danych. W Qubicu problem ten został rozwiązany w trochę inny sposób, który umożliwia stworzony generator opisu
+mapowania obiektowo-relacyjnego. Generowane pliki klas są tworzone według ściśle określonych zasad, co oznacza, że nazwy metod dostępowych odpowiadają w pewien
+sposób nazwom tabel i ich kolumn. Przykładowo dla kolumny o nazwie {\tt NAME} w tabeli {\tt EMPLOYEE} w pliku klasy {\tt Employee} zostaną wygenerowane metody 
+{\tt getName()} oraz {\tt setName(QString name)}. Wie\-dza ta została wykorzystana w trakcie korzystania z mechanizmu refleksji. Konfiguracja samego mapowania nazw
+została zapisana w pliku konfiguracyjnym Qubica.
+
+Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niższe schematy blokowe:
+
+\newpage
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resources/store_schema.png}
+\caption{Schemat blokowy metody zapisującej obiekty w bazie danych}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resources/update_schema.png}
+\caption{Schemat blokowy metody aktualizującej obiekty w bazie danych}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resources/load_schema.png}
+\caption{Schemat blokowy metody ładującej obiekty z bazy danych}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resources/remove_schema.png}
+\caption{Schemat blokowy metody usuwającej obiekty z bazy danych}
+\end{figure}
+
+\subsection{Diagram klas}
+
+\newpage
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resources/diagram.jpeg}
+\caption{Diagram klas}
+\end{figure}
 
 \section{Implementacja} % Punkty kluczowe, rodzaje przeprowadzanych testów.
 
@@ -227,7 +292,7 @@ pozostały niezrealizowane i dlaczego?
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
 \bibitem{symfonia} Grębosz, Jerzy. Symfonia C++. Standard. Wyd. 3. Kraków, 2013. ISBN 978-83-7366-134-4.
-\bibitem{cpp} C++ Language Tutorial. \url{http://www.cplusplus.com/doc/}.
+\bibitem{cpp} C++ Language Tutorial. {\tt http://www.cplusplus.com/doc/}.
 \bibitem{sql} Viescas, John. SQL Queries for Mere Mortals. 2001. ISBN 83-7279-152-X.
 \end{thebibliography}
 

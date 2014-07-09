@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  6 JUL 2014 15:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  9 JUL 2014 18:28
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -494,238 +494,112 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count104
 \AM@templatesizebox=\box29
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
-Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
-Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count105
+\float@exts=\toks23
+\float@box=\box30
+\@float@everytoks=\toks24
+\@floatcapt=\box31
 )
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
-)
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
-)
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package hobsub Info: Skipping package `atbegshi' (already loaded).
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-)
-\@linkdim=\dimen116
-\Hy@linkcounter=\count105
-\Hy@pagecounter=\count106
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-)
-\Hy@SavedSpaceFactor=\count107
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count108
-
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen117
-\Fld@menulength=\count109
-\Field@Width=\dimen118
-\Fld@charsize=\dimen119
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count110
-\c@Item=\count111
-\c@Hfootnote=\count112
-)
-
-Package hyperref Message: Driver (autodetected): hpdftex.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count113
-\c@bookmark@seq@number=\count114
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
-)
-\Hy@SectionHShift=\skip49
-)
-\c@definition=\count115
-\c@example=\count116
-\c@corollary=\count117
+\c@definition=\count106
+\c@example=\count107
+\c@corollary=\count108
 
 (D:\Workspace\Qubic\docs\thesis.aux)
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 28.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 28.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 34.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 34.
 
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 28.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 28.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 34.
 
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 28.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 28.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 34.
 
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 28.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 28.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 34.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Try loading font information for T1+txr on input line 28.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Try loading font information for T1+txr on input line 34.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
 )
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen120
-\scratchbox=\box30
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen121
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count109
+\scratchdimen=\dimen116
+\scratchbox=\box32
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen117
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks26
 )
-\AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 28.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
-)
-\c@section@level=\count124
-)
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
-
-(D:\Workspace\Qubic\docs\thesis.out) (D:\Workspace\Qubic\docs\thesis.out)
-\@outlinefile=\write3
-
-<resources/title_page.pdf, id=110, 597.23125pt x 845.1575pt>
+\AtBeginShipoutBox=\box33
+ <resources/title_page.pdf, id=1, 597.23125pt x 845.1575pt>
 File: resources/title_page.pdf Graphic file (type pdf)
 
 <use resources/title_page.pdf>
-Package pdftex.def Info: resources/title_page.pdf used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf used on input line 36.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: resources/title_page.pdf Graphic file (type pdf)
  <use resources/title_page.pdf>
-Package pdftex.def Info: resources/title_page.pdf used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf used on input line 36.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<resources/title_page.pdf, id=113, page=1, 597.23125pt x 845.1575pt>
+<resources/title_page.pdf, id=4, page=1, 597.23125pt x 845.1575pt>
 File: resources/title_page.pdf Graphic file (type pdf)
 
 <use resources/title_page.pdf, page 1>
-Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 36.
 
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: resources/title_page.pdf Graphic file (type pdf)
  <use resources/title_page.pdf, page 1>
-Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 36.
 
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: resources/title_page.pdf Graphic file (type pdf)
 
 <use resources/title_page.pdf, page 1>
-Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 36.
 
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: resources/title_page.pdf Graphic file (type pdf)
  <use resources/title_page.pdf, page 1>
-Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 36.
 
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: resources/title_page.pdf Graphic file (type pdf)
 
 <use resources/title_page.pdf, page 1>
-Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 30.
+Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 36.
 
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
  [1
@@ -760,24 +634,24 @@ File: utxsyc.fd 2000/12/15 v3.1
 [2
 
 {C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-\tf@toc=\write4
+\tf@toc=\write3
 
 [3]
 Rozdzia\IeC {\l } 1.
 
-Overfull \hbox (3.90147pt too wide) in paragraph at lines 38--41
+Overfull \hbox (3.90147pt too wide) in paragraph at lines 44--47
 \T1/txr/m/n/12 si[]gaj[] po ró»nego rodzaju narz[]dzia pro-gramisty-czne, które
  maj[] za zadanie uªatwi¢
  []
 
 
-Overfull \hbox (1.52544pt too wide) in paragraph at lines 42--46
+Overfull \hbox (1.52544pt too wide) in paragraph at lines 48--52
 \T1/txr/m/n/12 da-menty dla twor-zonych ap-likacji czy te» bib-lioteki pro-gram
 isty-czne udost[]pniaj[]ce
  []
 
 
-Overfull \hbox (0.10628pt too wide) in paragraph at lines 53--57
+Overfull \hbox (0.10628pt too wide) in paragraph at lines 59--63
 []\T1/txr/m/n/12 Podziaª naszej pracy zostanie opisany w dal-szych rozdzi-aªach
 , jed-nak na wst[]pie
  []
@@ -785,38 +659,38 @@ Overfull \hbox (0.10628pt too wide) in paragraph at lines 53--57
 [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 70.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 76.
  (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 70.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 76.
 
-Overfull \hbox (1.03214pt too wide) in paragraph at lines 76--78
+Overfull \hbox (1.03214pt too wide) in paragraph at lines 82--84
 \T1/txr/m/n/12 zwi[]zany z wyko-rzysty-wanym sys-te-mem zarz[]dzania baz[] dany
 ch dzi[]ki cze-
  []
 
 [5]
-Overfull \hbox (0.70811pt too wide) in paragraph at lines 105--106
+Overfull \hbox (0.70811pt too wide) in paragraph at lines 111--112
 []\T1/txr/m/n/12 Stworzenie wªas-nej ap-likacji szkiele-towej realizuj[]cej map
 owanie obiektowo-
  []
 
 [6]
-Overfull \hbox (7.2001pt too wide) in paragraph at lines 115--116
+Overfull \hbox (7.2001pt too wide) in paragraph at lines 121--122
 []\T1/txr/m/n/12 Stworzenie gen-er-a-tora opisu mapowa-nia obiektowo-relacyjneg
 o -- jest to przed-
  []
 
 
-Overfull \hbox (3.93741pt too wide) in paragraph at lines 126--129
+Overfull \hbox (3.93741pt too wide) in paragraph at lines 132--135
 \T1/txr/m/n/12 Podstawowa lit-er-atura wyko-rzys-tana pod-czas pisa-nia niniejs
 zej pracy doty-czy specy-
  []
 
 [7] [8]
-Overfull \hbox (2.46143pt too wide) in paragraph at lines 164--166
+Overfull \hbox (2.46143pt too wide) in paragraph at lines 170--172
 \T1/txr/m/n/12 liotek pro-gramisty-cznych i ap-likacji szkiele-towych realizuj[
 ]cych mapowanie obiekt-
  []
@@ -835,98 +709,154 @@ Rozdzia\IeC {\l } 4.
 
 ]
 Rozdzia\IeC {\l } 5.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 201.
 
-Overfull \hbox (20.0047pt too wide) in paragraph at lines 194--195
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+)
+Overfull \hbox (4.16544pt too wide) in paragraph at lines 199--202
+\T1/txr/m/n/12 Kluczowym mod-uªem narz[]dzi pro-gramisty-cznych realizuj[]cych 
+mapowanie obiekt-
+ []
+
+
+Overfull \hbox (2.79745pt too wide) in paragraph at lines 199--202
+\T1/txr/m/n/12 metod, które jako ar-gu-menty przyjmuj[] obiekty dziedzicz[]ce p
+o jed-nej z klas Qubica
+ []
+
+
+Overfull \hbox (2.56947pt too wide) in paragraph at lines 203--209
+\T1/txr/m/n/12 opis, cz[]±¢ narz[]dzi je realizuj[]cych ko-rzysta z ad-no-tacji
+, które okre±laj[] mapowanie
+ []
+
+[13
+
+] [14] <resources/store_schema.png, id=74, 796.9775pt x 1127.21124pt>
+File: resources/store_schema.png Graphic file (type png)
+
+<use resources/store_schema.png>
+Package pdftex.def Info: resources/store_schema.png used on input line 215.
+(pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
+
+Overfull \vbox (21.44072pt too high) has occurred while \output is active []
+
+
+[15 <D:/Workspace/Qubic/docs/resources/store_schema.png (PNG copy)>]
+<resources/update_schema.png, id=78, 796.9775pt x 1127.21124pt>
+File: resources/update_schema.png Graphic file (type png)
+
+<use resources/update_schema.png>
+Package pdftex.def Info: resources/update_schema.png used on input line 221.
+(pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
+
+Overfull \vbox (21.44072pt too high) has occurred while \output is active []
+
+
+[16 <D:/Workspace/Qubic/docs/resources/update_schema.png (PNG copy)>]
+<resources/load_schema.png, id=82, 796.9775pt x 1127.21124pt>
+File: resources/load_schema.png Graphic file (type png)
+
+<use resources/load_schema.png>
+Package pdftex.def Info: resources/load_schema.png used on input line 227.
+(pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
+
+Overfull \vbox (21.44072pt too high) has occurred while \output is active []
+
+
+[17 <D:/Workspace/Qubic/docs/resources/load_schema.png (PNG copy)>]
+<resources/remove_schema.png, id=86, 796.9775pt x 1127.21124pt>
+File: resources/remove_schema.png Graphic file (type png)
+
+<use resources/remove_schema.png>
+Package pdftex.def Info: resources/remove_schema.png used on input line 233.
+(pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
+
+Overfull \vbox (21.44072pt too high) has occurred while \output is active []
+
+
+[18 <D:/Workspace/Qubic/docs/resources/remove_schema.png (PNG copy)>] [19]
+<resources/diagram.jpeg, id=94, 1032.85875pt x 626.34pt>
+File: resources/diagram.jpeg Graphic file (type jpg)
+
+<use resources/diagram.jpeg>
+Package pdftex.def Info: resources/diagram.jpeg used on input line 242.
+(pdftex.def)             Requested size: 398.33858pt x 241.55737pt.
+
+Overfull \hbox (20.0047pt too wide) in paragraph at lines 259--260
 \T1/txr/m/n/12 W celu dal-szego roz-woju stwor-zonej ap-likacji szkiele-towej w
 arto rozwa»y¢ wprowadze-
  []
 
 
-Overfull \hbox (2.38812pt too wide) in paragraph at lines 197--200
+Overfull \hbox (2.38812pt too wide) in paragraph at lines 262--265
 []\T1/txr/m/n/12 System ad-no-tacji -- obec-nie na opis mapowa-nia skªadaj[] si
 [] odpowie-nie nazwy
  []
 
-[13
-
-]
-Overfull \hbox (5.62813pt too wide) in paragraph at lines 207--209
+[20 <D:/Workspace/Qubic/docs/resources/diagram.jpeg>]
+Overfull \hbox (5.62813pt too wide) in paragraph at lines 272--274
 []\T1/txr/m/n/12 Wsparcie dla ró»nych rodza-jów baz danych -- wprowadze-nie teg
 o us-prawnienia
  []
 
 
-Overfull \hbox (4.93141pt too wide) in paragraph at lines 207--209
+Overfull \hbox (4.93141pt too wide) in paragraph at lines 272--274
 \T1/txr/m/n/12 ogranicza si[] do im-ple-men-tacji kilku in-ter-fe-jsów dla in-n
 ych ni» MySQL rodza-
  []
 
 
-Overfull \hbox (13.81215pt too wide) in paragraph at lines 209--211
+Overfull \hbox (13.81215pt too wide) in paragraph at lines 274--276
 []\T1/txr/m/n/12 Serializacja danych -- do-danie mo»li-wo±ci se-ri-al-iza-cji m
 o»e okaza¢ si[] u»yteczne
  []
 
 
-Overfull \hbox (3.93607pt too wide) in paragraph at lines 213--215
+Overfull \hbox (3.93607pt too wide) in paragraph at lines 278--280
 []\T1/txr/m/n/12 Wielow[]tkowo±¢ -- wyko-rzys-tanie wielow[]tkowo±ci w przy-pad
 ku mapowania-
  []
 
-[14]
+[21]
 Rozdzia\IeC {\l } 6.
-[15
+[22
 
-]
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 230.
-
- (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
-File: t1txtt.fd 2000/12/15 v3.1
-)
-[16
+] [23
 
 ] (D:\Workspace\Qubic\docs\thesis.lof)
-\tf@lof=\write5
- [17
+\tf@lof=\write4
+ [24
 
 ]
 (D:\Workspace\Qubic\docs\thesis.lot)
-\tf@lot=\write6
- [18
+\tf@lot=\write5
+ [25
+
+] [26
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
- [19
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
-
-(D:\Workspace\Qubic\docs\thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B09789445DA4CBE6149DC1537EBB378C;1752.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 246.
- ) 
+(D:\Workspace\Qubic\docs\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 8070 strings out of 493921
- 112440 string characters out of 3144874
- 196288 words of memory out of 3000000
- 11150 multiletter control sequences out of 15000+200000
- 52311 words of font info for 103 fonts, out of 3000000 for 9000
+ 4430 strings out of 493921
+ 56729 string characters out of 3144874
+ 113353 words of memory out of 3000000
+ 7605 multiletter control sequences out of 15000+200000
+ 57015 words of font info for 107 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,18n,42p,279b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/
-Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxb.pfb><C:/Users
-/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/User
-s/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/t1xtt.pfb><C:/Us
-ers/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/txsy.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (19 pages, 172355 bytes).
+ 38i,18n,42p,279b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/
+enc/dvips/fontname/8r.enc}<C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/typ
+e1/public/txfonts/rtxb.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/ty
+pe1/public/txfonts/rtxr.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/t
+ype1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
+/type1/public/txfonts/txsy.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
+rw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
+mr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on thesis.pdf (26 pages, 501984 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

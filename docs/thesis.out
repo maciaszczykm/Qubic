@@ -11,17 +11,19 @@
 \BOOKMARK [0][-]{chapter.4}{Analiza istniejacych rozwiazan}{}% 11
 \BOOKMARK [0][-]{chapter.5}{Aplikacja szkieletowa Qubic}{}% 12
 \BOOKMARK [1][-]{section.5.1}{Analiza wymagan}{chapter.5}% 13
-\BOOKMARK [1][-]{section.5.2}{Projekt}{chapter.5}% 14
-\BOOKMARK [1][-]{section.5.3}{Implementacja}{chapter.5}% 15
-\BOOKMARK [1][-]{section.5.4}{Konserwacja i inzynieria wt\363rna}{chapter.5}% 16
-\BOOKMARK [1][-]{section.5.5}{Dokumentacja uzytkownika}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.6}{Przyk\233adowa aplikacja wykorzystujaca Qubica}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.7}{Testy oraz ich wyniki}{chapter.5}% 19
-\BOOKMARK [1][-]{section.5.8}{Perspektywy rozwoju Qubica}{chapter.5}% 20
-\BOOKMARK [0][-]{chapter.6}{Podsumowanie}{}% 21
-\BOOKMARK [1][-]{section.6.1}{Dyskusja wynik\363w}{chapter.6}% 22
-\BOOKMARK [1][-]{section.6.2}{Perspektywy rozwoju pracy}{chapter.6}% 23
-\BOOKMARK [0][-]{section.6.2}{Bibliografia}{}% 24
-\BOOKMARK [0][-]{chapter*.10}{Spis rysunk\363w}{}% 25
-\BOOKMARK [0][-]{chapter*.11}{Spis tabel}{}% 26
-\BOOKMARK [0][-]{chapter*.12}{Za\233aczniki}{}% 27
+\BOOKMARK [2][-]{subsection.5.1.1}{Wymagania funkcjonalne}{section.5.1}% 14
+\BOOKMARK [2][-]{subsection.5.1.2}{Wymagania niefunkcjonalne}{section.5.1}% 15
+\BOOKMARK [1][-]{section.5.2}{Projekt}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.3}{Implementacja}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.4}{Konserwacja i inzynieria wt\363rna}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.5}{Dokumentacja uzytkownika}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.6}{Przyk\233adowa aplikacja wykorzystujaca Qubica}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.7}{Testy oraz ich wyniki}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.8}{Perspektywy rozwoju Qubica}{chapter.5}% 22
+\BOOKMARK [0][-]{chapter.6}{Podsumowanie}{}% 23
+\BOOKMARK [1][-]{section.6.1}{Dyskusja wynik\363w}{chapter.6}% 24
+\BOOKMARK [1][-]{section.6.2}{Perspektywy rozwoju pracy}{chapter.6}% 25
+\BOOKMARK [0][-]{section.6.2}{Bibliografia}{}% 26
+\BOOKMARK [0][-]{chapter*.10}{Spis rysunk\363w}{}% 27
+\BOOKMARK [0][-]{chapter*.11}{Spis tabel}{}% 28
+\BOOKMARK [0][-]{chapter*.12}{Za\233aczniki}{}% 29
