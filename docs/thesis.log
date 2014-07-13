@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  10 JUL 2014 20:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  13 JUL 2014 20:08
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -684,19 +684,25 @@ owanie obiektowo-
  []
 
 
-Overfull \hbox (7.2001pt too wide) in paragraph at lines 134--135
+Overfull \hbox (7.2001pt too wide) in paragraph at lines 120--121
 []\T1/txr/m/n/12 Stworzenie gen-er-a-tora opisu mapowa-nia obiektowo-relacyjneg
 o -- jest to przed-
  []
 
 
-Overfull \hbox (3.93741pt too wide) in paragraph at lines 145--148
-\T1/txr/m/n/12 Podstawowa lit-er-atura wyko-rzys-tana pod-czas pisa-nia niniejs
-zej pracy doty-czy specy-
+Overfull \hbox (4.59741pt too wide) in paragraph at lines 131--135
+\T1/txr/m/n/12 ta« w j[]zyku SQL, ap-likacji szkiele-towej Qt oraz mapowa-nia o
+biektowo-relacyjnego.
  []
 
 [7] [8]
-Overfull \hbox (2.46143pt too wide) in paragraph at lines 183--185
+Overfull \hbox (2.70955pt too wide) in paragraph at lines 167--168
+[]\T1/txr/m/n/12 W tym przy-padku tak»e warto±-ciowe okazaªy si[] specy-fikacje
+ na przykªad j[]zyka
+ []
+
+
+Overfull \hbox (2.46143pt too wide) in paragraph at lines 193--195
 \T1/txr/m/n/12 liotek pro-gramisty-cznych i ap-likacji szkiele-towych realizuj[
 ]cych mapowanie obiekt-
  []
@@ -715,24 +721,24 @@ Rozdzia\IeC {\l } 4.
 
 ]
 Rozdzia\IeC {\l } 5.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 214.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 224.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (4.16544pt too wide) in paragraph at lines 212--215
+Overfull \hbox (4.16544pt too wide) in paragraph at lines 222--225
 \T1/txr/m/n/12 Kluczowym mod-uªem narz[]dzi pro-gramisty-cznych realizuj[]cych 
 mapowanie obiekt-
  []
 
 
-Overfull \hbox (2.79745pt too wide) in paragraph at lines 212--215
+Overfull \hbox (2.79745pt too wide) in paragraph at lines 222--225
 \T1/txr/m/n/12 metod, które jako ar-gu-menty przyjmuj[] obiekty dziedzicz[]ce p
 o jed-nej z klas Qubica
  []
 
 
-Overfull \hbox (2.56947pt too wide) in paragraph at lines 216--222
+Overfull \hbox (2.56947pt too wide) in paragraph at lines 226--232
 \T1/txr/m/n/12 opis, cz[]±¢ narz[]dzi je realizuj[]cych ko-rzysta z ad-no-tacji
 , które okre±laj[] mapowanie
  []
@@ -743,7 +749,7 @@ Overfull \hbox (2.56947pt too wide) in paragraph at lines 216--222
 File: resources/store_schema.png Graphic file (type png)
 
 <use resources/store_schema.png>
-Package pdftex.def Info: resources/store_schema.png used on input line 228.
+Package pdftex.def Info: resources/store_schema.png used on input line 238.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (21.44072pt too high) has occurred while \output is active []
@@ -754,7 +760,7 @@ Overfull \vbox (21.44072pt too high) has occurred while \output is active []
 File: resources/update_schema.png Graphic file (type png)
 
 <use resources/update_schema.png>
-Package pdftex.def Info: resources/update_schema.png used on input line 234.
+Package pdftex.def Info: resources/update_schema.png used on input line 244.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (21.44072pt too high) has occurred while \output is active []
@@ -765,7 +771,7 @@ Overfull \vbox (21.44072pt too high) has occurred while \output is active []
 File: resources/load_schema.png Graphic file (type png)
 
 <use resources/load_schema.png>
-Package pdftex.def Info: resources/load_schema.png used on input line 240.
+Package pdftex.def Info: resources/load_schema.png used on input line 250.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (21.44072pt too high) has occurred while \output is active []
@@ -776,79 +782,83 @@ Overfull \vbox (21.44072pt too high) has occurred while \output is active []
 File: resources/remove_schema.png Graphic file (type png)
 
 <use resources/remove_schema.png>
-Package pdftex.def Info: resources/remove_schema.png used on input line 246.
+Package pdftex.def Info: resources/remove_schema.png used on input line 256.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (21.44072pt too high) has occurred while \output is active []
 
 
 [18 <D:/Workspace/Qubic/docs/resources/remove_schema.png (PNG copy)>] [19]
-<resources/diagram.jpeg, id=94, 1032.85875pt x 626.34pt>
+<resources/diagram.jpeg, id=94, 469.755pt x 774.64406pt>
 File: resources/diagram.jpeg Graphic file (type jpg)
 
 <use resources/diagram.jpeg>
-Package pdftex.def Info: resources/diagram.jpeg used on input line 255.
-(pdftex.def)             Requested size: 398.33858pt x 241.55737pt.
+Package pdftex.def Info: resources/diagram.jpeg used on input line 265.
+(pdftex.def)             Requested size: 398.33858pt x 656.8785pt.
 
-Overfull \hbox (20.0047pt too wide) in paragraph at lines 272--273
+Overfull \vbox (114.92137pt too high) has occurred while \output is active []
+
+
+[20 <D:/Workspace/Qubic/docs/resources/diagram.jpeg>]
+Overfull \hbox (20.0047pt too wide) in paragraph at lines 282--283
 \T1/txr/m/n/12 W celu dal-szego roz-woju stwor-zonej ap-likacji szkiele-towej w
 arto rozwa»y¢ wprowadze-
  []
 
 
-Overfull \hbox (2.38812pt too wide) in paragraph at lines 275--278
+Overfull \hbox (2.38812pt too wide) in paragraph at lines 285--288
 []\T1/txr/m/n/12 System ad-no-tacji -- obec-nie na opis mapowa-nia skªadaj[] si
 [] odpowie-nie nazwy
  []
 
-[20 <D:/Workspace/Qubic/docs/resources/diagram.jpeg>]
-Overfull \hbox (5.62813pt too wide) in paragraph at lines 285--287
+
+Overfull \hbox (5.62813pt too wide) in paragraph at lines 295--297
 []\T1/txr/m/n/12 Wsparcie dla ró»nych rodza-jów baz danych -- wprowadze-nie teg
 o us-prawnienia
  []
 
 
-Overfull \hbox (4.93141pt too wide) in paragraph at lines 285--287
+Overfull \hbox (4.93141pt too wide) in paragraph at lines 295--297
 \T1/txr/m/n/12 ogranicza si[] do im-ple-men-tacji kilku in-ter-fe-jsów dla in-n
 ych ni» MySQL rodza-
  []
 
-
-Overfull \hbox (13.81215pt too wide) in paragraph at lines 287--289
+[21]
+Overfull \hbox (13.81215pt too wide) in paragraph at lines 297--299
 []\T1/txr/m/n/12 Serializacja danych -- do-danie mo»li-wo±ci se-ri-al-iza-cji m
 o»e okaza¢ si[] u»yteczne
  []
 
 
-Overfull \hbox (3.93607pt too wide) in paragraph at lines 291--293
+Overfull \hbox (3.93607pt too wide) in paragraph at lines 301--303
 []\T1/txr/m/n/12 Wielow[]tkowo±¢ -- wyko-rzys-tanie wielow[]tkowo±ci w przy-pad
 ku mapowania-
  []
 
-[21]
+[22]
 Rozdzia\IeC {\l } 6.
-[22
+[23
 
-] [23
+] [24
 
 ] (D:\Workspace\Qubic\docs\thesis.lof)
 \tf@lof=\write4
- [24
+ [25
 
 ]
 (D:\Workspace\Qubic\docs\thesis.lot)
 \tf@lot=\write5
- [25
+ [26
 
-] [26
+] [27
 
 ]
 (D:\Workspace\Qubic\docs\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4430 strings out of 493921
- 56729 string characters out of 3144874
- 114353 words of memory out of 3000000
- 7605 multiletter control sequences out of 15000+200000
+ 4431 strings out of 493921
+ 56736 string characters out of 3144874
+ 114356 words of memory out of 3000000
+ 7606 multiletter control sequences out of 15000+200000
  57015 words of font info for 107 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  38i,18n,42p,279b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -860,9 +870,9 @@ ype1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
 /type1/public/txfonts/txsy.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (26 pages, 502438 bytes).
+Output written on thesis.pdf (27 pages, 510303 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
+ 144 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
