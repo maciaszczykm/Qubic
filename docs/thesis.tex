@@ -151,13 +151,13 @@ przyjęte przez nas założenia i zaproponowane rozwiązania były lepsze niż t
 
 \section{Przegląd literatury w dziedzinie}
 
-\subsection{Literatura dotycząca języka C++}
+\subsection{Literatura dotycząca języka C++ oraz Qt}
 
 W celu zasięgnięcia informacji na temat języka C++ i zagadnień z nim związanych najczęściej wykorzystywaną pozycją książkową była ,,Symfonia'' Jerzego Grębosza \cite{symfonia}.
 Najlepszym jej określeniem jest ,,kurs programowania w języku C++'', opisane zostały w niej jednak zagadnienia dotyczące nie tylko języka C++, a także co istotne dla
 autora niniejszej pracy zagadnienia dotyczące obiektowości.
 
-Poza tym wartościowym źródłem wiedzy podczas tworzenia Qubica była specyfikacja języka C++ \cite{cpp}.
+Poza tym wartościowym źródłem wiedzy podczas tworzenia Qubica była specyfikacja języka C++ \cite{cpp} oraz dokumentacja aplikacji szkieletowej Qt \cite{qt}.
 
 \subsection{Literatura dotycząca języka SQL}
 
@@ -166,42 +166,42 @@ tytule ,,SQL Queries for Mere Mortals'' \cite{sql}. Wyjaśnione zostały w niej 
 
 W tym przypadku także wartościowe okazały się specyfikacje na przykład języka MySQL \cite{mysql}.
 
-\subsection{Literatura dotycząca aplikacji szkieletowej Qt}
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \subsection{Literatura dotycząca mapowania obiektowo-relacyjnego}
 
 \section{Układ pracy} % Cały podrozdział około 1 strony.
 
 Tematem niniejszej pracy jest mapowanie obiektowo-relacyjne w języku C++, zaś za jej główny cel przyjęto przeanalizowanie istniejących bibliotek oraz aplikacji szkieletowych
-realizujących mapowanie obiektowo-relacyjne oraz zaproponowanie własnej aplikacji szkieletowej.
+realizujących mapowanie obiektowo-relacyjne oraz stworzenie własnej aplikacji szkieletowej.
 
-W rozdziale \ref{wstep} uzasadniony został wybór tematu pracy, opisane jej cele oraz problematyka i zakres. Rozdział \ref{teoria} zawiera opis zagadnień teoretycznych
-do\-ty\-czą\-cych mapowania obiektowo-relacyjnego a także tworzenia aplikacji szkieletowych w języku C++.
+Najważniejszym celem pracy jest przeanalizowanie istniejących narzędzi służących do mapowania obiektowo-relacyjnego w języku C++ oraz stworzenie na podstawie tej analizy
+własnej aplikacji szkieletowej realizującej to samo zagadnienie.
 
-Najważniejszym rezultatem pracy jest analiza oraz porównanie istniejących bibliotek programistycznych i aplikacji szkieletowych realizujących mapowanie obiekt\-owo-rel\-acyjne
-z stworzonym przez nas Qubiciem.
+Rodział \ref{wstep} otwiera uzasadnienie wyboru tematu pracy, opisane zostały w nim także cele pracy, jej problematyka, zakres, wykorzystane metody badawcze, prze\-gląd 
+literatury oraz jej układ.
+
+Rozdział \ref{teoria} zawiera objaśnienia podstawowych zagadnień teotetycznych związanych z mapowaniem obiektowo-relacyjnym oraz tworzeniem aplikacji szkieletowych w
+języku C++.
+
+Rozdział \ref{analiza} przedstawia analizę istniejących już narzędzi służących do mapowania obiektowo-relacyjnego napisanych w języku C++.
+
+Rozdział \ref{technologie} zawiera opis technologii oraz metod wykorzystanych w części badawczej niniejszej pracy.
+
+Rozdział \ref{qubic} przedstawia projekt aplikacji szkieletowej Qubic, postawione wymagania, opis jego implementacji, wyniki testów oraz końcowe porównanie z wcześniej
+analizowanymi narzędziami w rozdziale \ref{analiza}.
+
+Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskiej, biorąc pod szczególną uwagę dyskusję wyników oraz dalsze prespektywy rozwoju pracy.
 
 \chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych} \label{teoria}
 
-% Definicje polimorfizmu, refleksji, operacji CRUD, diagram UML/klas.
+\section{Programowanie obiektowe}
 
-\section{Podstawowe definicje} % Dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy.
+\section{Relacyjne bazy danych}
 
-\chapter{Technologie i metody użyte w części badawczej} \label{technologie} % Sprzęt, oprogramowanie, serwer bazy danych, technologie i metodologie, język, biblioteki, wzorce.
+\section{Mapowanie obiektowo-relacyjne}
 
 \chapter[Analiza istniejących rozwiązań]{Analiza istniejących rozwiązań mapowania obiektowo-relacyjnego w języku C++} \label{analiza}
+
+\chapter{Technologie i metody użyte w części badawczej} \label{technologie}
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
@@ -210,6 +210,39 @@ z stworzonym przez nas Qubiciem.
 \subsection{Wymagania funkcjonalne}
 
 \subsection{Wymagania niefunkcjonalne}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
++ aplikacje szkieletowe i biblioteki? czy tylko jedno z nich?
++ poprawić książkę do sql
++ co tak na prawdę będzie testowane/analizowane?
++ literatura dot. orm
++ 3x teoria
++ poprawki od początku
++ definicje polimorfizmu, refleksji, operacji CRUD, diagram UML/klas
++ dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy
++ analiza istniejacych rozwiazan
++ technologie (sprzęt, oprogramowanie, serwer bazy danych, technologie i metodologie, język, biblioteki, wzorce)
++ 2x wymagania
+
 
 \section{Projekt} % Diagramy klas, wzorce projektowe. Rodzaj aplikacji, wybór środowiska i platformy działania. Wybór bibliotek.
 
@@ -316,6 +349,7 @@ pozostały niezrealizowane i dlaczego?
 \begin{thebibliography}{99}
 \bibitem{symfonia} Grębosz, Jerzy. Symfonia C++. Standard. Wyd. 3. Kraków, 2013. ISBN 978-83-7366-134-4.
 \bibitem{cpp} C++ Language Tutorial. {\tt http://www.cplusplus.com/doc/}.
+\bibitem{qt}Qt Project Documentation. {\tt http://qt-project.org/doc/}.
 \bibitem{sql} Viescas, John. SQL Queries for Mere Mortals. 2001. ISBN 83-7279-152-X.
 \bibitem{mysql} MySQL Documentation. {\tt http://dev.mysql.com/doc/}
 \end{thebibliography}
