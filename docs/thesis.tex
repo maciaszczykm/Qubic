@@ -6,6 +6,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{txfonts}
 \usepackage{pdfpages}
+\usepackage{caption}
 \usepackage{float}
 
 \renewcommand{\chaptername}{Rozdział}
@@ -184,8 +185,6 @@ języku C++.
 
 Rozdział \ref{analiza} przedstawia analizę istniejących już narzędzi służących do mapowania obiektowo-relacyjnego napisanych w języku C++.
 
-Rozdział \ref{technologie} zawiera opis technologii oraz metod wykorzystanych w części badawczej niniejszej pracy.
-
 Rozdział \ref{qubic} przedstawia projekt aplikacji szkieletowej Qubic, postawione wymagania, opis jego implementacji, wyniki testów oraz końcowe porównanie z wcześniej
 analizowanymi narzędziami w rozdziale \ref{analiza}.
 
@@ -201,7 +200,9 @@ Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskie
 
 \chapter[Analiza istniejących rozwiązań]{Analiza istniejących rozwiązań mapowania obiektowo-relacyjnego w języku C++} \label{analiza}
 
-\chapter{Technologie i metody użyte w części badawczej} \label{technologie}
+\section{Przegląd istniejących rozwiązań}
+
+\section{Porównanie istniejących rozwiązań}
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
@@ -209,46 +210,72 @@ Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskie
 
 \subsection{Wymagania funkcjonalne}
 
+Podczas projektowania Qubica przyjęto następujące założenia w celu jak najlepszego odwzorowania cech mapowania obiektowo-relacyjnego:
+
+\begin{itemize}
+\item Aplikacja musi umożliwiać podstawowe operacje mapowania obiektowo-rela\-cyjnego, a więc zapisywanie obiektów do bazy danych, ich odczyt, aktualizowanie obiektów
+już zapsanych w bazie oraz ich usuwanie.
+\item Aplikacja musi udostępniać interfejs do tworzenia zapytań z poziomu kodu, dzięki temu jej użytkownik nie musi znać języka SQL.
+\item Aplikacja musi udostępniać funkcje dostępu do powiązanych danych w przypadku wystąpienia relacji różnych od jeden do jednego. Użytkownik powinien mieć możliwość
+uzyskania dostępu do obiektów powiązanych z wybranym obiektem bez konieczności własnoręcznego konstruowania zapytań.
+\item Aplikacja powinna posiadać wsparcie dla wielu rodzajów baz danych, ewentualnie musi być ona łatwo rozszerzalna.
+\item Aplikacja musi posiadać możliwość wykorzystania transakcji.
+\item Aplikacja musi posiadać możliwość konfiguracji.
+\end{itemize}
+
 \subsection{Wymagania niefunkcjonalne}
 
+Do wymagań niefunkcjonalnych postawionych projektowanej aplikacji należą:
 
+\begin{itemize}
+\item Użytkowanie aplikacji powinno być jak najbardziej intuicyjne, co za tym idzie kod użytkownika mający za zadanie wykonywać podstawowe operacje powinien zajmować
+jak najmniej linii.
+\item Aplikacja musi działać możliwie szybko, czas podstawowych operacji nie powinien znacząco odbiegać od tego w przypadku gdy użytkownik sam two\-rzyłby zapytania do bazy.
+\item Aplikacja musi rozpoznawać relacje jeden do jednego, jeden do wielu oraz wiele do wielu i odpowiednio je obsługiwać.
+\item Pamięć w trakcie działania aplikacji musi być odpowiednio zarządzana, niedopuszczalne są żadne wycieki pamięci czy też zapętlenia się programu.
+\item Błędy pojawiające się w trakcie działania aplikacji powinny być prawidłowo obsługiwane i sygnalizowane użytkownikowi.
+\end{itemize}
 
+\section{Projekt}
 
+\subsection{Rodzaj aplikacji}
 
+Qubic jest aplikacją szkieletową, czyli strukturą do wykorzystywaną do budowy innych aplikacji. Jego podstawowym zadaniem jest realizacja mapowania obiektowo-relacyjnego,
+czyli udostępnienie funkcjonalności pozwalającej na przechowywanie obiektów w bazie danych.
 
+W celu stworzenia aplikacji w oparciu o Qubica użytkownik musi przygotować bazę danych na podstawie której wygenerowany zostanie plik projektu Qt wraz z plikami nagłówkowymi
+oraz plikami klas. W tym momencie aplikacja posiada już oprogramowany dostęp do danych i użytkownik może zająć się implementowaniem własnej logiki czy też warstwy widoku.
 
+\subsection{Diagram klas}
 
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Diagram klas Qubica przedstawia rysunek \ref{diagram}:
 
 \newpage
+\noindent
+\begin{minipage}{\linewidth}
+\makebox[\linewidth]{
+\includegraphics[keepaspectratio=true, width=.9\textwidth]{resources/diagram.jpeg}}
+\captionof{figure}{Diagram klas}
+\label{diagram}
+\end{minipage}
 
-+ aplikacje szkieletowe i biblioteki? czy tylko jedno z nich?
-+ poprawić książkę do sql
-+ co tak na prawdę będzie testowane/analizowane?
-+ literatura dot. orm
-+ 3x teoria
-+ poprawki od początku
-+ definicje polimorfizmu, refleksji, operacji CRUD, diagram UML/klas
-+ dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy
-+ analiza istniejacych rozwiazan
-+ technologie (sprzęt, oprogramowanie, serwer bazy danych, technologie i metodologie, język, biblioteki, wzorce)
-+ 2x wymagania
+\subsection{Wzorce projektowe}
 
+Jednym z wzorców projektowych, które znalazły zastosowanie w Qubicu jest Singleton. Do jego największych zalet należy fakt, że klasa go wykorzystująca może posiadać 
+co najwyżej jedną instancję do której istnieje globalny dostęp. Singleton swoje zastosowanie znajduje w przypadku gdy programista chce ograniczyć liczbę instancji dla 
+wybranych klas a także samemu odpowiadać za ich tworzenie. W przypadku Qubica został on wykorzystany w klasach {\tt QbDatabase} oraz {\tt QbProperties}. Tworzenie 
+więcej niż jednej instancji tych klas nie ma sensu biorąc pod uwagę specyfikę projektu, więc najlepszym rozwiązaniem wydaje się być zablokowanie tej możliwości użytkownikowi. 
 
-\section{Projekt} % Diagramy klas, wzorce projektowe. Rodzaj aplikacji, wybór środowiska i platformy działania. Wybór bibliotek.
+\subsection{Środowisko programistyczne}
 
-W związku z tym, że jest to projekt aplikacji szkieletowej w rozdziale tym nie zostanie zamieszczony opis warstwy danych czy też widoku, ponieważ zaprojektowanie oraz
-zaimplementowanie tych warstw należy do zadań programisty ko\-rzy\-sta\-ją\-cego z Qubica. Znajdą się tutaj jednak opisy poszczególnych modułów które wspólnie składają się
-na stworzoną aplikację szkieletową.
+Qubic został napisany w języku C++ w oparciu o aplikację szkieletową Qt, co za tym idzie wybór platformy należy do użytkownika i równie dobrze może to być Windows jak i Linux.
+Zarówno wybór bazy danych nie został narzucony z góry, co prawda na potrzeby projektu zaimplementowana została obsługa tylko dla bazy MySQL jednak zapewniona została 
+łatwa rozszerzalność i dodanie obsługi dla innych rodzajów baz danych nie powinna być problemem.
+
+Jedyną biblioteką wykorzystywaną przez Qubica jest QsLogger odpowiedzialny za logowanie. Jest to bardzo przydatna funkcja, która umożliwia szybkie zlokalizowanie pojawiających
+się problemów.
+
+\section{Implementacja}
 
 \subsection{Interfejs CRUD}
 
@@ -290,17 +317,6 @@ Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niż
 \caption{Schemat blokowy metody usuwającej obiekty z bazy danych}
 \end{figure}
 
-\subsection{Diagram klas}
-
-\newpage
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{resources/diagram.jpeg}
-\caption{Diagram klas}
-\end{figure}
-
-\section{Implementacja} % Punkty kluczowe, rodzaje przeprowadzanych testów.
-
 \section{Konserwacja i inżynieria wtórna} %Jak przebiega eksploatacja projektu? Jakie wady i zalety ujawniły się po okresie testowania i użytkowania?
 % Jak można skorzystać z tej wiedzy praktycznej pod kątem roz\-bu\-do\-wy pracy? Jakie elementy systemu powinny zostać w pierwszej kolejności zmodyfikowane?  
 
@@ -339,11 +355,7 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 
 \section{Dyskusja wyników}
 
-\section{Perspektywy rozwoju pracy} % Jak można kontynuować tę pracę, zwłaszcza pod kątem magisterskich i dalej? Co jeszcze powinno być zrobione lub ulepszone?
-% Co należy zmienić lub poprawić w pracy z dzisiejszego punktu widzenia?
-
-Dzięki zrealizowaniu pracy poprawie uległa wydajność. Ponadto, o ? \% skrócony został czas. Które cele pracy udało sie zrealizować? Co z tego wynika? Które cele pracy 
-pozostały niezrealizowane i dlaczego? 
+\section{Perspektywy rozwoju pracy} 
 
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
@@ -363,7 +375,27 @@ pozostały niezrealizowane i dlaczego?
 \addcontentsline{toc}{chapter}{Załączniki} 
 \chapter*{Załączniki}
 \begin{enumerate}
-\item
+\item Qubic oraz aplikacja przykładowa -- w wersji elektronicznej.
 \end{enumerate}
 
 \end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TODO: wstep, teoria, analiza, qubic, podsumowanie
+
+tabela minimum 1
+wieksza bibliografia
+aplikacje szkieletowe i biblioteki? czy tylko jedno z nich?
+poprawić książkę do sql
+co tak na prawdę będzie testowane/analizowane?
+definicje polimorfizmu, refleksji, operacji CRUD, diagram UML/klas
+dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy
+
+% Dzięki zrealizowaniu pracy poprawie uległa wydajność. Ponadto, o ? \% skrócony został czas. Które cele pracy udało sie zrealizować? Co z tego wynika? Które cele pracy 
+% pozostały niezrealizowane i dlaczego? 
+
+% Jak można kontynuować tę pracę, zwłaszcza pod kątem magisterskich i dalej? Co jeszcze powinno być zrobione lub ulepszone?
+% Co należy zmienić lub poprawić w pracy z dzisiejszego punktu widzenia?
