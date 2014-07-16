@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  15 JUL 2014 20:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  16 JUL 2014 20:29
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -675,65 +675,79 @@ Overfull \hbox (1.36943pt too wide) in paragraph at lines 48--53
 nego, co tak»e bral-
  []
 
+<resources/trends.png, id=36, 605.26125pt x 161.85469pt>
+File: resources/trends.png Graphic file (type png)
 
-Overfull \hbox (0.10628pt too wide) in paragraph at lines 54--58
-[]\T1/txr/m/n/12 Podziaª naszej pracy zostanie opisany w dal-szych rozdzi-aªach
-, jed-nak na wst[]pie
- []
-
-[4
+<use resources/trends.png>
+Package pdftex.def Info: resources/trends.png used on input line 56.
+(pdftex.def)             Requested size: 398.33858pt x 106.52063pt.
+ [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 71.
- (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
+Overfull \hbox (1.72627pt too wide) in paragraph at lines 61--65
+[]\T1/txr/m/n/12 Podziaª naszej pracy zostanie opisany na pocz[]tku rozdzi-aªu 
+4[], jed-nak na wst[]pie
+ []
+
+<resources/coop.png, id=41, 706.13812pt x 346.29375pt>
+File: resources/coop.png Graphic file (type png)
+
+<use resources/coop.png>
+Package pdftex.def Info: resources/coop.png used on input line 68.
+(pdftex.def)             Requested size: 398.33858pt x 195.34985pt.
+ [5 <D:/Workspace/Qubic/docs/resources/trends.png> <D:/Workspace/Qubic/docs/res
+ources/coop.png>]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 84.
+
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 71.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 84.
 
-Overfull \hbox (1.03214pt too wide) in paragraph at lines 77--79
+Overfull \hbox (1.03214pt too wide) in paragraph at lines 90--92
 \T1/txr/m/n/12 zwi[]zany z wyko-rzysty-wanym sys-te-mem zarz[]dzania baz[] dany
 ch dzi[]ki cze-
  []
 
-[5] [6]
-Overfull \hbox (0.70811pt too wide) in paragraph at lines 108--110
+[6]
+Overfull \hbox (0.70811pt too wide) in paragraph at lines 121--123
 []\T1/txr/m/n/12 Stworzenie wªas-nej ap-likacji szkiele-towej realizuj[]cej map
 owanie obiektowo-
  []
 
-
-Overfull \hbox (7.2001pt too wide) in paragraph at lines 121--122
+[7]
+Overfull \hbox (7.2001pt too wide) in paragraph at lines 134--135
 []\T1/txr/m/n/12 Stworzenie gen-er-a-tora opisu mapowa-nia obiektowo-relacyjneg
 o -- jest to przed-
  []
 
 
-Overfull \hbox (4.59741pt too wide) in paragraph at lines 132--136
+Overfull \hbox (4.59741pt too wide) in paragraph at lines 145--149
 \T1/txr/m/n/12 ta« w j[]zyku SQL, ap-likacji szkiele-towej Qt oraz mapowa-nia o
 biektowo-relacyjnego.
  []
 
-[7] [8]
-Overfull \hbox (2.70955pt too wide) in paragraph at lines 168--169
+[8] [9]
+Overfull \hbox (2.70955pt too wide) in paragraph at lines 181--182
 []\T1/txr/m/n/12 W tym przy-padku tak»e warto±-ciowe okazaªy si[] specy-fikacje
  na przykªad j[]zyka
  []
 
 
-Overfull \hbox (15.37025pt too wide) in paragraph at lines 177--179
+Overfull \hbox (15.37025pt too wide) in paragraph at lines 190--192
 []\T1/txr/m/n/12 Najwa»niejszym celem pracy jest przeanal-i-zowanie istniej[]cy
 ch narz[]dzi sªu»[]cych
  []
 
 
-Overfull \hbox (18.59824pt too wide) in paragraph at lines 183--185
+Overfull \hbox (18.59824pt too wide) in paragraph at lines 196--198
 []\T1/txr/m/n/12 Rozdziaª 2[] za-w-iera ob-ja±nienia pod-sta-wowych za-gad-nie«
  teote-ty-cznych zwi[]zanych
  []
 
-[9]
-Overfull \hbox (3.34944pt too wide) in paragraph at lines 188--190
+
+Overfull \hbox (3.34944pt too wide) in paragraph at lines 201--203
 \T1/txr/m/n/12 gania, opis jego im-ple-men-tacji, wyniki testów oraz ko«-cowe p
 orów-nanie z wcze±niej
  []
@@ -748,166 +762,171 @@ Rozdzia\IeC {\l } 3.
 
 ]
 Rozdzia\IeC {\l } 4.
+[13
 
-Overfull \hbox (1.8601pt too wide) in paragraph at lines 216--218
+]
+Overfull \hbox (1.8601pt too wide) in paragraph at lines 244--246
 []\T1/txr/m/n/12 Aplikacja musi umo»li-wia¢ pod-sta-wowe op-er-acje mapowa-nia 
 obiektowo-rela-
  []
 
 
-Overfull \hbox (1.94412pt too wide) in paragraph at lines 219--221
+Overfull \hbox (1.94412pt too wide) in paragraph at lines 247--249
 \T1/txr/m/n/12 padku wyst[]pienia relacji ró»nych od je-den do jed-nego. U»ytko
 wnik powinien
  []
 
-[13
 
-]
-Overfull \hbox (2.79616pt too wide) in paragraph at lines 235--236
+Overfull \hbox (2.79616pt too wide) in paragraph at lines 263--264
 []\T1/txr/m/n/12 Pami[]¢ w trak-cie dzi-aªa-nia ap-likacji musi by¢ odpowied-ni
 o zarz[]dzana, niedo-
  []
 
-[14] <resources/diagram.jpeg, id=73, 469.755pt x 774.64406pt>
+[14] [15] <resources/diagram.jpeg, id=81, 469.755pt x 774.64406pt>
 File: resources/diagram.jpeg Graphic file (type jpg)
 
 <use resources/diagram.jpeg>
-Package pdftex.def Info: resources/diagram.jpeg used on input line 257.
+Package pdftex.def Info: resources/diagram.jpeg used on input line 285.
 (pdftex.def)             Requested size: 358.50227pt x 591.18236pt.
 
 Overfull \vbox (40.62723pt too high) has occurred while \output is active []
 
 
-[15 <D:/Workspace/Qubic/docs/resources/diagram.jpeg>]
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 266.
+[16 <D:/Workspace/Qubic/docs/resources/diagram.jpeg>]
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 294.
 
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (4.16544pt too wide) in paragraph at lines 282--285
+Overfull \hbox (4.16544pt too wide) in paragraph at lines 310--313
 \T1/txr/m/n/12 Kluczowym mod-uªem narz[]dzi pro-gramisty-cznych realizuj[]cych 
 mapowanie obiekt-
  []
 
 
-Overfull \hbox (2.79745pt too wide) in paragraph at lines 282--285
+Overfull \hbox (2.79745pt too wide) in paragraph at lines 310--313
 \T1/txr/m/n/12 metod, które jako ar-gu-menty przyjmuj[] obiekty dziedzicz[]ce p
 o jed-nej z klas Qubica
  []
 
 
-Overfull \hbox (2.56947pt too wide) in paragraph at lines 286--292
+Overfull \hbox (2.56947pt too wide) in paragraph at lines 314--320
 \T1/txr/m/n/12 opis, cz[]±¢ narz[]dzi je realizuj[]cych ko-rzysta z ad-no-tacji
 , które okre±laj[] mapowanie
  []
 
-[16] [17] <resources/store_schema.png, id=84, 796.9775pt x 1127.21124pt>
+[17] [18] <resources/store_schema.png, id=92, 796.9775pt x 1127.21124pt>
 File: resources/store_schema.png Graphic file (type png)
 
 <use resources/store_schema.png>
-Package pdftex.def Info: resources/store_schema.png used on input line 298.
+Package pdftex.def Info: resources/store_schema.png used on input line 326.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 
 
-[18 <D:/Workspace/Qubic/docs/resources/store_schema.png (PNG copy)>]
-<resources/update_schema.png, id=88, 796.9775pt x 1127.21124pt>
+[19 <D:/Workspace/Qubic/docs/resources/store_schema.png (PNG copy)>]
+<resources/update_schema.png, id=97, 796.9775pt x 1127.21124pt>
 File: resources/update_schema.png Graphic file (type png)
 
 <use resources/update_schema.png>
-Package pdftex.def Info: resources/update_schema.png used on input line 304.
+Package pdftex.def Info: resources/update_schema.png used on input line 332.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 
 
-[19 <D:/Workspace/Qubic/docs/resources/update_schema.png (PNG copy)>]
-<resources/load_schema.png, id=93, 796.9775pt x 1127.21124pt>
+[20 <D:/Workspace/Qubic/docs/resources/update_schema.png (PNG copy)>]
+<resources/load_schema.png, id=101, 796.9775pt x 1127.21124pt>
 File: resources/load_schema.png Graphic file (type png)
 
 <use resources/load_schema.png>
-Package pdftex.def Info: resources/load_schema.png used on input line 310.
+Package pdftex.def Info: resources/load_schema.png used on input line 338.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 
 
-[20 <D:/Workspace/Qubic/docs/resources/load_schema.png (PNG copy)>]
-<resources/remove_schema.png, id=97, 796.9775pt x 1127.21124pt>
+[21 <D:/Workspace/Qubic/docs/resources/load_schema.png (PNG copy)>]
+<resources/remove_schema.png, id=105, 796.9775pt x 1127.21124pt>
 File: resources/remove_schema.png Graphic file (type png)
 
 <use resources/remove_schema.png>
-Package pdftex.def Info: resources/remove_schema.png used on input line 316.
+Package pdftex.def Info: resources/remove_schema.png used on input line 344.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 
 
-[21 <D:/Workspace/Qubic/docs/resources/remove_schema.png (PNG copy)>]
-Overfull \hbox (20.0047pt too wide) in paragraph at lines 331--332
+[22 <D:/Workspace/Qubic/docs/resources/remove_schema.png (PNG copy)>]
+Overfull \hbox (20.0047pt too wide) in paragraph at lines 359--360
 \T1/txr/m/n/12 W celu dal-szego roz-woju stwor-zonej ap-likacji szkiele-towej w
 arto rozwa»y¢ wprowadze-
  []
 
 
-Overfull \hbox (2.38812pt too wide) in paragraph at lines 334--337
+Overfull \hbox (2.38812pt too wide) in paragraph at lines 362--365
 []\T1/txr/m/n/12 System ad-no-tacji -- obec-nie na opis mapowa-nia skªadaj[] si
 [] odpowie-nie nazwy
  []
 
 
-Overfull \hbox (5.62813pt too wide) in paragraph at lines 344--346
+Overfull \hbox (5.62813pt too wide) in paragraph at lines 372--374
 []\T1/txr/m/n/12 Wsparcie dla ró»nych rodza-jów baz danych -- wprowadze-nie teg
 o us-prawnienia
  []
 
 
-Overfull \hbox (4.93141pt too wide) in paragraph at lines 344--346
+Overfull \hbox (4.93141pt too wide) in paragraph at lines 372--374
 \T1/txr/m/n/12 ogranicza si[] do im-ple-men-tacji kilku in-ter-fe-jsów dla in-n
 ych ni» MySQL rodza-
  []
 
-[22]
-Overfull \hbox (13.81215pt too wide) in paragraph at lines 346--348
+[23]
+Overfull \hbox (13.81215pt too wide) in paragraph at lines 374--376
 []\T1/txr/m/n/12 Serializacja danych -- do-danie mo»li-wo±ci se-ri-al-iza-cji m
 o»e okaza¢ si[] u»yteczne
  []
 
 
-Overfull \hbox (3.93607pt too wide) in paragraph at lines 350--352
+Overfull \hbox (3.93607pt too wide) in paragraph at lines 378--380
 []\T1/txr/m/n/12 Wielow[]tkowo±¢ -- wyko-rzys-tanie wielow[]tkowo±ci w przy-pad
 ku mapowania-
  []
 
-[23]
+[24]
 Rozdzia\IeC {\l } 5.
-[24
+[25
 
-] [25
+] [26
 
-] (D:\Workspace\Qubic\docs\thesis.lof)
+] (D:\Workspace\Qubic\docs\thesis.lof
+Overfull \hbox (23.78548pt too wide) in paragraph at lines 2--2
+ [][] []\T1/txr/m/n/12 Wykres przedstawiaj[]cy pop-u-larno±¢ mapowa-nia obiekto
+wo-relacyjnego 
+ []
+
+)
 \tf@lof=\write4
- [26
-
-]
-(D:\Workspace\Qubic\docs\thesis.lot)
-\tf@lot=\write5
  [27
 
-] [28
+] (D:\Workspace\Qubic\docs\thesis.lot)
+\tf@lot=\write5
+ [28
+
+] [29
 
 ]
 (D:\Workspace\Qubic\docs\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 5460 strings out of 493921
- 75560 string characters out of 3144874
- 138790 words of memory out of 3000000
- 8629 multiletter control sequences out of 15000+200000
+ 5474 strings out of 493921
+ 75801 string characters out of 3144874
+ 137790 words of memory out of 3000000
+ 8641 multiletter control sequences out of 15000+200000
  57015 words of font info for 107 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,18n,42p,279b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,18n,42p,297b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/
 enc/dvips/fontname/8r.enc}<C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/typ
 e1/public/txfonts/rtxb.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/ty
@@ -916,9 +935,9 @@ ype1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
 /type1/public/txfonts/txsy.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (28 pages, 515182 bytes).
+Output written on thesis.pdf (29 pages, 641461 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
+ 155 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

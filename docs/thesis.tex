@@ -48,13 +48,26 @@ danej dziedziny.
 Wraz z kolegą z tego samego roku studiów -- Sebastianem Florkiem, zdecydowaliśmy się w ramach pisamia pracy dyplomowej na wspólne stworzenie aplikacji szkieletowej, 
 która będzie realizowała mapowanie obiektowo-relacyjne w języku C++. Wybór C++ jako języka programowania tłumaczymy dość dobrą jego znajomością, a także pewnym
 doświadczeniem w programowaniu w tym języku nabytym w trakcie studiów. Mapowanie obiektowo-relacyjne jest to obecnie zagadnienie co raz bardziej powszechne, szczególnie w 
-językach programowania takich jak C\# czy Java. Programiści C++ nie mają już tak dużego wyboru wśród dostępnych narzędzi służących do mapowania 
+językach programowania takich jak PHP czy Java. Programiści C++ nie mają już tak dużego wyboru wśród dostępnych narzędzi służących do mapowania 
 obiektowo-relacyjnego, co także braliśmy pod uwagę ustalając temat nad jakim będziemy pracować.
 
-Podział naszej pracy zostanie opisany w dalszych rozdziałach, jednak na wstępie warto zaznaczyć, że tematem pracy Sebastiana jest generator opisu mapowania 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resources/trends.png}
+\caption[Wykres przedstawiający popularność mapowania obiektowo-relacyjnego na przestrzeni czasu w wybranych językach programowania] {Wykres przedstawiający 
+popularność mapowania obiektowo-relacyjnego na przestrzeni czasu w wybranych językach programowania \cite{trends}}
+\end{figure}
+
+Podział naszej pracy zostanie opisany na początku rozdziału \ref{qubic}, jednak na wstępie warto zaznaczyć, że tematem pracy Sebastiana jest generator opisu mapowania 
 obiektowo-relacyjnego, który jest wstępnym etapem pracy naszej aplikacji szkieletowej. Celem wspomnianego generatora jest wygenerowanie pliku projektu, a także plików
 nagłówkowych oraz klas na podstawie istniejącej już bazy danych. Moim zadaniem będzie samo mapowanie obiektowo-relacyjne, które będzie się opierało na wcześniej
 wygenerowanych plikach. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{resources/coop.png}
+\caption[Schemat współpracy modułów tworzonej aplikacji szkieletowej]{Schemat współpracy modułów tworzonej aplikacji szkieletowej, dalej występującej też pod nazwą Qubic}
+\end{figure}
 
 \section{Problematyka i zakres pracy}
 
@@ -205,6 +218,21 @@ Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskie
 \section{Porównanie istniejących rozwiązań}
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
+
+\section{Moduły tworzonej aplikacji}
+
+W rozdziale pierwszym w skrócie został przedstawiony schemat współpracy modułu tworzonego przez autora tej pracy a autora pracy, której tematem jest ,,Generator opis
+mapowania obiektowo-relacyjnego w języku C++''. W tym podrozdziale opis ten zostanie rozwinięty.
+
+Chcąc w jak największym stopniu zautomatyzować obsługę połączenia z bazą oraz zminimalizować czas jaki programista będzie musiał poświęcić na oprogra\-mowywanie
+komunikacji pomiędzy programem a bazą danych zdecydowaliśmy się na wprowadzenie generatora opisu, który tę część pracy wykona za użytkownika Qubica.
+
+Zadaniem generatora jest wygenerowanie plików klas, plików nagłówkowych oraz pliku projektu Qt w oparciu o istniejącą bazę danych. Moduł tworzony przez autora niniejszej
+pracy będzie wykorzystywany w wygenerowanym kodzie, a także w kodzie napisanym przez użytkownika Qubica. W momencie zakończenia pracy generatora wygenerowana
+aplikacja będzie w pełni gotowa do przechowywania danych z bazie bez konieczności tworzenia zapytań. W celu przechowania obiektów aplikacji, ich modifikacji, załadowania 
+czy usunięcia z bazy danych wystarczy uruchomienie odpowiednich metod Qubica.
+
+Dalsza część tego rozdziału została poświęcona w zdecydowanej większości modułowi Qubica zajmującego się mapowaniem obiektowo-relacyjnym.
 
 \section{Analiza wymagań}
 
@@ -359,11 +387,16 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
+\bibitem{trends} Trendy Google. {\tt https://www.google.pl/trends/explore\#q=orm\%20\-java\%2C\%20orm\%20php\%2C\%20orm\%20python\%2C\%20orm\%20c\&cmpt=q}
 \bibitem{symfonia} Grębosz, Jerzy. Symfonia C++. Standard. Wyd. 3. Kraków, 2013. ISBN 978-83-7366-134-4.
 \bibitem{cpp} C++ Language Tutorial. {\tt http://www.cplusplus.com/doc/}.
 \bibitem{qt}Qt Project Documentation. {\tt http://qt-project.org/doc/}.
 \bibitem{sql} Viescas, John. SQL Queries for Mere Mortals. 2001. ISBN 83-7279-152-X.
 \bibitem{mysql} MySQL Documentation. {\tt http://dev.mysql.com/doc/}
+\bibitem{orm} Barnes, Jeffrey. Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications. Saint Paul, 2007.
+\bibitem{patters} Ezust, Alan and Paul. Introduction to Design Patterns in C++ with Qt4. Wyd. 1. Soughton, 2006. ISBN 978-0-13-282645-7.
+\bibitem{hibernate} Bauer, Christian, King, David. Hibernate w akcji. Wyd. 1. Gliwice, 2007. ISBN 978-83-246-0527-9.
+
 \end{thebibliography}
 
 \addcontentsline{toc}{chapter}{Spis rysunków} 
@@ -379,6 +412,9 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 \end{enumerate}
 
 \end{document}
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
