@@ -32,7 +32,8 @@
 
 \tableofcontents
 
-\chapter{Wstęp} \label{wstep}
+\chapter{Wstęp}
+\label{wstep}
 
 \section{Uzasadnienie wyboru tematu}
 
@@ -78,11 +79,11 @@ aplikacji szkieletowych w języku C++ jest główną problematyką niniejszej pr
 
 Tutaj powstaje pytanie czy na prawdę warto korzystać z bibliotek i aplikacji szkieletowych służących do mapowania obiektowo relacyjnego? Od\-po\-wiedź nie jest
 jednoznaczna w wszystkich przypadkach, ale warto wymienić jego podstawowe wady i zalety, których dokładniejsza analiza znajduje się w dalszej części pracy. Zacznijmy od zalet 
-wykorzystania narzędzi ORM\footnote{mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping)}:
+wykorzystania narzędzi ORM\footnote{~mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping)}:
 
 \begin{itemize}
 \item Znacznie zredukowana ilość pracy wymagana na oprogramowanie dostępu do bazy danych.
-\item Nieobowiązkowa znajomość języka SQL\footnote{strukturalny język zapytań (ang. Structured Query Language)}. W celu tworzenia zapytań do bazy
+\item Nieobowiązkowa znajomość języka SQL\footnote{~strukturalny język zapytań (ang. Structured Query Language)}. W celu tworzenia zapytań do bazy
 danych korzystamy z interfejsu udostępnianego przez daną bibliotekę czy też aplikację szkieletową.
 \item Uniezależnienie się od rodzaju systemu zarządzania bazą danych, możemy korzystać równie dobrze z MySQL, Oracle, PostgreSQL czy też Microsoft SQL Server
 niekoniecznie posiadając o nich rozbudowaną wiedzę.
@@ -182,6 +183,9 @@ W tym przypadku także wartościowe okazały się specyfikacje na przykład jęz
 
 \subsection{Literatura dotycząca mapowania obiektowo-relacyjnego}
 
+Głównym źródłem wiedzy autora na temat mapowania obiektowo-relacyjnego były źródła elektroniczne, do których zaliczają się przede wszyskim artykuły naukowe. Odniesienia
+do tych artykułów znajdują się głównie w rozdziale /ref{teoria}, gdzie pojęcia dotyczące mapowania są objaśniane.
+
 \section{Układ pracy} % Cały podrozdział około 1 strony.
 
 Tematem niniejszej pracy jest mapowanie obiektowo-relacyjne w języku C++, zaś za jej główny cel przyjęto przeanalizowanie istniejących bibliotek oraz aplikacji szkieletowych
@@ -203,7 +207,8 @@ analizowanymi narzędziami w rozdziale \ref{analiza}.
 
 Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskiej, biorąc pod szczególną uwagę dyskusję wyników oraz dalsze prespektywy rozwoju pracy.
 
-\chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych} \label{teoria}
+\chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego oraz aplikacji szkieletowych}
+\label{teoria}
 
 \section{Programowanie obiektowe}
 
@@ -211,13 +216,27 @@ Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskie
 
 \section{Mapowanie obiektowo-relacyjne}
 
-\chapter[Analiza istniejących rozwiązań]{Analiza istniejących rozwiązań mapowania obiektowo-relacyjnego w języku C++} \label{analiza}
+\chapter[Analiza istniejących rozwiązań]{Analiza istniejących rozwiązań mapowania obiektowo-relacyjnego w języku C++}
+\label{analiza}
 
 \section{Przegląd istniejących rozwiązań}
 
 \section{Porównanie istniejących rozwiązań}
 
-\chapter{Aplikacja szkieletowa Qubic} \label{qubic}
+\begin{table}[h]
+\centering
+\begin{tabular}{| l | l | l | l | l |} 
+\hline 
+Nazwa & QxOrm & Debea & SOCI & OpenORM \\ \hline
+Typ & - & - & - & - \\ \hline
+Cena & 0 zł & 0 zł & 0 zł & 0 zł \\ \hline
+Obsługiwane bazy & - & - & - & -  \\ \hline
+\end{tabular} 
+\caption{Porównanie istniejących rozwiązań}
+\end{table}
+
+\chapter{Aplikacja szkieletowa Qubic}
+\label{qubic}
 
 \section{Moduły tworzonej aplikacji}
 
@@ -303,6 +322,27 @@ Zarówno wybór bazy danych nie został narzucony z góry, co prawda na potrzeby
 Jedyną biblioteką wykorzystywaną przez Qubica jest QsLogger odpowiedzialny za logowanie. Jest to bardzo przydatna funkcja, która umożliwia szybkie zlokalizowanie pojawiających
 się problemów.
 
+\subsection{System kontroli wersji}
+
+Podczas pracy nad projektami w których bierze udział więcej niż jedna osoba bardzo dobrym rozwiązaniem jest korzystanie z systemów kontroli wersji. Ułatwiają one wspólną
+pracę oraz organizację tworzonych projektów.
+
+Wybór autorów Qubica padł na dobrze znany serwis GitHub\footnote{~oficjalna strona serwisu -- \tt https://github.com/}. Poza repozytorium na którym znaleźć można kod 
+źródłowy Qubica podczas implementacji projektu wykorzystany został system Issues and Milestones\footnote{~problemy oraz kamienie miliowe}, który ułatwia organizację pracy 
+nad projektem.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{resources/githubissue.png}
+\caption{Przejrzysty widok systemu GitHub Issues}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{resources/githubmilestone.png}
+\caption{Przejrzysty widok systemu GitHub Miletsones}
+\end{figure}
+
 \section{Implementacja}
 
 \subsection{Interfejs CRUD}
@@ -355,6 +395,7 @@ Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niż
 \section{Testy oraz ich wyniki}
 
 \section{Perspektywy rozwoju Qubica}
+\label{perspektywyqubic}
 
 W celu dalszego rozwoju stworzonej aplikacji szkieletowej warto rozważyć wprowadzenie następujących usprawnień:
 
@@ -379,20 +420,29 @@ translacji udostępnianego przez Qt.
 może to usprawnić wykonywanie bardziej wymagających operacji.
 \end{itemize}
 
-\chapter{Podsumowanie} \label{podsumowanie}
+\chapter{Podsumowanie}
+\label{podsumowanie}
 
 \section{Dyskusja wyników}
 
-\section{Perspektywy rozwoju pracy} 
+\section{Perspektywy rozwoju pracy}
+
+W celu rozwoju niniejszej pracy dyplomowej należy przede wszystkim rozważyć dalsze prace nad stworzoną aplikacją szkieletową. W rozdziale \ref{perspektywyqubic} przedstawione
+zostały liczne możliwości rozwoju Qubica, ich realizacja z pewnością byłaby sporym krokiem w przód.
+
+Podjęcie się tego zadania oznaczałoby jednak trzymanie się tematyki mapowania obiektowo-relacyjnego a przecież aplikacja szkieletowa nie musi ograniczać się do realizacji
+tylko jednego zagadnienia, istnieje wiele innych możliwości rozwoju. Dobrym tego przykładem jest aplikacja szkieletowa Spring, która oferuje bardzo duże możliwości. Qubic można
+rozwijać w podobnym kierunku, zarazem zmieniając główny temat pracy dyplomowej. Nowym tematem mogłaby zostać na przykład aplikacja szkieletowa na telefony
+komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\footnote{~ang. webservice}.
 
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
-\bibitem{trends} Trendy Google. {\tt https://www.google.pl/trends/explore\#q=orm\%20\-java\%2C\%20orm\%20php\%2C\%20orm\%20python\%2C\%20orm\%20c\&cmpt=q}
+\bibitem{trends} Trendy Google. {\tt https://www.google.pl/trends/explore\#q=orm\%20\-java\%2C\%20orm\%20php\%2C\%20orm\%20python\%2C\%20orm\%20c\&cmpt=q}.
 \bibitem{symfonia} Grębosz, Jerzy. Symfonia C++. Standard. Wyd. 3. Kraków, 2013. ISBN 978-83-7366-134-4.
 \bibitem{cpp} C++ Language Tutorial. {\tt http://www.cplusplus.com/doc/}.
 \bibitem{qt}Qt Project Documentation. {\tt http://qt-project.org/doc/}.
 \bibitem{sql} Viescas, John. SQL Queries for Mere Mortals. 2001. ISBN 83-7279-152-X.
-\bibitem{mysql} MySQL Documentation. {\tt http://dev.mysql.com/doc/}
+\bibitem{mysql} MySQL Documentation. {\tt http://dev.mysql.com/doc/}.
 \bibitem{orm} Barnes, Jeffrey. Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications. Saint Paul, 2007.
 \bibitem{patters} Ezust, Alan and Paul. Introduction to Design Patterns in C++ with Qt4. Wyd. 1. Soughton, 2006. ISBN 978-0-13-282645-7.
 \bibitem{hibernate} Bauer, Christian, King, David. Hibernate w akcji. Wyd. 1. Gliwice, 2007. ISBN 978-83-246-0527-9.
@@ -408,7 +458,7 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 \addcontentsline{toc}{chapter}{Załączniki} 
 \chapter*{Załączniki}
 \begin{enumerate}
-\item Qubic oraz aplikacja przykładowa -- w wersji elektronicznej.
+\item Kod źródłowy Qubica oraz aplikacji przykładowej w wersji elektronicznej.
 \end{enumerate}
 
 \end{document}
@@ -420,10 +470,22 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-TODO: wstep, teoria, analiza, qubic, podsumowanie
+całość: przegląd i poprawki od początku, bibliografia, spis kodów źródłowych
+wstęp: poprawić schemat współpracy modułów, rozbudować przegląd literatury
+teoria: wszystko
+analiza: wszystko
+qubic: lepszy opis rodzaju aplikacji i wzorców, implementacja, konserwacja, dokumentacja, przykładowa aplikacja, testy
+podsumowanie: dyskusja wyników
 
-tabela minimum 1
-wieksza bibliografia
+
+http://scholar.google.pl/scholar?q=object-relational+mapping&btnG=&hl=pl&as_sdt=0%2C5&as_vis=1
+http://hibernate.org/orm/what-is-an-orm/
+http://www.agiledata.org/essays/mappingObjects.html                  !!!!!!!!!!
+http://madgeek.com/Articles/ORMapping/EN/mapping.htm
+http://www.dbtechnet.org/labs/dae_lab/Orm.pdf
+
+praca jap + tm
+wykorzystane technologie dokladniejszy opis - screeny itp - qt, qslogger cos jeszcze?
 aplikacje szkieletowe i biblioteki? czy tylko jedno z nich?
 poprawić książkę do sql
 co tak na prawdę będzie testowane/analizowane?
@@ -432,6 +494,3 @@ dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi aut
 
 % Dzięki zrealizowaniu pracy poprawie uległa wydajność. Ponadto, o ? \% skrócony został czas. Które cele pracy udało sie zrealizować? Co z tego wynika? Które cele pracy 
 % pozostały niezrealizowane i dlaczego? 
-
-% Jak można kontynuować tę pracę, zwłaszcza pod kątem magisterskich i dalej? Co jeszcze powinno być zrobione lub ulepszone?
-% Co należy zmienić lub poprawić w pracy z dzisiejszego punktu widzenia?
