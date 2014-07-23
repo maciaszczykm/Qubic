@@ -182,10 +182,11 @@ W tym przypadku także wartościowe okazały się specyfikacje na przykład jęz
 
 \subsection{Literatura dotycząca mapowania obiektowo-relacyjnego}
 
-Głównym źródłem wiedzy autora na temat mapowania obiektowo-relacyjnego była książka ,,Hibernate w akcji'' napisana przez Christiana Bauera oraz Gavina Kinga \cite{hibwakcji}.
-Jej tytuł może być mylący, jednakże pierwsze jej rozdziały bardzo dokładnie opisują problematykę mapowania obiektowo-relacyjnego i pojęcia z nią związane.
+Głównym źródłem wiedzy autora na temat mapowania obiektowo-relacyjnego były książki ,,Hibernate w akcji'' \cite{hibernate} oraz ,,Java Persistence with Hibernate'' 
+\cite{persistence} napisane przez Christiana Bauera oraz Gavina Kinga. Ich tytuły mogą być mylące, wstępne rozdziały dokładnie opisują tematykę mapowania
+obiektowo-relacyjnego nie uzglę\-dniając kontekstu języka Java czy aplikacji szkieletowej Hibernate.
 
-Ponadto liczne źródła elektroniczne, wśród których dominują artykuły naukowe również okazały się pomocne. Odniesienia do nich znajdują się w rozdziale /ref{teoria}, gdzie
+Ponadto liczne źródła elektroniczne, wśród których dominują artykuły naukowe również okazały się pomocne. Odniesienia do nich znajdują się w rozdziale \ref{teoria}, gdzie
 pojęcia dotyczące mapowania są objaśniane.
 
 \section{Układ pracy}
@@ -193,14 +194,14 @@ pojęcia dotyczące mapowania są objaśniane.
 Tematem niniejszej pracy jest mapowanie obiektowo-relacyjne w języku C++, zaś za jej główny cel przyjęto przeanalizowanie istniejących bibliotek oraz aplikacji szkieletowych
 realizujących mapowanie obiektowo-relacyjne oraz stworzenie własnej aplikacji szkieletowej.
 
-Najważniejszym celem pracy jest przeanalizowanie istniejących narzędzi służących do mapowania obiektowo-relacyjnego w języku C++ oraz stworzenie na podstawie tej analizy
+Najważniejszym celem pracy jest przeanalizowanie istniejących narzędzi służą\-cych do mapowania obiektowo-relacyjnego w języku C++ oraz stworzenie na podstawie tej analizy
 własnej aplikacji szkieletowej realizującej to samo zagadnienie.
 
 Rodział \ref{wstep} otwiera uzasadnienie wyboru tematu pracy, opisane zostały w nim także cele pracy, jej problematyka, zakres, wykorzystane metody badawcze, prze\-gląd 
 literatury oraz jej układ.
 
-Rozdział \ref{teoria} zawiera objaśnienia podstawowych zagadnień teotetycznych związanych z mapowaniem obiektowo-relacyjnym oraz tworzeniem aplikacji szkieletowych w
-języku C++.
+Rozdział \ref{teoria} zawiera objaśnienia podstawowych zagadnień teotetycznych zwią\-zanych z mapowaniem obiektowo-relacyjnym, czyli między innymi pojęć takich jak
+trwałość danych,  relacyjne bazy danych czy też język SQL.
 
 Rozdział \ref{analiza} przedstawia analizę istniejących już narzędzi służących do mapowania obiektowo-relacyjnego napisanych w języku C++.
 
@@ -211,12 +212,10 @@ Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskie
 
 \chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego} \label{teoria}
 
-{\color{red} Dokładny opis terminologii  pojęć zasadniczych dla tematu pracy, którymi autor będzie się posługiwał przy realizacji głównych celów pracy.}
-
 \section{Trwałość danych}
 
 Kluczowym zadaniem podczas tworzenia aplikacji jest zapewnienie trwałości da\-nych, co oznacza zapewnienie, że po zakończeniu działania aplikacji zebrane dane nie mogą
-zostać utracone \cite{hibinaction}. W przeciwnym wypadku znalezienie zastosowania dla takich aplikacji byłoby znacznie cięższym zadaniem a rozwiązanie wielu problemów 
+zostać utracone \cite{persistence}. W przeciwnym wypadku znalezienie zastosowania dla takich aplikacji byłoby znacznie cięższym zadaniem a rozwiązanie wielu problemów 
 za ich pomocą byłoby niemożliwe. Nie możemy przecież wyobrazić sobie systemu bankowego po którego ponownym uruchomieniu dane na temat wszystkich klientów i
 posiadanych przez nich środków zostałyby utracone.
 
@@ -234,26 +233,26 @@ Język SQL -- strukturalny język zapytań pozwalający na wprowadzanie zmian w 
 ten opiera się na silniku bazy danych, który pozwala tworzyć zapytania \cite{sql}.
 \end{definition}
 
-Duża popularność relacyjnych baz danych wynika z ich licznych zalet, do których należą między innymi łatwość modyfikacji przechowywanych w nich danych, zmniejszona
+Duża popularność relacyjnych baz danych wynika z ich licznych zalet, do któ\-rych należą między innymi łatwość modyfikacji przechowywanych w nich danych, zmniejszona
 możliwość popełnienia pomyłki czy też duża elastyczność i szybkość w zarządzaniu danymi. Ma to miejsce kosztem zmniejszonej wydajności w stosunku do innych modeli
-danych \cite{hibinaction}. Relacyjne bazy danych swoje zastosowanie znajdują w wielu systemach i platformach technologicznych, są one najczęściej podstawową 
+danych \cite{persistence}. Relacyjne bazy danych swoje zastosowanie znajdują w wielu systemach i platformach technologicznych, są one najczęściej podstawową 
 reprezentacją dla elementów biznesowych \cite{hibernate}.
 
 Aby jak najskuteczniej korzystać z narzędzi mapowania obiektowo-relacyjnego warto zaznajomić się z relacyjnymi bazami danych oraz językiem SQL. Wiedza ta umożliwia
-uczynienie tworzonych aplikacji sprawniejszymi i bardziej odpornymi na wszelkiego rodzaju błędy. Szczególnie przydatna może okazać się znajomość właśnie języka SQL,
-który jest fundamentem mapowania obiektowo-relacyjnego oraz wszystkich innych aplikacji wykorzystujących relacyjne bazy danych w celu zapewnienia trwałości danych.
+tworzenie aplikacji działających sprawniej i bardziej odpornych na wszelkiego rozdzaju błędy. Szczególnie przydatna może okazać się znajomość języka SQL,który jest 
+fundamentem mapowania obiektowo-relacyjnego oraz wszystkich innych aplikacji wykorzystujących relacyjne bazy danych w celu zapewnienia trwałości danych.
 
 \section{Programowanie obiektowe}
 
 W aplikacjach stworzonych w oparciu o paradygmat programowania obiektowego, trwałość danych umożliwia przechowanie obiektów po zakończeniu działania aplikacji aż do
-momentu kiedy przy jej ponownym uruchomieniu nie zajdzie potrzeba jego wczytania. Obiekt jest przechowywany na dysku twardym, a nie jak wcześniej w pamięci operacyjnej,
-a ich ilość nie jest ograniczona, ,,utrwalany'' może być pojedyńczy obiekt, ale także całe ich struktury. Warto pamiętać, że większość obiektów nie jest trwała. Obiekty ulotne 
-mają ograniczony czas życia, związany z tworzonym je procesem czy też metodą \cite{hibernate}.
+momentu kiedy przy jej ponownym uruchomieniu nie zajdzie potrzeba jego wczytania z powrotem. Obiekt jest przechowywany na dysku twardym, a nie jak wcześniej w pamięci
+operacyjnej komputera, a ich ilość nie jest ograniczona, ,,utrwalany'' może być pojedyńczy obiekt, ale także całe ich struktury. Warto pamiętać, że większość obiektów nie jest
+trwała. Obiekty ulotne mają ograniczony czas życia, związany z tworzonym je procesem czy też metodą \cite{hibernate}.
 
 Obecne relacyjne bazy danych udostępniają zestaw mechanizmów umożliwia\-jących manipulowanie, sortowanie, wyszukiwanie czy też zbieranie danych. Odpo\-wiedzialne są 
 one także za nadzorowanie operacjami współbieżnymi  oraz nad inte\-gralnością danych. W przypadku gdy z bazą połączonych jest kilka aplikacji klienckich do jej zadań należy
 zarządzanie wszystkimi operacjami oraz unikanie błędów. Decydując się na wykorzystanie relacyjnych baz danych wymienione mechanizmy wykonują za nas sporą część pracy
-\cite{hibinaction}.
+\cite{persistence}.
 
 \section{Wykorzystanie SQL w C++}
 
@@ -285,7 +284,61 @@ niedopasowanie paradygmatów. Problem ten może zostać podzielony na kilka mnie
 
 \section{Mapowanie obiektowo-relacyjne}
 
-\newpage -
+Poza przedstawionym wcześniej klasycznym podejściem zapewniania trwałości da\-nych w aplikacjach, w którym programista sam tworzy bazę danych a potem nią zarządza
+konstruując zapytania w języku SQL, istnieje także inne rozwiązanie tego problemu nazywane najczęściej mapowaniem, bądź też odwzorowaniem obiektowo-relacyjnym 
+\cite{hibernate}.
+
+W pierwszym rozdziale podczas opisu problematyki pracy została przedstawiona uproszczona definicja mapowania obiektowo-relacyjnego, biorąc pod uwagę pojęcia opisane
+w tym rozdziale można ją tym razem zapisać w sposób następujący:
+
+\begin{definition}
+Mapowanie obiektowo-relacyjne --  automatyczna i niewidoczna dla uży\-tkownika realizacja trwałości obiektów w aplikacji zamieniająca je na wpisy w relacyjnej bazie danych
+na podstawie metadanych opisujących klasę. Mapowanie działa jako dwukierunkowy translator danych z jednej reprezentacji w inną \cite{hibernate}. 
+\end{definition}
+
+Narzędzia realizujące mapowanie obiektowo-relacyjne składają się z w wię\-kszości przypadków następujących elementów \cite{hibernate}:
+
+\begin{itemize}
+\item Interfejsu do przeprowadzania podstawowych operacji CRUD\footnote{~utwórz, odczytaj, zaktualizuj oraz usuń (ang. Create, Read, Update and Delete)} na obiektach
+klas zapewniających trwałość.
+\item Interfejsu umożliwiającego tworzenie zapytań związanych z klasami oraz ich właściwościami.
+\item Narzędzia do określania metadanych.
+\item Technik takiej implementacji mapowania, aby poprawnie współgrało ono z obiektami transakcyjnymi wykonując wszystkie dostępne operacje. 
+\end{itemize}
+
+W zasadzie więc terminu mapowania obiektowo-relacyjnego można użyć w odniesieniu do dowolnej warswy trwałości, która zapytania do bazy danych generuje automatycznie
+na podstawie opisu w postaci metadanych. Tworzenie jednak takiego generatora dla pojedyńczej aplikacji często mija się z celem i lepszym rozwiązaniem jest skorzystanie z
+gotowego narzędzia służacego do mapowania bądź też własnoręczna implementacja warstwy trwałości w wybranej aplikacji. W przypadku wyboru jednego z gotowych narzędzi
+w ogóle nie musimy zajmować się implementacją warstwy trwałości, ponieważ korzystamy z już wcześniej przygotowanej.
+
+Do sposobów implementacji mapowania obiektowo-relacyjnego należą \cite{hibernate}:
+
+\begin{itemize}
+\item Pełna relacyjność -- cała aplikacja, włączając w to interfejs użytkownika, zaprojektowana jest wokół modelu relacyjnego i podstawowych operacji języka SQL. Aplikacje
+takie część logiki mogą mieć przeniesione do warstwy bazy danych.
+\item Lekkie odwzorowanie obiektów -- encje są reprezentowane przez ręczne napisane klasy odpowiadające tabelom relacynym. Kod SQL zostaje schowany przed logiką
+aplikacji dzięki wzorcom projektowym.
+\item Średnie odwzorowanie obiektów -- aplikacja jest zaprojektowana wokół modelu obiektowego. Kod SQL jest generowany dynamicznie przez szkielet systemu.
+\item Pełne odwzorowanie obiektów -- obsługuje wyrafinowane modele obiektowe stosując kompozycję, dziedziczenie i polimorfizm. Warstwa trwałości w sposób niewidoczny
+implementuje zapis i odczyt danych. Ten poziom funkcjonalności jest najtrudniejszy do osiągnięcia i uzyskiwanie go na potrzeby pojedyńczej aplikacji nie ma sensu.
+\end{itemize}
+
+Dlaczego warto korzystać z mapowania obiektowo-relacyjnego? Podstawową zaletą dla programisty jest z pewnością możliwość uniknięcia pisania własnoręcznie wszystkich
+zapytań, a zamiast tego skorzystanie z gotowych metod wybranego narzędzia. Mogłoby to sugerować, że decydując się na korzystanie z mapowania nie musimy znać się
+ani na relacyjnych bazach danych, ani na języku SQL, jest to jednak nieprawda, ponieważ wydajność tworzonych w taki sposób aplikacji byłaby znacznie mniejsza od tych
+napisanych przez programistów którym te pojęcia nie są obce. Przyjrzyjmy się jeszcze raz podstawowym zaletom mapowania obiektowo-relacyjnego \cite{hibernate}:
+
+\begin{itemize}
+\item Produktywność -- warstwa trwałości jest bardzo niewdzęczną warstwą do oprogramowania, decydując się na skorzystanie z narzędzi mapujących problem ten zostaje
+wyeliminowany a cała uwaga programisty może zostać poświę\-cona innym warstwom aplikacji.
+\item Konserwacja --
+\item Wydajność --
+\item Niezależność --
+\end{itemize}
+
+ogolne problemy
+
+podsumowanie
 
 \newpage -
 
