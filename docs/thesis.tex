@@ -212,6 +212,28 @@ Rozdział \ref{podsumowanie} zawiera podsumowanie niniejszej pracy inżynierskie
 
 \chapter[Zagadnienia teoretyczne]{Zagadnienia teoretyczne dotyczące mapowania obiektowo-relacyjnego} \label{teoria}
 
+\section{Architektura warstwowa}
+
+Architektura warstwowa opisuje interfejs pomiędzy kodem, który implementuje różne zadania, by zmiana w jednym z zadań i sposobie jego wykonania nie odbijała się na
+zmianach w innych warstwach. W ten sposób programista jest w stanie sprawniej wprowadzać poprawki oraz nowe elementy do tworzonej aplikacji. Typowa i sprawdzona
+architektura aplikacji wysokiego poziomu składa się z trzech warstw: prezentacji (nazywanej też warstwą widoku), logiki oraz trwałości danych.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.5\textwidth]{resources/layers.png}
+\caption[Warstwowa architektura aplikacji]{Warstwowa architektura aplikacji \cite{hibernate}}
+\end{figure}
+
+Zadaniem poszczególnych warstw jest:
+
+\begin{itemize}
+\item Warstwa prezentacji -- zawiera logikę interfejsu użytkownika, czyli między innymi kod odpowiedzialny za wyświetlanie okien, formularzy czy też tabel.
+\item Warstwa logiki -- jej postać bywa zróżnicowana, przyjmuje się jednak, że powinna zawierać implementację reguł biznesowych i wymagań systemowych, które
+zostały uznane za dziedzinę rozwiązywanego problemu.
+\item Warstwa trwałości danych -- stanowi grupę klas i komponentów odpowiedzialnych za zapamiętywanie danych i odczytywanie ich z wybranych źródeł. Zawiera ona także
+model elementów dziedziny biznesowej.
+\end{itemize}
+
 \section{Trwałość danych}
 
 Kluczowym zadaniem podczas tworzenia aplikacji jest zapewnienie trwałości da\-nych, co oznacza zapewnienie, że po zakończeniu działania aplikacji zebrane dane nie mogą
@@ -239,7 +261,7 @@ danych \cite{persistence}. Relacyjne bazy danych swoje zastosowanie znajdują w 
 reprezentacją dla elementów biznesowych \cite{hibernate}.
 
 Aby jak najskuteczniej korzystać z narzędzi mapowania obiektowo-relacyjnego warto zaznajomić się z relacyjnymi bazami danych oraz językiem SQL. Wiedza ta umożliwia
-tworzenie aplikacji działających sprawniej i bardziej odpornych na wszelkiego rozdzaju błędy. Szczególnie przydatna może okazać się znajomość języka SQL,który jest 
+tworzenie aplikacji działających sprawniej i bardziej odpornych na wszelkiego rozdzaju błędy. Szczególnie przydatna może okazać się znajomość języka SQL, który jest 
 fundamentem mapowania obiektowo-relacyjnego oraz wszystkich innych aplikacji wykorzystujących relacyjne bazy danych w celu zapewnienia trwałości danych.
 
 \section{Programowanie obiektowe}
@@ -273,14 +295,18 @@ Jak zauważają autorzy książki ,,Hibernate w akcji'' podstawowym problemem w 
 niedopasowanie paradygmatów. Problem ten może zostać podzielony na kilka mniejszych problemów:
 
 \begin{itemize}
-\item Problem szczegółowości -- 
-\item Problem podtypów --
-\item Problem identyczności --
+\item Problem szczegółowości -- programiści mogą tworzyć nowe klasy z różnym poziomem szczegółowości. Mniej znacząca klasa, na przykład {\tt Adres}, może zostać
+osadzona w klasie bardziej znaczącej, na przykład {\tt Użytkownik}. W bazie danych szczegółowość może zostać zaimplementowana jedynie na po\-ziomie tabeli
+{\tt Użytkownik} oraz kolumny {\tt Adres}.
+\item Problem podtypów -- dziedziczenie oraz polimorfizm to podstawowe mechanizmy programowania obiektowego i w praktycznie każdej aplikacji znajdziemy ich 
+wykorzystanie, relacyjne bazy danych nie udostępniają jednak tych mechanizmów co jest kolejną przyczyną niedopasowania.
+\item Problem identyczności -- w przypadku bazy danych encje są identyczne gdy ich klucze główne są takie same. W programowaniu obiektowym obiekty są sobie równe
+gdy mają takie same wartości pól lub gdy są identyczne (mają tę samą referencję).
 \item Problemy dotyczące asocjacji --
 \item Problem nawizgacji po grafie obiektów --
 \end{itemize}
 
-{\color{red} Koszt niedopasowania, warstwa trwałości.}
+\section{Koszt niedopasowania}
 
 \section{Mapowanie obiektowo-relacyjne}
 
@@ -331,20 +357,19 @@ napisanych przez programistów którym te pojęcia nie są obce. Przyjrzyjmy si�
 \begin{itemize}
 \item Produktywność -- warstwa trwałości jest bardzo niewdzęczną warstwą do oprogramowania, decydując się na skorzystanie z narzędzi mapujących problem ten zostaje
 wyeliminowany a cała uwaga programisty może zostać poświę\-cona innym warstwom aplikacji.
-\item Konserwacja --
-\item Wydajność --
-\item Niezależność --
+\item Konserwacja -- brak warstwy logiki w kodzie napisanym przez programistę czyni system bardziej zrozumiałym, czytelniejszym, a co za tym idzie łatwie\-jszym do 
+przekształcenia.
+\item Wydajność -- prawdą jest stwierdzenie, że warstwa trwałości napisana ręcznie przez programistę potrafi być co najmniej tak szybka jak ta wygenerowana automatycznie.
+Podobnie prawdą jest, że dowolny program napisany w C++ można napisać w Assemblerze by działał co najmniej tak szybko jak ten pierwszy. Jednak jak dobrze wiadomo,
+znacznie trudniejszym zadaniem jest napisanie programu w języku asemblera aby działał on tak samo sprawnie jak ten napisany w C++. Aby to zrobić trzeba bardzo dobrze
+znać Assemblera, analogiczna sytuacja ma miejsce podczas własnoręcznego tworzenia warstwy trwałości i znajomości języka SQL.
+\item Niezależność -- abstrakcja języka SQL uwalnia programistę od jego szczegółów i różnych jego dialektów w poszczególnych systemach bazodanowych. Większość narzędzi
+obsługuje wiele systemów bazodanowych, a więc nawet ich zmiana po napisaniu aplikacji nie powinna być problemem.
 \end{itemize}
 
-ogolne problemy
-
-podsumowanie
-
-\newpage -
-
-\newpage -
-
-\newpage -
+Mapowanie obiektowo-relacyjne jest rozwiązaniem sprawdzającym się obecnie w bardzo dużej ilości istniejących już aplikacji i jego wybór przed własnoręczną implementacją 
+zapytań jest najczęściej trafną decyzją. W chwili są to dwa najpopularniejsze rozwiązania, przy czym mapowanie jest obecnie najczęściej wybierane w związku z
+niedopasowaniem obiektowo-relacyjnym.
 
 \newpage -
 
