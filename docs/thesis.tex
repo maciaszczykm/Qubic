@@ -295,15 +295,21 @@ Jak zauważają autorzy książki ,,Hibernate w akcji'' podstawowym problemem w 
 niedopasowanie paradygmatów. Problem ten może zostać podzielony na kilka mniejszych problemów:
 
 \begin{itemize}
-\item Problem szczegółowości -- programiści mogą tworzyć nowe klasy z różnym poziomem szczegółowości. Mniej znacząca klasa, na przykład {\tt Adres}, może zostać
-osadzona w klasie bardziej znaczącej, na przykład {\tt Użytkownik}. W bazie danych szczegółowość może zostać zaimplementowana jedynie na po\-ziomie tabeli
-{\tt Użytkownik} oraz kolumny {\tt Adres}.
+\item Problem szczegółowości -- programiści mogą tworzyć nowe klasy z różnym poziomem szczegółowości. Mniej znacząca klasa, na przykład {\tt Adress}, może zostać
+osadzona w klasie bardziej znaczącej, na przykład {\tt User}. W bazie danych szczegółowość może zostać zaimplementowana jedynie na po\-ziomie tabeli
+{\tt USER} oraz kolumny {\tt ADRESS}.
 \item Problem podtypów -- dziedziczenie oraz polimorfizm to podstawowe mechanizmy programowania obiektowego i w praktycznie każdej aplikacji znajdziemy ich 
 wykorzystanie, relacyjne bazy danych nie udostępniają jednak tych mechanizmów co jest kolejną przyczyną niedopasowania.
 \item Problem identyczności -- w przypadku bazy danych encje są identyczne gdy ich klucze główne są takie same. W programowaniu obiektowym obiekty są sobie równe
 gdy mają takie same wartości pól lub gdy są identyczne (mają tę samą referencję).
-\item Problemy dotyczące asocjacji --
-\item Problem nawizgacji po grafie obiektów --
+\item Problemy dotyczące asocjacji -- w modelu obiektowym asocjacje reprezentują związki między klasami, na przykład pomiędzy klasami {\tt User} i {\tt Adress}. Języki
+obiektowe używają w tym celu referencji czy też wskaźników, stąd też łatwo zauważyć, że asocjacje w modelu obiektowym są kierunkowe lub też dwukierunkowe jeśli
+obie klasy mają do siebie referencje. W przypadku baz danych nie istnieją asocjacje dwukierunkowe, wyróżniamy jedynie relacje jeden do wielu oraz jeden do jednego.
+Relacja wiele do wielu jest tak na prawdę złożeniem dwóch relacji jeden do wielu z dodatkową tabelą łącznikową, nazywaną też asosjacyjną.
+\item Problem nawizgacji po grafie obiektów -- sposób dostępu do obiektów zna\-cznie różni się od dosępu do danych w relacyjnych bazach. Chcąc na przykład uzyskać
+informacje o ulicy na jakiej mieszka wybrany użytkownik systemu wywołamy metodę {\tt user.getAdress().getStreet()}, wywołanie takie nazywane jest chodzeniem
+po grafie obiektu. Przedstawiony sposób niestety nie sprawdza się w przypadku nawigacji w relacyjnych bazach danych. Rozwią\-zaniem jest minimalizacja ilości zapytań
+kierowanych do bazy danych, a więc wykorzystanie mechanizmów złączeń jednakże wydajność nigdy nie będzie taka sama.
 \end{itemize}
 
 \section{Koszt niedopasowania}
