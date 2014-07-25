@@ -36,6 +36,10 @@
 
 \section{Uzasadnienie wyboru tematu}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Wraz z rozwojem informatyki proces tworzenia oprogramowania wymaga od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
 danych czy sieci komputerowe. Ciężko jest być specjalistą w każdej z nich, dlatego też podczas tworzenia oprogramowania programiści co raz częściej sięgają po różnego 
 rodzaju narzędzia programistyczne, które mają za zadanie ułatwić im pracę wykonując jej część za nich.
@@ -385,11 +389,26 @@ niedopasowaniem obiektowo-relacyjnym.
 
 \section{Kryteria analizy}
 
-\newpage -
+W pierwszym rozdziale niniejszej pracy pojawiła się informacja, że istnieją już biblioteki oraz aplikacje szkieletowe realizujące mapowanie obiektowo-relacyjne w języku C++,
+jednakże jest ich mniej niż w przypadku innych znanych języków programowania. W tym rozdziale zostanie przeprowadzona ich dokładniejsza analiza, do której potrzebne
+jest wskazanie kryteriów, które zostaną przeanalizowane. Pod uwagę zostałe wzięte następujące aspekty:
 
-\section{Przegląd istniejących rozwiązań}
-
-\newpage -
+\begin{itemize}
+\item Charakter oprogramowania -- przede wszystkim istotny jest fakt, czy wybrane narzędzie należy do tak zwanego ,,wolnego oprogramowania'', a co za tym idzie czy jego
+użytkownik może podejrzeć i w razie potrzeby zmodyfikować jego kod źródłowy oraz podzielić się wprowadzonymi przez siebie zmianami z innymi jego użytkownikami. W ten
+sposób oprogramowanie ulega ciągłemu rozwojowi, a jego działanie łatwiej zrozumieć.
+\item Licencja -- wielce istotny jest fakt czy wybrane oprogramowanie jest darmowe oraz na jakich zasadach może zostać wykorzystywane. Mało restrykcyjna licencja jest z
+pewnością zaletą.
+\item Wspierane systemy zarządzania bazą danych -- tutaj zasada jest prosta, im więcej rodzajów baz danych jest wspieranych tym lepiej. Dużą zaletą jest także rozszerzalność
+orpgoramowania, czyli możliwość dodania wsparcia dla wybranych baz samodzielnie.
+\item Wykorzystywane biblioteki i aplikacje szkieletowe -- część narzędzi wykorzystuje inne, takie jak aplikacja szkieletowa Qt czy bibliotekę boost. Istotne jest to czy użytkownik
+też musi wykorzystywać dane rozwiązania w swojej aplikacji.
+\item Poziom skomplikowania interfejsu -- konieczność wywoływania sekwencji wielu metod w celu wykonania podstawowych operacji w bazie danych czy też w celu połączenia
+się z nią nie należy z pewnością do zalet oprogramowania.
+\item Dostępność generatora opisu -- generator opisu jest w stanie znacznie uprościć wykorzystanie narzędzi mapowania obiektowo-relacyjnego, więc jego obecność jest
+dodatkową zaletą.
+\item Dodatkowe możliwości -- wiele narzędzi posiada specyficzne dla siebie zalety, w tym punkcie zostaną one wyszczególnione.
+\end{itemize}
 
 \section{Porównanie istniejących rozwiązań}
 
