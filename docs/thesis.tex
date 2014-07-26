@@ -36,24 +36,20 @@
 
 \section{Uzasadnienie wyboru tematu}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 Wraz z rozwojem informatyki proces tworzenia oprogramowania wymaga od informatyków co raz większej wiedzy w poszczególnych dziedzinach takich jak na przykład bazy 
 danych czy sieci komputerowe. Ciężko jest być specjalistą w każdej z nich, dlatego też podczas tworzenia oprogramowania programiści co raz częściej sięgają po różnego 
-rodzaju narzędzia programistyczne, które mają za zadanie ułatwić im pracę wykonując jej część za nich.
+rodzaju narzędzia programistyczne, które mają za zadanie uła\-twić im pracę, wykonując jej część za nich.
 
-Przykładem takich narzędzi są aplikacje szkieletowe wykorzystywane jako fundamenty dla tworzonych aplikacji czy też biblioteki programistyczne udostępniające zestawy 
-określonych funkcji. Oczywiście nie zawsze mamy możliwość skorzystania z wspominanych narzędzi, jednak jeśli taka istnieje warto wziąć to pod uwagę podczas fazy planowania 
-tworzenia  oprogramowania, ponieważ decydując się na korzystanie z nich jesteśmy w stanie zaoszczędzić sporo czasu, a także uniknąć wielu błędów związanych z nieznajomością 
-danej dziedziny.
+Przykładem wspomnianych narzędzi programistycznych są aplikacje szkieletowe wykorzystywane jako fundamenty dla tworzonych aplikacji czy też biblioteki programistyczne
+udostępniające zestawy funkcji związanych z wybranym zagadnieniem. Nie zawsze mamy możliwość skorzystania z nich, jednak jeśli taka istnieje warto to rozważyć,
+ponieważ podejmując decyzję o ich wykorzystaniu powstaje możliwość zaoszczędzenia sporej ilości czasu, który można poświęcić na rozwią\-zanie postawionego przed nami
+głównego problemu biznesowego, a także uniknąć wielu błędów związanych z nieznajomością danej dziedziny.
 
-Wraz z kolegą z tego samego roku studiów -- Sebastianem Florkiem, zdecydowaliśmy się w ramach pisamia pracy dyplomowej na wspólne stworzenie aplikacji szkieletowej, 
-która będzie realizowała mapowanie obiektowo-relacyjne w języku C++. Wybór C++ jako języka programowania tłumaczymy dość dobrą jego znajomością, a także pewnym
-doświadczeniem w programowaniu w tym języku nabytym w trakcie studiów. Mapowanie obiektowo-relacyjne jest to obecnie zagadnienie co raz bardziej powszechne, szczególnie w 
-językach programowania takich jak PHP czy Java. Programiści C++ nie mają już tak dużego wyboru wśród dostępnych narzędzi służących do mapowania 
-obiektowo-relacyjnego, co także braliśmy pod uwagę ustalając temat nad jakim będziemy pracować.
+Autor tej pracy wraz z kolegą z roku studiów -- Sebastianem Florkiem, w ramach pisania pracy dyplomowej zdecydował się na współpracę przy tworzeniu wspólnej aplikacji
+szkieletowej, której zadaniem będzie realizowanie mapowania obiektowo-relacyjnego w języku C++. Wybór języka programowania autorzy tłumaczą dobrą jego 
+znajomością nabytą w trakcie trwania studów. Główny przedmiot pracy, czyli mapowanie obiektowo-relacyjne to obecnie zagadnienie co raz bardziej powszechne, 
+szczególnie w językach programowania takich jak PHP czy Java. Programiści C++ nie mają już tak dużego wyboru wśród dostępnych narzędzi służących do mapowania 
+obiektowo-relacyjnego, co także miało znaczenie podczas wyboru zagadnienia które niniejsza praca ma podejmować.
 
 \begin{figure}[H]
 \centering
@@ -62,10 +58,11 @@ obiektowo-relacyjnego, co także braliśmy pod uwagę ustalając temat nad jakim
 popularność mapowania obiektowo-relacyjnego na przestrzeni czasu w wybranych językach programowania \cite{trends}}
 \end{figure}
 
-Podział naszej pracy zostanie opisany na początku rozdziału \ref{qubic}, jednak na wstępie warto zaznaczyć, że tematem pracy Sebastiana jest generator opisu mapowania 
-obiektowo-relacyjnego, który jest wstępnym etapem pracy naszej aplikacji szkieletowej. Celem wspomnianego generatora jest wygenerowanie pliku projektu, a także plików
-nagłówkowych oraz klas na podstawie istniejącej już bazy danych. Moim zadaniem będzie samo mapowanie obiektowo-relacyjne, które będzie się opierało na wcześniej
-wygenerowanych plikach. 
+Podział pracy współautorów tworzonej aplikacji szkieletowej, dalej pojawiającej się także pod nazwą Qubic, był kluczową kwestią do ustalenia. Ostatecznie przyjęty został
+on w sposób następujący -- tematem pracy Sebastiana jest ,,Generowanie opisu mapowania obiektowo-relacyjnego w języku C++'' i to właśnie stworzenie generatora opisu
+mapowania jest głównym celem badawczym jego pracy. Zgodnie z tytułem tej pracy, jej autor będzie zajmował zrealizowaniem samego mapowania obiektowo-relacyjnego.
+Zadaniem generatora będzie wygenerowanie opisu mapowania w postaci plików nagłówkowych, klas oraz pliku projektu. Drugi moduł natomiast będzie implementował 
+mapowanie obiektowo-relacyjne w wygenerowanych plikach oraz udostępniał interfejs dostępny dla użytkownika.
 
 \begin{figure}[h]
 \centering
@@ -85,52 +82,53 @@ jednoznaczna w wszystkich przypadkach, ale warto wymienić jego podstawowe wady 
 wykorzystania narzędzi ORM\footnote{~mapowanie obiektowo-relacyjne (ang. Object-Relational Mapping)}:
 
 \begin{itemize}
-\item Znacznie zredukowana ilość pracy wymagana na oprogramowanie dostępu do bazy danych.
-\item Nieobowiązkowa znajomość języka SQL\footnote{~strukturalny język zapytań (ang. Structured Query Language)}. W celu tworzenia zapytań do bazy
-danych korzystamy z interfejsu udostępnianego przez daną bibliotekę czy też aplikację szkieletową.
-\item Uniezależnienie się od rodzaju systemu zarządzania bazą danych, możemy korzystać równie dobrze z MySQL, Oracle, PostgreSQL czy też Microsoft SQL Server
-niekoniecznie posiadając o nich rozbudowaną wiedzę.
-\item Aby skorzystać z transakcji, połączenia z bazą danych a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać pojedyńczą me\-to\-dę.
-\item Cały model danych przechowywany jest w jednym miejscu oraz nie jest ściśle związany z wykorzystywanym systemem zarządzania bazą danych dzięki cze\-mu łatwiej 
-jest nam wprowadzać kolejne modyfikacje w kodzie oraz nawet zmieniać system zarządzania bazą danych na inny.
+\item Oszczędność -- znacznie zredukowana zostaje ilość pracy wymagana na oprogramowanie dostępu do bazy danych.
+\item Uniezależnienie się od rodzaju systemu zarządzania bazą danych -- możliwość korzystania z wielu rozdzajów baz danych, a także możliwość jego zmiany w dowolnym
+momencie bez ponoszenia większych strat czasowych.
+\item Nieobowiązkowa znajomość języka SQL\footnote{~strukturalny język zapytań (ang. Structured Query Language)} -- w celu tworzenia zapytań do bazy wykorzystywany
+jest udostępniany interfejs.
+\item Liczne funkcjonalności -- aby skorzystać z transakcji, połączenia z bazą danych a także wieu innych funkcjonalności baz danych wystarczy zazwyczaj wywołać
+pojedyńczą metodę.
+\item Model danych przechowywany w jednym miejscu -- dzięki czemu łatwiej jest zarządzać kodem.
 \end{itemize}
 
-Wszędzie gdzie pojawiają się zalety mamy też do czynienia z wadami, nie inaczej jest w tym przypadku:
+W parze z przedstawionymi zaletami pojawiają się także pewne wady:
 
 \begin{itemize}
 \item Konfiguracja jest najczęściej skomplikowana i wymaga sporo czasu.
-\item Aby efektownie korzystać z narzędzi do mapowania obiektowo-relacyjnego wymagana jest od nas ich dobra znajomość.
+\item Aby efektownie korzystać z narzędzi do mapowania obiektowo-relacyjnego wymagana jest ich dobra znajomość.
 \item Proste zapytania są obsługiwane bardzo sprawnie, jednak gdy przetwarzamy duże ilości złożonych zapytań wydajność nie dorówna nigdy zapytaniom na\-pi\-sa\-nym
 przez specjalistę znającego język SQL.
 \item Abstrakcja wprowadzona przez narzędzia ORM może okazać się uciążliwa, ponieważ nie zawsze zdajemy sobie sprawę z tego co dzieje się za kulisami w trakcie
 wykonywania poszczególnch operacji.
 \end{itemize}
 
-Naszym głównym celem jest uczynienie Qubica dobrą alternatywą dla nie\-li\-cznych, ale istniejących już bibliotek oraz aplikacji szkieletowych realizujących mapowanie 
-obiektowo-relacyjne w języku C++. Wszystkie nam obecnie znane rozwiązania są dostępne za darmo, jednak nie udostępniają one generatora opisu będącego w stanie 
-wygenerować cały projekt aplikacji a ich interfejsy nie należą do intuicyjnych. Wprowadzenie generatora oraz intuicyjnego interfejsu użytkownika powinno uczynić Qubica
+Głównym celem autorów Qubica jest sprawienie aby stał się on dobrą alterna\-tywą dla nielicznych, ale istniejących już bibliotek oraz aplikacji szkieletowych realizujących
+mapowanie obiektowo-relacyjne w języku C++. Wszystkie znane rozwiązania są dostępne za darmo, jednak albo nie udostępniają one generatora opisu będącego w stanie 
+wygenerować cały projekt aplikacji albo ich interfejsy nie należą do intuicyjnych. Wprowadzenie generatora oraz intuicyjnego interfejsu użytkownika powinno uczynić Qubica
 istotną alternatywą dla istniejących już narzędzi za\-kła\-da\-jąc, że pozostała funkcjonalność mapowania obiektowo-relacyjnego zostanie zre\-al\-iz\-owana poprawnie.
 
-Analizę istniejących rozwiązań przedstawia kolejny rozdział a zestawienie z rezultatami naszej pracy znajduje się natomiast w końcowej części pracy, gdzie zostaną
-przedstawione uzyskane przez nas wyniki oraz podsumowanie wykonanej przez nas pracy.
-
-\section{Cele pracy} % Podrozdział około 1 strony, czyli 1800 znaków. Każdy cel opisany w 2-3 zdaniach, bez używania skrótów.
+\section{Cele pracy}
 
 Do najważniejszych celów niniejszej pracy dyplomowej należą:
 
 \begin{itemize}
 \item Analiza istniejących bibliotek oraz aplikacji szkieletowych realizujących ma\-po\-wa\-nie obiektowo-relacyjne w języku C++ -- przeanalizowanie istniejących już narzędzi
-umożliwi dokładniejsze zapoznanie się z tematyką mapowania obiektowo-relacyjnego a także ze sposobem działania istniejących już rozwiązań, co umożliwi zaczerpnięcie 
-najciekawszych pomysłów dla Qubica a także wskaże elementy, które mogą ulec w nim poprawie.
+umożliwi dokładniejsze zapoznanie się z tematyką mapowania obiektowo-relacyjnego a także ze sposobem działania istniejących już rozwiązań, co umożliwi wykorzystanie 
+najciekawszych pomysłów w Qubicu a także wskaże elementy, które mogą ulec w nim poprawie.
 \item Stworzenie własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne w języku C++ -- ułatwi dokładniejsze poznanie mechanizmów dzia\-łających
 podczas mapowania obiektowo-relacyjnego oraz sposobów ro\-zwią\-zania pojawiających się problemów.
-
-\item Porównanie szybkości działania oraz ilości kodu wymaganego do stworzenia przykładowej aplikacji stworzonej w oparciu o Qubic a o inne istniejące na\-rzędzia -- 
-przeprowadzenie testów pozwoli stwierdzić czy przyjęte założenia i zastosowane rozwiązania wpłynęły na stworzenie wartej uwagi aplikacji szkieletowej realizującej
-mapowanie obiektowo-relacyjne.
+\item Porównanie Qubica z wcześniej analizowanymi narzędziami -- porównanie to pozwoli stwierdzić czy przyjęte założenia i zastosowane rozwiązania okazały się słuszne
+oraz czy Qubic wnosi coś nowego.
 \end{itemize}
 
+\newpage
+
 Do celów części praktycznej należą:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
 \item Stworzenie intuicyjnego interfejsu użytkownika -- aby sprawdzić w jakim stopniu udało się zrealizować założenia zostanie przeprowadzony test po\-le\-ga\-ją\-cy na 
