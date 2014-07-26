@@ -119,35 +119,38 @@ najciekawszych pomysłów w Qubicu a także wskaże elementy, które mogą ulec 
 \item Stworzenie własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne w języku C++ -- ułatwi dokładniejsze poznanie mechanizmów dzia\-łających
 podczas mapowania obiektowo-relacyjnego oraz sposobów ro\-zwią\-zania pojawiających się problemów.
 \item Porównanie Qubica z wcześniej analizowanymi narzędziami -- porównanie to pozwoli stwierdzić czy przyjęte założenia i zastosowane rozwiązania okazały się słuszne
-oraz czy Qubic wnosi coś nowego.
+oraz czy Qubic wnosi coś nowego do grona istniejących rozwiązań.
 \end{itemize}
 
 \newpage
 
 Do celów części praktycznej należą:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{itemize}
-\item Stworzenie intuicyjnego interfejsu użytkownika -- aby sprawdzić w jakim stopniu udało się zrealizować założenia zostanie przeprowadzony test po\-le\-ga\-ją\-cy na 
-napisaniu tej samej aplikacji wykorzystującej Qubica oraz inne aplikacje szkieletowe i bibioteki, a następnie porównaniu ilości linii kodu stworzonych aplikacji.
-\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to przed\-mio\-tem pracy Sebastiana, naszym wspólnym celem jest integracja obu modułów.
-\item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań -- aby sprawdzić w jakim stopniu udało się zrealizować
-założenia zostanie przeprowadzony test polegający na napisaniu tej samej aplikacji wykorzystującej Qubica oraz inne aplikacje szkieletowe i bibioteki, a następnie porównaniu
-ich wydajności.
-\item Uczynienie konfiguracji Qubica jak najprostszą.
+\item Stworzenie intuicyjnego interfejsu użytkownika -- im mniej linii kodu musi zostać napisane w celu wykonania podstawowych operacji bazodanowych tym interfejs jest 
+uważany za bardziej intuicyjny.
+\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to celem pracy Sebastiana. Wspólnym celem obu autorów jest integracja utworzonych  modułów.
+\item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań -- mapowanie musi odbywać się możliwie szybko, jednak
+najważniejsze jest zrealizowanie wszystkich jego założeń.
+\item Uczynienie konfiguracji Qubica jak najprostszą -- najlepszym rozwiązaniem wydaje się być przeniesienie całej konfiguracji do pliku konfiguracyjnego, tak aby nie musiała
+ona zalegać w tworzonym kodzie.
 \end{itemize}
 
 \section{Metoda badawcza}
 
 \subsection{Studia literaturowe}
 
-Literatura wykorzystana podczas pisania niniejszej pracy dotyczy głównie czterech zagadnień, czyli tworzenia aplikacji szkieletowych w języku C++, tworzenia zapytań w 
-języku SQL, aplikacji szkieletowej Qt oraz mapowania obiektowo-relacyjnego. Pierwsze dwa należą są dość popularne, dlatego też wybór pozycji książkowych jest dość spory. 
-Na temat mapowania obiektowo-relacyjnego trudniej jednak znaleźć podobną ilość książek, jednak istnieje spora ilość artykułów w wersji elektronicznej. Najczęściej są one
-napisane w języku angielskim. Tytuły wykorzystanych pozycji bibliograficznych wraz z ich krótkimi opisami znajdują się w kolejnym rozdziale.
+Literaturę wykorzystaną podczas pisania niniejszej pracy można podzielić na trzy kategorie:
+
+\begin{itemize}
+\item Literatura dotycząca języka C++ oraz aplikacji szkieletowej Qt.
+\item Literatura dotycząca relacyjnych baz danych oraz języka SQL.
+\item Literatura dotycząca mapowania obiektowo-relacyjnego.
+\end{itemize}
+
+Na temat dwóch pierwszych kategorii powstało wiele książek oraz artykułów naukowych, ponadto ogromną ilość informacji można znaleźć w różnego rodzaju źródłach
+elektronicznych. W przypadku ostatniej kategorii wybór ten jest mniejszy, jednakże nadal można znaleźć na ten temat sporo informacji, szczególnie w języku angielskim.
+Kolejny podrozdział przedstawia najważniejsze pozycje w kazdej z wymienionych powyżej kategorii.
 
 \subsection{Analiza istniejących rozwiązań}
 
@@ -156,22 +159,21 @@ obiektowo-relacyjne. Analiza taka umożliwia poznanie praktycznych rozwiązań p
 
 \subsection{Stworzenie własnej aplikacji szkieletowej}
 
-Praktyka jest najczęściej najlepszą z dostępnych metod nauki i to właśnie podczas tworzenia własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne można
-się najbardziej z danym tematem zapoznać. Wszystkie problemy, które pojawiały się poczas pisania Qubica musiały zostać w pewien sposób roz\-wią\-zane i to właśnie analiza
-tych problemów i ich rozwiązywanie było główną metodą badawczą wykorzystaną podczas pisania niniejszej pracy.
+Praktyka jest najczęściej najlepszą z dostępnych metod nauki i to właśnie podczas tworzenia własnej aplikacji można się najbardziej z wybranym tematem zapoznać. Wszystkie 
+problemy, które pojawiały się poczas pisania Qubica musiały zostać w pewien sposób rozwiązane i to właśnie analiza tych problemów i ich rozwiązywanie było główną metodą
+badawczą wykorzystaną podczas pisania niniejszej pracy.
 
 \subsection{Analiza porównawcza oraz testy}
 
 Analizując wcześniej istniejące już rozwiązania i powównując je z własnym można dojść do najtrafniejszych wniosków. To właśnie na tym etapie często dowiadujemy się czy
-przyjęte przez nas założenia i zaproponowane rozwiązania były lepsze niż te z istniejących już rozwiązań. 
+przyjęte przez nas założenia i zaproponowane rozwiązania były lepsze niż te które przyjęli autorzy istniejących już rozwiązań. 
 
 \section{Przegląd literatury w dziedzinie}
 
 \subsection{Literatura dotycząca języka C++ oraz Qt}
 
-W celu zasięgnięcia informacji na temat języka C++ i zagadnień z nim związanych najczęściej wykorzystywaną pozycją książkową była ,,Symfonia'' Jerzego Grębosza \cite{symfonia}.
-Najlepszym jej określeniem jest ,,kurs programowania w języku C++'', opisane zostały w niej jednak zagadnienia dotyczące nie tylko języka C++, a także co istotne dla
-autora niniejszej pracy zagadnienia dotyczące obiektowości.
+W celu zasięgnięcia informacji na temat programowania w języku C++ i zagadnień z nim związanych najczęściej wykorzystywaną pozycją książkową była ,,Symfonia'' 
+\cite{symfonia} Jerzego Grębosza. Najlepszym jej określeniem jest ,,kurs programowania w języku C++'', opisane zostały w niej jednak zagadnienia dotyczące nie tylko języka C++, a także co istotne dla autora niniejszej pracy zagadnienia dotyczące obiektowości.
 
 Poza tym wartościowym źródłem wiedzy podczas tworzenia Qubica była specyfikacja języka C++ \cite{cpp} oraz dokumentacja aplikacji szkieletowej Qt \cite{qt}.
 
@@ -180,7 +182,7 @@ Poza tym wartościowym źródłem wiedzy podczas tworzenia Qubica była specyfik
 Kluczowym zadaniem Qubica jest tworzenie jak najefektywniejszych zapytań w języku SQL, wiedza autora na ten temat pochodzi w głównej mierze z książki Johna Viescasa o
 tytule ,,SQL Queries for Mere Mortals'' \cite{sql}. Wyjaśnione zostały w niej zagadnienia dotyczące tworzenia zapytań w języku SQL oraz podstawy związane z bazami danych.
 
-W tym przypadku także wartościowe okazały się specyfikacje na przykład języka MySQL \cite{mysql}.
+W tym przypadku wartościowa okazała się też specyfikacja języka MySQL \cite{mysql}.
 
 \subsection{Literatura dotycząca mapowania obiektowo-relacyjnego}
 
@@ -188,10 +190,15 @@ Głównym źródłem wiedzy autora na temat mapowania obiektowo-relacyjnego był
 \cite{persistence} napisane przez Christiana Bauera oraz Gavina Kinga. Ich tytuły mogą być mylące, wstępne rozdziały dokładnie opisują tematykę mapowania
 obiektowo-relacyjnego nie uzglę\-dniając kontekstu języka Java czy aplikacji szkieletowej Hibernate.
 
-Ponadto liczne źródła elektroniczne, wśród których dominują artykuły naukowe również okazały się pomocne. Odniesienia do nich znajdują się w rozdziale \ref{teoria}, gdzie
-pojęcia dotyczące mapowania są objaśniane.
+Ponadto liczne źródła elektroniczne, wśród których dominują artykuły naukowe również okazały się pomocne. Odniesienia do nich jak i do wszystkich innych wykorzystanych
+źródeł najłatwiej znaleźć z bibliografii, znadującej się na ostatnich stronach pracy.
 
 \section{Układ pracy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 Tematem niniejszej pracy jest mapowanie obiektowo-relacyjne w języku C++, zaś za jej główny cel przyjęto przeanalizowanie istniejących bibliotek oraz aplikacji szkieletowych
 realizujących mapowanie obiektowo-relacyjne oraz stworzenie własnej aplikacji szkieletowej.
