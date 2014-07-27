@@ -21,31 +21,31 @@
 \contentsline {section}{\numberline {2.6}Niedopasowanie paradygmat\IeC {\'o}w}{15}
 \contentsline {section}{\numberline {2.7}Koszt niedopasowania}{16}
 \contentsline {section}{\numberline {2.8}Mapowanie obiektowo-relacyjne}{16}
-\contentsline {chapter}{\numberline {3}Analiza istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{21}
-\contentsline {section}{\numberline {3.1}Kryteria analizy}{21}
-\contentsline {section}{\numberline {3.2}Por\IeC {\'o}wnanie istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{22}
-\contentsline {chapter}{\numberline {4}Aplikacja szkieletowa Qubic}{24}
-\contentsline {section}{\numberline {4.1}Modu\IeC {\l }y tworzonej aplikacji}{24}
-\contentsline {section}{\numberline {4.2}Analiza wymaga\IeC {\'n}}{25}
-\contentsline {subsection}{\numberline {4.2.1}Wymagania funkcjonalne}{25}
-\contentsline {subsection}{\numberline {4.2.2}Wymagania niefunkcjonalne}{25}
-\contentsline {section}{\numberline {4.3}Projekt}{26}
-\contentsline {subsection}{\numberline {4.3.1}Rodzaj aplikacji}{26}
-\contentsline {subsection}{\numberline {4.3.2}Diagram klas}{26}
-\contentsline {subsection}{\numberline {4.3.3}Wzorce projektowe}{28}
-\contentsline {subsection}{\numberline {4.3.4}\IeC {\'S}rodowisko programistyczne}{28}
-\contentsline {subsection}{\numberline {4.3.5}System kontroli wersji}{28}
-\contentsline {section}{\numberline {4.4}Implementacja}{29}
-\contentsline {subsection}{\numberline {4.4.1}Interfejs CRUD}{29}
-\contentsline {section}{\numberline {4.5}Konserwacja i in\IeC {\.z}ynieria wt\IeC {\'o}rna}{37}
-\contentsline {section}{\numberline {4.6}Dokumentacja u\IeC {\.z}ytkownika}{38}
-\contentsline {section}{\numberline {4.7}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{39}
-\contentsline {section}{\numberline {4.8}Testy oraz ich wyniki}{44}
-\contentsline {section}{\numberline {4.9}Perspektywy rozwoju Qubica}{45}
-\contentsline {chapter}{\numberline {5}Podsumowanie}{47}
-\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{47}
-\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{48}
-\contentsline {chapter}{Bibliografia}{48}
-\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{49}
-\contentsline {chapter}{Spis tabel}{50}
-\contentsline {chapter}{Za\IeC {\l }\IeC {\k a}czniki}{51}
+\contentsline {chapter}{\numberline {3}Analiza istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{22}
+\contentsline {section}{\numberline {3.1}Kryteria analizy}{22}
+\contentsline {section}{\numberline {3.2}Por\IeC {\'o}wnanie istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{23}
+\contentsline {chapter}{\numberline {4}Aplikacja szkieletowa Qubic}{25}
+\contentsline {section}{\numberline {4.1}Modu\IeC {\l }y tworzonej aplikacji}{25}
+\contentsline {section}{\numberline {4.2}Analiza wymaga\IeC {\'n}}{26}
+\contentsline {subsection}{\numberline {4.2.1}Wymagania funkcjonalne}{26}
+\contentsline {subsection}{\numberline {4.2.2}Wymagania niefunkcjonalne}{26}
+\contentsline {section}{\numberline {4.3}Projekt}{27}
+\contentsline {subsection}{\numberline {4.3.1}Rodzaj aplikacji}{27}
+\contentsline {subsection}{\numberline {4.3.2}Diagram klas}{27}
+\contentsline {subsection}{\numberline {4.3.3}Wzorce projektowe}{29}
+\contentsline {subsection}{\numberline {4.3.4}\IeC {\'S}rodowisko programistyczne}{29}
+\contentsline {subsection}{\numberline {4.3.5}System kontroli wersji}{29}
+\contentsline {section}{\numberline {4.4}Implementacja}{30}
+\contentsline {subsection}{\numberline {4.4.1}Interfejs CRUD}{30}
+\contentsline {section}{\numberline {4.5}Konserwacja i in\IeC {\.z}ynieria wt\IeC {\'o}rna}{38}
+\contentsline {section}{\numberline {4.6}Dokumentacja u\IeC {\.z}ytkownika}{39}
+\contentsline {section}{\numberline {4.7}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{40}
+\contentsline {section}{\numberline {4.8}Testy oraz ich wyniki}{45}
+\contentsline {section}{\numberline {4.9}Perspektywy rozwoju Qubica}{46}
+\contentsline {chapter}{\numberline {5}Podsumowanie}{48}
+\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{48}
+\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{49}
+\contentsline {chapter}{Bibliografia}{49}
+\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{50}
+\contentsline {chapter}{Spis tabel}{51}
+\contentsline {chapter}{Za\IeC {\l }\IeC {\k a}czniki}{52}
