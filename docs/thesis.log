@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  26 JUL 2014 22:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  27 JUL 2014 16:27
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -735,9 +735,9 @@ o -- jest to celem
  []
 
 [8] [9]
-Overfull \hbox (3.34944pt too wide) in paragraph at lines 217--219
-\T1/txr/m/n/12 gania, opis jego im-ple-men-tacji, wyniki testów oraz ko«-cowe p
-orów-nanie z wcze±niej
+Overfull \hbox (19.39026pt too wide) in paragraph at lines 210--212
+[]\T1/txr/m/n/12 Nast[]pnie au-tor przed-stawia analiz[] istniej[]cych ju» narz
+[]dzi sªu»[]cych do mapowa-
  []
 
 [10] [11]
@@ -746,58 +746,46 @@ Rozdzia\IeC {\l } 2.
 File: resources/layers.png Graphic file (type png)
 
 <use resources/layers.png>
-Package pdftex.def Info: resources/layers.png used on input line 232.
-(pdftex.def)             Requested size: 199.16928pt x 135.98457pt.
+Package pdftex.def Info: resources/layers.png used on input line 228.
+(pdftex.def)             Requested size: 239.00557pt x 163.18582pt.
+ [12
 
-Overfull \hbox (5.92812pt too wide) in paragraph at lines 240--242
+ <D:/Workspace/Qubic/docs/resources/layers.png>]
+Overfull \hbox (5.92812pt too wide) in paragraph at lines 236--238
 \T1/txr/m/n/12 powinna za-w-iera¢ implementacj[] reguª biz-ne-sowych i wyma-ga«
  sys-te-mowych,
  []
 
-[12
 
- <D:/Workspace/Qubic/docs/resources/layers.png>]
-Overfull \hbox (1.39209pt too wide) in paragraph at lines 242--244
+Overfull \hbox (1.39209pt too wide) in paragraph at lines 238--240
 []\T1/txr/m/n/12 Warstwa tr-waªo±ci danych -- stanowi grup[] klas i kom-po-nen-
 tów odpowiedzial-
  []
 
-
-Overfull \hbox (3.61342pt too wide) in paragraph at lines 272--275
+[13]
+Overfull \hbox (3.61342pt too wide) in paragraph at lines 268--271
 \T1/txr/m/n/12 j[]zyka SQL, który jest fun-da-mentem mapowa-nia obiektowo-relac
 yjnego oraz wszys-
  []
 
-[13]
-Overfull \hbox (2.25426pt too wide) in paragraph at lines 293--296
+[14]
+Overfull \hbox (2.25426pt too wide) in paragraph at lines 289--292
 []\T1/txr/m/n/12 Wi[]kszo±¢ pro-gramistów jed-nak na-jbardziej zain-tere-sowana
  jest prob-le-mem biz-
  []
 
-[14]
-Overfull \hbox (1.94542pt too wide) in paragraph at lines 303--305
-\T1/txr/m/n/12 przy-padku wyko-rzys-ta-nia rela-cyjnych baz danych oraz pro-gra
-mowa-nia obiek-towego
- []
-
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 307.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 303.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (6.13203pt too wide) in paragraph at lines 314--318
+Overfull \hbox (6.13203pt too wide) in paragraph at lines 310--314
 \T1/txr/m/n/12 zwi[]zki mi[]dzy klasami, na przykªad pomi[]dzy klasami \T1/txtt
 /m/n/12 User \T1/txr/m/n/12 i \T1/txtt/m/n/12 Adress\T1/txr/m/n/12 . J[]zyki
  []
 
-
-Overfull \hbox (20.04015pt too wide) in paragraph at lines 314--318
-\T1/txr/m/n/12 za-uwa»y¢, »e asoc-jacje w mod-elu obiek-towym s[] kierunk-owe l
-ub te» dwukierunk-
- []
-
 [15]
-Overfull \hbox (13.03178pt too wide) in paragraph at lines 318--322
+Overfull \hbox (13.03178pt too wide) in paragraph at lines 314--318
 \T1/txr/m/n/12 wywoªamy metod[] \T1/txtt/m/n/12 user.getAdress().getStreet()\T1
 /txr/m/n/12 , wywoªanie takie nazy-
  []
@@ -1056,7 +1044,7 @@ wo-relacyjnego
 Here is how much of TeX's memory you used:
  5498 strings out of 493921
  76296 string characters out of 3144874
- 138790 words of memory out of 3000000
+ 139790 words of memory out of 3000000
  8659 multiletter control sequences out of 15000+200000
  60426 words of font info for 111 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1070,7 +1058,7 @@ ype1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
 rw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (52 pages, 787695 bytes).
+Output written on thesis.pdf (52 pages, 787977 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
