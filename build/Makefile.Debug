@@ -1893,7 +1893,9 @@ debug/employee.o: ../source/QbTest/employee.cpp ../source/QbTest/employee.h \
 		../source/QbUtilities/qbmysqlpersistencehelper.h \
 		../source/QbUtilities/qbmysqlmappinghelper.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
-		../source/QbCore/qbmysqlquery.h
+		../source/QbCore/qbmysqlquery.h \
+		../source/QbTest/department.h \
+		../source/QbTest/assignment.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\employee.o ..\source\QbTest\employee.cpp
 
 debug/main.o: ../source/QbTest/main.cpp ../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QCoreApplication \
@@ -2022,7 +2024,9 @@ debug/main.o: ../source/QbTest/main.cpp ../../../Programy/Qt/5.2.1/mingw48_32/in
 		../source/QbCore/qbmysqlquery.h \
 		../source/QbTest/employee.h \
 		../source/QbTest/company.h \
-		../source/QbUtilities/qbadvancedqueryhelper.h
+		../source/QbUtilities/qbadvancedqueryhelper.h \
+		../source/QbTest/assignment.h \
+		../source/QbTest/department.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\source\QbTest\main.cpp
 
 debug/department.o: ../source/QbTest/department.cpp ../source/QbTest/department.h \
@@ -2147,7 +2151,10 @@ debug/department.o: ../source/QbTest/department.cpp ../source/QbTest/department.
 		../source/QbUtilities/qbmysqlpersistencehelper.h \
 		../source/QbUtilities/qbmysqlmappinghelper.h \
 		../../../Programy/Qt/5.2.1/mingw48_32/include/QtCore/QDateTime \
-		../source/QbCore/qbmysqlquery.h
+		../source/QbCore/qbmysqlquery.h \
+		../source/QbTest/employee.h \
+		../source/QbTest/company.h \
+		../source/QbTest/assignment.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\department.o ..\source\QbTest\department.cpp
 
 debug/assignment.o: ../source/QbTest/assignment.cpp ../source/QbTest/assignment.h \

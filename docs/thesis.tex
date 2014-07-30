@@ -8,6 +8,7 @@
 \usepackage{pdfpages}
 \usepackage{caption}
 \usepackage{float}
+\usepackage{listings}
 
 \renewcommand{\chaptername}{Rozdział}
 \renewcommand{\contentsname}{Spis treści}
@@ -16,6 +17,8 @@
 \renewcommand{\listfigurename}{Spis rysunków}
 \renewcommand{\listtablename}{Spis tabel}
 \renewcommand{\bibname}{Bibliografia}
+\renewcommand\lstlistingname{Listing}
+\renewcommand\lstlistlistingname{Spis listingów}
 
 \pagestyle{headings}
 
@@ -27,6 +30,44 @@
 \newtheorem{corollary}{Wniosek}[chapter]
 
 \begin{document}
+
+\lstdefinestyle{customcmd}{
+captionpos=b, 
+belowcaptionskip=1\baselineskip,
+breaklines=true,
+frame=LRTB,
+xleftmargin=\parindent,
+showstringspaces=false,
+basicstyle=\footnotesize\ttfamily,
+}
+
+\lstdefinestyle{customsql}{
+captionpos=b, 
+belowcaptionskip=1\baselineskip,
+breaklines=true,
+frame=LRTB,
+xleftmargin=\parindent,
+language=SQL,
+showstringspaces=false,
+basicstyle=\footnotesize\ttfamily,
+keywordstyle=\bfseries\color{purple},
+identifierstyle=\color{violet}
+}
+
+\lstdefinestyle{customc}{
+captionpos=b, 
+belowcaptionskip=1\baselineskip,
+breaklines=true,
+frame=LRTB,
+xleftmargin=\parindent,
+language=C++,
+showstringspaces=false,
+basicstyle=\footnotesize\ttfamily,
+keywordstyle=\bfseries\color{green!40!black},
+commentstyle=\itshape\color{purple!40!black},
+identifierstyle=\color{blue},
+stringstyle=\color{orange},
+}
 
 \includepdf[pages={1}]{resources/title_page.pdf}
 
@@ -317,11 +358,15 @@ po grafie obiektu. Przedstawiony sposób niestety nie sprawdza się w przypadku 
 kierowanych do bazy danych, a więc wykorzystanie mechanizmów złączeń jednakże wydajność nigdy nie będzie taka sama jak w przypadku modelu obiektowego.
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Koszt niedopasowania}
+
+Rozwązanie wymienionych wcześniej problemów dotyczących niedopasowania pa\-radygmatów może okazać się bardzo czasochłonne. Zazwyczaj około 30\% kodu aplikacji
+to kod warstwy trwałości danych oraz ręczne generowanie zapytań w celu przechowania danych w bazie. Pomimo tak dużych nakładów pracy, często okazuje się, że
+wymagane są liczne poprawki, ponieważ przyjęte rozwiązania okazały się nietrafne.
+
+Największy koszt jest związany z fazą modelowania i trudnościami z dopasowaniem dobrze znanego programistom modelu obiektowego do niekiedy trudniejszego do zrozumienia
+modelu relacyjnego. Problem ten udaje się często ro\-związać kosztem zalet modelu obiektowego takich jak niewykorzystanie dziedziczenia czy polimorfizmu. Problem niedopasowania
+modeli prowadzi do niskej elastyczności i utraty produktywności tworzonych aplikacji, co prowadzi w ostateczności ku wyższym kosztom tworzenia oprogramowania \cite{hibernate}. 
 
 \section{Mapowanie obiektowo-relacyjne}
 
@@ -337,12 +382,10 @@ Mapowanie obiektowo-relacyjne --  automatyczna i niewidoczna dla uży\-tkownika 
 na podstawie metadanych opisujących klasę. Mapowanie działa jako dwukierunkowy translator danych z jednej reprezentacji w inną \cite{hibernate}. 
 \end{definition}
 
-\newpage
-
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{resources/mapping.png}
-\caption{Mapowanie obiektowo-relacyjne - ŹLE}
+\includegraphics[width=.9\textwidth]{resources/orm.png}
+\caption{Mapowanie obiektowo-relacyjne}
 \end{figure}
 
 Narzędzia realizujące mapowanie obiektowo-relacyjne składają się z w wię\-kszości przypadków następujących elementów \cite{hibernate}:
@@ -365,10 +408,10 @@ Do sposobów implementacji mapowania obiektowo-relacyjnego należą \cite{hibern
 \begin{itemize}
 \item Pełna relacyjność -- cała aplikacja, włączając w to interfejs użytkownika, zaprojektowana jest wokół modelu relacyjnego i podstawowych operacji języka SQL. Aplikacje
 takie część logiki mogą mieć przeniesione do warstwy bazy danych.
-\item Lekkie odwzorowanie obiektów -- encje są reprezentowane przez ręczne napisane klasy odpowiadające tabelom relacynym. Kod SQL zostaje schowany przed logiką
+\item Lekkie odwzorowanie obiektów -- encje są reprezentowane przez ręczne na\-pisane klasy odpowiadające tabelom relacynym. Kod SQL zostaje schowany przed logiką
 aplikacji dzięki wzorcom projektowym.
 \item Średnie odwzorowanie obiektów -- aplikacja jest zaprojektowana wokół modelu obiektowego. Kod SQL jest generowany dynamicznie przez szkielet systemu.
-\item Pełne odwzorowanie obiektów -- obsługuje wyrafinowane modele obiektowe stosując kompozycję, dziedziczenie i polimorfizm. Warstwa trwałości w sposób niewidoczny
+\item Pełne odwzorowanie obiektów -- obsługuje wyrafinowane modele obiektowe stosując kompozycję, dziedziczenie i polimorfizm. Warstwa trwałości w spo\-sób niewidoczny
 implementuje zapis i odczyt danych. Ten poziom funkcjonalności jest najtrudniejszy do osiągnięcia i uzyskiwanie go na potrzeby pojedyńczej aplikacji nie ma sensu.
 \end{itemize}
 
@@ -394,9 +437,42 @@ Mapowanie obiektowo-relacyjne jest rozwiązaniem sprawdzającym się obecnie w b
 zapytań jest najczęściej trafną decyzją. W chwili są to dwa najpopularniejsze rozwiązania, przy czym mapowanie jest obecnie najczęściej wybierane w związku z
 niedopasowaniem obiektowo-relacyjnym.
 
-\newpage -
+\section{Aplikacje szkieletowe}
 
-\newpage -
+Na wstępie aplikacje szkieletowe zostały opisane jako ,,fundamenty'' dla tworzonych przez programistów aplikacji, warto przypomnieć tutaj dokładniejszą definicję tego
+pojęcia:
+
+\begin{definition}
+Aplikacja szkieletowa\footnote{~ang. Framework} -- szkielet budowy aplikacji. Definiuje strukturę aplikacji oraz jej ogólny mechanizm działania, dostarcza zestaw komponentów
+i bibliotek ogólnego przeznaczenia do wykonywania określonych zadań \cite{framework}.
+\end{definition}
+
+Charakterystycznymi cechami aplikacji szkieletowych są między innymi \cite{framework}:
+
+\begin{itemize}
+\item Gotowy szkielet dla tworzonych aplikacji.
+\item Narzucony przepły sterowania.
+\item Domyślna konfiguracja.
+\item Komponenty do rozbudowy.
+\end{itemize}
+
+Do zalet aplikacji szkieletowych można zaliczyć \cite{framework}:
+
+\begin{itemize}
+\item Szybka realizacja projektu -- część kodu jest gotowa, a więc oszczędzamy sporo czasu potrzebnego na jego napisanie.
+\item Poprawa jakości kodu oraz większa niezawodność -- gotowy kod został wielokrotnie przetestowany oraz był używany przez wielu innych programistów, a więc jeśli coś
+nie działa to w większości przypadków wina błędu użytkownika.
+\item Wsparcie twórców frameworka -- jeśli jednak uda nam się znaleźć jakiś błąd, zawsze możemy liczyć na wsparcie ze strony twórców oprogramowania.
+\end{itemize}
+
+Do ich wad natomiast zaliczamy \cite{framework}:
+
+\begin{itemize}
+\item Złożoność -- zakres działań aplikacji szkieletowych jest bardzo szeroki, a co za tym idzie ich sposób działania nie jest zawsze oczywisty.
+\item Koszt szkoleń -- aby poradzić sobie ze złożonością, najlepszym wyjściem jest poświęcenie dodatkowego czasu na szkolenie w zakresie wybranego oprogramowania.
+\item Zredukowana wydajność -- w bardziej skomplikowanych systemach wykorzystanie aplikacji szkieletowych może mieć wspłw na spadek wydajności systemu, dzieje się
+tak w związku z niedopasowaniem wybranej aplikacji do systemu.
+\end{itemize}
 
 \chapter[Analiza istniejących rozwiązań]{Analiza istniejących rozwiązań mapowania obiektowo-relacyjnego w języku C++} \label{analiza}
 
@@ -407,9 +483,9 @@ jednakże jest ich mniej niż w przypadku innych znanych języków programowania
 jest wskazanie kryteriów, które zostaną przeanalizowane. Pod uwagę zostałe wzięte następujące aspekty:
 
 \begin{itemize}
-\item Charakter oprogramowania -- przede wszystkim istotny jest fakt, czy wybrane narzędzie należy do tak zwanego ,,wolnego oprogramowania'', a co za tym idzie czy jego
-użytkownik może podejrzeć i w razie potrzeby zmodyfikować jego kod źródłowy oraz podzielić się wprowadzonymi przez siebie zmianami z innymi jego użytkownikami. W ten
-sposób oprogramowanie ulega ciągłemu rozwojowi, a jego działanie łatwiej zrozumieć.
+\item Charakter oprogramowania -- przede wszystkim istotny jest fakt, czy wybrane narzędzie należy do tak zwanego ,,wolnego oprogramowania''\footnote{~ang. open-source
+software}, a co za tym idzie czy jego użytkownik może podejrzeć i w razie potrzeby zmodyfikować jego kod źródłowy oraz podzielić się wprowadzonymi przez siebie zmianami z innymi 
+jego użytkownikami. W tensposób oprogramowanie ulega ciągłemu rozwojowi, a jego działanie łatwiej zrozumieć.
 \item Licencja -- wielce istotny jest fakt czy wybrane oprogramowanie jest darmowe oraz na jakich zasadach może zostać wykorzystywane. Mało restrykcyjna licencja jest z
 pewnością zaletą.
 \item Wspierane systemy zarządzania bazą danych -- tutaj zasada jest prosta, im więcej rodzajów baz danych jest wspieranych tym lepiej. Dużą zaletą jest także rozszerzalność
@@ -425,19 +501,38 @@ dodatkową zaletą.
 
 \section{Porównanie istniejących rozwiązań}
 
+\subsection{Biblioteka QxOrm}
+
+Analizę rozpoczyna najpopularniejsza biblioteka realizujaca mapowanie obiektowo-relacyjne w języku C++, czyli QxOrm.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.5\textwidth]{resources/qxorm.png}
+\caption[Biblioteka QxOrm]{Biblioteka QxOrm \cite{qxorm}}
+\end{figure}
+
+\newpage
+
+Analizę wyznaczonych kryteriów przedstawia poniższa tabela:
+
 \begin{table}[h]
 \centering
-\begin{tabular}{| l | l | l | l | l |} 
+\begin{tabular}{| l | l |} 
 \hline 
-Nazwa & QxOrm & Debea & SOCI & OpenORM \\ \hline
-Typ & - & - & - & - \\ \hline
-Cena & 0 zł & 0 zł & 0 zł & 0 zł \\ \hline
-Obsługiwane bazy & - & - & - & -  \\ \hline
+Charakter oprogramowania & open-source \\ \hline
+Licencja & GNU/GPL  \\ \hline
+Wspierane bazy danych & MySQL, PostgreSQL, Oracle, \\ \hline
+& SQLite, IBM DB2, InterBase, SysBase \\ \hline
+Wykorzystywane narzędzia & Qt, boost  \\ \hline
+Poziom skomplikowania interfejsu & wysoki  \\ \hline
+Dostępność generatora opisu & tak  \\ \hline
+Dodatkowe możliwości &  edytor encji, walidacja danych,   \\ \hline
+& serializacja danych, pamięć cache  \\ \hline
 \end{tabular} 
-\caption{Porównanie istniejących rozwiązań}
+\caption{Analiza biblioteki QxOrm}
 \end{table}
 
-\newpage -
+{\color{purple}TODO: Interfejs i opis QxOrm, plus co najmniej jeszcze dwa.}
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
@@ -490,6 +585,12 @@ jak najmniej linii.
 
 \subsection{Rodzaj aplikacji}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=.55\textwidth]{resources/qb.png}
+\caption{Logo tworzonej aplikacji szkieletowej}
+\end{figure}
+
 Qubic jest aplikacją szkieletową, czyli strukturą do wykorzystywaną do budowy innych aplikacji. Jego podstawowym zadaniem jest realizacja mapowania obiektowo-relacyjnego,
 czyli udostępnienie funkcjonalności pozwalającej na przechowywanie obiektów w bazie danych.
 
@@ -525,7 +626,7 @@ Zarówno wybór bazy danych nie został narzucony z góry, co prawda na potrzeby
 Jedyną biblioteką wykorzystywaną przez Qubica jest QsLogger odpowiedzialny za logowanie. Jest to bardzo przydatna funkcja, która umożliwia szybkie zlokalizowanie pojawiających
 się problemów.
 
-{\color{red} Wykorzystane technologie, poprawiony opis, screeny, czy coś jeszcze?}
+{\color{purple}TODO: Wykorzystane technologie, poprawiony opis, screeny, czy coś jeszcze?}
 
 \subsection{System kontroli wersji}
 
@@ -590,38 +691,38 @@ Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niż
 \caption{Schemat blokowy metody usuwającej obiekty z bazy danych}
 \end{figure}
 
-\newpage -
+\newpage
 
-\newpage -
-
-\newpage -
+{\color{purple}TODO: Opis pozostałych elementów.}
 
 \section{Konserwacja i inżynieria wtórna}
 
-{\color{red} Jak przebiega eksploatacja projektu? Jakie wady i zalety ujawniły się po okresie testowania i użytkowania? Jak można skorzystać z tej wiedzy praktycznej pod 
+{\color{purple}TODO: Jak przebiega eksploatacja projektu? Jakie wady i zalety ujawniły się po okresie testowania i użytkowania? Jak można skorzystać z tej wiedzy praktycznej pod 
 kątem roz\-bu\-do\-wy pracy? Jakie elementy systemu powinny zostać w pierwszej kolejności zmodyfikowane?}
-
-\newpage
-
-\section{Dokumentacja użytkownika}
-
-\newpage
 
 \section{Przykładowa aplikacja wykorzystująca Qubica}
 
-\newpage -
+W celu zaprezentowania sposobu działania Qubica rozważmy następujący schemat bazy danych, której struktura zawiera zarówno relację jeden do wielu jak i wiele do wielu:
 
-\newpage -
+\lstinputlisting[style=customsql,caption=Plik tworzący przykładową bazę danych]{resources/sample_db.sql}
 
-\newpage -
+Na podstawie zaprezentowanego schematu wygenerowane zostały pliki klas oraz projektu, następnie w celach prezentacyjnych stworzony został zaprezentowany poniżej
+plik, który wykonuje podstawowe operacje na bazie danych:
 
-\newpage -
+\lstinputlisting[style=customc,caption=Plik przedstawiający przykładowe zastosowanie Qubica]{resources/sample_app.cpp}
 
-\newpage -
+Jak widać wykonanie podstawowych operacji CRUD ogranicza się do wywołania pojedyńczej funkcji, bez konieczności wcześniejszego zapewnienia połączenia z bazą ani
+konfiguracji z poziomu kodu. Jest to bardzo dobry wynik biorąc pod uwagę poprawne działanie aplikacji widoczne na kolejnym listingu, tym razem jest to zrzut z konsolii
+wykonanego programu, przy użyciu świeżo utworzonej bazy danych:
+
+\lstinputlisting[style=customcmd,caption=Plik przedstawiajądsfadowe zastosowanie Qubica]{resources/sample_cmd.txt}
+
+Dodatkowo rezultatem pracy programu był szczegółowy log Qubica, jednakże ze względu na jego długość został on pominięty w niniejszej pracy. Wszystkie operacje zostały
+wykonane zgodnie z oczekiwaniami, co pozwala sądzić, że mapowanie obiektowo-relacyjne co najmniej w tym kontekście odbywa się poprawnie.
 
 \section{Testy oraz ich wyniki}
 
-\newpage
+{\color{purple}TODO}
 
 \section{Perspektywy rozwoju Qubica} \label{perspektywyqubic}
 
@@ -652,10 +753,12 @@ może to usprawnić wykonywanie bardziej wymagających operacji.
 
 \section{Dyskusja wyników}
 
-{\color{red} Dzięki zrealizowaniu pracy poprawie uległa wydajność. Ponadto, o ? \% skrócony został czas. Które cele pracy udało sie zrealizować? Co z tego wynika? Które
-cele pracy pozostały niezrealizowane i dlaczego?}
+Autorowi niniejszej pracy udało się stworzyć aplikację szkieletową realizującą ma\-powanie obiektowo-relacyjne, która stanowi dobrą alternatywę dla istniejących już narzędzi.
+Qubic wspiera wszystkie podstawowe mechanizmy charakterystyczne dla tego typu narzędzi, dodatkowo udostępnia generator opisu mapowania, a jego interfejs należy do
+najmniej skomplikowanych co zostało przedstawione w poprzednich rozdziałach pracy.
 
-\newpage
+Dzięki realizacji wszystkich postawionych wcześniej celów oraz wymagań udało się osiągnąć zamierzone rezultaty, jednakże przy okazji pisanie niniejszej pracy okazało się
+być bardzo dobrym sposobem zdobycia wiedzy na temat mapowania obiektowo-relacyjnego, który należy do ciekawszych zagadnień dotyczących inżynierii oprogramowania.
 
 \section{Perspektywy rozwoju pracy}
 
@@ -663,9 +766,9 @@ W celu rozwoju niniejszej pracy dyplomowej należy przede wszystkim rozważyć d
 zostały liczne możliwości rozwoju Qubica, ich realizacja z pewnością byłaby sporym krokiem w przód.
 
 Podjęcie się tego zadania oznaczałoby jednak trzymanie się tematyki mapowania obiektowo-relacyjnego a przecież aplikacja szkieletowa nie musi ograniczać się do realizacji
-tylko jednego zagadnienia, istnieje wiele innych możliwości rozwoju. Dobrym tego przykładem jest aplikacja szkieletowa Spring, która oferuje bardzo duże możliwości. Qubic można
-rozwijać w podobnym kierunku, zarazem zmieniając główny temat pracy dyplomowej. Nowym tematem mogłaby zostać na przykład aplikacja szkieletowa na telefony
-komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\footnote{~ang. webservice}.
+tylko jednego zagadnienia, istnieje wiele innych możliwości rozwoju. Dobrym tego przykładem jest aplikacja szkieletowa Spring, która oferuje bardzo duże możliwości. Qubic 
+można rozwijać w podobnym kierunku, zarazem zmieniając główny przedmiot pracy dyplomowej. Nowym tematem mogłaby zostać na przykład aplikacja szkieletowa na telefony
+komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\footnote{~ang. Webservice}.
 
 \addcontentsline{toc}{chapter}{Bibliografia} 
 \begin{thebibliography}{99}
@@ -679,6 +782,8 @@ komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\foot
 \bibitem{mysql} MySQL Documentation. {\tt http://dev.mysql.com/doc/}.
 \bibitem{trends} Trendy Google. {\tt https://www.google.pl/trends/explore\#q=orm\%20\-java\%2C\%20orm\%20php\%2C\%20orm\%20python\%2C\%20orm\%20c\&cmpt=q}.
 \bibitem{rel} Portal UAM w Poznaniu. {\tt http://www.staff.amu.edu.pl/\~psi/\-informatyka/kluczew/I2\_Database.htm}.
+\bibitem{framework} Grosser, Andrzej. Szkielety tworzenia aplikacji. {\tt http://icis.pcz.pl/~agrosser/wsztap.pdf}.
+\bibitem{qxorm} QxOrm Library for C++. {\tt http://www.qxorm.com/qxorm\_en/home.html}.
 \end{thebibliography}
 
 \addcontentsline{toc}{chapter}{Spis rysunków} 
@@ -687,10 +792,7 @@ komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\foot
 \addcontentsline{toc}{chapter}{Spis tabel} 
 \listoftables
 
-\addcontentsline{toc}{chapter}{Załączniki} 
-\chapter*{Załączniki}
-\begin{enumerate}
-\item Kod źródłowy Qubica oraz aplikacji przykładowej w wersji elektronicznej.
-\end{enumerate}
+\addcontentsline{toc}{chapter}{Spis listingów} 
+\lstlistoflistings
 
 \end{document}
