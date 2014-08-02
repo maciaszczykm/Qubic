@@ -41,16 +41,16 @@
 \contentsline {subsection}{\numberline {4.3.5}System kontroli wersji}{30}
 \contentsline {section}{\numberline {4.4}Implementacja}{31}
 \contentsline {subsection}{\numberline {4.4.1}Po\IeC {\l }\IeC {\k a}czenie z baz\IeC {\k a} danych}{31}
-\contentsline {subsection}{\numberline {4.4.2}Interfejs CRUD}{31}
+\contentsline {subsection}{\numberline {4.4.2}Interfejs CRUD}{32}
 \contentsline {subsection}{\numberline {4.4.3}Interfejs do tworzenia zapyta\IeC {\'n}}{37}
 \contentsline {subsection}{\numberline {4.4.4}Metody dost\IeC {\k e}pu do powi\IeC {\k a}zanych danych}{37}
 \contentsline {section}{\numberline {4.5}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{37}
-\contentsline {section}{\numberline {4.6}Analiza Qubica}{42}
-\contentsline {section}{\numberline {4.7}Perspektywy rozwoju Qubica}{43}
-\contentsline {chapter}{\numberline {5}Podsumowanie}{45}
-\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{45}
-\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{45}
-\contentsline {chapter}{Bibliografia}{46}
-\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{47}
-\contentsline {chapter}{Spis tabel}{48}
-\contentsline {chapter}{Spis listing\IeC {\'o}w}{49}
+\contentsline {section}{\numberline {4.6}Analiza Qubica}{43}
+\contentsline {section}{\numberline {4.7}Perspektywy rozwoju Qubica}{44}
+\contentsline {chapter}{\numberline {5}Podsumowanie}{46}
+\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{46}
+\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{46}
+\contentsline {chapter}{Bibliografia}{47}
+\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{48}
+\contentsline {chapter}{Spis tabel}{49}
+\contentsline {chapter}{Spis listing\IeC {\'o}w}{50}

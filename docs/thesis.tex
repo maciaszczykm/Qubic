@@ -532,16 +532,16 @@ Dodatkowe możliwości &  edytor encji, walidacja danych,   \\ \hline
 \caption{Analiza biblioteki QxOrm}
 \end{table}
 
-Konfiguracja QxOrm jest dość rozbudowana, a co za tym idzie skomplikowana. Rejestracja klas wymaga używanie wielu funkcji i makr w pliku nagłówkowym:
+Konfiguracja QxOrm jest dość rozbudowana, a co za tym idzie skomplikowana. Rejestracja klas wymaga używanie wielu funkcji i makr w pliku nagłówkowym \cite{qxorm}:
 
 \lstinputlisting[style=customc,caption=Przykładowy plik nagłówkowy klasy korzystającej z QxOrm]{resources/qxorm_sampleclass.h}
 
-A także w pliku klasy:
+A także w pliku klasy \cite{qxorm}:
 
 \lstinputlisting[style=customc,caption=Przykładowy plik klasy korzystającej z QxOrm]{resources/qxorm_sampleclass.cpp}
 
 Samo wykorzystanie QxOrm także nie należy do najłatwiejszych zadań, istotne jest poprawne skonfigurowanie bazy danych z poziomu kodu, oraz wykonanie odpowiednich
-sekwencji metod:
+sekwencji metod \cite{qxorm}:
 
 \lstinputlisting[style=customc,caption=Przykładowy plik klasy korzystającej z QxOrm]{resources/qxorm_sample.cpp}
 
@@ -665,6 +665,11 @@ wykorzystany został system Issues and Milestones\footnote{~problemy oraz kamien
 
 \subsection{Połączenie z bazą danych}
 
+Obsługa połączenia z bazą danych należy do fundamentalnych operacji realizowanych przez narzędzia zajmujące się mapowaniem obiektowo-relacyjnym, nie inaczej jest w
+przypadku Qubica. W związku z tym, że w innych analizowanych narzędziach można było się napotkać na uciążliwą konfigurację odbywającą się głównie z poziomu kodu
+Qubic korzysta z pliku konfiguracyjnego, który przechowywuje całą jego konfigurację. Ponadto sama obsługa połączenia jest niewidoczna dla użytkownika, ponieważ
+połączenie nawiązywane jest podczas uzyskania dostępu do instancji {\tt Singleton}. 
+
 \subsection{Interfejs CRUD}
 
 Kluczowym modułem narzędzi programistycznych realizujących mapowanie obiekt\-owo-relacyjne jest interfejs CRUD umożliwiający manipulowanie danymi w bazie danych z 
@@ -709,7 +714,22 @@ Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niż
 
 \subsection{Interfejs do tworzenia zapytań}
 
+Interfejs ten został utworzony w celu ujednolicenia zapytań jakie mogą być przesyłane do różnego rodzaju baz danych. Użytkownik za jego pomocą może skonstruować
+obiekt zapytania, który to w momencie przesłania do bazy danych jest przetłumaczony na dialekt języka SQL z którego aktualnie użytkownik korzysta. Przykład wykorzystania
+takiego interfejsu może wyglądać następująco:
+
+\lstinputlisting[style=customc,caption=Tworzenie zapytań Qubica]{resources/sample_query.cpp}
+
 \subsection{Metody dostępu do powiązanych danych}
+
+Charakterystycznymi elementami relacyjnych baz danych są relacje jeden do wielu oraz wiele do wielu, składające się tak na prawdę z tabeli łącznikowej oraz dwóch relacji
+jeden do wielu. Dużym usprawnieniem dla aplikacji jest możliwość uzyskania obiektów powiązanych z wybranym obiektem, Qubic udostępnia taką możliwość.
+
+Weźmy pod uwagę dwie klasy obiektów {\tt Employee} oraz {\tt Company}. W modelu relacyjnym tabela {\tt EMPLOYEE} zawiera odwołanie do tabeli {\tt COMPANY} dzięki
+czemu posiadamy informacje dla jakiej firmy pracuje wybrany pracownik, w modelu obiektowym zrealizowane to jest za pomocą referencji lub też wskaźników. Co jednak jeśli
+potrzebujemy informacji o wszystkich pracownikach danej firmy? Ani obiekt ani encja w tabeli nie posiada takich informacji, na pomoc przychodzą wygenerowane przez
+generator opisu tzw. metody dostępu do powiązanych danych. W przedstawionym przypadku jest to metoda {\tt getEmployees}, którą możemy wywołać na dowolnym obiekcie
+klasy {\tt Company}.
 
 \section{Przykładowa aplikacja wykorzystująca Qubica}
 
@@ -720,13 +740,15 @@ W celu zaprezentowania sposobu działania Qubica rozważmy następujący schemat
 Na podstawie zaprezentowanego schematu wygenerowane zostały pliki klas oraz projektu, następnie w celach prezentacyjnych stworzony został zaprezentowany poniżej
 plik, który wykonuje podstawowe operacje na bazie danych:
 
+\newpage
+
 \lstinputlisting[style=customc,caption=Plik przedstawiający przykładową aplikację korzystającą z Qubica]{resources/sample_app.cpp}
 
 Jak widać wykonanie podstawowych operacji CRUD ogranicza się do wywołania pojedyńczej funkcji, bez konieczności wcześniejszego zapewnienia połączenia z bazą ani
 konfiguracji z poziomu kodu. Jest to bardzo dobry wynik biorąc pod uwagę poprawne działanie aplikacji widoczne na kolejnym listingu, tym razem jest to zrzut z konsolii
 wykonanego programu, przy użyciu świeżo utworzonej bazy danych:
 
-\lstinputlisting[style=customcmd,caption=Plik wyjściowy przykładowej aplikacji korzystającej z Qubica]{resources/sample_cmd.txt}
+\lstinputlisting[style=customcmd,caption=Plik wynikowy przykładowej aplikacji korzystającej z Qubica]{resources/sample_cmd.txt}
 
 Dodatkowo rezultatem pracy programu był szczegółowy log Qubica, jednakże ze względu na jego długość został on pominięty w niniejszej pracy. Wszystkie operacje zostały
 wykonane zgodnie z oczekiwaniami, co pozwala sądzić, że mapowanie obiektowo-relacyjne co najmniej w tym kontekście odbywa się poprawnie.

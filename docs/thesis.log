@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  2 AUG 2014 13:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  2 AUG 2014 15:47
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -986,24 +986,32 @@ Package pdftex.def Info: resources/githubmilestone.png used on input line 660.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (4.16544pt too wide) in paragraph at lines 670--673
+Overfull \hbox (9.69743pt too wide) in paragraph at lines 668--672
+\T1/txr/m/n/12 Obsªuga poª[]czenia z baz[] danych nale»y do fun-da-men-tal-nych
+ op-er-acji re-al-i-zowanych
+ []
+
+
+Overfull \hbox (10.41743pt too wide) in paragraph at lines 668--672
+\T1/txr/m/n/12 mo»na byªo si[] napotka¢ na uci[]»liw[] konfiguracj[] odbywaj[]c
+[] si[] gªównie z poziomu
+ []
+
+[30] [31 <D:/Workspace/Qubic/docs/resources/githubissue.png> <D:/Workspace/Qubi
+c/docs/resources/githubmilestone.png>]
+Overfull \hbox (4.16544pt too wide) in paragraph at lines 675--678
 \T1/txr/m/n/12 Kluczowym mod-uªem narz[]dzi pro-gramisty-cznych realizuj[]cych 
 mapowanie obiekt-
  []
 
 
-Overfull \hbox (2.79745pt too wide) in paragraph at lines 670--673
+Overfull \hbox (2.79745pt too wide) in paragraph at lines 675--678
 \T1/txr/m/n/12 metod, które jako ar-gu-menty przyjmuj[] obiekty dziedzicz[]ce p
 o jed-nej z klas Qubica
  []
 
-[30]
-Overfull \vbox (4.89111pt too high) has occurred while \output is active []
 
-
-[31 <D:/Workspace/Qubic/docs/resources/githubissue.png> <D:/Workspace/Qubic/doc
-s/resources/githubmilestone.png>]
-Overfull \hbox (2.56947pt too wide) in paragraph at lines 674--680
+Overfull \hbox (2.56947pt too wide) in paragraph at lines 679--685
 \T1/txr/m/n/12 opis, cz[]±¢ narz[]dzi je realizuj[]cych ko-rzysta z ad-no-tacji
 , które okre±laj[] mapowanie
  []
@@ -1012,7 +1020,7 @@ Overfull \hbox (2.56947pt too wide) in paragraph at lines 674--680
 File: resources/store_schema.png Graphic file (type png)
 
 <use resources/store_schema.png>
-Package pdftex.def Info: resources/store_schema.png used on input line 686.
+Package pdftex.def Info: resources/store_schema.png used on input line 691.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
@@ -1023,7 +1031,7 @@ Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 File: resources/update_schema.png Graphic file (type png)
 
 <use resources/update_schema.png>
-Package pdftex.def Info: resources/update_schema.png used on input line 692.
+Package pdftex.def Info: resources/update_schema.png used on input line 697.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
@@ -1034,7 +1042,7 @@ Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 File: resources/load_schema.png Graphic file (type png)
 
 <use resources/load_schema.png>
-Package pdftex.def Info: resources/load_schema.png used on input line 698.
+Package pdftex.def Info: resources/load_schema.png used on input line 703.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
@@ -1045,99 +1053,110 @@ Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 File: resources/remove_schema.png Graphic file (type png)
 
 <use resources/remove_schema.png>
-Package pdftex.def Info: resources/remove_schema.png used on input line 704.
+Package pdftex.def Info: resources/remove_schema.png used on input line 709.
 (pdftex.def)             Requested size: 398.33858pt x 563.39784pt.
 
 Overfull \vbox (18.84271pt too high) has occurred while \output is active []
 
 
 [36 <D:/Workspace/Qubic/docs/resources/remove_schema.png (PNG copy)>]
+Overfull \hbox (9.55344pt too wide) in paragraph at lines 717--720
+\T1/txr/m/n/12 Interfejs ten zostaª ut-wor-zony w celu ujed-no-lice-nia za-py-t
+a« jakie mog[] by¢ przesyªane
+ []
+
+(D:\Workspace\Qubic\docs\resources/sample_query.cpp)
+Overfull \hbox (1.71745pt too wide) in paragraph at lines 728--733
+\T1/txr/m/n/12 posi-adamy in-for-ma-cje dla jakiej firmy pracuje wybrany pra-co
+wnik, w mod-elu obiek-
+ []
+
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
 (D:\Workspace\Qubic\docs\resources/sample_db.sql [37])
-Overfull \hbox (1.65744pt too wide) in paragraph at lines 720--722
+Overfull \hbox (1.65744pt too wide) in paragraph at lines 740--742
 \T1/txr/m/n/12 oraz pro-jektu, nast[]pnie w celach prezen-ta-cyjnych stwor-zony
  zostaª za-prezen-towany
  []
 
-(D:\Workspace\Qubic\docs\resources/sample_app.cpp [38] [39] [40])
-(D:\Workspace\Qubic\docs\resources/sample_cmd.txt [41]) [42]
-Overfull \hbox (4.20142pt too wide) in paragraph at lines 758--761
+[38] (D:\Workspace\Qubic\docs\resources/sample_app.cpp [39] [40] [41])
+(D:\Workspace\Qubic\docs\resources/sample_cmd.txt [42]) [43]
+Overfull \hbox (4.20142pt too wide) in paragraph at lines 780--783
 \T1/txr/m/n/12 przede wszys-tkim niskim poziomem skom-p-likowa-nia in-ter-fe-js
 u, co mo»na za-uwa»y¢
  []
 
 
-Overfull \hbox (0.56543pt too wide) in paragraph at lines 758--761
+Overfull \hbox (0.56543pt too wide) in paragraph at lines 780--783
 \T1/txr/m/n/12 podzczas gen-erowa-nia opisu czy go-towe metody dost[]pu do obie
 k-tów powi[]zanych. 
  []
 
 
-Overfull \hbox (5.83022pt too wide) in paragraph at lines 762--764
+Overfull \hbox (5.83022pt too wide) in paragraph at lines 784--786
 []\T1/txr/m/n/12 Qubic nale»y do wol-nego opro-gramowa-nia udost[]pnianego na l
 i-cencji GNU/GPL
  []
 
 
-Overfull \hbox (20.0047pt too wide) in paragraph at lines 767--768
+Overfull \hbox (20.0047pt too wide) in paragraph at lines 789--790
 \T1/txr/m/n/12 W celu dal-szego roz-woju stwor-zonej ap-likacji szkiele-towej w
 arto rozwa»y¢ wprowadze-
  []
 
 
-Overfull \hbox (2.38812pt too wide) in paragraph at lines 770--773
+Overfull \hbox (2.38812pt too wide) in paragraph at lines 792--795
 []\T1/txr/m/n/12 System ad-no-tacji -- obec-nie na opis mapowa-nia skªadaj[] si
 [] odpowie-nie nazwy
  []
 
-[43]
-Overfull \hbox (5.62813pt too wide) in paragraph at lines 780--782
+[44]
+Overfull \hbox (5.62813pt too wide) in paragraph at lines 802--804
 []\T1/txr/m/n/12 Wsparcie dla ró»nych rodza-jów baz danych -- wprowadze-nie teg
 o us-prawnienia
  []
 
 
-Overfull \hbox (4.93141pt too wide) in paragraph at lines 780--782
+Overfull \hbox (4.93141pt too wide) in paragraph at lines 802--804
 \T1/txr/m/n/12 ogranicza si[] do im-ple-men-tacji kilku in-ter-fe-jsów dla in-n
 ych ni» MySQL rodza-
  []
 
 
-Overfull \hbox (13.81215pt too wide) in paragraph at lines 782--784
+Overfull \hbox (13.81215pt too wide) in paragraph at lines 804--806
 []\T1/txr/m/n/12 Serializacja danych -- do-danie mo»li-wo±ci se-ri-al-iza-cji m
 o»e okaza¢ si[] u»yteczne
  []
 
 
-Overfull \hbox (3.93607pt too wide) in paragraph at lines 786--788
+Overfull \hbox (3.93607pt too wide) in paragraph at lines 808--810
 []\T1/txr/m/n/12 Wielow[]tkowo±¢ -- wyko-rzys-tanie wielow[]tkowo±ci w przy-pad
 ku mapowania-
  []
 
-[44]
+[45]
 Rozdzia\IeC {\l } 5.
 
-Overfull \hbox (3.01025pt too wide) in paragraph at lines 798--800
+Overfull \hbox (3.01025pt too wide) in paragraph at lines 820--822
 []\T1/txr/m/n/12 Dzi[]ki re-al-iza-cji wszys-t-kich postaw-ionych wcze±niej cel
 ów oraz wyma-ga« udaªo
  []
 
-[45
+[46
 
-] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 822--823
+] [47]
+Underfull \hbox (badness 10000) in paragraph at lines 844--845
 []\T1/txr/m/n/12 Portal UAM w Poz-na-niu. \T1/txtt/m/n/12 http://www.staff.amu.
 edu.pl/[]psi/-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
 []\T1/txr/m/n/12 Grosser, An-drzej. Szkielety tworzenia ap-likacji.
  []
 
-[47
+[48
 
 ] (D:\Workspace\Qubic\docs\thesis.lof
 Overfull \hbox (23.78548pt too wide) in paragraph at lines 2--2
@@ -1147,26 +1166,26 @@ wo-relacyjnego
 
 )
 \tf@lof=\write4
- [48
+ [49
 
 ] (D:\Workspace\Qubic\docs\thesis.lot)
 \tf@lot=\write5
- [49
+ [50
 
 ]
 (D:\Workspace\Qubic\docs\thesis.lol)
 \tf@lol=\write6
- [50
+ [51
 
 ] (D:\Workspace\Qubic\docs\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 7889 strings out of 493921
- 108248 string characters out of 3144874
- 364275 words of memory out of 3000000
+ 7892 strings out of 493921
+ 108360 string characters out of 3144874
+ 362457 words of memory out of 3000000
  10998 multiletter control sequences out of 15000+200000
  61143 words of font info for 113 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 40i,18n,68p,349b,1948s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,18n,68p,349b,1946s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/font
 s/enc/dvips/fontname/8r.enc}<C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/t
 ype1/public/txfonts/rtxb.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/
@@ -1178,9 +1197,9 @@ fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.
 type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (50 pages, 889666 bytes).
+Output written on thesis.pdf (51 pages, 893055 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
+ 251 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
