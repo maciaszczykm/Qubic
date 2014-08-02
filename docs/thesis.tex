@@ -38,7 +38,7 @@ breaklines=true,
 frame=LRTB,
 xleftmargin=\parindent,
 showstringspaces=false,
-basicstyle=\footnotesize\ttfamily,
+basicstyle=\footnotesize\ttfamily
 }
 
 \lstdefinestyle{customsql}{
@@ -532,7 +532,22 @@ Dodatkowe możliwości &  edytor encji, walidacja danych,   \\ \hline
 \caption{Analiza biblioteki QxOrm}
 \end{table}
 
-{\color{purple}TODO: Interfejs i opis QxOrm, plus co najmniej jeszcze dwa.}
+Konfiguracja QxOrm jest dość rozbudowana, a co za tym idzie skomplikowana. Rejestracja klas wymaga używanie wielu funkcji i makr w pliku nagłówkowym:
+
+\lstinputlisting[style=customc,caption=Przykładowy plik nagłówkowy klasy korzystającej z QxOrm]{resources/qxorm_sampleclass.h}
+
+A także w pliku klasy:
+
+\lstinputlisting[style=customc,caption=Przykładowy plik klasy korzystającej z QxOrm]{resources/qxorm_sampleclass.cpp}
+
+Samo wykorzystanie QxOrm także nie należy do najłatwiejszych zadań, istotne jest poprawne skonfigurowanie bazy danych z poziomu kodu, oraz wykonanie odpowiednich
+sekwencji metod:
+
+\lstinputlisting[style=customc,caption=Przykładowy plik klasy korzystającej z QxOrm]{resources/qxorm_sample.cpp}
+
+\subsection{Biblioteka X}
+
+\subsection{Aplikacja szkieletowa X}
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
@@ -623,19 +638,16 @@ Qubic został napisany w języku C++ w oparciu o aplikację szkieletową Qt, co 
 Zarówno wybór bazy danych nie został narzucony z góry, co prawda na potrzeby projektu zaimplementowana została obsługa tylko dla bazy MySQL jednak zapewniona została 
 łatwa rozszerzalność i dodanie obsługi dla innych rodzajów baz danych nie powinna być problemem.
 
-Jedyną biblioteką wykorzystywaną przez Qubica jest QsLogger odpowiedzialny za logowanie. Jest to bardzo przydatna funkcja, która umożliwia szybkie zlokalizowanie pojawiających
-się problemów.
-
-{\color{purple}TODO: Wykorzystane technologie, poprawiony opis, screeny, czy coś jeszcze?}
+Jedyną biblioteką wykorzystywaną przez Qubica jest QsLog \cite{qslog} odpowiedzialny za logowanie wydarzeń w konsoli Qt. Jest to bardzo przydatna funkcja, która umożliwia
+szybkie zlokalizowanie pojawiających się problemów.
 
 \subsection{System kontroli wersji}
 
 Podczas pracy nad projektami w których bierze udział więcej niż jedna osoba bardzo dobrym rozwiązaniem jest korzystanie z systemów kontroli wersji. Ułatwiają one wspólną
 pracę oraz organizację tworzonych projektów.
 
-Wybór autorów Qubica padł na dobrze znany serwis GitHub\footnote{~oficjalna strona serwisu -- \tt https://github.com/}. Poza repozytorium na którym znaleźć można kod 
-źródłowy Qubica podczas implementacji projektu wykorzystany został system Issues and Milestones\footnote{~problemy oraz kamienie miliowe}, który ułatwia organizację pracy 
-nad projektem.
+Wybór autorów Qubica padł na dobrze znany serwis GitHub \cite{github}. Poza repozytorium na którym znaleźć można kod źródłowy Qubica podczas implementacji projektu
+wykorzystany został system Issues and Milestones\footnote{~problemy oraz kamienie miliowe}, który ułatwia organizację pracy nad projektem.
 
 \begin{figure}[h]
 \centering
@@ -650,6 +662,8 @@ nad projektem.
 \end{figure}
 
 \section{Implementacja}
+
+\subsection{Połączenie z bazą danych}
 
 \subsection{Interfejs CRUD}
 
@@ -693,12 +707,9 @@ Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niż
 
 \newpage
 
-{\color{purple}TODO: Opis pozostałych elementów.}
+\subsection{Interfejs do tworzenia zapytań}
 
-\section{Konserwacja i inżynieria wtórna}
-
-{\color{purple}TODO: Jak przebiega eksploatacja projektu? Jakie wady i zalety ujawniły się po okresie testowania i użytkowania? Jak można skorzystać z tej wiedzy praktycznej pod 
-kątem roz\-bu\-do\-wy pracy? Jakie elementy systemu powinny zostać w pierwszej kolejności zmodyfikowane?}
+\subsection{Metody dostępu do powiązanych danych}
 
 \section{Przykładowa aplikacja wykorzystująca Qubica}
 
@@ -709,20 +720,47 @@ W celu zaprezentowania sposobu działania Qubica rozważmy następujący schemat
 Na podstawie zaprezentowanego schematu wygenerowane zostały pliki klas oraz projektu, następnie w celach prezentacyjnych stworzony został zaprezentowany poniżej
 plik, który wykonuje podstawowe operacje na bazie danych:
 
-\lstinputlisting[style=customc,caption=Plik przedstawiający przykładowe zastosowanie Qubica]{resources/sample_app.cpp}
+\lstinputlisting[style=customc,caption=Plik przedstawiający przykładową aplikację korzystającą z Qubica]{resources/sample_app.cpp}
 
 Jak widać wykonanie podstawowych operacji CRUD ogranicza się do wywołania pojedyńczej funkcji, bez konieczności wcześniejszego zapewnienia połączenia z bazą ani
 konfiguracji z poziomu kodu. Jest to bardzo dobry wynik biorąc pod uwagę poprawne działanie aplikacji widoczne na kolejnym listingu, tym razem jest to zrzut z konsolii
 wykonanego programu, przy użyciu świeżo utworzonej bazy danych:
 
-\lstinputlisting[style=customcmd,caption=Plik przedstawiajądsfadowe zastosowanie Qubica]{resources/sample_cmd.txt}
+\lstinputlisting[style=customcmd,caption=Plik wyjściowy przykładowej aplikacji korzystającej z Qubica]{resources/sample_cmd.txt}
 
 Dodatkowo rezultatem pracy programu był szczegółowy log Qubica, jednakże ze względu na jego długość został on pominięty w niniejszej pracy. Wszystkie operacje zostały
 wykonane zgodnie z oczekiwaniami, co pozwala sądzić, że mapowanie obiektowo-relacyjne co najmniej w tym kontekście odbywa się poprawnie.
 
-\section{Testy oraz ich wyniki}
+\section{Analiza Qubica}
 
-{\color{purple}TODO}
+W rozdziale trzecim przedstawiona została analiza istniejących narzędzi służących do mapowania obiektowo-relacyjnego w języku C++, między innymi na jej podstawie
+stworzona została aplikacja szkieletowa Qubic realizująca to samo zagadnienie. Jej analiza wygląda następująco:
+
+\newpage
+
+\begin{table}[h]
+\centering
+\begin{tabular}{| l | l |} 
+\hline 
+Charakter oprogramowania & open-source \\ \hline
+Licencja & GNU/GPL  \\ \hline
+Wspierane bazy danych & MySQL oraz łatwa możliwość \\ \hline
+&  rozszerzenia o inne rodzaje baz \\ \hline
+Wykorzystywane narzędzia & Qt  \\ \hline
+Poziom skomplikowania interfejsu & niski  \\ \hline
+Dostępność generatora opisu & tak  \\ \hline
+Dodatkowe możliwości &  walidacja danych, metody dostępu  \\ \hline
+& do powiązanych obiektów \\ \hline
+\end{tabular} 
+\caption{Analiza aplikacji szkieletowej Qubic}
+\end{table}
+
+W porównaniu do przeanalizowanych wcześniej narzędzi Qubic wyróżnia się przede wszystkim niskim poziomem skomplikowania interfejsu, co można zauważyć szczególnie w
+poprzedniej sekcji opisującej przykładową aplikacje stworzoną w oparciu o Qubica. Ponadto, udostępnia on wszystkie podstawowe mechanizmy charakterystyczne dla mapowania
+obiektowo-relacyjnego, a także walidację danych podzczas generowania opisu czy gotowe metody dostępu do obiektów powiązanych. 
+
+Qubic należy do wolnego oprogramowania udostępnianego na licencji GNU/GPL podobnie jak i większość analizowanych narzędzi. Istotną jego cechą jest wykorzystanie aplikacji
+szkieletowej Qt, podobnie jak analizowana wcześniej biblioteka QxOrm aplikacje tworzone w oparciu o Qubica muszą korzystać także z Qt. 
 
 \section{Perspektywy rozwoju Qubica} \label{perspektywyqubic}
 
@@ -783,7 +821,9 @@ komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\foot
 \bibitem{trends} Trendy Google. {\tt https://www.google.pl/trends/explore\#q=orm\%20\-java\%2C\%20orm\%20php\%2C\%20orm\%20python\%2C\%20orm\%20c\&cmpt=q}.
 \bibitem{rel} Portal UAM w Poznaniu. {\tt http://www.staff.amu.edu.pl/\~psi/\-informatyka/kluczew/I2\_Database.htm}.
 \bibitem{framework} Grosser, Andrzej. Szkielety tworzenia aplikacji. {\tt http://icis.pcz.pl/~agrosser/wsztap.pdf}.
+\bibitem{github} GitHub. {\tt https://github.com/}
 \bibitem{qxorm} QxOrm Library for C++. {\tt http://www.qxorm.com/qxorm\_en/home.html}.
+\bibitem{qslog} QsLog. {\tt http://blog.codeimproved.net/tag/qslog/}
 \end{thebibliography}
 
 \addcontentsline{toc}{chapter}{Spis rysunków} 
