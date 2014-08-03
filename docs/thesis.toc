@@ -26,31 +26,30 @@
 \contentsline {section}{\numberline {3.1}Kryteria analizy}{21}
 \contentsline {section}{\numberline {3.2}Por\IeC {\'o}wnanie istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{22}
 \contentsline {subsection}{\numberline {3.2.1}Biblioteka QxOrm}{22}
-\contentsline {subsection}{\numberline {3.2.2}Biblioteka X}{25}
-\contentsline {subsection}{\numberline {3.2.3}Aplikacja szkieletowa X}{25}
-\contentsline {chapter}{\numberline {4}Aplikacja szkieletowa Qubic}{26}
-\contentsline {section}{\numberline {4.1}Modu\IeC {\l }y tworzonej aplikacji}{26}
-\contentsline {section}{\numberline {4.2}Analiza wymaga\IeC {\'n}}{27}
-\contentsline {subsection}{\numberline {4.2.1}Wymagania funkcjonalne}{27}
-\contentsline {subsection}{\numberline {4.2.2}Wymagania niefunkcjonalne}{27}
-\contentsline {section}{\numberline {4.3}Projekt}{28}
-\contentsline {subsection}{\numberline {4.3.1}Rodzaj aplikacji}{28}
-\contentsline {subsection}{\numberline {4.3.2}Diagram klas}{28}
-\contentsline {subsection}{\numberline {4.3.3}Wzorce projektowe}{30}
-\contentsline {subsection}{\numberline {4.3.4}\IeC {\'S}rodowisko programistyczne}{30}
-\contentsline {subsection}{\numberline {4.3.5}System kontroli wersji}{30}
-\contentsline {section}{\numberline {4.4}Implementacja}{31}
-\contentsline {subsection}{\numberline {4.4.1}Po\IeC {\l }\IeC {\k a}czenie z baz\IeC {\k a} danych}{31}
-\contentsline {subsection}{\numberline {4.4.2}Interfejs CRUD}{32}
-\contentsline {subsection}{\numberline {4.4.3}Interfejs do tworzenia zapyta\IeC {\'n}}{37}
-\contentsline {subsection}{\numberline {4.4.4}Metody dost\IeC {\k e}pu do powi\IeC {\k a}zanych danych}{37}
-\contentsline {section}{\numberline {4.5}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{37}
-\contentsline {section}{\numberline {4.6}Analiza Qubica}{43}
-\contentsline {section}{\numberline {4.7}Perspektywy rozwoju Qubica}{44}
-\contentsline {chapter}{\numberline {5}Podsumowanie}{46}
-\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{46}
-\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{46}
-\contentsline {chapter}{Bibliografia}{47}
-\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{48}
-\contentsline {chapter}{Spis tabel}{49}
-\contentsline {chapter}{Spis listing\IeC {\'o}w}{50}
+\contentsline {subsection}{\numberline {3.2.2}Biblioteka Debea}{25}
+\contentsline {chapter}{\numberline {4}Aplikacja szkieletowa Qubic}{27}
+\contentsline {section}{\numberline {4.1}Modu\IeC {\l }y tworzonej aplikacji}{27}
+\contentsline {section}{\numberline {4.2}Analiza wymaga\IeC {\'n}}{28}
+\contentsline {subsection}{\numberline {4.2.1}Wymagania funkcjonalne}{28}
+\contentsline {subsection}{\numberline {4.2.2}Wymagania niefunkcjonalne}{28}
+\contentsline {section}{\numberline {4.3}Projekt}{29}
+\contentsline {subsection}{\numberline {4.3.1}Rodzaj aplikacji}{29}
+\contentsline {subsection}{\numberline {4.3.2}Diagram klas}{29}
+\contentsline {subsection}{\numberline {4.3.3}Wzorce projektowe}{31}
+\contentsline {subsection}{\numberline {4.3.4}\IeC {\'S}rodowisko programistyczne}{31}
+\contentsline {subsection}{\numberline {4.3.5}System kontroli wersji}{31}
+\contentsline {section}{\numberline {4.4}Implementacja}{32}
+\contentsline {subsection}{\numberline {4.4.1}Po\IeC {\l }\IeC {\k a}czenie z baz\IeC {\k a} danych}{32}
+\contentsline {subsection}{\numberline {4.4.2}Interfejs CRUD}{33}
+\contentsline {subsection}{\numberline {4.4.3}Interfejs do tworzenia zapyta\IeC {\'n}}{38}
+\contentsline {subsection}{\numberline {4.4.4}Metody dost\IeC {\k e}pu do powi\IeC {\k a}zanych danych}{38}
+\contentsline {section}{\numberline {4.5}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{38}
+\contentsline {section}{\numberline {4.6}Analiza Qubica}{44}
+\contentsline {section}{\numberline {4.7}Perspektywy rozwoju Qubica}{45}
+\contentsline {chapter}{\numberline {5}Podsumowanie}{47}
+\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{47}
+\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{47}
+\contentsline {chapter}{Bibliografia}{48}
+\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{50}
+\contentsline {chapter}{Spis tabel}{51}
+\contentsline {chapter}{Spis listing\IeC {\'o}w}{52}

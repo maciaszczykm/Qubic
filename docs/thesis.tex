@@ -144,18 +144,18 @@ przez specjalistę znającego język SQL.
 wykonywania poszczególnch operacji.
 \end{itemize}
 
-Głównym celem autorów Qubica jest sprawienie aby stał się on dobrą alterna\-tywą dla nielicznych, ale istniejących już bibliotek oraz aplikacji szkieletowych realizujących
-mapowanie obiektowo-relacyjne w języku C++. Wszystkie znane rozwiązania są dostępne za darmo, jednak albo nie udostępniają one generatora opisu będącego w stanie 
-wygenerować cały projekt aplikacji albo ich interfejsy nie należą do intuicyjnych. Wprowadzenie generatora oraz intuicyjnego interfejsu użytkownika powinno uczynić Qubica
-istotną alternatywą dla istniejących już narzędzi za\-kła\-da\-jąc, że pozostała funkcjonalność mapowania obiektowo-relacyjnego zostanie zre\-al\-iz\-owana poprawnie.
+Głównym celem autorów Qubica jest sprawienie aby stał się on dobrą alternaty\-wą dla nielicznych, ale istniejących już narzędzi realizujących mapowanie obiekt\-owo-relacyjne 
+w języku C++. Wszystkie znane rozwiązania są dostępne za darmo, jednak albo nie udostępniają one generatora opisu będącego w stanie  wygenerować cały projekt aplikacji
+albo ich interfejsy nie należą do intuicyjnych. Wprowadzenie generatora oraz intuicyjnego interfejsu użytkownika powinno uczynić Qubica istotną alternatywą dla istniejących już
+narzędzi za\-kła\-da\-jąc, że pozostała funkcjonalność mapowania obiektowo-relacyjnego zostanie zre\-al\-iz\-owana poprawnie.
 
 \section{Cele pracy}
 
 Do najważniejszych celów niniejszej pracy dyplomowej należą:
 
 \begin{itemize}
-\item Analiza istniejących bibliotek oraz aplikacji szkieletowych realizujących ma\-po\-wa\-nie obiektowo-relacyjne w języku C++ -- przeanalizowanie istniejących już narzędzi
-umożliwi dokładniejsze zapoznanie się z tematyką mapowania obiektowo-relacyjnego a także ze sposobem działania istniejących już rozwiązań, co umożliwi wykorzystanie 
+\item Analiza istniejących bibliotek programistycznych realizujących ma\-po\-wa\-nie obiektowo-relacyjne w języku C++ -- przeanalizowanie istniejących już na\-rzędzi
+umożliwi dokładniejsze zapoznanie się z tematyką mapowania obiekt\-owo-relacyjnego a także ze sposobem działania istniejących już rozwiązań, co umożliwi wykorzystanie 
 najciekawszych pomysłów w Qubicu a także wskaże elementy, które mogą ulec w nim poprawie.
 \item Stworzenie własnej aplikacji szkieletowej realizującej mapowanie obiektowo-relacyjne w języku C++ -- ułatwi dokładniejsze poznanie mechanizmów dzia\-łających
 podczas mapowania obiektowo-relacyjnego oraz sposobów ro\-zwią\-zania pojawiających się problemów.
@@ -248,7 +248,7 @@ oraz jej układu.
 W kolejnym rozdziale zawarte zostały objaśnienia zagadnień teoretycznych do\-tyczących relacyjnych baz danych, programowania obiektowego oraz przede wszystkim
 z mapowania obiektowo-relacyjnego. Można w nim znaleźć informacje na tematy związane także z architekturą aplikacji, trwałością danych w aplikacjach czy z językiem SQL.
 
-Następnie autor przedstawia analizę istniejących już narzędzi służących do mapowania obiektowo-relacyjnego napisanych w języku C++ biorąc pod uwagę wcześniej
+Następnie autor przedstawia analizę istniejących już narzędzi służących do ma\-powania obiektowo-relacyjnego napisanych w języku C++ biorąc pod uwagę wcze\-śniej
 wymienione kryteria analizy.
 
 Czwarty rozdział przedstawia projekt aplikacji szkieletowej Qubic tworzonej w ramach części badawczej niniejszej pracy, a w tym między innymi postawione wymagania, 
@@ -545,9 +545,39 @@ sekwencji metod \cite{qxorm}:
 
 \lstinputlisting[style=customc,caption=Przykładowy plik klasy korzystającej z QxOrm]{resources/qxorm_sample.cpp}
 
-\subsection{Biblioteka X}
+\subsection{Biblioteka Debea}
 
-\subsection{Aplikacja szkieletowa X}
+Kolejnym narzędziem poddanym analizie została biblioteka Debea:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.5\textwidth]{resources/debea.jpg}
+\caption[Biblioteka Debea]{Biblioteka Debea \cite{debea}}
+\end{figure}
+
+Analizę wyznaczonych kryteriów przedstawia poniższa tabela:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{| l | l |} 
+\hline 
+Charakter oprogramowania & open-source \\ \hline
+Licencja & wxWindows  \\ \hline
+Wspierane bazy danych & MySQL, IBM DB2, Oracle, MSSQL\\ \hline
+Wykorzystywane narzędzia & brak  \\ \hline
+Poziom skomplikowania interfejsu & wysoki  \\ \hline
+Dostępność generatora opisu & tak  \\ \hline
+Dodatkowe możliwości &  serializacja danych  \\ \hline
+\end{tabular} 
+\caption{Analiza biblioteki Debea}
+\end{table}
+
+Konfiguracja Debei jest stosunkowo prosta, odbywa się z poziomu kodu. Wykonywanie podstawowych operacji nie należy jednak do najprostszych, oto przykładowe połączenie
+z bazą danych i wykonanie na niej podstawowych operacji z użyciem Debei:
+
+\lstinputlisting[style=customc,caption=Przykładowy użycie Debei]{resources/debea_sample.cpp}
+
+Treść licencji bibliotek wxWindows można znaleźć pod adresem {\tt http://open\-source.org/licenses/wxwindows.php}.
 
 \chapter{Aplikacja szkieletowa Qubic} \label{qubic}
 
@@ -758,8 +788,6 @@ wykonane zgodnie z oczekiwaniami, co pozwala sądzić, że mapowanie obiektowo-r
 W rozdziale trzecim przedstawiona została analiza istniejących narzędzi służących do mapowania obiektowo-relacyjnego w języku C++, między innymi na jej podstawie
 stworzona została aplikacja szkieletowa Qubic realizująca to samo zagadnienie. Jej analiza wygląda następująco:
 
-\newpage
-
 \begin{table}[h]
 \centering
 \begin{tabular}{| l | l |} 
@@ -846,6 +874,8 @@ komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\foot
 \bibitem{github} GitHub. {\tt https://github.com/}
 \bibitem{qxorm} QxOrm Library for C++. {\tt http://www.qxorm.com/qxorm\_en/home.html}.
 \bibitem{qslog} QsLog. {\tt http://blog.codeimproved.net/tag/qslog/}
+\bibitem{debea} Debea. {\tt http://debea.net/trac}.
+\bibitem{openorm} OpenORM. {\tt https://code.google.com/p/openorm/}
 \end{thebibliography}
 
 \addcontentsline{toc}{chapter}{Spis rysunków} 
