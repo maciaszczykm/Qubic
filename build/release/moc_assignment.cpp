@@ -1,18 +1,18 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'assignment.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.3.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../source/QbTest/assignment.h"
+#include "../../source/Test/assignment.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'assignment.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.3.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,12 +20,12 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Assignment_t {
     QByteArrayData data[13];
-    char stringdata[149];
+    char stringdata[148];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_Assignment_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_Assignment_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_Assignment_t qt_meta_stringdata_Assignment = {
     {
@@ -46,7 +46,7 @@ QT_MOC_LITERAL(12, 145, 2)
     "Assignment\0getDepartmentPtr\0Department*\0"
     "\0setDepartmentPtr\0departmentPtr\0"
     "getEmployeePtr\0Employee*\0setEmployeePtr\0"
-    "employeePtr\0QbPersistable*\0other\0id\0"
+    "employeePtr\0QbPersistable*\0other\0id"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,12 +64,12 @@ static const uint qt_meta_data_Assignment[] = {
        0,       // signalCount
 
  // methods: name, argc, parameters, tag, flags
-       1,    0,   44,    3, 0x02,
-       4,    1,   45,    3, 0x02,
-       6,    0,   48,    3, 0x02,
-       8,    1,   49,    3, 0x02,
-       4,    1,   52,    3, 0x00,
-       8,    1,   55,    3, 0x00,
+       1,    0,   44,    3, 0x02 /* Public */,
+       4,    1,   45,    3, 0x02 /* Public */,
+       6,    0,   48,    3, 0x02 /* Public */,
+       8,    1,   49,    3, 0x02 /* Public */,
+       4,    1,   52,    3, 0x00 /* Private */,
+       8,    1,   55,    3, 0x00 /* Private */,
 
  // methods: parameters
     0x80000000 | 2,
@@ -86,10 +86,10 @@ static const uint qt_meta_data_Assignment[] = {
     0x80000000 | 3, QMetaType::Int, 0x80000000 | 2, 0x80000000 | 7,   12,    5,    9,
 
  // constructors: name, argc, parameters, tag, flags
-       0,    0,   58,    3, 0x0e,
-       0,    1,   59,    3, 0x0e,
-       0,    2,   62,    3, 0x0e,
-       0,    3,   67,    3, 0x0e,
+       0,    0,   58,    3, 0x0e /* Public */,
+       0,    1,   59,    3, 0x0e /* Public */,
+       0,    2,   62,    3, 0x0e /* Public */,
+       0,    3,   67,    3, 0x0e /* Public */,
 
        0        // eod
 };
@@ -106,6 +106,7 @@ void Assignment::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
         case 3: { Assignment *_r = new Assignment((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< Department*(*)>(_a[2])),(*reinterpret_cast< Employee*(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
+        default: break;
         }
     } else if (_c == QMetaObject::InvokeMetaMethod) {
         Assignment *_t = static_cast<Assignment *>(_o);

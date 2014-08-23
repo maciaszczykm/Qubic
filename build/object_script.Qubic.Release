@@ -8,11 +8,6 @@ INPUT(
 ./release\qbproperties.o
 ./release\qbquery.o
 ./release\qbmysqlquery.o
-./release\company.o
-./release\employee.o
-./release\main.o
-./release\department.o
-./release\assignment.o
 ./release\qbloggerhelper.o
 ./release\qbpersistencehelper.o
 ./release\qbmysqlpersistencehelper.o
@@ -20,6 +15,11 @@ INPUT(
 ./release\qbmappinghelper.o
 ./release\qbqueryhelper.o
 ./release\qbadvancedqueryhelper.o
+./release\company.o
+./release\employee.o
+./release\main.o
+./release\department.o
+./release\assignment.o
 ./release\moc_qbpersistable.o
 ./release\moc_company.o
 ./release\moc_employee.o
