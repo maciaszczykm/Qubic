@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.7)  3 AUG 2014 15:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.31)  31 AUG 2014 11:10
 entering extended mode
 **D:/Workspace/Qubic/docs/thesis.tex
 (D:/Workspace/Qubic/docs/thesis.tex
@@ -355,7 +355,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\txfonts.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\txfonts.sty"
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -440,7 +440,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 (Font)                  U/txexa/m/n --> U/txexa/bx/n on input line 129.
 LaTeX Info: Redefining \not on input line 1043.
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pdfpages.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
@@ -459,7 +459,7 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count103
 \calc@Cskip=\skip48
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\eso-pic\eso-pic.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
 Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
@@ -469,7 +469,7 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 ))
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
@@ -486,7 +486,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pppdftex.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box28
@@ -494,10 +494,10 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count104
 \AM@templatesizebox=\box29
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen116
@@ -518,7 +518,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks24
 \@floatcapt=\box31
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count107
 \lst@gtempboxa=\box32
 \lst@token=\toks25
@@ -532,13 +532,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \lst@lineno=\count112
 \lst@maxwidth=\dimen126
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 \c@lstnumber=\count113
 \lst@skipnumbers=\count114
 \lst@framebox=\box33
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
 Package: listings 2014/03/04 1.5c (Carsten Heinz)
@@ -551,7 +551,7 @@ LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 32.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 32.
 
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omltxmi.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\omltxmi.fd"
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 32.
@@ -563,7 +563,7 @@ LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 32.
 LaTeX Font Info:    Try loading font information for OMS+txsy on input line 32.
 
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxsy.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\omstxsy.fd"
 File: omstxsy.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 32.
@@ -571,23 +571,23 @@ LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 32.
 LaTeX Font Info:    Try loading font information for OMX+txex on input line 32.
 
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omxtxex.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\omxtxex.fd"
 File: omxtxex.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 32.
 LaTeX Font Info:    Try loading font information for U+txexa on input line 32.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxexa.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\utxexa.fd"
 File: utxexa.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Try loading font information for T1+txr on input line 32.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\t1txr.fd"
 File: t1txr.fd 2000/12/15 v3.1
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
 \scratchdimen=\dimen127
@@ -653,35 +653,33 @@ Package pdftex.def Info: resources/title_page.pdf, page1 used on input line 72.
 hesis.toc
 LaTeX Font Info:    Try loading font information for OT1+txr on input line 2.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\ot1txr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\ot1txr.fd"
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Try loading font information for U+txsya on input line 2.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxsya.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\utxsya.fd"
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Try loading font information for U+txsyb on input line 2.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxsyb.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\utxsyb.fd"
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Try loading font information for U+txmia on input line 2.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxmia.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\utxmia.fd"
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Try loading font information for U+txsyc on input line 2.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\utxsyc.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\utxsyc.fd"
 File: utxsyc.fd 2000/12/15 v3.1
-)
-[2
+) [2
 
-{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write3
-
-[3]
+ [3]
 Rozdzia\IeC {\l } 1.
 
 Overfull \hbox (2.72543pt too wide) in paragraph at lines 89--94
@@ -720,7 +718,7 @@ ources/coop.png>]
 LaTeX Font Info:    Try loading font information for OMS+txr on input line 126.
 
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd"
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
@@ -791,7 +789,7 @@ Overfull \hbox (2.25426pt too wide) in paragraph at lines 330--333
 
 LaTeX Font Info:    Try loading font information for T1+txtt on input line 344.
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
 Overfull \hbox (6.13203pt too wide) in paragraph at lines 351--355
@@ -888,13 +886,13 @@ Package pdftex.def Info: resources/qxorm.png used on input line 510.
 (pdftex.def)             Requested size: 199.16928pt x 47.45808pt.
 
 [22 <D:/Workspace/Qubic/docs/resources/qxorm.png>]
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 )
 (D:\Workspace\Qubic\docs\resources/qxorm_sampleclass.h
@@ -1079,7 +1077,7 @@ Overfull \hbox (1.71745pt too wide) in paragraph at lines 758--763
 wnik, w mod-elu obiek-
  []
 
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
 (D:\Workspace\Qubic\docs\resources/sample_db.sql [38])
@@ -1154,19 +1152,37 @@ Overfull \hbox (3.01025pt too wide) in paragraph at lines 848--850
 [47
 
 ] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
+Underfull \hbox (badness 10000) in paragraph at lines 871--873
+\T1/txtt/m/n/12 java%2C%20orm%20php%2C%20orm%20python%2C%20orm%20c&cmpt=q\T1/tx
+r/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
 []\T1/txr/m/n/12 Portal UAM w Poz-na-niu. \T1/txtt/m/n/12 http://www.staff.amu.
 edu.pl/[]psi/-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
 []\T1/txr/m/n/12 Grosser, An-drzej. Szkielety tworzenia ap-likacji.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
+\T1/txtt/m/n/12 http://icis.pcz.pl/ agrosser/wsztap.pdf\T1/txr/m/n/12 . Data do
+st[]pu --
  []
 
 [49
 
-] [50] (D:\Workspace\Qubic\docs\thesis.lof
+]
+Underfull \hbox (badness 2460) in paragraph at lines 879--880
+[]\T1/txr/m/n/12 OpenORM. \T1/txtt/m/n/12 https://code.google.com/p/openorm/\T1
+/txr/m/n/12 . Data dost[]pu --
+ []
+
+[50] (D:\Workspace\Qubic\docs\thesis.lof
 Overfull \hbox (23.78548pt too wide) in paragraph at lines 2--2
  [][] []\T1/txr/m/n/12 Wykres przedstawiaj[]cy pop-u-larno±¢ mapowa-nia obiekto
 wo-relacyjnego 
@@ -1188,24 +1204,24 @@ wo-relacyjnego
 ] (D:\Workspace\Qubic\docs\thesis.aux) ) 
 Here is how much of TeX's memory you used:
  7952 strings out of 493921
- 109150 string characters out of 3144874
+ 108601 string characters out of 3144873
  362521 words of memory out of 3000000
  11053 multiletter control sequences out of 15000+200000
  61143 words of font info for 113 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  40i,18n,68p,349b,1946s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/font
-s/enc/dvips/fontname/8r.enc}<C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/t
-ype1/public/txfonts/rtxb.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts/
-type1/public/txfonts/rtxr.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fonts
-/type1/public/txfonts/t1xbtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/fo
-nts/type1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.9/
-fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Marcin/AppData/Roaming/MiKTeX/2.
-9/fonts/type1/public/txfonts/txsy.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (53 pages, 907217 bytes).
+s/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/txfonts/rtxb.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/txfon
+ts/rtxr.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/txfonts/t1xbt
+t.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/txfonts/txsy.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on thesis.pdf (53 pages, 907468 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
