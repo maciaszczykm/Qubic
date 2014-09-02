@@ -9,6 +9,7 @@
 \usepackage{caption}
 \usepackage{float}
 \usepackage{listings}
+\usepackage[polish]{babel}
 
 \renewcommand{\chaptername}{Rozdział}
 \renewcommand{\contentsname}{Spis treści}
@@ -693,25 +694,35 @@ wykorzystany został system Issues and Milestones\footnote{~problemy oraz kamien
 
 \section{Implementacja}
 
+W niniejszej sekcji zostaną opisane kluczowe elementy, które zostały zaimplementowane w Qubicu, a także problemy jakie pojawiły się podczas implementacji i zastosowane
+rozwiązania.
+
 \subsection{Połączenie z bazą danych}
 
-Obsługa połączenia z bazą danych należy do fundamentalnych operacji realizowanych przez narzędzia zajmujące się mapowaniem obiektowo-relacyjnym, nie inaczej jest w
-przypadku Qubica. W związku z tym, że w innych analizowanych narzędziach można było się napotkać na uciążliwą konfigurację odbywającą się głównie z poziomu kodu
-Qubic korzysta z pliku konfiguracyjnego, który przechowywuje całą jego konfigurację. Ponadto sama obsługa połączenia jest niewidoczna dla użytkownika, ponieważ
+Implementacja dużej aplikacji szkieletowej operującej w większości na bazie danych nie mogła zacząć się od niczego innego niż obsługa połączenia z bazą danych. Jest to
+element kluczowy dla narzędzi realizujących mapowanie relacyjno-obiektowe i nie inaczej jest w przypadku Qubica. W związku z tym, że w innych analizowanych narzędziach
+można było się napotkać na uciążliwą konfigurację \linebreak odbywającą się głównie z poziomu kodu Qubic korzysta z pliku konfiguracyjnego, który przechowywuje całą jego 
+konfigurację. W celu zaimplementowania mechanizmów takich jak połączenie się z bazą czy operacje wejścia i wyjścia wykorzystane zostały zestawy funkcji udostępniane przez
+aplikację szkieletową Qt oraz sterowniki dla wybranych systemów zarządznia bazą danych. Warto wspomnieć, że sama obsługa połączenia jest niewidoczna dla użytkownika, ponieważ
 połączenie nawiązywane jest podczas uzyskania dostępu do instancji {\tt Singleton}. 
 
 \subsection{Interfejs CRUD}
 
-Kluczowym modułem narzędzi programistycznych realizujących mapowanie obiekt\-owo-relacyjne jest interfejs CRUD umożliwiający manipulowanie danymi w bazie danych z 
+Innym kluczowym modułem narzędzi programistycznych realizujących mapowanie obiekt\-owo-relacyjne jest interfejs CRUD umożliwiający manipulowanie danymi w bazie danych z 
 poziomu kodu. Interfejs ten dostępny jest w podstaci co najmniej czterech metod, które jako argumenty przyjmują obiekty dziedziczące po jednej z klas Qubica -- 
 {\tt QbPersistable}. Umożliwia to wykorzystanie polimorfizmu, a przecież podczas operacji na obiektach od samego początku nie znany jest dokładny typ obiektu.
 
-Aby mapowanie mogło skutecznie działać potrzebny jest jego jednoznaczny opis, część narzędzi je realizujących korzysta z adnotacji, które określają mapowanie pomiędzy
-konkretnymi polami klas a konkretnymi tabelami w bazie danych. W Qubicu problem ten został rozwiązany w trochę inny sposób, który umożliwia stworzony generator opisu
-mapowania obiektowo-relacyjnego. Generowane pliki klas są tworzone według ściśle określonych zasad, co oznacza, że nazwy metod dostępowych odpowiadają w pewien
-sposób nazwom tabel i ich kolumn. Przykładowo dla kolumny o nazwie {\tt NAME} w tabeli {\tt EMPLOYEE} w pliku klasy {\tt Employee} zostaną wygenerowane metody 
-{\tt getName()} oraz {\tt setName(QString name)}. Wie\-dza ta została wykorzystana w trakcie korzystania z mechanizmu refleksji. Konfiguracja samego mapowania nazw
-została zapisana w pliku konfiguracyjnym Qubica.
+Aby mapowanie mogło skutecznie działać potrzebny jest jego jednoznaczny opis. Część narzędzi je realizujących korzysta z adnotacji, które określają mapowanie pomiędzy
+konkretnymi polami klas a konkretnymi tabelami w bazie danych. Nie jest to jednak jedyn możliwe rozwiązanie i w Qubicu problem ten został rozwiązany w trochę inny sposób,
+który umożliwia stworzony generator opisu mapowania obiektowo-relacyjnego. Generowane pliki klas oraz pliki nagłówkowe są tworzone według ściśle określonych zasad, 
+co oznacza, że nazwy metod dostępowych odpowiadają w pewien sposób nazwom tabel i ich kolumn. Przykładowo dla kolumny o nazwie {\tt NAME} w tabeli {\tt EMPLOYEE} 
+w pliku klasy {\tt Employee} zostaną wygenerowane metody {\tt getName()} oraz {\tt setName(QString name)}. Wie\-dza ta została wykorzystana w trakcie korzystania z 
+mechanizmu refleksji. Konfiguracja samego mapowania nazw została zapisana w pliku konfiguracyjnym Qubica.
+
+Rozwiązanie opisane w poprzednim akapicie jest możliwe dzięki wykorzystaniu mechanizmu refleksji, który umożliwia konstruowanie obiektów czy też wywoływanie metod
+dynamicznie -- to znaczy w trakcie działania programu. Autor niniejszej pracy nie był przecież w stanie określić dokładnie jakie obiekty i klasy będą obsługiwane w trakcie działania
+Qubica. Sam mechanizm refleksji jest także jednym z powodów dla którego Qubic działa w oparciu o aplikację szkieletową Qt, bo jak dobrze wiadomo sam język C++ w
+przeciwieństwie do chociażby języka Java go nie udostępnia.
 
 Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niższe schematy blokowe:
 
@@ -760,6 +771,56 @@ czemu posiadamy informacje dla jakiej firmy pracuje wybrany pracownik, w modelu 
 potrzebujemy informacji o wszystkich pracownikach danej firmy? Ani obiekt ani encja w tabeli nie posiada takich informacji, na pomoc przychodzą wygenerowane przez
 generator opisu tzw. metody dostępu do powiązanych danych. W przedstawionym przypadku jest to metoda {\tt getEmployees}, którą możemy wywołać na dowolnym obiekcie
 klasy {\tt Company}.
+
+\section{Podręcznik użytkownika}
+
+Jednym z głównych celów postawionych przed tworzoną aplikacją szkieletową było uczynienie interfejsu użytkownika jak najbardziej przejrzystym, tak aby tworzenie rozbudowanej
+instukcji dla użytkowników nie było koniecznością. 
+
+Zamiast wspomnianej instrukcji przyjrzyjmy się sposobom realizacji podstawowych operacji za pomocą Qubica oraz odpowiedziom na najczęstsze pytania użytkowników narzędzi
+mapowania obiektowo-relacyjnego w kontekście tworzonej aplikacji szkieletowej.
+
+\subsubsection{Jak wygląda konfiguracja Qubica?}
+
+Konfiguracja Qubica została całkowicie przeniesiona do pliku konfiguracyjnego o nazwie {\tt qb.properties}. Za jego pomocą użytkownik może między innymi ustawić w jakim 
+folderze mają zostać zapisywane logi, skonfigurować połączenie z bazą danych czy też zdecydować czy Qubic powinien domyślnie wykorzystywać transakcje czy też nie.
+
+\subsubsection{Jak wykorzystać Qubica w tworzonym projekcie?}
+
+Po wygenerowaniu pliku projektu, plików nagłówkowych i klas przez generator wystarczy zadbać o to aby wspomniany wcześniej plik konfiguracyjny \linebreak {\tt qb.properties}
+znalazł się jednym folderze z plikiem wykonywalnym tworzonego przez nas projektu, a także zaimportować nagłówek {\tt Qubic.h} w tworzonych przez siebie plikach, które korzystają
+z Qubica.
+
+\subsubsection{Jak połączyć się z bazą danych?}
+
+Połączenie z bazą danych jest realizowane automatycznie podczas tworzenia instancji klasy Singleton {\tt QbDatabase}. Oznacza to, że użytkownik nie musi samemu troszczyć
+się o połączenie z bazą danych przed skorzystaniem z operacji na bazie danych, wszystko to zostanie wykonane automatycznie.
+
+\subsubsection{Jak korzystać z operacji CRUD?}
+
+Operacje CRUD zostały udostępnione przez klasę {\tt QbDatabase}. Użytkownik chcąc zapisać w bazie obiekt {\tt employee} powinen wywołać metodę 
+{\tt QbDatabase::get\-Instance()->store(employee)}. Warto zauważyć, że może to być pierwsza metoda Qubica wywoływana przez użytkownika a i tak powinna bez problemu
+zapisać obiekt w bazie, jest to zapewnione przez mechanizm wspomniany w poprzednim punkcie.
+
+\subsubsection{Jak tworzyć własne zapytania za pomocą Qubica?}
+
+Przykładowo gdy użytkownik bazy MySQL oraz Qubica chce stworzyć za jego pomocą zapytanie powinien wykorzystać on klasę {\tt QbMySQLQuery}, która umożliwi mu
+skonstruowanie zapytania na wzór zapytań SQL. Atutem takiego rozwiązania jest to, że użytkownik nie musi znać wybranego dialektu SQL, wystarczy jedynie szerokopojęta
+znajomość SQL. Przykładowe zapytanie prezentuje się następująco:
+
+\begin{lstlisting}[style=customc,caption=Przykładowe zapytanie Qubica]  
+QbMySQLQuery query = QbMySQLQuery(Employee::CLASSNAME);
+query.appendWhere(Employee::FIRSTNAME, "Ryo", QbQuery::EQUALS);
+query.appendAnd();
+query.appendWhere(Employee::SALARY, "150", QbQuery::MORE_THAN);
+list = QbDatabase::getInstance()->load(&query);
+\end{lstlisting}
+
+\subsubsection{Jak korzystać z metod dostępu do powiązanych danych?}
+
+Generator opisu udostępniany wraz z Qubiciem podczas generowania plików \linebreak uwzględnia wystąpienia relacji jeden do wielu oraz wiele do wielu i automatycznie dodaje
+nowe metody do generowanych klas.  Gdy w bazie pojawia się relacja jeden do wielu, na przykład {\tt Employee -- Company}, w klasie {\tt Company} utworzona zostanie nowa
+metoda dostępu {\tt getEmployees()} umożliwiająca uzyskanie dostępu do wszystkich pracowników pracujących w danej firmie.
 
 \section{Przykładowa aplikacja wykorzystująca Qubica}
 
