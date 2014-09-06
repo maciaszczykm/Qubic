@@ -101,7 +101,7 @@ popularność mapowania obiektowo-relacyjnego na przestrzeni czasu w wybranych j
 \end{figure}
 
 Podział pracy współautorów tworzonej aplikacji szkieletowej, dalej pojawiającej się także pod nazwą Qubic, był kluczową kwestią do ustalenia. Ostatecznie przyjęty został
-on w sposób następujący -- tematem pracy Sebastiana jest ,,Generowanie opisu mapowania obiektowo-relacyjnego w języku C++'' i to właśnie stworzenie generatora opisu
+on w sposób następujący -- tematem pracy Sebastiana Florka jest ,,Generowanie opisu mapowania obiektowo-relacyjnego w języku C++'' i to właśnie stworzenie generatora opisu
 mapowania jest głównym celem badawczym jego pracy. Zgodnie z tytułem tej pracy, jej autor będzie zajmował zrealizowaniem samego mapowania obiektowo-relacyjnego.
 Zadaniem generatora będzie wygenerowanie opisu mapowania w postaci plików nagłówkowych, klas oraz pliku projektu. Drugi moduł natomiast będzie implementował 
 mapowanie obiektowo-relacyjne w wygenerowanych plikach oraz udostępniał interfejs dostępny dla użytkownika.
@@ -171,7 +171,7 @@ Do celów części praktycznej należą:
 \begin{itemize}
 \item Stworzenie intuicyjnego interfejsu użytkownika -- im mniej linii kodu musi zostać napisane w celu wykonania podstawowych operacji bazodanowych tym interfejs jest 
 uważany za bardziej intuicyjny.
-\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to celem pracy Sebastiana. Wspólnym celem obu autorów jest integracja utworzonych  modułów.
+\item Stworzenie generatora opisu mapowania obiektowo-relacyjnego -- jest to celem pracy Sebastiana Florka. Wspólnym celem obu autorów jest integracja utworzonych  modułów.
 \item Poprawne zrealizowanie założeń mapowania obiektowo-relacyjnego, a także jak najlepsza optymalizacja zapytań -- mapowanie musi odbywać się możliwie szybko, jednak
 najważniejsze jest zrealizowanie wszystkich jego założeń.
 \item Uczynienie konfiguracji Qubica jak najprostszą -- najlepszym rozwiązaniem wydaje się być przeniesienie całej konfiguracji do pliku konfiguracyjnego, tak aby nie musiała
@@ -294,7 +294,12 @@ Większość programistów problem trwałości danych rozwiązuje poprzez wykorz
 danymi''. Pojęcia te są powszechnie znane, jednakże warto przypomnieć ich definicje:
 
 \begin{definition}
-Relacyjna baza danych -- zbiór danych w postaci tabel połączonych ze sobą relacjami \cite{rel}.
+
+Relacyjna baza danych -- zbiór informacji zapisanych w ściśle określony sposób w strukturach odpowiadających założonemu modelowi danych. Model relacyjny został operty 
+na postulatach relacyjności, a jego twórcą jest Edgar Frank Codd. Dane w modelu relacyjnym reprezentowane są jako zbiór krotek, które w znormalizowanych bazach
+danych są unikatowe a ich kolejność nie gra roli. Dostęp do nich zapewnia algebra relacji wraz z operatorami takimi jak rzutowanie, selekcja, złączenie, suma, różnica czy
+produkt kartezjański. Zbiory danych powiązane są logicznie za pomocą encji, w ten sposób uniezależnia się widziany przez użytkownika obraz bazy danych od jej postaci fizycznej
+\cite{rel}.
 \end{definition}
 
 \begin{definition}
@@ -645,7 +650,7 @@ oraz plikami klas. W tym momencie aplikacja posiada już oprogramowany dostęp d
 
 \subsection{Diagram klas}
 
-Diagram klas Qubica przedstawia rysunek \ref{diagram}:
+Diagram klas nieuwzględniający relacji zależności Qubica przedstawia rysunek \ref{diagram}:
 
 \newpage
 \noindent
@@ -755,11 +760,12 @@ Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niż
 
 \subsection{Interfejs do tworzenia zapytań}
 
-Interfejs ten został utworzony w celu ujednolicenia zapytań jakie mogą być przesyłane do różnego rodzaju baz danych. Użytkownik za jego pomocą może skonstruować
-obiekt zapytania, który to w momencie przesłania do bazy danych jest przetłumaczony na dialekt języka SQL z którego aktualnie użytkownik korzysta. Przykład wykorzystania
-takiego interfejsu może wyglądać następująco:
-
-\lstinputlisting[style=customc,caption=Tworzenie zapytań Qubica]{resources/sample_query.cpp}
+Operacja ładowania danych udostępniana przez interfejs opisany w poprzedniej sekcji jest w stanie załadować wszystkie dane z wybranej tabeli. Jest to jednak rozwiązanie
+mało efektywne, szczególnie biorąc pod uwagę systemy przetwarzające duże ilości informacji. Nawet gdy użytkownik przefiltruje odpowiednio dla siebie wyniki ładowania i tak
+straci dużo czasu na wykonanie tych operacji. Najlepszym sposobem aby usprawnić proces ładowania danych jest skorzystanie z odpowiednio skonstruowanych zapytań SQL.
+Chcąc podtrzymać ideę mapowania obiektowo-relacyjnego, w której użytkownik nie jest zmuszony do dokładnego poznania wybranego dialektu języka SQL autor niniejszej
+pracy zdecydował się stworzyć uogólniony interfejs za którego pomocą użytkownicy Qubica mogą tworzyć zapytania SQL bez większej wiedzy na ich temat. Sam sposób tworzenia
+obiektów zapytań i z nich korzystania został opisany w podręczniku użytkownika.
 
 \subsection{Metody dostępu do powiązanych danych}
 
@@ -808,13 +814,7 @@ Przykładowo gdy użytkownik bazy MySQL oraz Qubica chce stworzyć za jego pomoc
 skonstruowanie zapytania na wzór zapytań SQL. Atutem takiego rozwiązania jest to, że użytkownik nie musi znać wybranego dialektu SQL, wystarczy jedynie szerokopojęta
 znajomość SQL. Przykładowe zapytanie prezentuje się następująco:
 
-\begin{lstlisting}[style=customc,caption=Przykładowe zapytanie Qubica]  
-QbMySQLQuery query = QbMySQLQuery(Employee::CLASSNAME);
-query.appendWhere(Employee::FIRSTNAME, "Ryo", QbQuery::EQUALS);
-query.appendAnd();
-query.appendWhere(Employee::SALARY, "150", QbQuery::MORE_THAN);
-list = QbDatabase::getInstance()->load(&query);
-\end{lstlisting}
+\lstinputlisting[style=customc,caption=Tworzenie zapytań Qubica]{resources/sample_query.cpp}
 
 \subsubsection{Jak korzystać z metod dostępu do powiązanych danych?}
 
@@ -931,7 +931,7 @@ komórkowe czy też aplikacja szkieletowa do tworzenia usług internetowych\foot
 \bibitem{mysql} MySQL Documentation. {\tt http://dev.mysql.com/doc/}. Data dostępu -- 31.08.2014.
 \bibitem{trends} Trendy Google. {\tt https://www.google.pl/trends/explore\#q=orm\%20\-java\%2C\%20orm\%20php\%2C\%20orm\%20python\%2C\%20orm\%20c\&cmpt=q}.
 Data dostępu -- 31.08.2014.
-\bibitem{rel} Portal UAM w Poznaniu. {\tt http://www.staff.amu.edu.pl/\~psi/\-informatyka/kluczew/I2\_Database.htm}. Data dostępu -- 31.08.2014.
+\bibitem{rel} Tarnowski, Ireneusz. Relacyjne bazy danych. {\tt http://gis.pwr.wroc.pl/arch/I\%20rok.kons/bazy\_danych\_wyklad\linebreak\_Ireneusz\_Tarnowski.pdf}. Data dostępu -- 31.08.2014.
 \bibitem{framework} Grosser, Andrzej. Szkielety tworzenia aplikacji. {\tt http://icis.pcz.pl/~agrosser/wsztap.pdf}. Data dostępu -- 31.08.2014.
 \bibitem{github} GitHub. {\tt https://github.com/}. Data dostępu -- 31.08.2014.
 \bibitem{qxorm} QxOrm Library for C++. {\tt http://www.qxorm.com/qxorm\_en/home.html}. Data dostępu -- 31.08.2014.
