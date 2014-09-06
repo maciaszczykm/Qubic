@@ -32,6 +32,8 @@
 
 \begin{document}
 
+\lstset{aboveskip=20pt,belowskip=20pt}
+
 \lstdefinestyle{customcmd}{
 captionpos=b, 
 belowcaptionskip=1\baselineskip,
@@ -542,6 +544,8 @@ Konfiguracja QxOrm jest dość rozbudowana, a co za tym idzie skomplikowana. Rej
 
 \lstinputlisting[style=customc,caption=Przykładowy plik nagłówkowy klasy korzystającej z QxOrm]{resources/qxorm_sampleclass.h}
 
+\newpage
+
 A także w pliku klasy \cite{qxorm}:
 
 \lstinputlisting[style=customc,caption=Przykładowy plik klasy korzystającej z QxOrm]{resources/qxorm_sampleclass.cpp}
@@ -718,16 +722,24 @@ poziomu kodu. Interfejs ten dostępny jest w podstaci co najmniej czterech metod
 {\tt QbPersistable}. Umożliwia to wykorzystanie polimorfizmu, a przecież podczas operacji na obiektach od samego początku nie znany jest dokładny typ obiektu.
 
 Aby mapowanie mogło skutecznie działać potrzebny jest jego jednoznaczny opis. Część narzędzi je realizujących korzysta z adnotacji, które określają mapowanie pomiędzy
-konkretnymi polami klas a konkretnymi tabelami w bazie danych. Nie jest to jednak jedyn możliwe rozwiązanie i w Qubicu problem ten został rozwiązany w trochę inny sposób,
+konkretnymi polami klas a konkretnymi tabelami w bazie danych. Nie jest to jednak jedyne możliwe rozwiązanie i w Qubicu problem ten został rozwiązany w trochę inny sposób,
 który umożliwia stworzony generator opisu mapowania obiektowo-relacyjnego. Generowane pliki klas oraz pliki nagłówkowe są tworzone według ściśle określonych zasad, 
 co oznacza, że nazwy metod dostępowych odpowiadają w pewien sposób nazwom tabel i ich kolumn. Przykładowo dla kolumny o nazwie {\tt NAME} w tabeli {\tt EMPLOYEE} 
 w pliku klasy {\tt Employee} zostaną wygenerowane metody {\tt getName()} oraz {\tt setName(QString name)}. Wie\-dza ta została wykorzystana w trakcie korzystania z 
 mechanizmu refleksji. Konfiguracja samego mapowania nazw została zapisana w pliku konfiguracyjnym Qubica.
 
-Rozwiązanie opisane w poprzednim akapicie jest możliwe dzięki wykorzystaniu mechanizmu refleksji, który umożliwia konstruowanie obiektów czy też wywoływanie metod
-dynamicznie -- to znaczy w trakcie działania programu. Autor niniejszej pracy nie był przecież w stanie określić dokładnie jakie obiekty i klasy będą obsługiwane w trakcie działania
-Qubica. Sam mechanizm refleksji jest także jednym z powodów dla którego Qubic działa w oparciu o aplikację szkieletową Qt, bo jak dobrze wiadomo sam język C++ w
-przeciwieństwie do chociażby języka Java go nie udostępnia.
+Wspomniany mechanizm refleksji umożliwia konstruowanie obiektów czy też wywoływanie metod dynamicznie -- to znaczy w trakcie działania programu. Autor niniejszej pracy 
+nie był przecież w stanie określić dokładnie jakie obiekty i klasy będą obsługiwane w trakcie działania Qubica. Sama refleksja jest także jednym z powodów dla którego Qubic działa
+w oparciu o aplikację szkieletową Qt, bo jak dobrze wiadomo sam język C++ w przeciwieństwie do chociażby języka Java jej nie udostępnia.
+
+Aby metody wybranych klas były dostępne za pomocą refleksji Qt wymaga zarejestrowania ich specjalnie do tego przeznaczonym makrem {\tt Q\_INVOKABLE} natomiast cała klasa
+powinna dziedziczyć po klasie {\tt QObject}, w przypadku Qubica drugie wymaganie zostaje spełnione przez dziedziczenie po wcześniej wspominanej klasie {\tt QbPersistable}, natomiast
+makra zostają dodane na etapie generowania kodu poprzez generator opisu mapowania. Dodatkowa rola klasy {\tt QbPersistable} polega na zagwarantowaniu zestawu pewnych metod
+w każdej klasie mapowanej, czyli na przykład metody pobierającej klucz główny danego obiektu czy też metody odpowiedzialnej za zwrócenie rzeczywistej i dokładnej nazwy klasy.
+
+W celu zagwarantowania użytkownikowi lepszej kontroli nad tworzoną aplikacją utworzona została także lista aktualnie zsynchronizowanych obiektów, która jest na bieżąco aktualizowana
+przez metody Qubica. Skorzystanie z niej jest najlepszym sposobem na szybki dostęp do aktualnie zsynchronizowanych obiektów, a udostępniana jest ona podobnie jak interfejs CRUD
+przez klasę {\tt QbDatabase}.
 
 Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niższe schematy blokowe:
 
@@ -767,16 +779,72 @@ Chcąc podtrzymać ideę mapowania obiektowo-relacyjnego, w której użytkownik 
 pracy zdecydował się stworzyć uogólniony interfejs za którego pomocą użytkownicy Qubica mogą tworzyć zapytania SQL bez większej wiedzy na ich temat. Sam sposób tworzenia
 obiektów zapytań i z nich korzystania został opisany w podręczniku użytkownika.
 
+Sam sposób działania klas tworzących zapytania nie należy do skomplikowanych. Kluczowa jest tutaj klasa wirtualna {\tt QbQuery}, która sama implementuje część metod
+używanych do tworzenia zapytań -- dokładniej są to metody, których ciało nie zmienia się w zależności od wybranego dialektu języka SQL, a także wymusza na klasach
+dziedziczących zaimplementowanie pozostałych potrzebnych metod. W ten sposób implementując klasę {\tt QbMySQLQuery} zaimplementowana musiała zostać tylko część
+metod a reszta była już dostępna. Wszystkie tworzone metody operują głównie na łaćuchach znaków stopniowo tworząc obiekty zapytań, które póżniej mogą zostać przekazane
+do metody {\tt load(query)} w klasie {\tt QbDatabase}.
+
 \subsection{Metody dostępu do powiązanych danych}
 
 Charakterystycznymi elementami relacyjnych baz danych są relacje jeden do wielu oraz wiele do wielu, składające się tak na prawdę z tabeli łącznikowej oraz dwóch relacji
-jeden do wielu. Dużym usprawnieniem dla aplikacji jest możliwość uzyskania obiektów powiązanych z wybranym obiektem, Qubic udostępnia taką możliwość.
+jeden do wielu. Dużym usprawnieniem dla aplikacji jest możliwość uzyskania obiektów powiązanych z wybranym obiektem, Qubic dzięki obecności generatora kodu udostępnia
+taką możliwość.
 
 Weźmy pod uwagę dwie klasy obiektów {\tt Employee} oraz {\tt Company}. W modelu relacyjnym tabela {\tt EMPLOYEE} zawiera odwołanie do tabeli {\tt COMPANY} dzięki
 czemu posiadamy informacje dla jakiej firmy pracuje wybrany pracownik, w modelu obiektowym zrealizowane to jest za pomocą referencji lub też wskaźników. Co jednak jeśli
 potrzebujemy informacji o wszystkich pracownikach danej firmy? Ani obiekt ani encja w tabeli nie posiada takich informacji, na pomoc przychodzą wygenerowane przez
-generator opisu tzw. metody dostępu do powiązanych danych. W przedstawionym przypadku jest to metoda {\tt getEmployees}, którą możemy wywołać na dowolnym obiekcie
+generator opisu tzw. metody dostępu do powiązanych danych. W przedstawionym przypadku jest to metoda {\tt getEmployees()}, którą możemy wywołać na dowolnym obiekcie
 klasy {\tt Company}.
+
+Przyjrzyjmy się w jaki sposób odbywa się dostęp do powiązanych danych po wygenerowaniu metod a także jak wyglądają ciała takich metod. Wróćmy do przedstawionego
+wcześniej przykładu, tzn. do relacji jeden do wielu pomiędzy tabelami {\tt EMPLOYEE} oraz {\tt COMPANY}. Generator opisu po wykryciu wspomnianej relacji w kodzie źródłowym
+klasy {\tt Company} umieści następującą metodę:
+
+\begin{lstlisting}[style=customc,caption=Ciało metody dostępu do powiązanych danych (jeden do wielu)]
+QList<QbPersistable*> Company::getEmployees() {
+    return QbAdvancedQueryHelper::queryOneToMany(Employee::CLASSNAME, CLASSNAME, id);
+}
+\end{lstlisting}
+
+Jak widać zadaniem generatora jest jedynie wywołanie metody \linebreak {\tt queryOneToMany(className, conditionClass, id)}, gdzie argument \linebreak {\tt className} to 
+nazwa klasy docelowej -- w tym przypadku {\tt EMPLOYEE}, \linebreak {\tt conditionClass} to nazwa klasy obecnej -- {\tt COMPANY}, a {\tt id} to unikalny identyfikator 
+wybranego obiektu klasy {\tt Company}. Na podstawie tych trzech argumentów tworzone jest zapytanie z wykorzystaniem wcześniej stworzonego mechanizmu zapytań 
+(poniższy przykład zawiera fragment kodu używanego w przypadku wykorzystania języka MySQL):
+
+\begin{lstlisting}[style=customc,caption=Zapytanie dostępu do powiązanych danych (jeden do wielu)]
+QbQuery* query = new QbMySQLQuery(className);
+query->appendWhere(conditionClass, QString::number(id), QbQuery::EQUALS);
+return QbDatabase::getInstance()->load(query);
+\end{lstlisting}
+
+Poza relacjami jeden do wielu Qubic udostępnia dostęp do powiązanych danych także w przypadku relacji wiele do wielu. Tutaj rozważmy przypadek trzech tabel, tzn.
+{\tt EMPLOYEE}, {\tt DEPARTMENT} oraz {\tt ASSIGNMENT} występującej w postaci tabeli łącznikowej. W przedstawionym przypadku zostaną wygenerowane dwie metody,
+jedna w klasie {\tt Employee} a druga w {\tt Department}. Przyjrzyjmy się jednej z tych metod, czyli {\tt getEmployees()} w klasie {\tt Department}:
+
+\begin{lstlisting}[style=customc,caption=Ciało metody dostępu do powiązanych danych (wiele do wielu)]
+QList<QbPersistable*> Department::getEmployees() {
+    return QbAdvancedQueryHelper::queryManyToMany(Employee::CLASSNAME, CLASSNAME, Assignment::CLASSNAME, id);
+}
+\end{lstlisting}
+
+W tym przypadku wygenerowany kod musi zawierać wywołanie metody \linebreak {\tt queryManyToMany(className, conditionClass, middleClass, id)}, gdzie jedynym dodatkowym
+argumentem w stosunku do relacji jeden do wielu jest łańcuch znaków {\tt middleName}, który musi zawierać nazwę tabeli łącznikowej. Samo ciało metody dla języka MySQL
+wygląda następująco:
+
+\begin{lstlisting}[style=customc,caption=Zapytanie dostępu do powiązanych danych (wiele do wielu)]
+QString tableIdentifier = QbProperties::getInstance()->getProperty("qubic.configuration.table.identifier").toUpper();
+        QString queryString = "SELECT * FROM " + className.toUpper() + " WHERE " ;
+        queryString += className.toUpper() + "." + tableIdentifier + " IN (SELECT ";
+        queryString += middleClass.toUpper() + "." + className.toUpper() + " FROM " + middleClass.toUpper();
+        queryString += " WHERE " + middleClass.toUpper() + "." + conditionClass.toUpper() + "='" + QString::number(id) + "')";
+        QbQuery* query = new QbMySQLQuery(className);
+        query->setQuery(queryString);
+        return QbDatabase::getInstance()->load(query);
+\end{lstlisting}
+
+Jak widać w powyższym fragmencie kodu tym razem nie został wykorzystany mechanim zapytań Qubica, który w chwili obecnej nie obsługuje zagnieżdzonych w sobie zapytań, a
+które były konieczne do otrzymania prawidłowego rezultatu.
 
 \section{Podręcznik użytkownika}
 

@@ -44,20 +44,20 @@
 \contentsline {subsection}{\numberline {4.4.2}Interfejs CRUD}{33}
 \contentsline {subsection}{\numberline {4.4.3}Interfejs do tworzenia zapyta\IeC {\'n}}{39}
 \contentsline {subsection}{\numberline {4.4.4}Metody dost\IeC {\k e}pu do powi\IeC {\k a}zanych danych}{39}
-\contentsline {section}{\numberline {4.5}Podr\IeC {\k e}cznik u\IeC {\.z}ytkownika}{39}
-\contentsline {subsubsection}{Jak wygl\IeC {\k a}da konfiguracja Qubica?}{40}
-\contentsline {subsubsection}{Jak wykorzysta\IeC {\'c} Qubica w tworzonym projekcie?}{40}
-\contentsline {subsubsection}{Jak po\IeC {\l }\IeC {\k a}czy\IeC {\'c} si\IeC {\k e} z baz\IeC {\k a} danych?}{40}
-\contentsline {subsubsection}{Jak korzysta\IeC {\'c} z operacji CRUD?}{40}
-\contentsline {subsubsection}{Jak tworzy\IeC {\'c} w\IeC {\l }asne zapytania za pomoc\IeC {\k a} Qubica?}{40}
-\contentsline {subsubsection}{Jak korzysta\IeC {\'c} z metod dost\IeC {\k e}pu do powi\IeC {\k a}zanych danych?}{41}
-\contentsline {section}{\numberline {4.6}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{41}
-\contentsline {section}{\numberline {4.7}Analiza Qubica}{47}
-\contentsline {section}{\numberline {4.8}Perspektywy rozwoju Qubica}{48}
-\contentsline {chapter}{\numberline {5}Podsumowanie}{50}
-\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{50}
-\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{50}
-\contentsline {chapter}{Bibliografia}{51}
-\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{53}
-\contentsline {chapter}{Spis tabel}{54}
-\contentsline {chapter}{Spis listing\IeC {\'o}w}{55}
+\contentsline {section}{\numberline {4.5}Podr\IeC {\k e}cznik u\IeC {\.z}ytkownika}{42}
+\contentsline {subsubsection}{Jak wygl\IeC {\k a}da konfiguracja Qubica?}{42}
+\contentsline {subsubsection}{Jak wykorzysta\IeC {\'c} Qubica w tworzonym projekcie?}{42}
+\contentsline {subsubsection}{Jak po\IeC {\l }\IeC {\k a}czy\IeC {\'c} si\IeC {\k e} z baz\IeC {\k a} danych?}{42}
+\contentsline {subsubsection}{Jak korzysta\IeC {\'c} z operacji CRUD?}{42}
+\contentsline {subsubsection}{Jak tworzy\IeC {\'c} w\IeC {\l }asne zapytania za pomoc\IeC {\k a} Qubica?}{43}
+\contentsline {subsubsection}{Jak korzysta\IeC {\'c} z metod dost\IeC {\k e}pu do powi\IeC {\k a}zanych danych?}{43}
+\contentsline {section}{\numberline {4.6}Przyk\IeC {\l }adowa aplikacja wykorzystuj\IeC {\k a}ca Qubica}{43}
+\contentsline {section}{\numberline {4.7}Analiza Qubica}{49}
+\contentsline {section}{\numberline {4.8}Perspektywy rozwoju Qubica}{50}
+\contentsline {chapter}{\numberline {5}Podsumowanie}{52}
+\contentsline {section}{\numberline {5.1}Dyskusja wynik\IeC {\'o}w}{52}
+\contentsline {section}{\numberline {5.2}Perspektywy rozwoju pracy}{52}
+\contentsline {chapter}{Bibliografia}{53}
+\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{55}
+\contentsline {chapter}{Spis tabel}{56}
+\contentsline {chapter}{Spis listing\IeC {\'o}w}{57}
