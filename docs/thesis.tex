@@ -217,7 +217,8 @@ przyjęte przez nas założenia i zaproponowane rozwiązania były lepsze niż t
 \subsection{Literatura dotycząca języka C++ oraz Qt}
 
 W celu zasięgnięcia informacji na temat programowania w języku C++ i zagadnień z nim związanych najczęściej wykorzystywaną pozycją książkową była ,,Symfonia'' 
-\cite{symfonia} Jerzego Grębosza. Najlepszym jej określeniem jest ,,kurs programowania w języku C++'', opisane zostały w niej jednak zagadnienia dotyczące nie tylko języka C++, a także co istotne dla autora niniejszej pracy zagadnienia dotyczące obiektowości.
+\cite{symfonia} Jerzego Grębosza. Najlepszym jej określeniem jest ,,kurs programowania w języku C++'', opisane zostały w niej jednak zagadnienia dotyczące nie tylko języka 
+C++, a także co istotne dla autora niniejszej pracy zagadnienia dotyczące obiektowości.
 
 Poza tym wartościowym źródłem wiedzy podczas tworzenia Qubica była specyfikacja języka C++ \cite{cpp} oraz dokumentacja aplikacji szkieletowej Qt \cite{qt}.
 
@@ -741,31 +742,49 @@ W celu zagwarantowania użytkownikowi lepszej kontroli nad tworzoną aplikacją 
 przez metody Qubica. Skorzystanie z niej jest najlepszym sposobem na szybki dostęp do aktualnie zsynchronizowanych obiektów, a udostępniana jest ona podobnie jak interfejs CRUD
 przez klasę {\tt QbDatabase}.
 
-Schematy działania czterech podstawowych metod dostępu przedstawiają po\-niższe schematy blokowe:
+Schematy działania czterech podstawowych metod dostępu przedstawiają schematy blokowe umieszczone na rysunkach \ref{blok1} -- \ref{blok4}.
+
+Pierwszy ze schematów przedstawia sposób działania metody zapisującej \linebreak obiekty w bazie danych. Warte uwagi jest w tym przypadku rozwiązanie problemu z wskaźnikami 
+do innychobiektów, które w bazie danych muszą zostać zamienione w odwołania do rekordów w innych tabelach. Aby było to możliwe w trakcie zapisu dowolnego obiektu sprawdzane 
+jest czy posiada on odwołania do innych obiektów i jeśli tak jest pierwsze w bazie zostaną zapisane obiekty podrzędne a dopiero później obiekty, które posiadają do nich odwołania.
+Ten schemat postępowania został powielony także w przypadku metody aktualizującej obiekty w bazie danych.
+
+Problem dotyczący odwołań pomiędzy rekordami pojawia się także w trakcie ich ładowania z bazy danych. Tym razem po stworzeniu obiektów powstaje konieczność przekształcenia
+odwołań do rekordów w innych tabelach w wskaźniki do obiektów utworzonych na ich podstawie. Wywołując metodę {\tt getCompany()} klasy {\tt Employee} liczymy na to, że zwróci
+nam ona wskaźnik do obiektu klasy {\tt Company} a nie klucz główny z tabeli {\tt COMPANY} w bazie. Transformacja ta ma miejsce w ostatnim momencie konstruowania obiektów, gdy
+wszystkie inne pola zostały już wypełnione. Wczytywane są wtedy obiekty do których prowadzą odwołania a obiekty w których te odwołania występują uzupełniane są o wskaźniki
+do nich.
+
+Ostatnia z metod należących do interfejsu CRUD, której zadaniem jest usuwanie obiektów z bazy nie musi dodatkowo dbać o relacje pomiędzy obiektami. Zadanie to zostaje powierzone
+bazie danych, która zależnie od preferencji użytkownika będzie usuwała rekordy kaskadowo lub też nie zezwoli na ich usunięcie ze względu na istniejące do nich odwołania. 
 
 \newpage
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{resources/store_schema.png}
 \caption{Schemat blokowy metody zapisującej obiekty w bazie danych}
+\label{blok1}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{resources/update_schema.png}
 \caption{Schemat blokowy metody aktualizującej obiekty w bazie danych}
+\label{blok2}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{resources/load_schema.png}
 \caption{Schemat blokowy metody ładującej obiekty z bazy danych}
+\label{blok3}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{resources/remove_schema.png}
 \caption{Schemat blokowy metody usuwającej obiekty z bazy danych}
+\label{blok4}
 \end{figure}
 
 \newpage
