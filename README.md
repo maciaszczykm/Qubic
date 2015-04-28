@@ -3,7 +3,6 @@
 ***
 
 ## Information
-
 Qubic is an object-relational mapping tool written in C++.
 
 If you have any questions concerning Qubic, you can [contact with me](mailto:marmac91@gmail.com).
